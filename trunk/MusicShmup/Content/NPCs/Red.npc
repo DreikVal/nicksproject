@@ -1,0 +1,60 @@
+[MaxCount]
+4
+[Texture]
+Sprites/npcplane
+
+[Animations]
+Up:2,32,32,0,0,8
+Down:2,32,32,64,0,8
+Left:2,32,32,128,0,8 
+Right:2,32,32,192,0,8 
+Death:8,32,32,0,32,10 
+Explode:8,32,32,0,64,12 
+
+[Extras]
+FlipHorizontally
+OriginOffset = 16,32
+Position = 500,300
+
+[EndSprite]
+
+[Texture]
+Sprites/exhaust
+
+[Animations]
+Exhaust:2,12,8,0,0,24 
+
+[Bools]
+TrackParent = true
+
+[Extras]
+FlipHorizontally
+childOffset = 32,13
+
+[EndSprite]
+
+[Texture]
+Sprites/burst
+
+[Animations]
+Burst:18,16,16,0,0,48 
+
+[Bools]
+TrackParent = false
+
+[EndSprite]
+
+[Texture]
+Sprites/gunflash
+
+[Animations]
+GunFlash:3,5,10,0,0,12
+
+[Bools]
+TrackParent = true
+
+[Extras]
+FlipHorizontally
+childOffset = 0,12
+
+[EndSprite]

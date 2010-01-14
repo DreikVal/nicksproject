@@ -1,0 +1,6 @@
+C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyEngine\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyEngine\obj\x86\Debug\FriendlyEngine.dll
+C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyEngine\bin\x86\Debug\FriendlyEngine.dll
+C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyEngine\bin\x86\Debug\FriendlyEngine.pdb
+C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyEngine\obj\x86\Debug\FriendlyEngine.pdb
