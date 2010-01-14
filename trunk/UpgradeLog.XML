@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="FriendlyGame">
+</Property><Property Name="Solution File" Value="C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyGame.sln">
+</Property><Property Name="Date" Value="Friday, October 30, 2009">
+</Property><Property Name="Time" Value="19:53 PM">
+</Property></Properties><Event ErrorLevel="0" Project="FriendlyGame" Source="FriendlyGame\FriendlyGame.csproj" Description="Upgraded XNA Game Studio nested content projects to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="FriendlyGame" Source="FriendlyGame\FriendlyGame.csproj" Description="Upgraded XNA Game Studio project to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="FriendlyGame" Source="FriendlyGame\FriendlyGame.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FriendlyGame" Source="FriendlyGame\FriendlyGame.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FriendlyEngine" Source="FriendlyEngine\FriendlyEngine.csproj" Description="Upgraded XNA Game Studio nested content projects to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="FriendlyEngine" Source="FriendlyEngine\FriendlyEngine.csproj" Description="Upgraded XNA Game Studio project to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="FriendlyEngine" Source="FriendlyEngine\FriendlyEngine.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FriendlyEngine" Source="FriendlyEngine\FriendlyEngine.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FriendlyEditor" Source="FriendlyEditor\FriendlyEditor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FriendlyEditor" Source="FriendlyEditor\FriendlyEditor.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FriendlyContent" Source="FriendlyContent\FriendlyContent.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FriendlyContent" Source="FriendlyContent\FriendlyContent.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MusicShmup" Source="MusicShmup\MusicShmup.csproj" Description="Upgraded XNA Game Studio nested content projects to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="MusicShmup" Source="MusicShmup\MusicShmup.csproj" Description="Upgraded XNA Game Studio project to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="MusicShmup" Source="MusicShmup\MusicShmup.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MusicShmup" Source="MusicShmup\MusicShmup.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="FriendlyGame.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="FriendlyGame.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FriendlyGame" Source="FriendlyGame\FriendlyGame.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FriendlyGame" Source="FriendlyGame\FriendlyGame.csproj" Description="Upgraded XNA Framework references to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="FriendlyEngine" Source="FriendlyEngine\FriendlyEngine.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FriendlyEngine" Source="FriendlyEngine\FriendlyEngine.csproj" Description="Upgraded XNA Framework references to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="FriendlyEditor" Source="FriendlyEditor\FriendlyEditor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FriendlyContent" Source="FriendlyContent\FriendlyContent.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FriendlyContent" Source="FriendlyContent\FriendlyContent.csproj" Description="Upgraded XNA Framework Content Pipeline References.">
+</Event><Event ErrorLevel="0" Project="FriendlyContent" Source="FriendlyContent\FriendlyContent.csproj" Description="Upgraded XNA Framework references to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="MusicShmup" Source="MusicShmup\MusicShmup.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MusicShmup" Source="MusicShmup\MusicShmup.csproj" Description="Upgraded XNA Framework references to XNA Framework 3.0.">
+</Event></UpgradeLog>
