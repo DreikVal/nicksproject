@@ -1,6 +1,10 @@
 Content\Fonts\Calibri10.xnb
 Content\Fonts\Calibri16.xnb
 Content\Fonts\Palatino.xnb
+Content\Fonts\Ara48.xnb
+Content\Fonts\Ara79.xnb
+Content\Fonts\Calibri24.xnb
+Content\Fonts\Calibri32.xnb
 Content\Sprites\Moodlets\angry.xnb
 Content\Sprites\Moodlets\annoyed.xnb
 Content\Sprites\Moodlets\happy.xnb
@@ -47,10 +51,20 @@ Content\Sprites\TabDar\tabdarhair.xnb
 Content\Sprites\TabDar\tabdarhair1a.xnb
 Content\Sprites\TabDar\tabdarhair1.xnb
 Content\Sprites\projectileb.xnb
+Content\Sprites\TitleScreen\menua copy.xnb
+Content\Sprites\TitleScreen\title.xnb
+Content\Sprites\TitleScreen\Load.xnb
+Content\Sprites\HUD\bottomPanel.xnb
+Content\Sprites\humana.xnb
+Content\Sprites\missilething.xnb
 Content\Layers\f.xnb
 Content\Layers\grassyknoll.xnb
+Content\Layers\j.xnb
+Content\Layers\a.xnb
+Content\Layers\b.xnb
 Content\Layers\TileMap.xnb
 Content\Sound\hit.xnb
+Content\Tiles\sand.xnb
 Content\Tiles\se_free_dirt_texture.xnb
 Content\Tiles\se_free_grass_texture.xnb
 Content\Tiles\se_free_ground_texture.xnb
@@ -62,19 +76,6 @@ Content\Doodads\tree.xnb
 Content\Doodads\tree1.xnb
 Content\Doodads\tree2.xnb
 Content\Doodads\tree3.xnb
-Content\Tiles\sand.xnb
-Content\Layers\j.xnb
-Content\Fonts\Ara48.xnb
-Content\Fonts\Ara79.xnb
-Content\Fonts\Calibri24.xnb
-Content\Fonts\Calibri32.xnb
-Content\Sprites\TitleScreen\menua copy.xnb
-Content\Sprites\TitleScreen\title.xnb
-Content\Sprites\TitleScreen\Load.xnb
-Content\Sprites\HUD\bottomPanel.xnb
-Content\Layers\a.xnb
-Content\Sprites\humana.xnb
-Content\Layers\b.xnb
 Content\Tiles\runwayc.xnb
 Content\Tiles\runwayd.xnb
 Content\Tiles\runwaye.xnb
@@ -84,7 +85,6 @@ Content\Tiles\runwayc1.xnb
 Content\Tiles\runwayc2.xnb
 Content\Tiles\runwayca.xnb
 Content\Tiles\runwaycaa.xnb
-Content\Sprites\missilething.xnb
 Content\Scripts\NPC1.script
 Content\Scripts\NPC2.script
 Content\NPCs\Blue.npc
