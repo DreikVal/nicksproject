@@ -1,0 +1,10 @@
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\bin\x86\Debug\FriendlyContent.dll
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\bin\x86\Debug\FriendlyContent.pdb
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\obj\x86\Debug\FriendlyContent.dll
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\obj\x86\Debug\FriendlyContent.pdb
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\bin\x86\Release\FriendlyContent.dll
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\bin\x86\Release\FriendlyContent.pdb
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\obj\x86\Release\FriendlyContent.dll
+C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyContent\obj\x86\Release\FriendlyContent.pdb
