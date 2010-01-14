@@ -643,7 +643,8 @@ namespace MusicShmup
                     player.childOffsets[0] = new Vector2(-12 * 4, 13 * 4);
                 }
             }
-
+            //littlehack
+            player.Position += camera.ScrollRate;
         }
 
         public override void Draw(GameTime gameTime)

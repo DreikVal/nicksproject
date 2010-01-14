@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri10.xnb</Output>
-      <Time>2009-09-02T13:58:18.897547+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri10.xnb</Output>
+      <Time>2010-01-14T22:03:15.9511718+09:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Calibri16.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri16.xnb</Output>
-      <Time>2009-09-02T13:58:18.9043825+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri16.xnb</Output>
+      <Time>2010-01-14T22:03:16.0019531+09:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Palatino.spritefont</Source>
@@ -25,8 +25,44 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Palatino.xnb</Output>
-      <Time>2009-09-02T13:58:18.9141475+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Palatino.xnb</Output>
+      <Time>2010-01-14T22:03:15.977539+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Ara48.spritefont</Source>
+      <Name>Fonts\Ara48</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Ara48.xnb</Output>
+      <Time>2010-01-14T22:03:16.0068359+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Ara79.spritefont</Source>
+      <Name>Fonts\Ara79</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Ara79.xnb</Output>
+      <Time>2010-01-14T22:03:15.9472656+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Calibri24.spritefont</Source>
+      <Name>Fonts\Calibri24</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri24.xnb</Output>
+      <Time>2010-01-14T22:03:15.9980468+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Calibri32.spritefont</Source>
+      <Name>Fonts\Calibri32</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri32.xnb</Output>
+      <Time>2010-01-14T22:03:15.993164+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Moodlets\angry.png</Source>
@@ -34,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\angry.xnb</Output>
-      <Time>2009-09-02T13:59:02.88106+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\angry.xnb</Output>
+      <Time>2010-01-14T22:03:21.040039+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Moodlets\annoyed.png</Source>
@@ -43,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\annoyed.xnb</Output>
-      <Time>2009-09-02T13:59:02.8820365+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\annoyed.xnb</Output>
+      <Time>2010-01-14T22:03:21.0361328+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Moodlets\happy.png</Source>
@@ -52,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\happy.xnb</Output>
-      <Time>2009-09-02T13:59:02.8878955+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\happy.xnb</Output>
+      <Time>2010-01-14T22:03:21.0429687+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Moodlets\neutral.png</Source>
@@ -61,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\neutral.xnb</Output>
-      <Time>2009-09-02T13:59:02.8996135+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\neutral.xnb</Output>
+      <Time>2010-01-14T22:03:21.1113281+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Moodlets\sad.png</Source>
@@ -70,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\sad.xnb</Output>
-      <Time>2009-09-02T13:59:02.9074255+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Moodlets\sad.xnb</Output>
+      <Time>2010-01-14T22:03:21.0996093+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\rocks.png</Source>
@@ -79,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\rocks.xnb</Output>
-      <Time>2009-09-02T13:59:32.760007+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\rocks.xnb</Output>
+      <Time>2010-01-14T22:03:14.171875+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\projectilea.png</Source>
@@ -88,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\projectilea.xnb</Output>
-      <Time>2009-09-05T21:03:31.8593215+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\projectilea.xnb</Output>
+      <Time>2010-01-14T22:03:26.1972656+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\gunflash.png</Source>
@@ -97,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\gunflash.xnb</Output>
-      <Time>2009-09-05T20:55:38.2900225+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\gunflash.xnb</Output>
+      <Time>2010-01-14T22:03:25.5957031+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\exhaust.png</Source>
@@ -106,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\exhaust.xnb</Output>
-      <Time>2009-09-05T21:31:18.056389+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\exhaust.xnb</Output>
+      <Time>2010-01-14T22:03:26.7021484+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\npcplane.png</Source>
@@ -115,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\npcplane.xnb</Output>
-      <Time>2009-09-06T19:51:16.0228945+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\npcplane.xnb</Output>
+      <Time>2010-01-14T22:03:25.9892578+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\missile.png</Source>
@@ -124,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\missile.xnb</Output>
-      <Time>2009-09-07T00:25:10.6956175+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\missile.xnb</Output>
+      <Time>2010-01-14T22:03:26.6601562+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\water1.png</Source>
@@ -133,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water1.xnb</Output>
-      <Time>2009-09-07T08:44:29.9158+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water1.xnb</Output>
+      <Time>2010-01-14T22:03:18.696289+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\water2.png</Source>
@@ -142,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water2.xnb</Output>
-      <Time>2009-09-07T08:44:49.6284055+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water2.xnb</Output>
+      <Time>2010-01-14T22:03:18.7011718+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\water3.png</Source>
@@ -151,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water3.xnb</Output>
-      <Time>2009-09-07T08:45:08.397712+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water3.xnb</Output>
+      <Time>2010-01-14T22:03:18.977539+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\water4.png</Source>
@@ -160,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water4.xnb</Output>
-      <Time>2009-09-07T08:45:27.7587775+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water4.xnb</Output>
+      <Time>2010-01-14T22:03:18.9833984+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\water5.png</Source>
@@ -169,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water5.xnb</Output>
-      <Time>2009-09-07T08:45:48.17251+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water5.xnb</Output>
+      <Time>2010-01-14T22:03:18.9882812+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\water6.png</Source>
@@ -178,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water6.xnb</Output>
-      <Time>2009-09-07T08:46:40.3810825+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\water6.xnb</Output>
+      <Time>2010-01-14T22:03:18.993164+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\waterblip.png</Source>
@@ -187,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\waterblip.xnb</Output>
-      <Time>2009-09-07T08:51:16.915141+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\waterblip.xnb</Output>
+      <Time>2010-01-14T22:03:18.9980468+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\se_trans.png</Source>
@@ -196,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_trans.xnb</Output>
-      <Time>2009-09-07T20:06:16.617916+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_trans.xnb</Output>
+      <Time>2010-01-14T22:03:14.1601562+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Water\waterblipa.png</Source>
@@ -205,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\Water\waterblipa.xnb</Output>
-      <Time>2009-09-09T01:21:02.8935065+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\Water\waterblipa.xnb</Output>
+      <Time>2010-01-14T22:03:19.0019531+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\npcgplane.png</Source>
@@ -214,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\npcgplane.xnb</Output>
-      <Time>2009-09-11T04:30:25.8641345+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\npcgplane.xnb</Output>
+      <Time>2010-01-14T22:03:25.5927734+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\npcbplanea.png</Source>
@@ -223,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\npcbplanea.xnb</Output>
-      <Time>2009-09-11T04:23:16.7861285+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\npcbplanea.xnb</Output>
+      <Time>2010-01-14T22:03:26.359375+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\burst.png</Source>
@@ -232,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\burst.xnb</Output>
-      <Time>2009-09-15T15:42:39.0312195+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\burst.xnb</Output>
+      <Time>2010-01-14T22:03:25.9814453+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\npcmig.png</Source>
@@ -241,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\npcmig.xnb</Output>
-      <Time>2009-09-17T20:31:44.7819223+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\npcmig.xnb</Output>
+      <Time>2010-01-14T22:03:26.6943359+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\npcmiga.png</Source>
@@ -250,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\npcmiga.xnb</Output>
-      <Time>2009-09-17T20:45:46.1362753+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\npcmiga.xnb</Output>
+      <Time>2010-01-14T22:03:25.6191406+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\minismoke.png</Source>
@@ -262,8 +298,8 @@
         <Data Key="GenerateMipmaps">True</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\minismoke.xnb</Output>
-      <Time>2009-09-19T12:47:51.8792266+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\minismoke.xnb</Output>
+      <Time>2010-01-14T22:03:26.7314453+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\planeb.png</Source>
@@ -271,8 +307,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\planeb.xnb</Output>
-      <Time>2009-09-19T19:51:09.2175601+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\planeb.xnb</Output>
+      <Time>2010-01-14T22:03:26.2021484+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\targethair.png</Source>
@@ -280,8 +316,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\targethair.xnb</Output>
-      <Time>2009-09-20T23:45:09.4922377+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\targethair.xnb</Output>
+      <Time>2010-01-14T22:03:25.9648437+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\targethaira.png</Source>
@@ -289,8 +325,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\targethaira.xnb</Output>
-      <Time>2009-11-08T18:01:03.7244149+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\targethaira.xnb</Output>
+      <Time>2010-01-14T22:03:25.9726562+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\expirement.png</Source>
@@ -298,8 +334,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\expirement.xnb</Output>
-      <Time>2009-11-10T18:57:54.7613544+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\expirement.xnb</Output>
+      <Time>2010-01-14T22:03:26.6982421+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\blcok.png</Source>
@@ -307,8 +343,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\blcok.xnb</Output>
-      <Time>2009-11-10T19:17:33.8362794+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\blcok.xnb</Output>
+      <Time>2010-01-14T22:03:25.96875+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\line.png</Source>
@@ -316,8 +352,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\line.xnb</Output>
-      <Time>2009-11-23T05:46:06.9499398+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\line.xnb</Output>
+      <Time>2010-01-14T22:03:25.9609375+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\backing.png</Source>
@@ -325,8 +361,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\backing.xnb</Output>
-      <Time>2009-11-23T06:05:54.6834903+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\backing.xnb</Output>
+      <Time>2010-01-14T22:03:25.2841796+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\playerLine.png</Source>
@@ -334,8 +370,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\playerLine.xnb</Output>
-      <Time>2009-11-23T06:24:36.1986228+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\playerLine.xnb</Output>
+      <Time>2010-01-14T22:03:25.4160156+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\upLine.png</Source>
@@ -343,8 +379,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\upLine.xnb</Output>
-      <Time>2009-11-23T07:01:38.6013018+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\upLine.xnb</Output>
+      <Time>2010-01-14T22:03:25.2783203+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\missileIndicator.png</Source>
@@ -352,8 +388,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\missileIndicator.xnb</Output>
-      <Time>2009-12-16T15:34:37.9628786+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\missileIndicator.xnb</Output>
+      <Time>2010-01-14T22:03:26.2070312+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\tabdarback.png</Source>
@@ -361,8 +397,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarback.xnb</Output>
-      <Time>2009-12-16T19:04:17.8725566+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarback.xnb</Output>
+      <Time>2010-01-14T22:03:22.0859375+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\tabdarelement.png</Source>
@@ -370,8 +406,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarelement.xnb</Output>
-      <Time>2009-12-16T17:09:42.6426776+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarelement.xnb</Output>
+      <Time>2010-01-14T22:03:22.6357421+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\tabdarfield.png</Source>
@@ -379,8 +415,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarfield.xnb</Output>
-      <Time>2009-12-16T18:57:28.4632136+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarfield.xnb</Output>
+      <Time>2010-01-14T22:03:22.3427734+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\elementback.png</Source>
@@ -388,8 +424,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\elementback.xnb</Output>
-      <Time>2009-12-16T20:01:07.3789436+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\elementback.xnb</Output>
+      <Time>2010-01-14T22:03:22.6396484+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\elementfront.png</Source>
@@ -397,8 +433,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\elementfront.xnb</Output>
-      <Time>2009-12-16T18:56:54.9585221+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\elementfront.xnb</Output>
+      <Time>2010-01-14T22:03:22.6191406+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\elementmid.png</Source>
@@ -406,8 +442,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\elementmid.xnb</Output>
-      <Time>2009-12-16T20:00:07.2890396+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\elementmid.xnb</Output>
+      <Time>2010-01-14T22:03:22.6308593+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\tabdarhair.png</Source>
@@ -415,8 +451,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarhair.xnb</Output>
-      <Time>2009-12-16T19:50:39.2589896+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarhair.xnb</Output>
+      <Time>2010-01-14T22:03:22.0908203+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\tabdarhair1a.png</Source>
@@ -424,8 +460,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarhair1a.xnb</Output>
-      <Time>2009-12-16T19:53:06.6987716+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarhair1a.xnb</Output>
+      <Time>2010-01-14T22:03:22.6269531+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\TabDar\tabdarhair1.png</Source>
@@ -433,8 +469,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarhair1.xnb</Output>
-      <Time>2009-12-16T20:21:24.6926321+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TabDar\tabdarhair1.xnb</Output>
+      <Time>2010-01-14T22:03:22.6230468+09:00</Time>
     </Item>
     <Item>
       <Source>Sprites\projectileb.png</Source>
@@ -442,8 +478,62 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\projectileb.xnb</Output>
-      <Time>2009-12-16T22:24:47.7490796+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\projectileb.xnb</Output>
+      <Time>2010-01-14T22:03:26.2158203+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\TitleScreen\menua copy.jpg</Source>
+      <Name>Sprites\TitleScreen\menua copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TitleScreen\menua copy.xnb</Output>
+      <Time>2010-01-14T22:03:17.0205078+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\TitleScreen\title.png</Source>
+      <Name>Sprites\TitleScreen\title</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TitleScreen\title.xnb</Output>
+      <Time>2010-01-14T22:03:17.0957031+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\TitleScreen\Load.png</Source>
+      <Name>Sprites\TitleScreen\Load</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\TitleScreen\Load.xnb</Output>
+      <Time>2010-01-14T22:03:17.0273437+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\HUD\bottomPanel.png</Source>
+      <Name>Sprites\HUD\bottomPanel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\HUD\bottomPanel.xnb</Output>
+      <Time>2010-01-14T22:03:16.1474609+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\humana.png</Source>
+      <Name>Sprites\humana</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\humana.xnb</Output>
+      <Time>2010-01-14T22:03:25.6035156+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\missilething.png</Source>
+      <Name>Sprites\missilething</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sprites\missilething.xnb</Output>
+      <Time>2010-01-14T22:03:25.4072265+09:00</Time>
     </Item>
     <Item>
       <Source>Layers\f.level</Source>
@@ -451,20 +541,20 @@
       <Importer>TileMapImporter</Importer>
       <Processor>TileMapProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Layers\f.xnb</Output>
-      <Time>2009-12-20T01:39:08.6496851+08:00</Time>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Layers\f.xnb</Output>
+      <Time>2010-01-14T22:03:11.5419921+09:00</Time>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
     </Item>
     <Item>
       <Source>Layers\grassyknoll.level</Source>
@@ -472,20 +562,92 @@
       <Importer>TileMapImporter</Importer>
       <Processor>TileMapProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Layers\grassyknoll.xnb</Output>
-      <Time>2009-12-18T17:31:40.9632356+08:00</Time>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Layers\grassyknoll.xnb</Output>
+      <Time>2010-01-14T22:03:11.7792968+09:00</Time>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Layers\j.level</Source>
+      <Name>Layers\j</Name>
+      <Importer>TileMapImporter</Importer>
+      <Processor>TileMapProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Layers\j.xnb</Output>
+      <Time>2010-01-14T22:03:11.5615234+09:00</Time>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Layers\a.level</Source>
+      <Name>Layers\a</Name>
+      <Importer>TileMapImporter</Importer>
+      <Processor>TileMapProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Layers\a.xnb</Output>
+      <Time>2010-01-14T22:03:11.4609375+09:00</Time>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Layers\b.level</Source>
+      <Name>Layers\b</Name>
+      <Importer>TileMapImporter</Importer>
+      <Processor>TileMapProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Layers\b.xnb</Output>
+      <Time>2010-01-14T22:03:11.5136718+09:00</Time>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayd.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwaye.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayca.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwaycaa.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
     </Item>
     <Item>
       <Source>Layers\TileMap.level</Source>
@@ -493,19 +655,19 @@
       <Importer>TileMapImporter</Importer>
       <Processor>TileMapProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Layers\TileMap.xnb</Output>
-      <Time>2009-12-17T23:15:57.2843816+08:00</Time>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Layers\TileMap.xnb</Output>
+      <Time>2010-01-14T22:03:08.7148437+09:00</Time>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
+      <Request>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
     </Item>
     <Item>
       <Source>Sound\hit.wav</Source>
@@ -513,140 +675,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sound\hit.xnb</Output>
-      <Time>2009-11-09T00:18:13.3453624+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_dirt_texture.jpg</Source>
-      <Name>Tiles\se_free_dirt_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.7746545+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_grass_texture.jpg</Source>
-      <Name>Tiles\se_free_grass_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.7844195+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_ground_texture.jpg</Source>
-      <Name>Tiles\se_free_ground_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.7961375+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_mud_texture.jpg</Source>
-      <Name>Tiles\se_free_mud_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.8059025+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_road_texture.jpg</Source>
-      <Name>Tiles\se_free_road_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.8156675+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_rock_texture.jpg</Source>
-      <Name>Tiles\se_free_rock_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.8273855+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Tiles\se_free_wood_texture.jpg</Source>
-      <Name>Tiles\se_free_wood_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Output>
-      <Time>2009-09-02T13:59:32.842033+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Doodads\tree.png</Source>
-      <Name>Doodads\tree</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Output>
-      <Time>2009-09-05T21:05:08.924398+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Doodads\tree1.png</Source>
-      <Name>Doodads\tree1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Output>
-      <Time>2009-09-18T20:49:28.0266898+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Doodads\tree2.png</Source>
-      <Name>Doodads\tree2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Output>
-      <Time>2009-09-18T20:49:16.3946218+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Doodads\tree3.png</Source>
-      <Name>Doodads\tree3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Output>
-      <Time>2009-09-18T20:49:22.0954288+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Sound\hit.xnb</Output>
+      <Time>2010-01-14T22:03:15.1201171+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\sand.jpg</Source>
@@ -657,161 +687,140 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Output>
-      <Time>2009-09-13T11:18:25.3068041+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Output>
+      <Time>2010-01-14T22:03:14.165039+09:00</Time>
     </Item>
     <Item>
-      <Source>Layers\j.level</Source>
-      <Name>Layers\j</Name>
-      <Importer>TileMapImporter</Importer>
-      <Processor>TileMapProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Layers\j.xnb</Output>
-      <Time>2009-12-20T00:40:24.4104071+08:00</Time>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Fonts\Ara48.spritefont</Source>
-      <Name>Fonts\Ara48</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Ara48.xnb</Output>
-      <Time>2008-07-29T10:05:58.6193545+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Ara79.spritefont</Source>
-      <Name>Fonts\Ara79</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Ara79.xnb</Output>
-      <Time>2008-07-29T10:05:58.7052865+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Calibri24.spritefont</Source>
-      <Name>Fonts\Calibri24</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri24.xnb</Output>
-      <Time>2008-07-28T22:35:07.972561+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Calibri32.spritefont</Source>
-      <Name>Fonts\Calibri32</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Fonts\Calibri32.xnb</Output>
-      <Time>2008-07-28T22:35:07.9813495+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\TitleScreen\menua copy.jpg</Source>
-      <Name>Sprites\TitleScreen\menua copy</Name>
+      <Source>Tiles\se_free_dirt_texture.jpg</Source>
+      <Name>Tiles\se_free_dirt_texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TitleScreen\menua copy.xnb</Output>
-      <Time>2009-12-24T21:55:46.3075813+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.09375+09:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\TitleScreen\title.png</Source>
-      <Name>Sprites\TitleScreen\title</Name>
+      <Source>Tiles\se_free_grass_texture.jpg</Source>
+      <Name>Tiles\se_free_grass_texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TitleScreen\title.xnb</Output>
-      <Time>2009-12-25T00:02:28.6354543+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.1757812+09:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\TitleScreen\Load.png</Source>
-      <Name>Sprites\TitleScreen\Load</Name>
+      <Source>Tiles\se_free_ground_texture.jpg</Source>
+      <Name>Tiles\se_free_ground_texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\TitleScreen\Load.xnb</Output>
-      <Time>2009-12-26T01:30:09.8624255+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.0458984+09:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\HUD\bottomPanel.png</Source>
-      <Name>Sprites\HUD\bottomPanel</Name>
+      <Source>Tiles\se_free_mud_texture.jpg</Source>
+      <Name>Tiles\se_free_mud_texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\HUD\bottomPanel.xnb</Output>
-      <Time>2009-12-26T02:13:22.0051115+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.5322265+09:00</Time>
     </Item>
     <Item>
-      <Source>Layers\a.level</Source>
-      <Name>Layers\a</Name>
-      <Importer>TileMapImporter</Importer>
-      <Processor>TileMapProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Layers\a.xnb</Output>
-      <Time>2009-12-26T17:40:40.3277069+08:00</Time>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Sprites\humana.png</Source>
-      <Name>Sprites\humana</Name>
+      <Source>Tiles\se_free_road_texture.jpg</Source>
+      <Name>Tiles\se_free_road_texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\humana.xnb</Output>
-      <Time>2009-12-26T19:33:16.5769199+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.2753906+09:00</Time>
     </Item>
     <Item>
-      <Source>Layers\b.level</Source>
-      <Name>Layers\b</Name>
-      <Importer>TileMapImporter</Importer>
-      <Processor>TileMapProcessor</Processor>
+      <Source>Tiles\se_free_rock_texture.jpg</Source>
+      <Name>Tiles\se_free_rock_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Layers\b.xnb</Output>
-      <Time>2009-12-27T04:19:23.0497004+08:00</Time>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\sand.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_dirt_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_grass_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_ground_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_mud_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_road_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayd.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwaye.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayca.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwaycaa.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Request>
-      <Request>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Request>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_rock_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.040039+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Tiles\se_free_wood_texture.jpg</Source>
+      <Name>Tiles\se_free_wood_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\se_free_wood_texture.xnb</Output>
+      <Time>2010-01-14T22:03:14.1552734+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Doodads\tree.png</Source>
+      <Name>Doodads\tree</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree.xnb</Output>
+      <Time>2010-01-14T22:03:28.2109375+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Doodads\tree1.png</Source>
+      <Name>Doodads\tree1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree1.xnb</Output>
+      <Time>2010-01-14T22:03:28.2158203+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Doodads\tree2.png</Source>
+      <Name>Doodads\tree2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree2.xnb</Output>
+      <Time>2010-01-14T22:03:28.21875+09:00</Time>
+    </Item>
+    <Item>
+      <Source>Doodads\tree3.png</Source>
+      <Name>Doodads\tree3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Doodads\tree3.xnb</Output>
+      <Time>2010-01-14T22:03:28.25+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayc.jpg</Source>
@@ -822,8 +831,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc.xnb</Output>
-      <Time>2009-12-27T03:15:17.6376194+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc.xnb</Output>
+      <Time>2010-01-14T22:03:14.1816406+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayd.jpg</Source>
@@ -834,8 +843,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayd.xnb</Output>
-      <Time>2009-12-27T03:28:16.0506884+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayd.xnb</Output>
+      <Time>2010-01-14T22:03:14.1923828+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwaye.jpg</Source>
@@ -846,8 +855,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwaye.xnb</Output>
-      <Time>2009-12-27T03:20:02.6164499+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwaye.xnb</Output>
+      <Time>2010-01-14T22:03:14.2597656+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayf1.jpg</Source>
@@ -858,8 +867,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf1.xnb</Output>
-      <Time>2009-12-27T03:28:03.3259169+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf1.xnb</Output>
+      <Time>2010-01-14T22:03:14.1083984+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayf2.jpg</Source>
@@ -870,8 +879,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf2.xnb</Output>
-      <Time>2009-12-27T03:27:23.5784609+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayf2.xnb</Output>
+      <Time>2010-01-14T22:03:14.1416015+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayc1.jpg</Source>
@@ -882,8 +891,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc1.xnb</Output>
-      <Time>2009-12-27T03:59:23.2534454+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc1.xnb</Output>
+      <Time>2010-01-14T22:03:14.0898437+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayc2.jpg</Source>
@@ -894,8 +903,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc2.xnb</Output>
-      <Time>2009-12-27T03:59:12.0002594+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayc2.xnb</Output>
+      <Time>2010-01-14T22:03:14.1035156+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwayca.jpg</Source>
@@ -906,8 +915,8 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwayca.xnb</Output>
-      <Time>2009-12-27T04:14:02.6776274+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwayca.xnb</Output>
+      <Time>2010-01-14T22:03:14.1855468+09:00</Time>
     </Item>
     <Item>
       <Source>Tiles\runwaycaa.jpg</Source>
@@ -918,56 +927,47 @@
         <Data Key="GenerateMipmaps" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Tiles\runwaycaa.xnb</Output>
-      <Time>2009-12-27T04:16:17.0323094+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\missilething.png</Source>
-      <Name>Sprites\missilething</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\Sprites\missilething.xnb</Output>
-      <Time>2010-01-03T15:35:00.6337945+08:00</Time>
+      <Output>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\Tiles\runwaycaa.xnb</Output>
+      <Time>2010-01-14T22:03:14.2539062+09:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\MusicShmup\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Nick\Desktop\nicksproject\MusicShmup\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Nick\Desktop\nicksproject\MusicShmup\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Nick\Desktop\nicksproject\MusicShmup\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Nick\Desktop\nicksproject\MusicShmup\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2009-05-14T11:13:52+08:00</Value>
+        <Value>2009-05-14T10:13:52+08:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2009-05-14T11:13:52+08:00</Value>
+        <Value>2009-05-14T10:13:52+08:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2009-05-14T11:13:52+08:00</Value>
+        <Value>2009-05-14T10:13:52+08:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2009-05-14T11:13:52+08:00</Value>
+        <Value>2009-05-14T10:13:52+08:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2009-05-14T11:13:52+08:00</Value>
+        <Value>2009-05-14T10:13:52+08:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyContent\bin\x86\Debug\FriendlyContent.dll</Key>
-        <Value>2009-12-18T01:54:01.2623291+08:00</Value>
+        <Key>C:\Users\Nick\Desktop\nicksproject\FriendlyContent\bin\x86\Debug\FriendlyContent.dll</Key>
+        <Value>2010-01-14T22:15:26.1894531+09:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-10-30T19:35:37.7651793+08:00</Value>
+        <Value>2009-07-01T15:49:05.453125+08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
