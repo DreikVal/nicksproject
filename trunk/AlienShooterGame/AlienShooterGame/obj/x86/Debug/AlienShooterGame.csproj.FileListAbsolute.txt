@@ -1,0 +1,10 @@
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\sand_tile.xnb
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\soldier.xnb
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\AlienShooterGame.exe
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\AlienShooterGame.pdb
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.exe
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.pdb
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\crosshair.xnb
+C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\mg_bullet.xnb
