@@ -23,11 +23,14 @@ namespace AlienShooterGame
             _Player.Geometry.Position.Y = 200;
 
             _BackBehaviour = ActionOnBack.ExitApplication;
+
+            _FadeInTime = 0.0f;
+            _FadeOutTime = 0.0f;
         }
 
-        protected override void HandleInputActive(Bind bind)
+        public override void HandleInput(Bind bind)
         {
-            base.HandleInputActive(bind);
+            base.HandleInput(bind);
 
             if (bind.Name.CompareTo("Forward") == 0)
             {
