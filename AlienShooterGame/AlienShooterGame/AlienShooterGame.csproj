@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Marine.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\AnimationSet.cs" />
     <Compile Include="Application.cs" />
