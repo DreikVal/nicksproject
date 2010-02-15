@@ -7,6 +7,8 @@ namespace AlienShooterGame
 {
     class Marine : Entity
     {
+        public Marine(Screen parent) : base(parent) { }
+
         public override string Initialize()
         {
             // Create collision geometry for the marine
