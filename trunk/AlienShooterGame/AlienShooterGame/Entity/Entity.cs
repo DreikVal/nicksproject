@@ -74,7 +74,7 @@ namespace AlienShooterGame
         /// </summary>
         /// <param name="id">The unique ID for the entity. (Optional parameter.)</param>
         /// <param name="manager">The entity manager for this entity.</param>
-        public Entity(Screen parent, bool isNetworkEntity)
+        public Entity(Screen parent)
         {
             // Retrieve entity manager
             if (parent == null)
