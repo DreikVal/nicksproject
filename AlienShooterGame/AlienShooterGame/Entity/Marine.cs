@@ -10,10 +10,22 @@ namespace AlienShooterGame
     class Marine : Entity
     {
         public float Speed { get { return _Speed; } set { _Speed = value; } }
-        protected float _Speed = 5.0f;
+        protected float _Speed = 0.1f;
+
+        public float StrafeSpeed { get { return _StrafeSpeed; } set { _StrafeSpeed = value; } }
+        protected float _StrafeSpeed = 0.06f;
 
         public bool MoveForward { get { return _MoveForward; } set { _MoveForward = value; } }
         protected bool _MoveForward = false;
+
+        public bool MoveBack { get { return _MoveBack; } set { _MoveBack = value; } }
+        protected bool _MoveBack = false;
+
+        public bool MoveLeft { get { return _MoveLeft; } set { _MoveLeft = value; } }
+        protected bool _MoveLeft = false;
+
+        public bool MoveRight { get { return _MoveRight; } set { _MoveRight = value; } }
+        protected bool _MoveRight = false;
 
         public Marine(Screen parent) : base(parent) { }
 
@@ -27,6 +39,9 @@ namespace AlienShooterGame
 
             // Add the default animation
             _Animations.AddAnimation(new Animation("soldier", "Normal", 1, 1, 18.0f));
+
+            // Set marine towards front of screen
+            _Depth = 0.2f;
 
             // Return the name for this class
             return "Marine";
@@ -46,8 +61,23 @@ namespace AlienShooterGame
 
             if (_MoveForward)
             {
-                _Geometry.Position.X += (float)Math.Sin(Geometry.Direction);
-                _Geometry.Position.Y += -(float)Math.Cos(Geometry.Direction);
+                _Geometry.Position.X += (float)Math.Sin(Geometry.Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+                _Geometry.Position.Y += -(float)Math.Cos(Geometry.Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+            }
+            if (_MoveBack)
+            {
+                _Geometry.Position.X -= (float)Math.Sin(Geometry.Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+                _Geometry.Position.Y -= -(float)Math.Cos(Geometry.Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+            }
+            if (_MoveLeft)
+            {
+                _Geometry.Position.X += -(float)Math.Cos(Geometry.Direction) * _StrafeSpeed * time.ElapsedGameTime.Milliseconds;
+                _Geometry.Position.Y += -(float)Math.Sin(Geometry.Direction) * _StrafeSpeed * time.ElapsedGameTime.Milliseconds;
+            }
+            if (_MoveRight)
+            {
+                _Geometry.Position.X += (float)Math.Cos(Geometry.Direction) * _StrafeSpeed * time.ElapsedGameTime.Milliseconds;
+                _Geometry.Position.Y += (float)Math.Sin(Geometry.Direction) * _StrafeSpeed * time.ElapsedGameTime.Milliseconds;
             }
         }
     }

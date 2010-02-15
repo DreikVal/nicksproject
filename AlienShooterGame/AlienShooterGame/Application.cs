@@ -75,6 +75,9 @@ namespace AlienShooterGame
         public WaveBank WaveBank { get { return _WaveBank; } }
         protected WaveBank _WaveBank;
 
+        public Random Random { get { return _Random; } }
+        protected Random _Random = new Random(DateTime.Now.Millisecond);
+
         /// <summary>
         /// Creates a new Game Application.
         /// </summary>
@@ -119,7 +122,10 @@ namespace AlienShooterGame
             InitializeAudio();
 
             // Load game binds
-            _ScreenManager.Input.AddBind(new Bind("Forward", Keys.W));
+            _ScreenManager.Input.AddBind(new Bind("MoveForward", Keys.W));
+            _ScreenManager.Input.AddBind(new Bind("MoveBack", Keys.S));
+            _ScreenManager.Input.AddBind(new Bind("StrafeLeft", Keys.A));
+            _ScreenManager.Input.AddBind(new Bind("StrafeRight", Keys.D));
 
             // Load entity definitions
 
