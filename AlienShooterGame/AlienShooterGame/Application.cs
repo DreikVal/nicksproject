@@ -55,17 +55,16 @@ namespace AlienShooterGame
         protected GamerServicesComponent _GamerServices = null;
 
         /// <summary>
-        /// The network session for the game.
-        /// </summary>
-        public NetworkSession Network { get { return _Network; } set { _Network = value; } }
-        protected NetworkSession _Network;
-        protected bool _NetworkActive = false;
-
-        /// <summary>
         /// Gets a dictionary that contains every entity controlled by the application.
         /// </summary>
         public ThreadDictionary<UInt64, Entity> AllEntities { get { return _AllEntities; } }
         protected ThreadDictionary<UInt64, Entity> _AllEntities = new ThreadDictionary<ulong, Entity>();
+
+        /// <summary>
+        /// Gets or sets the input manager which controls user input state and game binds.
+        /// </summary>
+        public InputManager InputManager { get { return _InputManager; } set { _InputManager = value; } }
+        protected InputManager _InputManager;
 
         /// <summary>
         /// Gets a library that contains a function that creates an entity based on its entity class name.
@@ -94,6 +93,7 @@ namespace AlienShooterGame
             
             // Initialize local components
             _Graphics = new GraphicsDeviceManager(this);
+            _InputManager = new InputManager();
             _ScreenManager = new ScreenManager();
             Content.RootDirectory = "Content";
             _GamerServices = new GamerServicesComponent(this);
@@ -125,7 +125,13 @@ namespace AlienShooterGame
             // Setup audio system
             InitializeAudio();
 
+            // Load game binds
+            _InputManager.AddBind(new Bind("Forward", Keys.W));
+
             // Load entity definitions
+
+            // Add game screens
+            _ScreenManager.AddScreen(new WorldScreen(_ScreenManager));
             
         }
 

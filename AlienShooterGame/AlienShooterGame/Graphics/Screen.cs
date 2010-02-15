@@ -266,12 +266,6 @@ namespace AlienShooterGame
         public static Vector2 DefaultMessageLocation { get { return _DefaultMessageLocation; } set { _DefaultMessageLocation = value; } }
         protected static Vector2 _DefaultMessageLocation = new Vector2(50, 536);
 
-        /// <summary>
-        /// A network screen is one that requires an active network in order to function.
-        /// </summary>
-        public bool NetworkScreen { get { return _NetworkScreen; } set { _NetworkScreen = value; } }
-        protected bool _NetworkScreen = false;
-
 
         /// <summary>
         /// Creates a new Screen object.
@@ -441,9 +435,6 @@ namespace AlienShooterGame
             if (_Dying) return;
             _Dying = true;
             FadeOut();
-
-            if (_NetworkScreen && Application.AppReference.Network != null && !Application.AppReference.Network.IsDisposed)
-                Application.AppReference.Network.Dispose();
         }
 
         public virtual void FadeIn()

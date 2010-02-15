@@ -99,6 +99,7 @@
     <Compile Include="Graphics\ScreenManager.cs" />
     <Compile Include="Utility\ThreadDictionary.cs" />
     <Compile Include="Graphics\ViewPort.cs" />
+    <Compile Include="WorldScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
