@@ -22,9 +22,7 @@ namespace AlienShooterGame
         SpriteBatch spriteBatch;
 
         //player
-        Texture2D playerTexture;
-        float playerRotation;
-        Vector2 playerPosition = Vector2.Zero;
+        Player player = new Player();
 
         //misc textures
         Texture2D crosshairTexture;
@@ -74,7 +72,7 @@ namespace AlienShooterGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            playerTexture = Content.Load<Texture2D>("soldier");
+            player.Texture = Content.Load<Texture2D>("soldier");
             floorTexture = Content.Load<Texture2D>("sand_tile");
             crosshairTexture = Content.Load<Texture2D>("crosshair");
             bulletTexture = Content.Load<Texture2D>("mg_bullet");
@@ -87,7 +85,7 @@ namespace AlienShooterGame
 
             //controls
             mState = Mouse.GetState();
-            playerRotation = (float)Math.Atan2(mState.Y - playerPosition.Y, mState.X - playerPosition.X) + MathHelper.ToRadians(90);
+            player.Rotation = (float)Math.Atan2(mState.Y - player.Position.Y, mState.X - player.Position.X) + MathHelper.ToRadians(90);
 
             double shotCooldownDefault = 400;
             int shotSpeed = 5;
@@ -95,20 +93,20 @@ namespace AlienShooterGame
                 if (shotCooldown >= shotCooldownDefault)
                 {
                     shotCooldown = 0.0;
-                    bulletList.Add(new Bullet(playerPosition, Vector2.Normalize(new Vector2(mState.X - playerPosition.X, mState.Y - playerPosition.Y)) * shotSpeed, 1));
+                    bulletList.Add(new Bullet(player.Position, Vector2.Normalize(new Vector2(mState.X - player.Position.X, mState.Y - player.Position.Y)) * shotSpeed, 1));
                 }
 
             float speed = 2;
 
             KeyboardState kbState = Keyboard.GetState();
             if (kbState.IsKeyDown(Keys.W))
-                playerPosition.Y -= speed;
+                player.Position.Y -= speed;
             if (kbState.IsKeyDown(Keys.A))
-                playerPosition.X -= speed;
+                player.Position.X -= speed;
             if (kbState.IsKeyDown(Keys.S))
-                playerPosition.Y += speed;
+                player.Position.Y += speed;
             if (kbState.IsKeyDown(Keys.D))
-                playerPosition.X += speed;
+                player.Position.X += speed;
 
             foreach (Bullet bullet in bulletList)
                 bullet.Update();
@@ -129,7 +127,7 @@ namespace AlienShooterGame
                 spriteBatch.Draw(floorTexture, new Vector2(x * floorTexture.Width, y * floorTexture.Height), Color.White);
 
             //draw player
-            spriteBatch.Draw(playerTexture, playerPosition, null, Color.White, playerRotation, new Vector2(33, 33), 1.5f, SpriteEffects.None, 1.0f);
+            spriteBatch.Draw(player.Texture, player.Position, null, Color.White, player.Rotation, new Vector2(33, 33), 1.5f, SpriteEffects.None, 1.0f);
 
             //draw crosshair
             spriteBatch.Draw(crosshairTexture, new Vector2(mState.X - crosshairTexture.Width / 2, mState.Y - crosshairTexture.Height / 2), Color.White);
