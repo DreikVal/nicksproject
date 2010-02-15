@@ -18,6 +18,8 @@ namespace AlienShooterGame
 
             _Player.Geometry.Position.X = 200;
             _Player.Geometry.Position.Y = 200;
+
+            _BackBehaviour = ActionOnBack.ExitApplication;
         }
 
         protected override void HandleInputActive(Bind bind)
