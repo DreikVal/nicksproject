@@ -8,13 +8,16 @@ namespace AlienShooterGame
     class WorldScreen : Screen
     {
         protected Marine _Player;
+        protected Crosshair _Crosshair;
 
 
         public WorldScreen(ScreenManager manager)
             : base(manager, "World")
         {
             _Player = new Marine(this);
-            _Entities.Add(_Player.ID, _Player);
+            //_Entities.Add(_Player.ID, _Player);
+
+            _Crosshair = new Crosshair(this);
 
             _Player.Geometry.Position.X = 200;
             _Player.Geometry.Position.Y = 200;
