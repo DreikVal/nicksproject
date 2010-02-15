@@ -29,6 +29,11 @@ namespace AlienShooterGame
         /// </summary>
         protected ThreadDictionary<string, Bind> _Binds;
 
+        /// <summary>
+        /// Gets or sets whether the movement style is absolute or relative
+        /// </summary>
+        public bool AbsoluteMovement { get { return _AbsoluteMovement; } set { _AbsoluteMovement = value; } }
+        protected bool _AbsoluteMovement = false;
         
         /// <summary>
         /// Creates an input manager to monitor the keyboard state.

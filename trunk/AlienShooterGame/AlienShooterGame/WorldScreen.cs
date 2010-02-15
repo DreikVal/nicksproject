@@ -41,9 +41,9 @@ namespace AlienShooterGame
             _FadeOutTime = 0.0f;
         }
 
-        public override void HandleInput(Bind bind)
+        protected override void HandleInputActive(Bind bind)
         {
-            base.HandleInput(bind);
+            base.HandleInputActive(bind);
 
             if (bind.Name.CompareTo("MoveForward") == 0)
             {
@@ -52,26 +52,31 @@ namespace AlienShooterGame
                 else
                     _Player.MoveForward = false;
             }
-            if (bind.Name.CompareTo("MoveBack") == 0)
+            else if (bind.Name.CompareTo("MoveBack") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.MoveBack = true;
                 else
                     _Player.MoveBack = false;
             }
-            if (bind.Name.CompareTo("StrafeLeft") == 0)
+            else if (bind.Name.CompareTo("StrafeLeft") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.MoveLeft = true;
                 else
                     _Player.MoveLeft = false;
             }
-            if (bind.Name.CompareTo("StrafeRight") == 0)
+            else if (bind.Name.CompareTo("StrafeRight") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.MoveRight = true;
                 else
                     _Player.MoveRight = false;
+            }
+            else if (bind.Name.CompareTo("MoveMode") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                    _Manager.Input.AbsoluteMovement = !_Manager.Input.AbsoluteMovement;
             }
         }
 

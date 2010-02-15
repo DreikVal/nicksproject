@@ -119,6 +119,8 @@ namespace AlienShooterGame
                     EffectOffset = new Vector2(0, 0);
                 }
             }
+            else
+                _IsSliding = false;
                 
         }
 
