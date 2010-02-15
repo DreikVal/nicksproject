@@ -21,6 +21,9 @@ namespace AlienShooterGame
             // Add the default animation
             _Animations.AddAnimation(new Animation("crosshair", "Normal", 1, 1, 8.0f));
 
+            // Set crosshair to front of screen
+            _Depth = 0.1f;
+
             // Return the name for this class
             return "Crosshair";
         }
