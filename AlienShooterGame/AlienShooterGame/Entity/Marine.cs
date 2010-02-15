@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace AlienShooterGame
 {
@@ -34,10 +35,19 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
  	        base.Update(time);
+
+            MouseState mState = Mouse.GetState();
+
+            Vector2 mLoc = new Vector2();
+            mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
+            mLoc.Y = mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
+
+            _Geometry.Direction = (float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + MathHelper.ToRadians(90);
+
             if (_MoveForward)
-            {               
-                //Geometry.Position.X += Speed * (float)Math.Sin(Geometry.Direction);
-                //Geometry.Position.Y += Speed * (float)Math.Cos(Geometry.Direction);
+            {
+                _Geometry.Position.X += (float)Math.Sin(Geometry.Direction);
+                _Geometry.Position.Y += -(float)Math.Cos(Geometry.Direction);
             }
         }
     }

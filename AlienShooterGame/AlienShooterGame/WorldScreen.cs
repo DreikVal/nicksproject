@@ -15,6 +15,9 @@ namespace AlienShooterGame
         {
             _Player = new Marine(this);
             _Entities.Add(_Player.ID, _Player);
+
+            _Player.Geometry.Position.X = 200;
+            _Player.Geometry.Position.Y = 200;
         }
 
         protected override void HandleInputActive(Bind bind)
