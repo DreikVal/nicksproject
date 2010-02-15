@@ -61,12 +61,6 @@ namespace AlienShooterGame
         protected ThreadDictionary<UInt64, Entity> _AllEntities = new ThreadDictionary<ulong, Entity>();
 
         /// <summary>
-        /// Gets or sets the input manager which controls user input state and game binds.
-        /// </summary>
-        public InputManager InputManager { get { return _InputManager; } set { _InputManager = value; } }
-        protected InputManager _InputManager;
-
-        /// <summary>
         /// Gets a library that contains a function that creates an entity based on its entity class name.
         /// </summary>
         public Dictionary<String, Func<UInt64?, Screen, bool, Entity>> EntityDefinitions { get { return _EntityDefinitions; } }
@@ -93,7 +87,6 @@ namespace AlienShooterGame
             
             // Initialize local components
             _Graphics = new GraphicsDeviceManager(this);
-            _InputManager = new InputManager();
             _ScreenManager = new ScreenManager();
             Content.RootDirectory = "Content";
             _GamerServices = new GamerServicesComponent(this);
@@ -126,7 +119,7 @@ namespace AlienShooterGame
             InitializeAudio();
 
             // Load game binds
-            _InputManager.AddBind(new Bind("Forward", Keys.W));
+            _ScreenManager.Input.AddBind(new Bind("Forward", Keys.W));
 
             // Load entity definitions
 

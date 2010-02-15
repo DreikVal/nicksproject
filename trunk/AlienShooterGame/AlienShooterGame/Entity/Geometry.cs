@@ -25,8 +25,7 @@ namespace AlienShooterGame
         public Vector2[] Polar { get { return _Polar; } }
         protected Vector2[] _Polar = null;
 
-        public Vector2 Position { get { return _Position; } set { _Position = value; } }
-        protected Vector2 _Position;
+        public Vector2 Position;
 
         public double Direction { get { return _Direction; } set { _Direction = value; } }
         protected double _Direction;
@@ -50,7 +49,7 @@ namespace AlienShooterGame
         {
             _Parent = parent;
             _Vertices = vertices;
-            _Position = position;
+            Position = position;
             _Direction = direction;
             CalculateGeometry();
         }
@@ -108,7 +107,7 @@ namespace AlienShooterGame
             {
                 _AbsoluteVertices[i] = new Vector2(_Polar[i].X * (float)Math.Sin(_Vertices[i].Y + (float)_Direction),
                     _Polar[i].X * (float)Math.Cos(_Vertices[i].Y + (float)_Direction));
-                _AbsoluteVertices[i] += (Vector2)_Position;
+                _AbsoluteVertices[i] += (Vector2)Position;
             }
             _GeometryUpToDate = true;
         }

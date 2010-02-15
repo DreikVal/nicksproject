@@ -23,26 +23,23 @@ namespace AlienShooterGame
         /// <summary>
         /// The size in game units of the screen.
         /// </summary>
-        public Vector2 Size { get { return _Size; } set { _Size = value; } }
-        protected Vector2 _Size = new Vector2(1024, 576);
+        public Vector2 Size = new Vector2(1024, 576);
 
         /// <summary>
         /// The exact location of the top left corner of the screen in game units.
         /// </summary>
-        public Vector2 ActualLocation { get { return _TargetLocation + _EffectOffset; } }
+        public Vector2 ActualLocation { get { return TargetLocation + EffectOffset; } }
 
         /// <summary>
         /// The amount the screen has moved from its target location due to some sort of graphics effect such as screen
         /// shaking.
         /// </summary>
-        public Vector2 EffectOffset { get { return _EffectOffset; } set { _EffectOffset = value; } }
-        protected Vector2 _EffectOffset = new Vector2(0, 0);
+        public Vector2 EffectOffset = new Vector2(0, 0);
 
         /// <summary>
         /// The location of the top left of the screen before EffectOffset is applied.
         /// </summary>
-        public Vector2 TargetLocation { get { return _TargetLocation; } set { _TargetLocation = value; } }
-        protected Vector2 _TargetLocation = new Vector2(0, 0);
+        public Vector2 TargetLocation = new Vector2(0, 0);
 
         // Variables for handling screen shakes
         protected float _ShakeDamping = 0.90f;
@@ -76,8 +73,8 @@ namespace AlienShooterGame
         /// <param name="size">The size in game units of the screen.</param>
         public ViewPort(Vector2 position, Vector2 size)
         {
-            _TargetLocation = position;
-            _Size = size;
+            TargetLocation = position;
+            Size = size;
         }
 
         public virtual void Update(GameTime time)
@@ -85,41 +82,41 @@ namespace AlienShooterGame
             if (_ShakeDamping < 0.001f)
             {
                 _ShakeMagnitude = 0;
-                _EffectOffset = new Vector2(0, 0);
+                EffectOffset = new Vector2(0, 0);
             }
             if (_ShakeLeft)
             {
-                if (_EffectOffset.X < -_ShakeMagnitude * _ShakeDamping)
+                if (EffectOffset.X < -_ShakeMagnitude * _ShakeDamping)
                 {
                     _ShakeLeft = false;
-                    _EffectOffset.X = -_ShakeMagnitude * _ShakeDamping;
+                    EffectOffset.X = -_ShakeMagnitude * _ShakeDamping;
                     _ShakeDamping *= _ShakeDamping;
                 }
                 else
-                    _EffectOffset.X -= _ShakeMagnitude * _ShakeRate;
+                    EffectOffset.X -= _ShakeMagnitude * _ShakeRate;
             }
             else
             {
-                if (_EffectOffset.X > _ShakeMagnitude * _ShakeDamping)
+                if (EffectOffset.X > _ShakeMagnitude * _ShakeDamping)
                 {
                     _ShakeLeft = true;
-                    _EffectOffset.X = _ShakeMagnitude * _ShakeDamping;
+                    EffectOffset.X = _ShakeMagnitude * _ShakeDamping;
                     _ShakeDamping *= _ShakeDamping;
                 }
                 else
-                    _EffectOffset.X += _ShakeMagnitude * _ShakeRate;
+                    EffectOffset.X += _ShakeMagnitude * _ShakeRate;
             }
 
             if (_SlideTimeLeft > 0.0f)
             {
-                _EffectOffset = (_SlideFrom - _TargetLocation) * _SlideTimeLeft / _SlideTime;
+                EffectOffset = (_SlideFrom - TargetLocation) * _SlideTimeLeft / _SlideTime;
                 //_EffectOffset -= (_SlideFrom - _TargetLocation) * (float)time.ElapsedGameTime.Milliseconds / 1000.0f / _SlideTime;
                 _SlideTimeLeft -= (float)time.ElapsedGameTime.Milliseconds / 1000.0f;
 
                 if (_SlideTimeLeft < 0.0f)
                 {
                     _IsSliding = false;
-                    _EffectOffset = new Vector2(0, 0);
+                    EffectOffset = new Vector2(0, 0);
                 }
             }
                 
@@ -136,9 +133,9 @@ namespace AlienShooterGame
         {
             _SlideFrom = from;
             _SlideTime = time;
-            _TargetLocation = to;
+            TargetLocation = to;
             _SlideTimeLeft = time;
-            _EffectOffset = _SlideFrom - _TargetLocation;
+            EffectOffset = _SlideFrom - TargetLocation;
             _IsSliding = true;
         }
 
