@@ -46,7 +46,7 @@ namespace AlienShooterGame
         /// The colour with which the backbuffer is cleared each time a frame is rendered.
         /// </summary>
         public Color BackgroundColour { get { return _BackgroundColour; } set { _BackgroundColour = value; } }
-        protected Color _BackgroundColour = Color.Black;
+        protected Color _BackgroundColour = Color.CornflowerBlue;
 
         /// <summary>
         /// Gets a reference to the gamer services for the application.
