@@ -89,8 +89,8 @@ namespace AlienShooterGame
             _Graphics = new GraphicsDeviceManager(this);
             _ScreenManager = new ScreenManager();
             Content.RootDirectory = "Content";
-            _GamerServices = new GamerServicesComponent(this);
-            Components.Add(_GamerServices);
+            //_GamerServices = new GamerServicesComponent(this);
+            //Components.Add(_GamerServices);
         }
 
         /// <summary>
