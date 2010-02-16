@@ -39,12 +39,18 @@ namespace AlienShooterGame
 
             // Set tile type
             double r = Application.AppReference.Random.NextDouble();
-            if (r > 0.30f)
+            if (r > 0.60f)
+                _Animations.AddAnimation(new Animation("dirt_tile", "Normal", 1, 1, 8.0f));
+            else if (r > 0.50f)
+                _Animations.AddAnimation(new Animation("road_tile", "Normal", 1, 1, 8.0f));
+            else if (r > 0.40f)
+                _Animations.AddAnimation(new Animation("grass_tile", "Normal", 1, 1, 8.0f));
+            else if (r > 0.30f)
                 _Animations.AddAnimation(new Animation("sand_tile", "Normal", 1, 1, 8.0f));
             else if (r > 0.20f)
                 _Animations.AddAnimation(new Animation("crosshair", "Normal", 2, 2, 5.0f));
             else
-                _Animations.AddAnimation(new Animation("mg_bullet", "Normal", 1, 1, 5.0f));
+                _Animations.AddAnimation(new Animation("ground_tile", "Normal", 1, 1, 5.0f));
 
             _Animations.PlayAnimation("Normal");
 
