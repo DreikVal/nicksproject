@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\sand_tile.xnb</Output>
-      <Time>2010-02-15T18:25:14.6992187+09:00</Time>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\sand_tile.xnb</Output>
+      <Time>2010-02-16T00:18:53.6289062+08:00</Time>
     </Item>
     <Item>
       <Source>soldier.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\soldier.xnb</Output>
-      <Time>2010-02-15T18:25:33.4863281+09:00</Time>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\soldier.xnb</Output>
+      <Time>2010-02-16T00:18:53.6289062+08:00</Time>
     </Item>
     <Item>
       <Source>crosshair.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\crosshair.xnb</Output>
-      <Time>2010-02-15T22:48:16.2412109+09:00</Time>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\crosshair.xnb</Output>
+      <Time>2010-02-16T00:18:53.625+08:00</Time>
     </Item>
     <Item>
       <Source>mg_bullet.png</Source>
@@ -34,18 +34,171 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\mg_bullet.xnb</Output>
-      <Time>2010-02-15T22:53:38.7666015+09:00</Time>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\mg_bullet.xnb</Output>
+      <Time>2010-02-16T00:18:53.6308593+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Font.spritefont</Source>
+      <Name>Font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\Font.xnb</Output>
+      <Time>2010-02-16T12:09:41.3583984+08:00</Time>
+    </Item>
+    <Item>
+      <Source>dirt_tile.jpg</Source>
+      <Name>dirt_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\dirt_tile.xnb</Output>
+      <Time>2010-02-16T15:40:40.2314453+08:00</Time>
+    </Item>
+    <Item>
+      <Source>grass_tile.jpg</Source>
+      <Name>grass_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\grass_tile.xnb</Output>
+      <Time>2010-02-16T15:40:40.2314453+08:00</Time>
+    </Item>
+    <Item>
+      <Source>road_tile.jpg</Source>
+      <Name>road_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\road_tile.xnb</Output>
+      <Time>2010-02-16T15:40:40.2314453+08:00</Time>
+    </Item>
+    <Item>
+      <Source>ground_tile.jpg</Source>
+      <Name>ground_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\ground_tile.xnb</Output>
+      <Time>2010-02-16T15:40:40.2314453+08:00</Time>
+    </Item>
+    <Item>
+      <Source>ball_tile.png</Source>
+      <Name>ball_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\ball_tile.xnb</Output>
+      <Time>2010-02-16T21:50:18.7451171+08:00</Time>
+    </Item>
+    <Item>
+      <Source>bar_tile.png</Source>
+      <Name>bar_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\bar_tile.xnb</Output>
+      <Time>2010-02-16T21:48:30.1044921+08:00</Time>
+    </Item>
+    <Item>
+      <Source>blade_tile.jpg</Source>
+      <Name>blade_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\blade_tile.xnb</Output>
+      <Time>2010-02-16T21:46:38.868164+08:00</Time>
+    </Item>
+    <Item>
+      <Source>caution_tile.jpg</Source>
+      <Name>caution_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\caution_tile.xnb</Output>
+      <Time>2010-02-16T21:44:31.0351562+08:00</Time>
+    </Item>
+    <Item>
+      <Source>cross_tile.jpg</Source>
+      <Name>cross_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\cross_tile.xnb</Output>
+      <Time>2010-02-16T21:45:43.9091796+08:00</Time>
+    </Item>
+    <Item>
+      <Source>detail_tile.jpg</Source>
+      <Name>detail_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\detail_tile.xnb</Output>
+      <Time>2010-02-16T21:44:51.1289062+08:00</Time>
+    </Item>
+    <Item>
+      <Source>half_tile.jpg</Source>
+      <Name>half_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\half_tile.xnb</Output>
+      <Time>2010-02-16T21:45:32.8154296+08:00</Time>
+    </Item>
+    <Item>
+      <Source>old_tile.png</Source>
+      <Name>old_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\old_tile.xnb</Output>
+      <Time>2010-02-16T21:49:22.5576171+08:00</Time>
+    </Item>
+    <Item>
+      <Source>para_tile.png</Source>
+      <Name>para_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\para_tile.xnb</Output>
+      <Time>2010-02-16T21:49:54.9794921+08:00</Time>
+    </Item>
+    <Item>
+      <Source>sci_tile.jpg</Source>
+      <Name>sci_tile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\sci_tile.xnb</Output>
+      <Time>2010-02-16T21:46:56.1396484+08:00</Time>
+    </Item>
+    <Item>
+      <Source>bullet.png</Source>
+      <Name>bullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\bullet.xnb</Output>
+      <Time>2010-02-17T02:04:34.3164062+08:00</Time>
+    </Item>
+    <Item>
+      <Source>muzzle.png</Source>
+      <Name>muzzle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\muzzle.xnb</Output>
+      <Time>2010-02-17T02:27:48.6435546+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\Content\</RootDirectory>
+      <LoggerRootDirectory>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Personal Documents\Source Code\SVN\AlienShooter\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -74,7 +227,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-11-01T17:29:05.3847656+09:00</Value>
+        <Value>2009-10-31T12:02:24.2539062+08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -85,6 +85,12 @@ namespace AlienShooterGame
         {
             _Muzzle.Active = true;
             _MuzzleFrames = 5;
+            Vector2 bulletPos = _Geometry.Position;
+            bulletPos.X += (float)Math.Sin(_Geometry.Direction) * 25.0f;
+            bulletPos.Y += -(float)Math.Cos(_Geometry.Direction) * 25.0f;
+            new Bullet(_Parent, bulletPos, _Geometry.Direction);
+            _Parent.ViewPort.Shake(3.0f, 1.0f, 0.95f);
+            new MuzzleFlash(_Parent, bulletPos, _Geometry.Direction);
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
@@ -102,6 +108,7 @@ namespace AlienShooterGame
             _FlashLight.Position = _Geometry.Position;
             _FlashLight.Direction = _Geometry.Direction;
             _Muzzle.Position = _Geometry.Position;
+            _Muzzle.Direction = _Geometry.Direction;
 
             if (_MuzzleFrames < 0) _Muzzle.Active = false;
             else _MuzzleFrames--;
