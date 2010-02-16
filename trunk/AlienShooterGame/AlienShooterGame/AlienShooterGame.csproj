@@ -93,6 +93,8 @@
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\Geometry.cs" />
     <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Map\Layer.cs" />
+    <Compile Include="Map\TileMap.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
