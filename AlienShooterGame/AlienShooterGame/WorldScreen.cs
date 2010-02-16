@@ -16,7 +16,7 @@ namespace AlienShooterGame
 
         public const int TileCols = 100;
         public const int TileRows = 100;
-        protected Tile[,] _Tiles;
+        protected TileMap tileMap;
 
         public WorldScreen(ScreenManager manager)
             : base(manager, "World")
@@ -30,14 +30,7 @@ namespace AlienShooterGame
             _Crosshair = new Crosshair(this);
 
             // Setup tiles
-            _Tiles = new Tile[TileRows, TileCols];
-            for (int row = 0; row < TileRows; row++)
-            {
-                for (int col = 0; col < TileCols; col++)
-                {
-                    _Tiles[row, col] = new Tile(this, row, col);
-                }
-            }
+            tileMap = new TileMap(this, TileCols, TileRows, 3);
 
             // Setup screen behavior
             _BackBehaviour = ActionOnBack.ExitApplication;
