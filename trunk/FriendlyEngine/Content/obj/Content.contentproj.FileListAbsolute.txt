@@ -1,2 +1,0 @@
-C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyEngine\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Ath3rl3y\Documents\Visual Studio 2005\Projects\FriendlyGame\FriendlyEngine\Content\obj\x86\Release\ResolveAssemblyReference.cache
