@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
-    class Tile : Entity
+    public class Tile : Entity
     {
         public static float TileWidth = 24.0f;
         public static float TileHeight = 24.0f;
@@ -51,6 +51,7 @@ namespace AlienShooterGame
             _Animations.PlayAnimation("Normal");
 
             _ColourOverlay = Color.White;
+            _DynamicLighting = true;
 
             // Set tiles towards back of screen
             _Depth = 0.95f;
@@ -62,28 +63,6 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
             base.Update(time);
-
-            
-            WorldScreen scr = (WorldScreen)_Parent;
-            Marine player = scr.Player;
-            float range = player.VisRange;
-            float x_diff = _Geometry.Position.X-player.Geometry.Position.X;
-            float y_diff = _Geometry.Position.Y-player.Geometry.Position.Y;
-            float dist = (float)Math.Sqrt( (x_diff*x_diff) + (y_diff*y_diff) );
-            float val = 1.0f - (dist / range);
-            if (val < 0.0f) val = 0.0f;
-
-            float angle = (float)Math.Atan2(y_diff, x_diff);
-            float angle_diff = (float)Math.Abs(player.Geometry.Direction - Math.PI/2 - angle);
-            if (angle_diff > Math.PI)
-                angle_diff = 2*(float)Math.PI - angle_diff;
-            float angle_val = 1.0f - ( angle_diff / player.LightRadius);
-
-            Vector4 pre = _ColourOverlay.ToVector4();
-            Vector4 dis = new Vector4(val, val, val, 1.0f);
-            Vector4 ang = new Vector4(angle_val, angle_val, angle_val, 1.0f);
-
-            _ActualColour = new Color(pre * dis * ang);
         }
     }
 }
