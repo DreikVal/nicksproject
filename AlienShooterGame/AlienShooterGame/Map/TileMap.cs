@@ -10,14 +10,6 @@ namespace AlienShooterGame
     {
         List<Layer> layerList = new List<Layer>();
 
-        //public TileMap(Screen screen, int width, int height, int Count)
-        //{
-        //    for (int i = 0; i < Count; i++)
-        //    {
-        //        layerList.Add(new Layer(screen, width, height));
-        //    }
-        //}
-
         public TileMap(Screen screen, int width, int height, int Count)
         {
             float alphaModifier = 0.1f;
