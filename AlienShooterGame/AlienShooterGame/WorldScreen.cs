@@ -15,9 +15,8 @@ namespace AlienShooterGame
         protected Crosshair _Crosshair;
         protected LightSource _RedLight, _GreenLight;
 
-        public const int TileCols = 220;
-        public const int TileRows = 220;
-        protected TileMap tileMap;
+        public const int TileCols = 200;
+        public const int TileRows = 200;
 
         public WorldScreen(ScreenManager manager)
             : base(manager, "World")
@@ -35,7 +34,13 @@ namespace AlienShooterGame
             _GreenLight = new LightSource(this, new Color(100,255,100), 1200f, 1.2f, 0.0f, new Vector2(600f, 700f));
 
             // Setup tiles
-            tileMap = new TileMap(this, TileCols, TileRows, 1);
+            for (int row = 0; row < TileRows; row++)
+            {
+                for (int col = 0; col < TileCols; col++)
+                {
+                    new Tile(this, row, col);
+                }
+            }
 
             // Setup screen behavior
             _BackBehaviour = ActionOnBack.ExitApplication;
@@ -96,10 +101,9 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
-
             if (time.TotalGameTime.Milliseconds % 37 == 0)
                 _RedLight.Active = !_RedLight.Active;
-            _GreenLight.Direction += 0.02;
+            _GreenLight.Direction += 0.002 * time.ElapsedGameTime.Milliseconds;
             if (_GreenLight.Direction > 3 * Math.PI / 2) _GreenLight.Direction -= 2 * Math.PI;
         }        
     }
