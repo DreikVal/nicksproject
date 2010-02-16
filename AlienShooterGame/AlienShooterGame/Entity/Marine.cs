@@ -10,21 +10,40 @@ namespace AlienShooterGame
     class Marine : Entity
     {
         public float Speed { get { return _Speed; } set { _Speed = value; } }
-        protected float _Speed = 0.1f;
+        protected float _Speed = 0.15f;
 
-        public float StrafeSpeed { get { return _StrafeSpeed; } set { _StrafeSpeed = value; } }
-        protected float _StrafeSpeed = 0.06f;
+        public float VisRange { get { return _VisRange; } set { _VisRange = value; } }
+        protected float _VisRange = 350.0f;
 
-        public bool MoveForward { get { return _MoveForward; } set { _MoveForward = value; } }
+        public bool MoveForward { get { return _MoveForward; } 
+            set { _MoveForward = value; 
+                if (_MoveForward) _Speed *= 0.707106781187f;
+                else _Speed /= 0.707106781187f;
+            }
+        }
         protected bool _MoveForward = false;
 
-        public bool MoveBack { get { return _MoveBack; } set { _MoveBack = value; } }
+        public bool MoveBack { get { return _MoveBack; } 
+            set { _MoveBack = value;
+                if (_MoveBack) _Speed *= 0.707106781187f;
+                else _Speed /= 0.707106781187f;
+            }}
         protected bool _MoveBack = false;
 
-        public bool MoveLeft { get { return _MoveLeft; } set { _MoveLeft = value; } }
+        public bool MoveLeft { get { return _MoveLeft; } 
+            set { _MoveLeft = value;
+                if (_MoveLeft) _Speed *= 0.707106781187f;
+                else _Speed /= 0.707106781187f;
+            }
+        }
         protected bool _MoveLeft = false;
 
-        public bool MoveRight { get { return _MoveRight; } set { _MoveRight = value; } }
+        public bool MoveRight { get { return _MoveRight; } 
+            set { _MoveRight = value;
+                if (_MoveRight) _Speed *= 0.707106781187f;
+                else _Speed /= 0.707106781187f;
+            }
+        }
         protected bool _MoveRight = false;
 
         public Marine(Screen parent) : base(parent) { }
