@@ -14,8 +14,8 @@ namespace AlienShooterGame
 
         protected Crosshair _Crosshair;
 
-        public const int TileCols = 50;
-        public const int TileRows = 50;
+        public const int TileCols = 75;
+        public const int TileRows = 75;
         protected TileMap tileMap;
 
         public WorldScreen(ScreenManager manager)
@@ -23,8 +23,8 @@ namespace AlienShooterGame
         {
             // Create player
             _Player = new Marine(this);
-            _Player.Geometry.Position.X = 200;
-            _Player.Geometry.Position.Y = 200;
+            _Player.Geometry.Position.X = 500;
+            _Player.Geometry.Position.Y = 500;
 
             // Create crosshair
             _Crosshair = new Crosshair(this);

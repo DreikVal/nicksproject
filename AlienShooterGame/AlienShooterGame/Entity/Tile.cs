@@ -9,8 +9,8 @@ namespace AlienShooterGame
 {
     class Tile : Entity
     {
-        public const float TileWidth = 16.0f;
-        public const float TileHeight = 16.0f;
+        public static float TileWidth = 12.0f;
+        public static float TileHeight = 12.0f;
 
         public bool Collidable { get { return _Collidable; } set { _Collidable = value; } }
         protected bool _Collidable = false;
@@ -40,15 +40,11 @@ namespace AlienShooterGame
             // Set tile type
             double r = Application.AppReference.Random.NextDouble();
             if (r > 0.60f)
-                _Animations.AddAnimation(new Animation("dirt_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.50f)
                 _Animations.AddAnimation(new Animation("road_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.40f)
+            else if (r > 0.50f)
+                _Animations.AddAnimation(new Animation("dirt_tile", "Normal", 1, 1, 8.0f));
+            else if (r > 0.15f)
                 _Animations.AddAnimation(new Animation("grass_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.30f)
-                _Animations.AddAnimation(new Animation("sand_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.20f)
-                _Animations.AddAnimation(new Animation("crosshair", "Normal", 2, 2, 5.0f));
             else
                 _Animations.AddAnimation(new Animation("ground_tile", "Normal", 1, 1, 5.0f));
 
@@ -79,7 +75,9 @@ namespace AlienShooterGame
 
             float angle = (float)Math.Atan2(y_diff, x_diff);
             float angle_diff = (float)Math.Abs(player.Geometry.Direction - Math.PI/2 - angle);
-            float angle_val = 1.0f - (angle_diff / player.LightRadius);
+            if (angle_diff > Math.PI)
+                angle_diff = 2*(float)Math.PI - angle_diff;
+            float angle_val = 1.0f - ( angle_diff / player.LightRadius);
 
             Vector4 pre = _ColourOverlay.ToVector4();
             Vector4 dis = new Vector4(val, val, val, 1.0f);

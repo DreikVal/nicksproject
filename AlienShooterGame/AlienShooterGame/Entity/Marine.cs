@@ -13,10 +13,10 @@ namespace AlienShooterGame
         protected float _Speed = 0.15f;
 
         public float VisRange { get { return _VisRange; } set { _VisRange = value; } }
-        protected float _VisRange = 350.0f;
+        protected float _VisRange = 700.0f;
 
         public float LightRadius { get { return _LightRadius; } set { _LightRadius = value; } }
-        protected float _LightRadius = 1.5f;
+        protected float _LightRadius = 1.9f;
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -79,7 +79,7 @@ namespace AlienShooterGame
             mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
             mLoc.Y = mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
 
-            _Geometry.Direction = (float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + MathHelper.ToRadians(90);
+            _Geometry.Direction = (float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + Math.PI/2;
 
             if (_Parent.Manager.Input.AbsoluteMovement)
             {
