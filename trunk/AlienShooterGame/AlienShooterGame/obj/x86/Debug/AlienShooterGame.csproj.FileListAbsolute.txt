@@ -8,3 +8,31 @@ C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShoote
 C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.pdb
 C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\crosshair.xnb
 C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\mg_bullet.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\sand_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\soldier.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\crosshair.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\mg_bullet.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\dirt_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\grass_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\road_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\ground_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\ball_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\bar_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\blade_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\caution_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\cross_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\detail_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\half_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\old_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\para_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\sci_tile.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\bullet.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\muzzle.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\Font.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\AlienShooterGame.exe
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\AlienShooterGame.pdb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.exe
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.pdb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\ammobox.xnb

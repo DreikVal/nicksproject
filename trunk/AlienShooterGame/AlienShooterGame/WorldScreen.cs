@@ -43,6 +43,7 @@ namespace AlienShooterGame
             }
 
             // Setup screen behavior
+            Depth = 0.9f;
             _BackBehaviour = ActionOnBack.ExitApplication;
             _FadeInTime = 0.0f;
             _FadeOutTime = 0.0f;
