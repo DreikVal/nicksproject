@@ -14,8 +14,8 @@ namespace AlienShooterGame
 
         protected Crosshair _Crosshair;
 
-        public const int TileCols = 75;
-        public const int TileRows = 75;
+        public const int TileCols = 50;
+        public const int TileRows = 50;
         protected TileMap tileMap;
 
         public WorldScreen(ScreenManager manager)
@@ -86,6 +86,6 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
-        }
+        }        
     }
 }

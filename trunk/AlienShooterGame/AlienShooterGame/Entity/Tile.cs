@@ -9,8 +9,8 @@ namespace AlienShooterGame
 {
     class Tile : Entity
     {
-        public static float TileWidth = 12.0f;
-        public static float TileHeight = 12.0f;
+        public static float TileWidth = 24.0f;
+        public static float TileHeight = 24.0f;
 
         public bool Collidable { get { return _Collidable; } set { _Collidable = value; } }
         protected bool _Collidable = false;
