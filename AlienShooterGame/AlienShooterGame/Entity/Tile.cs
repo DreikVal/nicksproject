@@ -48,7 +48,7 @@ namespace AlienShooterGame
 
             _Animations.PlayAnimation("Normal");
 
-            _ColourOverlay = Color.CornflowerBlue;
+            _ColourOverlay = Color.White;
 
             // Set tiles towards back of screen
             _Depth = 0.95f;
@@ -71,10 +71,15 @@ namespace AlienShooterGame
             float val = 1.0f - (dist / range);
             if (val < 0.0f) val = 0.0f;
 
-            Vector4 pre = _ColourOverlay.ToVector4();
-            Vector4 mask = new Vector4(val, val, val, 1.0f);
+            float angle = (float)Math.Atan2(y_diff, x_diff);
+            float angle_diff = (float)Math.Abs(player.Geometry.Direction - Math.PI/2 - angle);
+            float angle_val = 1.0f - (angle_diff / player.LightRadius);
 
-            _ActualColour = new Color(pre * mask);
+            Vector4 pre = _ColourOverlay.ToVector4();
+            Vector4 dis = new Vector4(val, val, val, 1.0f);
+            Vector4 ang = new Vector4(angle_val, angle_val, angle_val, 1.0f);
+
+            _ActualColour = new Color(pre * dis * ang);
         }
     }
 }

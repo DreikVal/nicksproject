@@ -15,6 +15,9 @@ namespace AlienShooterGame
         public float VisRange { get { return _VisRange; } set { _VisRange = value; } }
         protected float _VisRange = 350.0f;
 
+        public float LightRadius { get { return _LightRadius; } set { _LightRadius = value; } }
+        protected float _LightRadius = 1.5f;
+
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
                 if (_MoveForward) _Speed *= 0.707106781187f;
