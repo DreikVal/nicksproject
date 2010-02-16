@@ -1,5 +1,0 @@
-C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyContent\bin\Xbox 360\Debug\FriendlyContent.dll
-C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyContent\bin\Xbox 360\Debug\FriendlyContent.pdb
-C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyContent\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
-C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyContent\obj\Xbox 360\Debug\FriendlyContent.dll
-C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\FriendlyGame\FriendlyContent\obj\Xbox 360\Debug\FriendlyContent.pdb
