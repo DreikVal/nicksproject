@@ -48,6 +48,8 @@ namespace AlienShooterGame
 
             _Animations.PlayAnimation("Normal");
 
+            _ColourOverlay = Color.CornflowerBlue;
+
             // Set tiles towards back of screen
             _Depth = 0.95f;
 
@@ -69,7 +71,10 @@ namespace AlienShooterGame
             float val = 1.0f - (dist / range);
             if (val < 0.0f) val = 0.0f;
 
-            _ColourOverlay = new Color(new Vector3(val, val, val));
+            Vector4 pre = _ColourOverlay.ToVector4();
+            Vector4 mask = new Vector4(val, val, val, 1.0f);
+
+            _ActualColour = new Color(pre * mask);
         }
     }
 }
