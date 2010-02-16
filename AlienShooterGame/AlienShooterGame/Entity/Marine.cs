@@ -16,8 +16,9 @@ namespace AlienShooterGame
         public LightSource FlashLight { get { return _FlashLight; } }
         protected LightSource _FlashLight;
 
-        public LightSource Glow { get { return _Glow; } }
-        protected LightSource _Glow;
+        public LightSource Muzzle { get { return _Muzzle; } }
+        protected LightSource _Muzzle;
+        protected int _MuzzleFrames;
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -70,13 +71,20 @@ namespace AlienShooterGame
             _FlashLight = new LightSource(_Parent, Color.Yellow, 480f, 1.5f, 0.0, _Geometry.Position);
 
             // Create small glow radius
-            _Glow = new LightSource(_Parent, Color.Yellow, 64.0f, 6.28f, 0.0, _Geometry.Position);
+            _Muzzle = new LightSource(_Parent, Color.White, 800.0f, 4.0f, 0.0, _Geometry.Position);
+            _Muzzle.Active = false;
 
             // Activate dynamic lighting for the marine
             _DynamicLighting = true;
 
             // Return the name for this class
             return "Marine";
+        }
+
+        public void Fire()
+        {
+            _Muzzle.Active = true;
+            _MuzzleFrames = 5;
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
@@ -93,7 +101,10 @@ namespace AlienShooterGame
 
             _FlashLight.Position = _Geometry.Position;
             _FlashLight.Direction = _Geometry.Direction;
-            _Glow.Position = _Geometry.Position;
+            _Muzzle.Position = _Geometry.Position;
+
+            if (_MuzzleFrames < 0) _Muzzle.Active = false;
+            else _MuzzleFrames--;
 
             if (_Parent.Manager.Input.AbsoluteMovement)
             {
