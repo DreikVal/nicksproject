@@ -16,6 +16,9 @@ namespace AlienShooterGame
         public LightSource FlashLight { get { return _FlashLight; } }
         protected LightSource _FlashLight;
 
+        public LightSource Glow { get { return _Glow; } }
+        protected LightSource _Glow;
+
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
                 if (_MoveForward) _Speed *= 0.707106781187f;
@@ -64,7 +67,13 @@ namespace AlienShooterGame
             _Depth = 0.2f;
 
             // Create flashlight for marine
-            _FlashLight = new LightSource(_Parent, Color.Yellow, 600f, 1.5f, 0.0, _Geometry.Position);
+            _FlashLight = new LightSource(_Parent, Color.Yellow, 480f, 1.5f, 0.0, _Geometry.Position);
+
+            // Create small glow radius
+            _Glow = new LightSource(_Parent, Color.Yellow, 64.0f, 6.28f, 0.0, _Geometry.Position);
+
+            // Activate dynamic lighting for the marine
+            _DynamicLighting = true;
 
             // Return the name for this class
             return "Marine";
@@ -84,6 +93,7 @@ namespace AlienShooterGame
 
             _FlashLight.Position = _Geometry.Position;
             _FlashLight.Direction = _Geometry.Direction;
+            _Glow.Position = _Geometry.Position;
 
             if (_Parent.Manager.Input.AbsoluteMovement)
             {

@@ -39,7 +39,7 @@ namespace AlienShooterGame
         /// <summary>
         /// The default horizontal screen resolution.
         /// </summary>
-        public const int DefaultHorizontalResolution = 1024;
+        public const int DefaultHorizontalResolution = 1600;
 
         /// <summary>
         /// The default horizontal to vertical screen ratio.
