@@ -84,6 +84,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Ammo_GUI.cs" />
+    <Compile Include="GUI\Ammo_Gui_Bullet.cs" />
     <Compile Include="Entity\Bullet.cs" />
     <Compile Include="Entity\Crosshair.cs" />
     <Compile Include="Entity\LightSource.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Application.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\Geometry.cs" />
+    <Compile Include="GUIScreen.cs" />
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,7 +157,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\" />
     <Folder Include="Map\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

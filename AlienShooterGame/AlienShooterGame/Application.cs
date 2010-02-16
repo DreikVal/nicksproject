@@ -136,6 +136,7 @@ namespace AlienShooterGame
 
             // Add game screens
             _ScreenManager.AddScreen(new WorldScreen(_ScreenManager));
+            _ScreenManager.AddScreen(new GUIScreen(_ScreenManager));
             
         }
 
