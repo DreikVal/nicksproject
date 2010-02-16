@@ -14,8 +14,8 @@ namespace AlienShooterGame
 
         protected Crosshair _Crosshair;
 
-        public const int TileCols = 100;
-        public const int TileRows = 100;
+        public const int TileCols = 50;
+        public const int TileRows = 50;
         protected TileMap tileMap;
 
         public WorldScreen(ScreenManager manager)
