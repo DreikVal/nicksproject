@@ -30,7 +30,7 @@ namespace AlienShooterGame
             _Crosshair = new Crosshair(this);
 
             // Setup tiles
-            tileMap = new TileMap(this, TileCols, TileRows, 3);
+            tileMap = new TileMap(this, TileCols, TileRows, 1);
 
             // Setup screen behavior
             _BackBehaviour = ActionOnBack.ExitApplication;
