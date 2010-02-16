@@ -15,8 +15,8 @@ namespace AlienShooterGame
         protected Crosshair _Crosshair;
         protected LightSource _RedLight, _GreenLight;
 
-        public const int TileCols = 50;
-        public const int TileRows = 50;
+        public const int TileCols = 220;
+        public const int TileRows = 220;
         protected TileMap tileMap;
 
         public WorldScreen(ScreenManager manager)
@@ -25,13 +25,13 @@ namespace AlienShooterGame
             // Create player
             _Player = new Marine(this);
             _Player.Geometry.Position.X = 500;
-            _Player.Geometry.Position.Y = 500;
+            _Player.Geometry.Position.Y = 400;
 
             // Create crosshair
             _Crosshair = new Crosshair(this);
 
             // Create ambient lights
-            _RedLight = new LightSource(this, new Color(255,120,120), 400f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));
+            _RedLight = new LightSource(this, new Color(255,150,150), 650f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));
             _GreenLight = new LightSource(this, new Color(100,255,100), 1200f, 1.2f, 0.0f, new Vector2(600f, 700f));
 
             // Setup tiles

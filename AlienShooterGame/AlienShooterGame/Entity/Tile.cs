@@ -59,10 +59,5 @@ namespace AlienShooterGame
             // Return the name for this class
             return "Tile";
         }
-
-        public override void Update(Microsoft.Xna.Framework.GameTime time)
-        {
-            base.Update(time);
-        }
     }
 }
