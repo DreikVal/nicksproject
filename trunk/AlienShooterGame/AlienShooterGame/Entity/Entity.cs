@@ -83,6 +83,11 @@ namespace AlienShooterGame
         protected bool _DynamicLighting = false;
 
         protected Color _ActualColour = Color.White;
+
+        private Animation _Draw_Animation;
+        private Vector2 _Draw_Origin, _Draw_Position, _Draw_Size;
+        private Rectangle _Draw_Destination, _Draw_Source;
+        private bool _Draw_OnScreen = false;
         
 
         #endregion
@@ -137,13 +142,17 @@ namespace AlienShooterGame
         public virtual void Update(GameTime time)
         {
             if (_Disposed) return;
-        }
 
-        public virtual void Draw(GameTime time, SpriteBatch batch) 
-        {
-            if (_Disposed) return;
+            // Graphics updates, bail now if the entity isn't on screen
+            if (!isOnScreen()) { _Draw_OnScreen = false; return; }
 
-            if (_Animations.Current == null) return;
+            _Draw_OnScreen = true;
+            _Draw_Animation = _Animations.Current;
+            _Draw_Position = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Geometry.Position);
+            _Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(_Geometry.UncompensatedSize);
+            _Draw_Origin = new Vector2(-_Geometry.MinX() / (_Geometry.MaxX() - _Geometry.MinX()) * _Animations.Current.WidthPerCell, -_Geometry.MinY() / (_Geometry.MaxY() - _Geometry.MinY()) * _Animations.Current.HeightPerCell);
+            _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)_Draw_Size.X, (int)_Draw_Size.Y);
+            _Draw_Source = _Draw_Animation.UpdateSource(time);
 
             if (_DynamicLighting)
             {
@@ -180,15 +189,27 @@ namespace AlienShooterGame
             }
             else
                 _ActualColour = _ColourOverlay;
+        }
 
-            Animation a = _Animations.Current;
-            Vector2 pos = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Geometry.Position);
-            Vector2 size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(_Geometry.UncompensatedSize);
-            Vector2 origin = new Vector2(-_Geometry.MinX()/(_Geometry.MaxX() - _Geometry.MinX()) * _Animations.Current.WidthPerCell, -_Geometry.MinY()/(_Geometry.MaxY() - _Geometry.MinY()) * _Animations.Current.HeightPerCell);
-            Rectangle dest = new Rectangle((int)(pos.X), (int)(pos.Y), (int)size.X, (int)size.Y);
-            batch.Draw(a.Texture, dest, a.UpdateSource(time), _ActualColour, (float)_Geometry.Direction, origin, SpriteEffects.None, _Depth);
+        public virtual void Draw(GameTime time, SpriteBatch batch) 
+        {
+            if (_Draw_OnScreen == false) return;
+            if (_Disposed) return;
+            if (_Draw_Animation == null) return;
+
+            batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, (float)_Geometry.Direction, _Draw_Origin, SpriteEffects.None, _Depth);
         }
 
         #endregion
+
+        public bool isOnScreen()
+        {
+            if (_Geometry.Position.X + _Geometry.Radius < _Parent.ViewPort.ActualLocation.X ||
+                _Geometry.Position.Y + _Geometry.Radius < _Parent.ViewPort.ActualLocation.Y ||
+                _Geometry.Position.X > _Parent.ViewPort.ActualLocation.X + _Parent.ViewPort.Size.X ||
+                _Geometry.Position.Y > _Parent.ViewPort.ActualLocation.Y + _Parent.ViewPort.Size.Y)
+                return false;
+            return true;
+        }
     }
 }
