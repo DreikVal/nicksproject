@@ -267,6 +267,10 @@ namespace AlienShooterGame
         protected static Vector2 _DefaultMessageLocation = new Vector2(50, 536);
 
 
+        public List<LightSource> Lights { get { return _Lights; } }
+        protected List<LightSource> _Lights = new List<LightSource>();
+
+
         /// <summary>
         /// Creates a new Screen object.
         /// </summary>

@@ -126,6 +126,7 @@ namespace AlienShooterGame
             _ScreenManager.Input.AddBind(new Bind("MoveBack", Keys.S));
             _ScreenManager.Input.AddBind(new Bind("StrafeLeft", Keys.A));
             _ScreenManager.Input.AddBind(new Bind("StrafeRight", Keys.D));
+            _ScreenManager.Input.AddBind(new Bind("FlashLight", Keys.F));
             _ScreenManager.Input.AddBind(new Bind("MoveMode", Keys.M));
 
             // Load entity definitions

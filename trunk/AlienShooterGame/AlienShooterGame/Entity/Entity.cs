@@ -75,7 +75,15 @@ namespace AlienShooterGame
         /// </summary>
         public Color ColourOverlay { get { return _ColourOverlay; } set { _ColourOverlay = value; } }
         protected Color _ColourOverlay = Color.White;
+
+        /// <summary>
+        /// Gets or sets whether this entity requires light sources to become illuminated
+        /// </summary>
+        public bool DynamicLighting { get { return _DynamicLighting; } set { _DynamicLighting = value; } }
+        protected bool _DynamicLighting = false;
+
         protected Color _ActualColour = Color.White;
+        
 
         #endregion
 
@@ -136,6 +144,42 @@ namespace AlienShooterGame
             if (_Disposed) return;
 
             if (_Animations.Current == null) return;
+
+            if (_DynamicLighting)
+            {
+                Vector4 _Lighting = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+                foreach (LightSource light in _Parent.Lights)
+                {
+                    if (!light.Active) continue;
+
+                    float x_diff = _Geometry.Position.X - light.Position.X;
+                    float y_diff = _Geometry.Position.Y - light.Position.Y;
+                    float dist = (float)Math.Sqrt((x_diff * x_diff) + (y_diff * y_diff));
+                    float val = 1.0f - (dist / light.Range);
+                    if (val < 0.0f) val = 0.0f;
+
+                    float angle = (float)Math.Atan2(y_diff, x_diff);
+                    float angle_diff = (float)Math.Abs(light.Direction - Math.PI / 2 - angle);
+                    if (angle_diff > Math.PI)
+                        angle_diff = 2 * (float)Math.PI - angle_diff;
+                    float angle_val = 1.0f - (angle_diff / light.Radius);
+
+                    Vector4 pre = light.Colour.ToVector4();
+                    Vector4 dis = new Vector4(val, val, val, 1.0f);
+                    Vector4 ang = new Vector4(angle_val, angle_val, angle_val, 1.0f);
+                    Vector4 result = pre * dis * ang;
+                    if (result.X < 0.0f) result.X = 0.0f;
+                    if (result.Y < 0.0f) result.Y = 0.0f;
+                    if (result.Z < 0.0f) result.Z = 0.0f;
+                    if (result.W < 0.0f) result.W = 0.0f;
+                    _Lighting += result;
+                }
+                Vector4 _VectorOverlay = _ColourOverlay.ToVector4();
+
+                _ActualColour = new Color(_VectorOverlay * _Lighting);
+            }
+            else
+                _ActualColour = _ColourOverlay;
 
             Animation a = _Animations.Current;
             Vector2 pos = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Geometry.Position);

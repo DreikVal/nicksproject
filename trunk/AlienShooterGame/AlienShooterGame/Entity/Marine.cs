@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
@@ -12,11 +13,8 @@ namespace AlienShooterGame
         public float Speed { get { return _Speed; } set { _Speed = value; } }
         protected float _Speed = 0.15f;
 
-        public float VisRange { get { return _VisRange; } set { _VisRange = value; } }
-        protected float _VisRange = 700.0f;
-
-        public float LightRadius { get { return _LightRadius; } set { _LightRadius = value; } }
-        protected float _LightRadius = 1.9f;
+        public LightSource FlashLight { get { return _FlashLight; } }
+        protected LightSource _FlashLight;
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -65,6 +63,9 @@ namespace AlienShooterGame
             // Set marine towards front of screen
             _Depth = 0.2f;
 
+            // Create flashlight for marine
+            _FlashLight = new LightSource(_Parent, Color.Yellow, 600f, 1.5f, 0.0, _Geometry.Position);
+
             // Return the name for this class
             return "Marine";
         }
@@ -79,7 +80,10 @@ namespace AlienShooterGame
             mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
             mLoc.Y = mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
 
-            _Geometry.Direction = (float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + Math.PI/2;
+            _Geometry.Direction = ((float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + Math.PI/2);
+
+            _FlashLight.Position = _Geometry.Position;
+            _FlashLight.Direction = _Geometry.Direction;
 
             if (_Parent.Manager.Input.AbsoluteMovement)
             {

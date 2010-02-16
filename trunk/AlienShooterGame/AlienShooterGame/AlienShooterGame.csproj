@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Crosshair.cs" />
+    <Compile Include="Entity\LightSource.cs" />
     <Compile Include="Entity\Marine.cs" />
     <Compile Include="Entity\Tile.cs" />
     <Compile Include="Graphics\Animation.cs" />
