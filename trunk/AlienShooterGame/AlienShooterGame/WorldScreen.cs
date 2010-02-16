@@ -92,6 +92,11 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.FlashLight.Active = !_Player.FlashLight.Active;
             }
+            else if (bind.Name.CompareTo("PrimaryFire") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                    _Player.Fire();
+            }
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)

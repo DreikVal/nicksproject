@@ -62,16 +62,63 @@ namespace AlienShooterGame
         }
         private object ForEachUpdate(Bind bind, object keystate, object p2, object p3)
         {
-            KeyboardState state = (KeyboardState)keystate;
-            if (state.IsKeyDown(bind.Key) && bind.State == KeyState.Up)
+            if (bind.MouseBind)
             {
-                bind.State = KeyState.Down;
-                OnStateChanged(bind);
+                MouseState state = Mouse.GetState();
+                if (bind.MouseButton == MouseButtons.LeftButton)
+                {
+                    if (state.LeftButton == ButtonState.Pressed && bind.State == KeyState.Up)
+                    {
+                        bind.State = KeyState.Down;
+                        OnStateChanged(bind);
+                    }
+                    else if (state.LeftButton == ButtonState.Released && bind.State == KeyState.Down)
+                    {
+                        bind.State = KeyState.Up;
+                        OnStateChanged(bind);
+                    }
+                }
+                else if (bind.MouseButton == MouseButtons.RightButton)
+                {
+                    if (state.RightButton == ButtonState.Pressed && bind.State == KeyState.Up)
+                    {
+                        bind.State = KeyState.Down;
+                        OnStateChanged(bind);
+                    }
+                    else if (state.RightButton == ButtonState.Released && bind.State == KeyState.Down)
+                    {
+                        bind.State = KeyState.Up;
+                        OnStateChanged(bind);
+                    }
+                }
+                else if (bind.MouseButton == MouseButtons.MiddleButton)
+                {
+                    if (state.MiddleButton == ButtonState.Pressed && bind.State == KeyState.Up)
+                    {
+                        bind.State = KeyState.Down;
+                        OnStateChanged(bind);
+                    }
+                    else if (state.MiddleButton == ButtonState.Released && bind.State == KeyState.Down)
+                    {
+                        bind.State = KeyState.Up;
+                        OnStateChanged(bind);
+                    }
+                }
+                
             }
-            else if (state.IsKeyUp(bind.Key) && bind.State == KeyState.Down)
+            else
             {
-                bind.State = KeyState.Up;
-                OnStateChanged(bind);
+                KeyboardState state = (KeyboardState)keystate;
+                if (state.IsKeyDown(bind.Key) && bind.State == KeyState.Up)
+                {
+                    bind.State = KeyState.Down;
+                    OnStateChanged(bind);
+                }
+                else if (state.IsKeyUp(bind.Key) && bind.State == KeyState.Down)
+                {
+                    bind.State = KeyState.Up;
+                    OnStateChanged(bind);
+                }
             }
             return null;
         }
@@ -126,6 +173,12 @@ namespace AlienShooterGame
         public Keys Key { get { return _Key; } set { _Key = value; } }
         protected Keys _Key;
 
+        public MouseButtons MouseButton { get { return _MouseButton; } }
+        protected MouseButtons _MouseButton;
+
+        public bool MouseBind { get { return _MouseBind; } }
+        protected bool _MouseBind;
+
         /// <summary>
         /// Gets or sets the keystate of this binding.
         /// </summary>
@@ -142,6 +195,24 @@ namespace AlienShooterGame
             _Name = name;
             _Key = key;
             _State = KeyState.Up;
+            _MouseBind = false;
         }
+
+        public Bind(String name, MouseButtons mouse)
+        {
+            _Name = name;
+            _MouseButton = mouse;
+            _State = KeyState.Up;
+            _MouseBind = true;
+        }
+    }
+
+    public enum MouseButtons
+    {
+        LeftButton,
+        RightButton,
+        MiddleButton,
+        Button4,
+        Button5
     }
 }
