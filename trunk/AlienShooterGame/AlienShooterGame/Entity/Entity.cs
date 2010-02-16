@@ -70,6 +70,12 @@ namespace AlienShooterGame
         public float Depth { get { return _Depth; } set { _Depth = value; } }
         protected float _Depth = 0.5f;
 
+        /// <summary>
+        /// Gets or sets the overlay colour for this entity
+        /// </summary>
+        public Color ColourOverlay { get { return _ColourOverlay; } set { _ColourOverlay = value; } }
+        protected Color _ColourOverlay = Color.White;
+
         #endregion
 
 
@@ -135,7 +141,7 @@ namespace AlienShooterGame
             Vector2 size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(_Geometry.UncompensatedSize);
             Vector2 origin = new Vector2(-_Geometry.MinX()/(_Geometry.MaxX() - _Geometry.MinX()) * _Animations.Current.WidthPerCell, -_Geometry.MinY()/(_Geometry.MaxY() - _Geometry.MinY()) * _Animations.Current.HeightPerCell);
             Rectangle dest = new Rectangle((int)(pos.X), (int)(pos.Y), (int)size.X, (int)size.Y);
-            batch.Draw(a.Texture, dest, a.UpdateSource(time), Color.White, (float)_Geometry.Direction, origin, SpriteEffects.None, _Depth);
+            batch.Draw(a.Texture, dest, a.UpdateSource(time), _ColourOverlay, (float)_Geometry.Direction, origin, SpriteEffects.None, _Depth);
         }
 
         #endregion
