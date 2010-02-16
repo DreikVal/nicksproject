@@ -20,6 +20,16 @@ namespace AlienShooterGame
         protected LightSource _Muzzle;
         protected int _MuzzleFrames;
 
+        public static int ReloadTime = 2500;
+        protected int _Reloading = -1;
+
+        public bool Reloading { get { return _Reloading > 0; } }
+
+
+        public static int ClipSize = 25;
+        public int Ammo { get { return _Ammo; } set { _Ammo = value; } }
+        protected int _Ammo = ClipSize;
+
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
                 if (_MoveForward) _Speed *= 0.707106781187f;
@@ -83,6 +93,8 @@ namespace AlienShooterGame
 
         public void Fire()
         {
+            if (_Reloading >= 0) return;
+
             _Muzzle.Active = true;
             _MuzzleFrames = 5;
             Vector2 bulletPos = _Geometry.Position;
@@ -91,6 +103,8 @@ namespace AlienShooterGame
             new Bullet(_Parent, bulletPos, _Geometry.Direction);
             _Parent.ViewPort.Shake(3.0f, 1.0f, 0.95f);
             new MuzzleFlash(_Parent, bulletPos, _Geometry.Direction);
+            if (--_Ammo <= 0)
+                _Reloading = ReloadTime;
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
@@ -109,6 +123,13 @@ namespace AlienShooterGame
             _FlashLight.Direction = _Geometry.Direction;
             _Muzzle.Position = _Geometry.Position;
             _Muzzle.Direction = _Geometry.Direction;
+
+            if (_Reloading >= 0)
+            {
+                _Reloading -= time.ElapsedGameTime.Milliseconds;
+                if (_Reloading < 0)
+                    _Ammo = ClipSize;
+            }
 
             if (_MuzzleFrames < 0) _Muzzle.Active = false;
             else _MuzzleFrames--;
