@@ -105,6 +105,8 @@ namespace AlienShooterGame
         protected override void Initialize()
         {
             base.Initialize();
+
+            this.IsFixedTimeStep = false;
         }
 
         /// <summary>
