@@ -20,13 +20,16 @@ namespace AlienShooterGame
         protected LightSource _Muzzle;
         protected int _MuzzleFrames;
 
-        public static int ReloadTime = 2500;
+        public const int ReloadTime = 2500;
         protected int _Reloading = -1;
 
         public bool Reloading { get { return _Reloading > 0; } }
 
+        public const int MaxHP = 100;
+        public int CurrentHP { get { return _CurrentHP; } set { _CurrentHP = value; } }
+        protected int _CurrentHP = MaxHP;
 
-        public static int ClipSize = 25;
+        public const int ClipSize = 25;
         public int Ammo { get { return _Ammo; } set { _Ammo = value; } }
         protected int _Ammo = ClipSize;
 
@@ -101,10 +104,15 @@ namespace AlienShooterGame
             bulletPos.X += (float)Math.Sin(_Geometry.Direction) * 25.0f;
             bulletPos.Y += -(float)Math.Cos(_Geometry.Direction) * 25.0f;
             new Bullet(_Parent, bulletPos, _Geometry.Direction);
-            _Parent.ViewPort.Shake(3.0f, 1.0f, 0.95f);
+            _Parent.ViewPort.Shake(1.5f, 0.8f, 0.95f);
             new MuzzleFlash(_Parent, bulletPos, _Geometry.Direction);
             if (--_Ammo <= 0)
                 _Reloading = ReloadTime;
+        }
+
+        public void Reload()
+        {
+            _Reloading = ReloadTime;
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
