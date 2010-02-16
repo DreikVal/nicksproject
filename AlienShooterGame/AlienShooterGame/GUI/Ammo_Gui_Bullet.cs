@@ -23,7 +23,7 @@ namespace AlienShooterGame
             _Animations = new AnimationSet();
 
             // Add the default animation
-            _Animations.AddAnimation(new Animation("bullet", "Normal", 1, 1, 1.0f));
+            _Animations.AddAnimation(new Animation("bullet_gui", "Normal", 1, 1, 1.0f));
 
             // Set marine towards front of screen
             //_Depth = 0.2f;
