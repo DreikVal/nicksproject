@@ -101,6 +101,11 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.Fire();
             }
+            else if (bind.Name.CompareTo("Reload") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                    _Player.Reload();
+            }
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
