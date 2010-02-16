@@ -82,6 +82,9 @@ namespace AlienShooterGame
         public bool DynamicLighting { get { return _DynamicLighting; } set { _DynamicLighting = value; } }
         protected bool _DynamicLighting = false;
 
+        public bool Hide { get { return _Hide; } set { _Hide = value; } }
+        protected bool _Hide = false;
+
         protected Color _ActualColour = Color.White;
 
         private Animation _Draw_Animation;
@@ -145,6 +148,7 @@ namespace AlienShooterGame
 
             // Graphics updates, bail now if the entity isn't on screen
             if (!isOnScreen()) { _Draw_OnScreen = false; return; }
+            if (_Hide) return;
 
             _Draw_OnScreen = true;
             _Draw_Animation = _Animations.Current;
@@ -196,6 +200,7 @@ namespace AlienShooterGame
             if (_Draw_OnScreen == false) return;
             if (_Disposed) return;
             if (_Draw_Animation == null) return;
+            if (_Hide) return;
 
             batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, (float)_Geometry.Direction, _Draw_Origin, SpriteEffects.None, _Depth);
         }

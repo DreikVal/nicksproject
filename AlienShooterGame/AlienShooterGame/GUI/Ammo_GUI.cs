@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace AlienShooterGame
 {
     public class Ammo_Gui : Entity
     {
-        Screen parent;
-        Ammo_Gui_Bullet bullets;
+        protected Screen parent;
+        protected Ammo_Gui_Bullet[] bullets;
+        protected Vector2 firstPos = new Vector2(794f, 422f);
+        protected Vector2 increment = new Vector2(-7f, 0f);
+
         public Ammo_Gui(Screen Parent)
             : base(Parent)
 
@@ -20,9 +24,9 @@ namespace AlienShooterGame
 
         public override string Initialize()
         {
-            bullets = new Ammo_Gui_Bullet(Parent);
-            bullets.Geometry.Position.X = Parent.ViewPort.Size.X - 90;
-            bullets.Geometry.Position.Y = Parent.ViewPort.Size.Y - 35;
+            bullets = new Ammo_Gui_Bullet[Marine.ClipSize];
+            for (int i = 0; i < Marine.ClipSize; i++)
+                bullets[i] = new Ammo_Gui_Bullet(_Parent, firstPos + (i * increment));
 
             Geometry = Geometry.CreateRectangularGeometry(this, 70, 180);
 
@@ -42,6 +46,20 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
             base.Update(time);
+
+            Screen screen;
+            WorldScreen world;
+            _Parent.Manager.LookupScreen("World", out screen);
+            world = (WorldScreen)screen;
+            int index = world.Player.Ammo;
+            if (world.Player.Reloading) index = 0;
+            for (int i = 0; i < Marine.ClipSize; i++)
+            {
+                if (i < index)
+                    bullets[i].Hide = false;
+                else
+                    bullets[i].Hide = true;
+            }
         }
 
 
