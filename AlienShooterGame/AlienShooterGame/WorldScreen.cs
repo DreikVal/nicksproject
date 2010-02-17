@@ -15,17 +15,17 @@ namespace AlienShooterGame
         protected Crosshair _Crosshair;
         protected LightSource _RedLight, _GreenLight;
 
-        public const int TileCols = 200;
-        public const int TileRows = 200;
-        public const int NumAliens = 10;
+        public const int TileCols = 125;
+        public const int TileRows = 125;
+        public const int NumAliens = 8;
 
         public WorldScreen(ScreenManager manager)
             : base(manager, "World")
         {
             // Create player
             _Player = new Marine(this);
-            _Player.Geometry.Position.X = 1000;
-            _Player.Geometry.Position.Y = 1000;
+            _Player.Geometry.Position.X = TileCols*Tile.TileWidth/2;
+            _Player.Geometry.Position.Y = TileRows*Tile.TileHeight/2;
 
             // Create crosshair
             _Crosshair = new Crosshair(this);
@@ -38,8 +38,8 @@ namespace AlienShooterGame
             }
 
             // Create ambient lights
-            _RedLight = new LightSource(this, new Color(255,150,150), 650f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));
-            _GreenLight = new LightSource(this, new Color(100,255,100), 1200f, 1.2f, 0.0f, new Vector2(600f, 700f));
+            //_RedLight = new LightSource(this, new Color(255,150,150), 650f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));
+            //_GreenLight = new LightSource(this, new Color(100,255,100), 1200f, 1.2f, 0.0f, new Vector2(600f, 700f));
 
             // Setup tiles
             for (int row = 0; row < TileRows; row++)
@@ -120,10 +120,12 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
+            /*
             if (time.TotalGameTime.Milliseconds % 37 == 0)
                 _RedLight.Active = !_RedLight.Active;
             _GreenLight.Direction += 0.002 * time.ElapsedGameTime.Milliseconds;
             if (_GreenLight.Direction > 3 * Math.PI / 2) _GreenLight.Direction -= 2 * Math.PI;
+            */
         }        
     }
 }

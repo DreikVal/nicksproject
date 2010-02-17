@@ -13,7 +13,7 @@ namespace AlienShooterGame
         public Entity Target { get { return _Target; } set { _Target = value; } } 
         protected Entity _Target;
 
-        public const float AlienSpeed = 0.07f;
+        public const float AlienSpeed = 0.08f;
 
         public Alien(Screen parent, Vector2 position, Entity target) : base(parent) 
         {
@@ -115,7 +115,7 @@ namespace AlienShooterGame
                 // Set crosshair to front of screen
                 _Depth = 0.75f;
 
-                _DynamicLighting = true;
+                //_DynamicLighting = true;
 
                 _Geometry.Direction = Application.AppReference.Random.NextDouble() * Math.PI * 2;
                 _Speed = (float)Application.AppReference.Random.NextDouble() * SpeedVariation + SpeedBase;
