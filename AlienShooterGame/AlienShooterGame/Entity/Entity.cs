@@ -85,6 +85,9 @@ namespace AlienShooterGame
         public bool Hide { get { return _Hide; } set { _Hide = value; } }
         protected bool _Hide = false;
 
+        public CollisionType CollisionType { get { return _CollisionType; } set { _CollisionType = value; } }
+        protected CollisionType _CollisionType = CollisionType.None;
+
         protected Color _ActualColour = Color.White;
 
         private Animation _Draw_Animation;
@@ -149,6 +152,9 @@ namespace AlienShooterGame
             // Graphics updates, bail now if the entity isn't on screen
             if (!isOnScreen()) { _Draw_OnScreen = false; return; }
             if (_Hide) return;
+
+            // Collision updates only done onscreen as well
+            if (_CollisionType == CollisionType.Active) CheckCollisions();
 
             _Draw_OnScreen = true;
             _Draw_Animation = _Animations.Current;
@@ -216,5 +222,31 @@ namespace AlienShooterGame
                 return false;
             return true;
         }
+
+        protected virtual void CheckCollisions()
+        {
+            _Parent.Entities.ForEach(ForEachCollisionCheck, null, null, null);
+        }
+        private Object ForEachCollisionCheck(Entity ent, object p1, object p2, object p3)
+        {
+            if (ent.CollisionType == CollisionType.None) return null;
+            if (ent == this) return null;
+
+            CollisionResult result = _Geometry.Collision(ent.Geometry);
+            if (result.Collision)
+                HandleCollision(ent, result);
+            return null;
+        }
+
+        protected virtual void HandleCollision(Entity otherEnt, CollisionResult result)
+        {
+        }
+    }
+
+    public enum CollisionType
+    {
+        Active,
+        Passive,
+        None
     }
 }

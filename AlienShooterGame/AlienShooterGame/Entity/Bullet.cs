@@ -8,8 +8,8 @@ namespace AlienShooterGame
 {
     public class Bullet : Entity
     {
-        public static float Speed = 1.8f;
-        public static int LifeTime = 150;
+        public static float Speed = 0.4f;
+        public static int LifeTime = 2000;
 
         protected int _Remaining = LifeTime;
 
@@ -31,7 +31,10 @@ namespace AlienShooterGame
             _Animations.AddAnimation(new Animation("bullet", "Normal", 1, 1, 8.0f));
 
             // Set crosshair to front of screen
-            _Depth = 0.50f;
+            _Depth = 0.82f;
+
+            // Flag as an active collision entity
+            CollisionType = CollisionType.Passive;
 
             // Return the name for this class
             return "Bullet";

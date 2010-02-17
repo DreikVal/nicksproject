@@ -78,7 +78,7 @@ namespace AlienShooterGame
             _Animations.AddAnimation(new Animation("soldier", "Normal", 1, 1, 18.0f));
 
             // Set marine towards front of screen
-            _Depth = 0.2f;
+            _Depth = 0.8f;
 
             // Create flashlight for marine
             _FlashLight = new LightSource(_Parent, Color.Yellow, 480f, 1.5f, 0.0, _Geometry.Position);
@@ -89,6 +89,9 @@ namespace AlienShooterGame
 
             // Activate dynamic lighting for the marine
             _DynamicLighting = true;
+
+            // Flag as an active collision entity
+            CollisionType = CollisionType.Active;
 
             // Return the name for this class
             return "Marine";

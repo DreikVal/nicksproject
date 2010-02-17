@@ -91,6 +91,7 @@ namespace AlienShooterGame
             }
             _UncompensatedTopLeft = new Vector2(MinX(), MinY());
             _UncompensatedSize = new Vector2(MaxX(), MaxY()) - _UncompensatedTopLeft;
+            _Radius = _UncompensatedSize.Length() / 2;
 
             _Polar = new Vector2[_Vertices.Length];
             _AbsoluteVertices = new Vector2[_Vertices.Length];
@@ -154,6 +155,67 @@ namespace AlienShooterGame
                 if (vec.Y > max)
                     max = vec.Y;
             return max;
+        }
+
+        public CollisionResult Collision(Geometry otherGeom)
+        {
+            if (!PossibleCollision(otherGeom))
+                return new CollisionResult(false, new Vector2());
+            if (!_GeometryUpToDate)
+                UpdateGeometry();
+            if (!otherGeom.GeometryUpToDate)
+                otherGeom.UpdateGeometry();
+            if (otherGeom.AbsoluteVertices == null)
+            {
+                if (AbsoluteVertices == null) return new CollisionResult(true, new Vector2());
+                else return otherGeom.Collision(this);
+            }
+            foreach (Vector2 point in otherGeom.AbsoluteVertices)
+                if (Contains(point+otherGeom.Position))
+                    return new CollisionResult(true, point);
+            return new CollisionResult(false, new Vector2());
+        }
+
+        protected bool Contains(Vector2 point)
+        {
+            if (_AbsoluteVertices == null)
+            {
+                float x_diff = point.X - Position.X;
+                float y_diff = point.Y - Position.Y;
+                float dist_sqr = (x_diff * x_diff + y_diff * y_diff);
+                if (dist_sqr < _Radius*_Radius) return true;
+                return false;
+            }
+            for (int i = 0; i < _Vertices.Length; i++)
+            {
+                Vector2 p1 = _AbsoluteVertices[i];
+                Vector2 p2 = _AbsoluteVertices[(i + 1) % _AbsoluteVertices.Length];
+                double gradient = (p2.Y - p1.Y) / (p2.X - p1.X);
+                double yoffset = p1.Y;
+                if ((Position.Y > p1.Y + (gradient * (Position.X - p1.X))) ^ (point.Y > p1.Y + (gradient * (point.X - p1.X))))
+                    return false;
+            }
+            return true;
+        }
+
+        protected bool PossibleCollision(Geometry otherGeom)
+        {
+            if (((Position.X - otherGeom.Position.X) * (Position.X - otherGeom.Position.X)) +
+                ((Position.Y - otherGeom.Position.Y) * (Position.Y - otherGeom.Position.Y))
+                > (_Radius + otherGeom.Radius) * (_Radius + otherGeom.Radius))
+                return false;
+            return true;
+        }
+    }
+
+    public class CollisionResult
+    {
+        public bool Collision;
+        public Vector2 IntersectionPoint;
+        public CollisionResult(bool occured, Vector2 intPoint)
+        {
+            Collision = occured;
+            IntersectionPoint = intPoint;
         }
     }
 }
