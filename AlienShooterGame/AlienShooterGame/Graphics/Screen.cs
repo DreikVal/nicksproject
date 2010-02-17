@@ -215,7 +215,7 @@ namespace AlienShooterGame
         public float FadeInTime { get { return _FadeInTime; } set { _FadeInTime = value; } }
         protected float _FadeInTime = _DefaultFadeInTime;
         public static float DefaultFadeInTime { get { return _DefaultFadeInTime; } set { _DefaultFadeInTime = value; } }
-        protected static float _DefaultFadeInTime = 2.00f;
+        protected static float _DefaultFadeInTime = 0.00f;
 
         /// <summary>
         /// The location to fade out to.
@@ -231,7 +231,7 @@ namespace AlienShooterGame
         public float FadeOutTime { get { return _FadeOutTime; } set { _FadeOutTime = value; } }
         protected float _FadeOutTime = _DefaultFadeOutTime;
         public static float DefaultFadeOutTime { get { return _DefaultFadeOutTime; } set { _DefaultFadeOutTime = value; } }
-        protected static float _DefaultFadeOutTime = 2.00f;
+        protected static float _DefaultFadeOutTime = 0.00f;
 
         protected bool _Dying = false;
         protected bool _Fading = false;
