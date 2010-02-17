@@ -30,7 +30,7 @@ namespace AlienShooterGame
             _Crosshair = new Crosshair(this);
 
             // Create aliens
-            //new Alien(this, new Vector2(1000, 600));
+            new Alien(this, new Vector2(700, 550));
 
             // Create ambient lights
             _RedLight = new LightSource(this, new Color(255,150,150), 650f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));
