@@ -108,7 +108,7 @@ namespace AlienShooterGame
             bulletPos.Y += -(float)Math.Cos(_Geometry.Direction) * 25.0f;
             new Bullet(_Parent, bulletPos, _Geometry.Direction);
             _Parent.ViewPort.Shake(1.5f, 0.8f, 0.95f);
-            new MuzzleFlash(_Parent, bulletPos, _Geometry.Direction);
+            new MuzzleFlash(_Parent, bulletPos, this);
             if (--_Ammo <= 0)
                 _Reloading = ReloadTime;
         }

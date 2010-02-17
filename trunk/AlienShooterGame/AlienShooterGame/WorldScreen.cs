@@ -17,20 +17,25 @@ namespace AlienShooterGame
 
         public const int TileCols = 200;
         public const int TileRows = 200;
+        public const int NumAliens = 10;
 
         public WorldScreen(ScreenManager manager)
             : base(manager, "World")
         {
             // Create player
             _Player = new Marine(this);
-            _Player.Geometry.Position.X = 500;
-            _Player.Geometry.Position.Y = 400;
+            _Player.Geometry.Position.X = 1000;
+            _Player.Geometry.Position.Y = 1000;
 
             // Create crosshair
             _Crosshair = new Crosshair(this);
 
             // Create aliens
-            new Alien(this, new Vector2(700, 550));
+            for (int i = 0; i < NumAliens; i++)
+            {
+                float dist = (float)Application.AppReference.Random.NextDouble() * 300 + 200f;
+                Alien.CreateNearbyAlien(this, _Player, dist, _Player);
+            }
 
             // Create ambient lights
             _RedLight = new LightSource(this, new Color(255,150,150), 650f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));

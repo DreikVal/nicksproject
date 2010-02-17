@@ -234,7 +234,10 @@ namespace AlienShooterGame
 
             CollisionResult result = _Geometry.Collision(ent.Geometry);
             if (result.Collision)
+            {
                 HandleCollision(ent, result);
+                ent.HandleCollision(this, result);
+            }
             return null;
         }
 

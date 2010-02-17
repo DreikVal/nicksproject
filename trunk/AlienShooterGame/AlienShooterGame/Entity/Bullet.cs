@@ -51,5 +51,13 @@ namespace AlienShooterGame
             _Geometry.Position.X += (float)Math.Sin(_Geometry.Direction) * Speed * time.ElapsedGameTime.Milliseconds;
             _Geometry.Position.Y += -(float)Math.Cos(_Geometry.Direction) * Speed * time.ElapsedGameTime.Milliseconds;          
         }
+
+        protected override void HandleCollision(Entity otherEnt, CollisionResult result)
+        {
+            base.HandleCollision(otherEnt, result);
+
+            if (otherEnt as Marine == null && otherEnt as Bullet == null)
+                Dispose();
+        }
     }
 }

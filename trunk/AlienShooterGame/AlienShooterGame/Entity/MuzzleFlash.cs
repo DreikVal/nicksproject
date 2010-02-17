@@ -9,15 +9,17 @@ namespace AlienShooterGame
     public class MuzzleFlash : Entity
     {
         public static float Speed = 1.5f;
-        public static int LifeTime = 5;
+        public static int LifeTime = 4;
 
         protected int _Remaining = LifeTime;
+        protected Entity _Owner = null;
+        protected Vector2 _Offset;
 
-        public MuzzleFlash(Screen parent, Vector2 position, double direction)
+        public MuzzleFlash(Screen parent, Vector2 position, Entity owner)
             : base(parent)
         {
-            _Geometry.Position = position;
-            _Geometry.Direction = direction;
+            _Offset = position - owner.Geometry.Position;
+            _Owner = owner;
         }
 
         public override string Initialize()
@@ -29,7 +31,7 @@ namespace AlienShooterGame
             _Animations = new AnimationSet();
 
             // Add the default animation
-            Animation normal = new Animation("muzzle", "Normal", 1, 3, 15.0f);
+            Animation normal = new Animation("muzzle", "Normal", 1, 3, 6.0f);
             normal.Loop = 1;
             _Animations.AddAnimation(normal);
             _Animations.PlayAnimation("Normal");
@@ -45,9 +47,9 @@ namespace AlienShooterGame
         {
             base.Update(time);
 
-            _Remaining--;
-
-            if (_Remaining < 0) Dispose();
+            if (_Remaining-- < 0) Dispose();
+            _Geometry.Position = _Owner.Geometry.Position + _Offset;
+            _Geometry.Direction = _Owner.Geometry.Direction;
         }
     }
 }
