@@ -13,7 +13,6 @@ namespace AlienShooterGame
         protected Marine _Player;
 
         protected Crosshair _Crosshair;
-        protected LightSource _RedLight, _GreenLight;
 
         public const int TileCols = 125;
         public const int TileRows = 125;
@@ -55,7 +54,7 @@ namespace AlienShooterGame
             _BackBehaviour = ActionOnBack.ExitApplication;
             _FadeInTime = 0.0f;
             _FadeOutTime = 0.0f;
-            _Message = "Press F to toggle flashlight";
+            _Message = "New Features:  (F)lashlight, (R)eload, (N)ightVision";
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
         }
 
@@ -110,6 +109,11 @@ namespace AlienShooterGame
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.Reload();
+            }
+            else if (bind.Name.CompareTo("NightVision") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                    _Player.NightVision.Active = !_Player.NightVision.Active;
             }
         }
 

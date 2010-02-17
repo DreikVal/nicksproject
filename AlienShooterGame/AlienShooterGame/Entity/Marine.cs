@@ -20,6 +20,9 @@ namespace AlienShooterGame
         protected LightSource _Muzzle;
         protected int _MuzzleFrames;
 
+        public LightSource NightVision { get { return _NightVision; } }
+        protected LightSource _NightVision;
+
         public const int ReloadTime = 2500;
         protected int _Reloading = -1;
 
@@ -81,11 +84,15 @@ namespace AlienShooterGame
             _Depth = 0.8f;
 
             // Create flashlight for marine
-            _FlashLight = new LightSource(_Parent, Color.Yellow, 480f, 1.5f, 0.0, _Geometry.Position);
+            _FlashLight = new LightSource(_Parent, Color.Yellow, 500.0f, 1.5f, 0.0, _Geometry.Position);
 
             // Create small glow radius
-            _Muzzle = new LightSource(_Parent, Color.White, 800.0f, 4.0f, 0.0, _Geometry.Position);
+            _Muzzle = new LightSource(_Parent, Color.White, 700.0f, 4.0f, 0.0, _Geometry.Position);
             _Muzzle.Active = false;
+
+            // Create night vision
+            _NightVision = new LightSource(_Parent, new Color(100, 255, 100), 280.0f, 4.8f, 0.0, _Geometry.Position);
+            _NightVision.Active = false;
 
             // Activate dynamic lighting for the marine
             _DynamicLighting = true;
@@ -134,6 +141,8 @@ namespace AlienShooterGame
             _FlashLight.Direction = _Geometry.Direction;
             _Muzzle.Position = _Geometry.Position;
             _Muzzle.Direction = _Geometry.Direction;
+            _NightVision.Position = _Geometry.Position;
+            _NightVision.Direction = _Geometry.Direction;
 
             if (_Reloading >= 0)
             {
