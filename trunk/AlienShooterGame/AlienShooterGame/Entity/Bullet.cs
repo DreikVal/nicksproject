@@ -8,7 +8,7 @@ namespace AlienShooterGame
 {
     public class Bullet : Entity
     {
-        public static float Speed = 0.4f;
+        public static float Speed = 1.8f;
         public static int LifeTime = 2000;
 
         protected int _Remaining = LifeTime;
