@@ -18,5 +18,8 @@ Content\para_tile.xnb
 Content\sci_tile.xnb
 Content\bullet.xnb
 Content\muzzle.xnb
-Content\Font.xnb
 Content\ammobox.xnb
+Content\Font.xnb
+Content\bullet_gui.xnb
+Content\alien1.xnb
+Content\alien_blood.xnb
