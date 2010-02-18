@@ -10,6 +10,7 @@ namespace AlienShooterGame
     class EditorScreen : Screen
     {
         protected Crosshair _Crosshair;
+        protected Editor_Gui _EditorGUI;
 
         public const int TileCols = 120;
         public const int TileRows = 120;
@@ -21,7 +22,13 @@ namespace AlienShooterGame
         protected bool _Dragging = false;
         protected int lastRow, lastCol;
 
+        protected Tile PreviewTile;
+        protected Tile PreviewTileB;
+
         protected Tile[,] _Tiles;
+
+        protected int row = 0;
+        protected int col = 0;
 
         public EditorScreen(ScreenManager manager)
             : base(manager, "Editor")
@@ -29,13 +36,22 @@ namespace AlienShooterGame
             // Create crosshair
             _Crosshair = new Crosshair(this);
 
+            _EditorGUI = new Editor_Gui(this);
+            _EditorGUI.Geometry.Position = new Vector2(764, 407);
+            PreviewTile = new Tile(this, "bar_tile", false, row, col);
+            PreviewTile.Geometry.Position = new Vector2(734, 256);
+            PreviewTile.Depth = 0.16f;
+            PreviewTileB = new Tile(this, "bar_tile", false, row, col);
+            PreviewTileB.Geometry.Position = new Vector2(734, 256);
+            PreviewTileB.Depth = 0.16f;
+
             Application.AppReference.DynamicLighting = false;
 
             // Setup tiles
             _Tiles = new Tile[TileRows, TileCols];
-            for (int row = 0; row < TileRows; row++)
+            for (row = 0; row < TileRows; row++)
             {
-                for (int col = 0; col < TileCols; col++)
+                for (col = 0; col < TileCols; col++)
                 {
                     _Tiles[row, col] = new Tile(this, "bar_tile", false, row, col);
                 }
@@ -65,6 +81,12 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
                     _TileIndex = (_TileIndex + 1) % Tile.TileGen.Length;
+                    PreviewTile.Dispose();
+                    PreviewTile = Tile.TileGen[_TileIndex](this, row, col);
+                    PreviewTile.Depth = 0.16f;
+                    PreviewTileB.Dispose();
+                    PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col);
+                    PreviewTileB.Depth = 0.18f;
                 }
             }
             else if (bind.Name.CompareTo("StrafeLeft") == 0)
@@ -93,10 +115,14 @@ namespace AlienShooterGame
         {
             base.Update(time);
 
+            _EditorGUI.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 764 ,_ViewPort.ActualLocation.Y + 407);
+            PreviewTile.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 754, _ViewPort.ActualLocation.Y + 397);
+            PreviewTileB.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 774, _ViewPort.ActualLocation.Y + 417);
+
             if (_Dragging)
             {
-                int col = (int)((_Crosshair.Geometry.Position.X + _Crosshair.Geometry.Radius / 2) / Tile.TileWidth);
-                int row = (int)((_Crosshair.Geometry.Position.Y + _Crosshair.Geometry.Radius / 2) / Tile.TileHeight);
+                col = (int)((_Crosshair.Geometry.Position.X + _Crosshair.Geometry.Radius / 2) / Tile.TileWidth);
+                row = (int)((_Crosshair.Geometry.Position.Y + _Crosshair.Geometry.Radius / 2) / Tile.TileHeight);
                 if (col != lastCol || row != lastRow)
                 {
                     try

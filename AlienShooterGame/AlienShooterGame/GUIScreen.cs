@@ -10,6 +10,7 @@ namespace AlienShooterGame
     class GUIScreen : Screen
     {
         Ammo_Gui _AmmoGUI;
+
         public GUIScreen(ScreenManager manager)
             : base(manager, "GUI")
         {

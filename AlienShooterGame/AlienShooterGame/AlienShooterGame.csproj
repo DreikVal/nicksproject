@@ -100,6 +100,7 @@
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\Geometry.cs" />
     <Compile Include="GUIScreen.cs" />
+    <Compile Include="GUI\Editor_GUI.cs" />
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
