@@ -229,11 +229,16 @@ namespace AlienShooterGame
 
             if (_OldItems.Count == 0 && _NewItems.Count == 0)
                 return;
-
             foreach (KeyType key in _OldItems)
-                _Dictionary.Remove(key);
+            {
+                try { _Dictionary.Remove(key); }
+                catch (Exception) { }
+            }
             foreach (KeyValuePair<KeyType, ValueType> pair in _NewItems)
-                _Dictionary.Add(pair.Key, pair.Value);
+            {
+                try { _Dictionary.Add(pair.Key, pair.Value); }
+                catch (Exception) { }
+            }
             _OldItems.Clear();
             _NewItems.Clear();
             _IterationBlocked = false;

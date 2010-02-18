@@ -78,6 +78,9 @@ namespace AlienShooterGame
         public Random Random { get { return _Random; } }
         protected Random _Random = new Random(DateTime.Now.Millisecond);
 
+        public bool DynamicLighting { get { return _DynamicLighting; } set { _DynamicLighting = value; } }
+        public bool _DynamicLighting = true;
+
         /// <summary>
         /// Creates a new Game Application.
         /// </summary>
@@ -131,8 +134,11 @@ namespace AlienShooterGame
             _ScreenManager.Input.AddBind(new Bind("FlashLight", Keys.F));
             _ScreenManager.Input.AddBind(new Bind("MoveMode", Keys.M));
             _ScreenManager.Input.AddBind(new Bind("PrimaryFire", MouseButtons.LeftButton));
+            _ScreenManager.Input.AddBind(new Bind("SecondaryFire", MouseButtons.RightButton));
             _ScreenManager.Input.AddBind(new Bind("Reload", Keys.R));
             _ScreenManager.Input.AddBind(new Bind("NightVision", Keys.N));
+            _ScreenManager.Input.AddBind(new Bind("Editor", Keys.F12));
+            _ScreenManager.Input.AddBind(new Bind("FPS", Keys.F9));
 
             // Load entity definitions
 

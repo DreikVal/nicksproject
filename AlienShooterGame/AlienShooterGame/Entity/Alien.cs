@@ -107,7 +107,7 @@ namespace AlienShooterGame
                 _Animations = new AnimationSet();
 
                 // Add the default animation
-                Animation normal = new Animation("alien_blood", "Normal", 1, 4, 3.8f);
+                Animation normal = new Animation("alien_blood", "Normal", 1, 4, 4.5f);
                 normal.Loop = 1;
                 _Animations.AddAnimation(normal);
                 _Animations.PlayAnimation("Normal");

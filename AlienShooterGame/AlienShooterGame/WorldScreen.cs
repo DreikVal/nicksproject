@@ -14,9 +14,15 @@ namespace AlienShooterGame
 
         protected Crosshair _Crosshair;
 
-        public const int TileCols = 125;
-        public const int TileRows = 125;
+        public const int TileCols = 120;
+        public const int TileRows = 120;
         public const int NumAliens = 8;
+
+        protected int _Frames = 60;
+        protected int _NextFPSUpdate = 1000;
+        protected bool _FPSDisplay = false;
+
+        protected String _HelpMessage = "New Features:  (F)lashlight, (R)eload, (N)ightVision, (F9)FPS, (F12) WorldEditor";
 
         public WorldScreen(ScreenManager manager)
             : base(manager, "World")
@@ -45,7 +51,7 @@ namespace AlienShooterGame
             {
                 for (int col = 0; col < TileCols; col++)
                 {
-                    new Tile(this, row, col);
+                    new Tile(this, "detail_tile", false, row, col);
                 }
             }
 
@@ -54,8 +60,9 @@ namespace AlienShooterGame
             _BackBehaviour = ActionOnBack.ExitApplication;
             _FadeInTime = 0.0f;
             _FadeOutTime = 0.0f;
-            _Message = "New Features:  (F)lashlight, (R)eload, (N)ightVision";
+            _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
+            _MessageColour = Color.White;
         }
 
         protected override void HandleInputActive(Bind bind)
@@ -115,6 +122,23 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _Player.NightVision.Active = !_Player.NightVision.Active;
             }
+            else if (bind.Name.CompareTo("FPS") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    if (_FPSDisplay)
+                    {
+                        _FPSDisplay = false;
+                        _Message = _HelpMessage;
+                    }
+                    else _FPSDisplay = true;
+                }
+            }
+            else if (bind.Name.CompareTo("Editor") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                    _Manager.AddScreen(new EditorScreen(_Manager));
+            }
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
@@ -130,6 +154,22 @@ namespace AlienShooterGame
             _GreenLight.Direction += 0.002 * time.ElapsedGameTime.Milliseconds;
             if (_GreenLight.Direction > 3 * Math.PI / 2) _GreenLight.Direction -= 2 * Math.PI;
             */
-        }        
+        }
+
+        public override void Draw(GameTime time, SpriteBatch batch)
+        {
+            base.Draw(time, batch);
+
+            _Frames++;
+
+            _NextFPSUpdate -= time.ElapsedRealTime.Milliseconds;
+            if (_NextFPSUpdate < 0)
+            {
+                _NextFPSUpdate += 1000;
+                if (_FPSDisplay)
+                    _Message = "FPS: " + _Frames;
+                _Frames = 0;
+            }
+        }
     }
 }
