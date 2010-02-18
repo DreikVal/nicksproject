@@ -24,13 +24,14 @@ namespace AlienShooterGame
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            Geometry = Geometry.CreateRectangularGeometry(this, 48.0f, 20.0f);
+            Geometry = Geometry.CreateRectangularGeometry(this, 48.0f, 48.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
 
             // Add the default animation
-            _Animations.AddAnimation(new Animation("alien1", "Normal", 1, 1, 8.0f));
+            _Animations.AddAnimation(new Animation("alien3", "Normal", 1, 5, 8.0f));
+            _Animations.PlayAnimation("Normal");
 
             // Set crosshair to front of screen
             _Depth = 0.79f;
