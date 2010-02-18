@@ -12,13 +12,27 @@ namespace AlienShooterGame
         public static float TileWidth = 24.0f;
         public static float TileHeight = 24.0f;
 
-        public bool Collidable { get { return _Collidable; } set { _Collidable = value; } }
-        protected bool _Collidable = false;
-
         protected int _Row = 0;
         protected int _Col = 0;
 
-        public Tile(Screen parent, int row, int col)
+        public static Func<Screen, int, int, Tile>[] TileGen = {
+                                                            Tile_Floor1,
+                                                            Tile_Floor2,
+                                                            Tile_Floor3,
+                                                            Tile_Floor4,
+                                                            Tile_Floor5,
+                                                            Tile_Floor6,
+                                                            Tile_Floor7,
+                                                            Tile_Floor8,
+                                                            Tile_Floor9,
+                                                            Tile_Floor10,
+                                                            Tile_Floor11,
+                                                            Tile_Floor12,
+                                                            Tile_Floor13,
+                                                            Tile_Floor14
+                                                        };
+
+        public Tile(Screen parent, String texName, bool collidable, int row, int col)
             : base(parent)
         {
             _Row = row;
@@ -27,32 +41,20 @@ namespace AlienShooterGame
             // Set tile location
             Geometry.Position.X = _Col * TileWidth;
             Geometry.Position.Y = _Row * TileHeight;
+
+            _Animations.AddAnimation(new Animation(texName, "Normal", 1, 1, 1.0f));
+
+            if (collidable) CollisionType = CollisionType.Passive;
+            else CollisionType = CollisionType.None;
         }
 
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            Geometry = Geometry.CreateRectangularGeometry(this, TileWidth, TileHeight);        
+            Geometry = Geometry.CreateRectangularGeometry(this, TileWidth, TileHeight);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
-
-            // Set tile type
-            double r = Application.AppReference.Random.NextDouble();
-            if (r > 0.80f)
-                _Animations.AddAnimation(new Animation("half_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.70f)
-                _Animations.AddAnimation(new Animation("para_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.60f)
-                _Animations.AddAnimation(new Animation("caution_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.40f)
-                _Animations.AddAnimation(new Animation("blade_tile", "Normal", 1, 1, 8.0f));
-            else if (r > 0.10f)
-                _Animations.AddAnimation(new Animation("bar_tile", "Normal", 1, 1, 8.0f));
-            else
-                _Animations.AddAnimation(new Animation("detail_tile", "Normal", 1, 1, 5.0f));
-
-            _Animations.PlayAnimation("Normal");
 
             _ColourOverlay = Color.White;
             _DynamicLighting = true;
@@ -62,6 +64,64 @@ namespace AlienShooterGame
 
             // Return the name for this class
             return "Tile";
+        }
+
+
+        public static Tile Tile_Floor1(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "blade_tile", false, row, col);
+        }
+        public static Tile Tile_Floor2(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "detail_tile", false, row, col);
+        }
+        public static Tile Tile_Floor3(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "bar_tile", false, row, col);
+        }
+        public static Tile Tile_Floor4(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "para_tile", false, row, col);
+        }
+        public static Tile Tile_Floor5(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "caution_tile", false, row, col);
+        }
+        public static Tile Tile_Floor6(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "ball_tile", false, row, col);
+        }
+        public static Tile Tile_Floor7(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "cross_tile", false, row, col);
+        }
+        public static Tile Tile_Floor8(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "dirt_tile", false, row, col);
+        }
+        public static Tile Tile_Floor9(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "grass_tile", false, row, col);
+        }
+        public static Tile Tile_Floor10(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "sand_tile", false, row, col);
+        }
+        public static Tile Tile_Floor11(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "road_tile", false, row, col);
+        }
+        public static Tile Tile_Floor12(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "half_tile", false, row, col);
+        }
+        public static Tile Tile_Floor13(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "old_tile", false, row, col);
+        }
+        public static Tile Tile_Floor14(Screen parent, int row, int col)
+        {
+            return new Tile(parent, "sci_tile", false, row, col);
         }
     }
 }

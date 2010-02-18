@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditorScreen.cs" />
     <Compile Include="Entity\Alien.cs" />
     <Compile Include="GUI\Ammo_GUI.cs" />
     <Compile Include="GUI\Ammo_Gui_Bullet.cs" />

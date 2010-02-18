@@ -164,7 +164,7 @@ namespace AlienShooterGame
             _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)_Draw_Size.X, (int)_Draw_Size.Y);
             _Draw_Source = _Draw_Animation.UpdateSource(time);
 
-            if (_DynamicLighting)
+            if (Application.AppReference.DynamicLighting && _DynamicLighting)
             {
                 Vector4 _Lighting = new Vector4(0.1f, 0.1f, 0.1f, 1.0f);
                 foreach (LightSource light in _Parent.Lights)
