@@ -43,7 +43,7 @@ namespace AlienShooterGame
             PreviewTile.Depth = 0.16f;
             PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col);
             PreviewTileB.Geometry.Position = new Vector2(734, 256);
-            PreviewTileB.Depth = 0.16f;
+            PreviewTileB.Depth = 0.18f;
 
 
             Application.AppReference.DynamicLighting = false;
