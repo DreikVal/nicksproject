@@ -1,2 +1,0 @@
-C:\Users\Nick\Documents\Visual Studio 2008\Projects\AlienShooterGame\AlienShooterGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Ath3rl3y\Documents\Visual Studio 2008\Projects\nicksproject\AlienShooterGame\AlienShooterGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
