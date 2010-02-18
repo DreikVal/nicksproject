@@ -38,12 +38,13 @@ namespace AlienShooterGame
 
             _EditorGUI = new Editor_Gui(this);
             _EditorGUI.Geometry.Position = new Vector2(764, 407);
-            PreviewTile = new Tile(this, "bar_tile", false, row, col);
+            PreviewTile = Tile.TileGen[_TileIndex](this, row, col);
             PreviewTile.Geometry.Position = new Vector2(734, 256);
             PreviewTile.Depth = 0.16f;
-            PreviewTileB = new Tile(this, "bar_tile", false, row, col);
+            PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col);
             PreviewTileB.Geometry.Position = new Vector2(734, 256);
             PreviewTileB.Depth = 0.16f;
+
 
             Application.AppReference.DynamicLighting = false;
 
