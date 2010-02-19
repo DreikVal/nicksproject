@@ -36,7 +36,7 @@ namespace AlienShooterGame
         public int CurrentHP { get { return _CurrentHP; } set { _CurrentHP = value; } }
         protected int _CurrentHP = MaxHP;
 
-        public const int ClipSize = 75;
+        public const int ClipSize = 45;
         public int Ammo { get { return _Ammo; } set { _Ammo = value; } }
         protected int _Ammo = ClipSize;
 
@@ -45,6 +45,12 @@ namespace AlienShooterGame
 
         public int BloodOnDeath { get { return _BloodOnDeath; } }
         protected int _BloodOnDeath = 56;
+
+        public float ScoreMultiplier { get { return _ScoreMultiplier; } }
+        protected float _ScoreMultiplier = 1.0f;
+        protected int _MultiReset = 0;
+        public int MultiTime = 1000;
+        protected float _MultiGrowth = 1.4f;
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -149,6 +155,15 @@ namespace AlienShooterGame
             _Parent.Lights.Remove(_Muzzle);
         }
 
+        public int GiveScore(int baseScore)
+        {
+            int score =(int) (baseScore * _ScoreMultiplier);
+            _Score += score;
+            _MultiReset = MultiTime;
+            _ScoreMultiplier *= _MultiGrowth;
+            return score;
+        }
+
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
  	        base.Update(time);
@@ -163,6 +178,12 @@ namespace AlienShooterGame
             {
                 _CurrentHP = 0;
                 Dispose();
+            }
+
+            _MultiReset -= time.ElapsedGameTime.Milliseconds;
+            if (_MultiReset <= 0)
+            {
+                _ScoreMultiplier = 1.0f;
             }
 
             _Geometry.Direction = ((float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + Math.PI/2);
