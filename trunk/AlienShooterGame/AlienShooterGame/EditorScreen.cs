@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,8 +14,8 @@ namespace AlienShooterGame
         protected Crosshair _Crosshair;
         protected Editor_Gui _EditorGUI;
 
-        public const int TileCols = 120;
-        public const int TileRows = 120;
+        public const int TileCols = 100;
+        public const int TileRows = 100;
 
         protected int _TileIndex = 0;
 
@@ -30,6 +32,8 @@ namespace AlienShooterGame
         protected int row = 0;
         protected int col = 0;
 
+        protected BackgroundWorker worker = new BackgroundWorker();
+
         public EditorScreen(ScreenManager manager)
             : base(manager, "Editor")
         {
@@ -37,10 +41,10 @@ namespace AlienShooterGame
             _Crosshair = new Crosshair(this);
 
             _EditorGUI = new Editor_Gui(this, new Vector2(764, 407));
-            PreviewTile = Tile.TileGen[_TileIndex](this, row, col);
+            PreviewTile = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
             PreviewTile.Geometry.Position = new Vector2(734, 256);
             PreviewTile.Depth = 0.16f;
-            PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col);
+            PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col, _TileIndex);
             PreviewTileB.Geometry.Position = new Vector2(734, 256);
             PreviewTileB.Depth = 0.18f;
 
@@ -53,7 +57,7 @@ namespace AlienShooterGame
             {
                 for (col = 0; col < TileCols; col++)
                 {
-                    _Tiles[row, col] = new Tile(this, "bar_tile", false, row, col);
+                    _Tiles[row, col] = Tile.TileGen[0](this, row, col, 0);
                 }
             }
 
@@ -65,11 +69,13 @@ namespace AlienShooterGame
             _Message = "World Editor Mode";
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.Red;
+
+            _ViewPort.TargetLocation = new Vector2(TileCols * Tile.TileWidth, TileRows * Tile.TileHeight);
         }
 
         protected override void HandleInputActive(Bind bind)
         {
-            base.HandleInputActive(bind);
+            //base.HandleInputActive(bind);
 
             if (bind.Name.CompareTo("PrimaryFire") == 0)
             {
@@ -82,10 +88,10 @@ namespace AlienShooterGame
                 {
                     _TileIndex = (_TileIndex + 1) % Tile.TileGen.Length;
                     PreviewTile.Dispose();
-                    PreviewTile = Tile.TileGen[_TileIndex](this, row, col);
+                    PreviewTile = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
                     PreviewTile.Depth = 0.16f;
                     PreviewTileB.Dispose();
-                    PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col);
+                    PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col, _TileIndex);
                     PreviewTileB.Depth = 0.18f;
                 }
             }
@@ -109,6 +115,46 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                     _ViewPort.TargetLocation.Y += ScreenMoveRate;
             }
+            else if (bind.Name.CompareTo("Save") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    _Message = "Saved map to world.awo";
+                    worker.DoWork += SaveMap;
+                    worker.RunWorkerAsync();
+                }
+            }
+            else if (bind.Name.CompareTo("back") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    this.Remove();
+                    _Manager.AddScreen(new WorldScreen(_Manager, "world.awo"));
+                    _Manager.AddScreen(new GUIScreen(_Manager));
+                }
+            }
+        }
+
+        protected void SaveMap(object source, DoWorkEventArgs e)
+        {
+            FileStream fs = File.OpenWrite("world.awo");
+            BinaryWriter bin = new BinaryWriter(fs);
+
+            bin.Write(TileRows);
+            bin.Write(TileCols);
+            bin.Write(Tile.TileWidth);
+            bin.Write(Tile.TileHeight);
+            for (int row = 0; row < TileRows; row++)
+            {
+                for (int col = 0; col < TileCols; col++)
+                {
+                    bin.Write(_Tiles[row, col].TileIndex);
+                }
+            }
+
+            bin.Flush();
+            bin.Close();
+            fs.Close();
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
@@ -127,7 +173,7 @@ namespace AlienShooterGame
                     try
                     {
                         _Tiles[row, col].Dispose();
-                        _Tiles[row, col] = Tile.TileGen[_TileIndex](this, row, col);
+                        _Tiles[row, col] = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
                         lastRow = row;
                         lastCol = col;
                     }

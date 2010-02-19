@@ -49,17 +49,21 @@ namespace AlienShooterGame
 
             Screen screen;
             WorldScreen world;
-            _Parent.Manager.LookupScreen("World", out screen);
-            world = (WorldScreen)screen;
-            int index = world.Player.Ammo;
-            if (world.Player.Reloading) index = 0;
-            for (int i = 0; i < Marine.ClipSize; i++)
+            try
             {
-                if (i < index)
-                    bullets[i].Hide = false;
-                else
-                    bullets[i].Hide = true;
+                _Parent.Manager.LookupScreen("World", out screen);
+                world = (WorldScreen)screen;
+                int index = world.Player.Ammo;
+                if (world.Player.Reloading) index = 0;
+                for (int i = 0; i < Marine.ClipSize; i++)
+                {
+                    if (i < index)
+                        bullets[i].Hide = false;
+                    else
+                        bullets[i].Hide = true;
+                }
             }
+            catch (Exception) { }
         }
 
 

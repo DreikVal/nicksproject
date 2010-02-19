@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -14,19 +15,45 @@ namespace AlienShooterGame
 
         protected Crosshair _Crosshair;
 
-        public const int TileCols = 120;
-        public const int TileRows = 120;
-        public const int NumAliens = 8;
+        public int TileCols;
+        public int TileRows;
+        public int NumAliens = 8;
 
         protected int _Frames = 60;
         protected int _NextFPSUpdate = 1000;
         protected bool _FPSDisplay = false;
 
+        protected String _WorldMap;
+
         protected String _HelpMessage = "New Features:  (F)lashlight, (R)eload, (N)ightVision, (F9)FPS, (F12) WorldEditor";
 
-        public WorldScreen(ScreenManager manager)
+        public WorldScreen(ScreenManager manager, String worldMap)
             : base(manager, "World")
         {
+            // Load world
+            _WorldMap = worldMap;
+            FileStream fs = File.OpenRead(_WorldMap);
+            BinaryReader bin = new BinaryReader(fs);
+
+            TileRows = bin.ReadInt32();
+            TileCols = bin.ReadInt32();
+            Tile.TileWidth = bin.ReadSingle();
+            Tile.TileHeight = bin.ReadSingle();
+            _Message ="Rows " + TileRows;
+
+            for (int row = 0; row < TileRows; row++)
+            {
+                for (int col = 0; col < TileCols; col++)
+                {
+                    int index = bin.ReadInt32();
+                    Tile.TileGen[index](this, row, col, index);
+                }
+            }
+
+            bin.Close();
+            fs.Close();
+
+
             // Create player
             _Player = new Marine(this);
             _Player.Geometry.Position.X = TileCols*Tile.TileWidth/2;
@@ -42,18 +69,6 @@ namespace AlienShooterGame
                 Alien.CreateNearbyAlien(this, _Player, dist, _Player);
             }
 
-            // Create ambient lights
-            //_RedLight = new LightSource(this, new Color(255,150,150), 650f, (float)Math.PI*2, 0.0f, new Vector2(400f,300f));
-            //_GreenLight = new LightSource(this, new Color(100,255,100), 1200f, 1.2f, 0.0f, new Vector2(600f, 700f));
-
-            // Setup tiles
-            for (int row = 0; row < TileRows; row++)
-            {
-                for (int col = 0; col < TileCols; col++)
-                {
-                    new Tile(this, "detail_tile", false, row, col);
-                }
-            }
 
             // Setup screen behavior
             Depth = 0.9f;
@@ -63,6 +78,7 @@ namespace AlienShooterGame
             _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
+            Application.AppReference.DynamicLighting = true;
         }
 
         protected override void HandleInputActive(Bind bind)
@@ -137,7 +153,13 @@ namespace AlienShooterGame
             else if (bind.Name.CompareTo("Editor") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    Screen gui;
+                    _Manager.LookupScreen("GUI", out gui);
+                    gui.Remove();
+                    Remove();
                     _Manager.AddScreen(new EditorScreen(_Manager));
+                }
             }
         }
 
