@@ -180,6 +180,56 @@ namespace AlienShooterGame
                     _Manager.AddScreen(new EditorScreen(_Manager));
                 }
             }
+            else if (bind.Name.CompareTo("Weapon1") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    if (Player.weaponList.Count > 0)
+                    {
+                        Player.currentWeapon = Player.weaponList[0];
+                    }
+                }
+            }
+            else if (bind.Name.CompareTo("Weapon2") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    if (Player.weaponList.Count > 1)
+                    {
+                        Player.currentWeapon = Player.weaponList[1];
+                    }
+                }
+            }
+            else if (bind.Name.CompareTo("Weapon3") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    if (Player.weaponList.Count > 2)
+                    {
+                        Player.currentWeapon = Player.weaponList[2];
+                    }
+                }
+            }
+            else if (bind.Name.CompareTo("Weapon4") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    if (Player.weaponList.Count > 3)
+                    {
+                        Player.currentWeapon = Player.weaponList[3];
+                    }
+                }
+            }
+            else if (bind.Name.CompareTo("Weapon5") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    if (Player.weaponList.Count > 4)
+                    {
+                        Player.currentWeapon = Player.weaponList[4];
+                    }
+                }
+            }
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)

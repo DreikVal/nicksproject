@@ -7,16 +7,18 @@ using Microsoft.Xna.Framework;
 
 namespace AlienShooterGame
 {
-    class Weapon
+    public class Weapon
     {
         public double weaponCooldown = 200;
         public int ReloadTime = 1500;
+        protected Marine player;
 
-        public Weapon()
+        public Weapon(Marine Player)
         {
+            this.player = Player;
         }
 
-        public void Fire(Marine player)
+        public void Fire()
         {
 
             // return;
@@ -33,6 +35,11 @@ namespace AlienShooterGame
                 player._Reloading = ReloadTime;
 
             Application.AppReference.Content.Load<SoundEffect>("Sounds\\bullet").Play();
+        }
+
+        public virtual string getName()
+        {
+            return "Handgun";
         }
     }
 }

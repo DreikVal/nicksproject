@@ -140,6 +140,11 @@ namespace AlienShooterGame
             _ScreenManager.Input.AddBind(new Bind("Editor", Keys.F12));
             _ScreenManager.Input.AddBind(new Bind("FPS", Keys.F9));
             _ScreenManager.Input.AddBind(new Bind("Save", Keys.F11));
+            _ScreenManager.Input.AddBind(new Bind("Weapon1", Keys.D1));
+            _ScreenManager.Input.AddBind(new Bind("Weapon2", Keys.D2));
+            _ScreenManager.Input.AddBind(new Bind("Weapon3", Keys.D3));
+            _ScreenManager.Input.AddBind(new Bind("Weapon4", Keys.D4));
+            _ScreenManager.Input.AddBind(new Bind("Weapon5", Keys.D5));
 
             // Load entity definitions
 
