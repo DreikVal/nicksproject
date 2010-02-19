@@ -17,11 +17,15 @@ namespace AlienShooterGame
 
         public int TileCols;
         public int TileRows;
-        public int NumAliens = 8;
+        public int NumAliens = 20;
 
         protected int _Frames = 60;
         protected int _NextFPSUpdate = 1000;
         protected bool _FPSDisplay = false;
+
+        protected bool isFiring = false;
+        protected double shotCooldown = 0.0;
+        protected double weaponCooldown = 200;
 
         protected String _WorldMap;
 
@@ -76,7 +80,7 @@ namespace AlienShooterGame
             _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
-            Application.AppReference.DynamicLighting = true;
+            Application.AppReference.DynamicLighting = false;
 
             // Create loadport
             LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 1000), 240f);
@@ -127,7 +131,9 @@ namespace AlienShooterGame
             else if (bind.Name.CompareTo("PrimaryFire") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
-                    _Player.Fire();
+                    isFiring = true;
+                else
+                    isFiring = false;
             }
             else if (bind.Name.CompareTo("Reload") == 0)
             {
@@ -166,6 +172,13 @@ namespace AlienShooterGame
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
+            shotCooldown += time.ElapsedGameTime.Milliseconds;
+            if (shotCooldown > weaponCooldown && isFiring)
+            {
+                shotCooldown = 0.0;
+                Player.Fire();
+            }
+
             base.Update(time);
 
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
