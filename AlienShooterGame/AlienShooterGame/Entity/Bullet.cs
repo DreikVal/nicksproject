@@ -11,12 +11,16 @@ namespace AlienShooterGame
         public static float Speed = 1.8f;
         public static int LifeTime = 2000;
 
+        public Entity Owner { get { return _Owner; } }
+        protected Entity _Owner;
+
         protected int _Remaining = LifeTime;
 
-        public Bullet(Screen parent, Vector2 position, double direction) : base(parent) 
+        public Bullet(Screen parent, Entity owner, Vector2 position, double direction) : base(parent) 
         {
             _Geometry.Position = position;
             _Geometry.Direction = direction;
+            _Owner = owner;
         }
 
         public override string Initialize()

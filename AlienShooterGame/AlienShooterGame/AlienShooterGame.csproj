@@ -87,6 +87,7 @@
     <Compile Include="EditorScreen.cs" />
     <Compile Include="Entity\Alien.cs" />
     <Compile Include="Entity\Blood.cs" />
+    <Compile Include="Entity\FloatingText.cs" />
     <Compile Include="Entity\Weapon.cs" />
     <Compile Include="Entity\Weapons\AutoHandGun.cs" />
     <Compile Include="Entity\Weapons\MachineGun.cs" />

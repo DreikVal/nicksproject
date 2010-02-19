@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace AlienShooterGame
 {
-    class Crosshair : Entity
+    public class Crosshair : Entity
     {
         public Crosshair(Screen parent) : base(parent) { }
 

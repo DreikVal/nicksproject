@@ -22,7 +22,7 @@ namespace AlienShooterGame
             _RadarGUI = new Radar_Gui(this);
 
             
-            _AmmoGUI.Geometry.Position.X = this.ViewPort.Size.X - 90;
+            _AmmoGUI.Geometry.Position.X = this.ViewPort.Size.X - 160;
             _AmmoGUI.Geometry.Position.Y = this.ViewPort.Size.Y - 35;
 
             _HealthGUI.Geometry.Position.X = 35;

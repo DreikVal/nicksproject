@@ -150,9 +150,12 @@ namespace AlienShooterGame
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
-                    _Player = new Marine(this);
-                    _Player.Geometry.Position.X = TileCols * Tile.TileWidth / 2;
-                    _Player.Geometry.Position.Y = TileRows * Tile.TileHeight / 2;
+                    if (_Player.Disposed)
+                    {
+                        _Player = new Marine(this);
+                        _Player.Geometry.Position.X = TileCols * Tile.TileWidth / 2;
+                        _Player.Geometry.Position.Y = TileRows * Tile.TileHeight / 2;
+                    }
                 }
             }
             else if (bind.Name.CompareTo("Reload") == 0)
@@ -254,7 +257,7 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
-
+            _Message = "Score: " + _Player.Score;
             //_Message = "Active: " + _Entities.Count + "  Inactive: " + _InactiveEntities.Count;
             /*
             if (time.TotalGameTime.Milliseconds % 37 == 0)
