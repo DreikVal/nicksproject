@@ -276,7 +276,7 @@ namespace AlienShooterGame
         }
         private object ForEachVisPopup(Screen screen, object p1, object p2, object p3)
         {
-            if (vblocker == null) screen.ActivateVisibility();
+            if (vblocker == null) { screen.ActivateVisibility(); return null; }
             if (screen.BlocksVisibility) return null;
             if (screen.Depth < vblocker.Depth)
                 screen.ActivateVisibility();
@@ -310,7 +310,7 @@ namespace AlienShooterGame
         }
         private object ForEachInputPopup(Screen screen, object p1, object p2, object p3)
         {
-            if (iblocker == null) screen.ActivateInput();
+            if (iblocker == null) { screen.ActivateInput(); return null; }
             if (screen.BlocksInput) return null;
             if (screen.Depth < iblocker.Depth)
                 screen.ActivateInput();
@@ -344,7 +344,7 @@ namespace AlienShooterGame
         }
         private object ForEachUpdatePopup(Screen screen, object p1, object p2, object p3)
         {
-            if (ublocker == null) screen.ActivateUpdates();
+            if (ublocker == null) { screen.ActivateUpdates(); return null; }
             if (screen.BlocksUpdates) return null;
             if (screen.Depth < ublocker.Depth)
                 screen.ActivateUpdates();
