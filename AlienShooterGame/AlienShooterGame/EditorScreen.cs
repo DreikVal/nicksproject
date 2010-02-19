@@ -14,8 +14,8 @@ namespace AlienShooterGame
         protected Crosshair _Crosshair;
         protected Editor_Gui _EditorGUI;
 
-        public const int TileCols = 100;
-        public const int TileRows = 100;
+        public int TileCols = 50;
+        public int TileRows = 50;
 
         protected int _TileIndex = 0;
 
