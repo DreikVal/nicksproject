@@ -139,11 +139,12 @@ namespace AlienShooterGame
             _ScreenManager.Input.AddBind(new Bind("NightVision", Keys.N));
             _ScreenManager.Input.AddBind(new Bind("Editor", Keys.F12));
             _ScreenManager.Input.AddBind(new Bind("FPS", Keys.F9));
+            _ScreenManager.Input.AddBind(new Bind("Save", Keys.F11));
 
             // Load entity definitions
 
             // Add game screens
-            _ScreenManager.AddScreen(new WorldScreen(_ScreenManager));
+            _ScreenManager.AddScreen(new WorldScreen(_ScreenManager, "world.awo"));
             _ScreenManager.AddScreen(new GUIScreen(_ScreenManager));
             
         }
