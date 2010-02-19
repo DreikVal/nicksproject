@@ -15,7 +15,7 @@ namespace AlienShooterGame
         public Entity Target { get { return _Target; } set { _Target = value; } } 
         protected Entity _Target;
 
-        public const float AlienSpeed = 0.08f;
+        public const float AlienSpeed = 0.14f;
 
         public Alien(Screen parent, Vector2 position, Entity target) : base(parent) 
         {
@@ -75,7 +75,7 @@ namespace AlienShooterGame
             double knockbackFactor = 1.3;
             player.CurrentHP -= alienHurt;
             Parent.ViewPort.Shake(3.0f, 0.8f, 0.95f);
-            for (int i = 0; i < BloodPerDeath; i++)
+            for (int i = 0; i < player.BloodPerHit; i++)
                 new Blood(_Parent, _Geometry.Position, Color.Red);
 
             //bump em

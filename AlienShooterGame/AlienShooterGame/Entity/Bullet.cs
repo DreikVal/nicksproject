@@ -34,7 +34,7 @@ namespace AlienShooterGame
             _Depth = 0.82f;
 
             // Flag as an active collision entity
-            CollisionType = CollisionType.Passive;
+            CollisionType = CollisionType.Active;
 
             // Return the name for this class
             return "Bullet";
