@@ -5,6 +5,8 @@ using System.Text;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace AlienShooterGame
 {
@@ -80,10 +82,18 @@ namespace AlienShooterGame
             _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
-            Application.AppReference.DynamicLighting = true;
+            Application.AppReference.DynamicLighting = false;
 
             // Create loadport
             LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 1000), 240f);
+
+            //music time
+            Random random = new Random();
+            int song = random.Next(0, 2);
+            if (song == 0)
+                MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\03 - Teardrop"));
+            if (song == 1)
+                MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\leanonme"));
         }
 
         protected override void HandleInputActive(Bind bind)
