@@ -9,6 +9,7 @@ namespace AlienShooterGame
     public class Alien : Entity
     {
         public const int BloodPerDeath = 24;
+        private const int alienHurt = 2;
 
         public Entity Target { get { return _Target; } set { _Target = value; } } 
         protected Entity _Target;
@@ -61,8 +62,23 @@ namespace AlienShooterGame
         {
             base.HandleCollision(otherEnt);
 
-            if (otherEnt as Bullet != null || otherEnt as Marine != null)
-                Dispose();
+            if (otherEnt as Bullet != null)
+            Dispose();
+
+            if (otherEnt as Marine != null)
+                hurtPlayer((Marine)otherEnt);
+        }
+
+        private void hurtPlayer(Marine player)
+        {
+            double knockbackFactor = 1.1;
+            player.CurrentHP -= alienHurt;
+
+            //bump em
+            Vector2 diff = Geometry.Position - player.Geometry.Position;
+            double angle = Math.Atan2(diff.Y, diff.X);
+            player.Geometry.Position.X = (float)(Geometry.Position.X + ((player.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Cos(angle) * knockbackFactor));
+            player.Geometry.Position.Y = (float)(Geometry.Position.Y + ((player.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Sin(angle) * knockbackFactor));
         }
 
         public override void Dispose()
