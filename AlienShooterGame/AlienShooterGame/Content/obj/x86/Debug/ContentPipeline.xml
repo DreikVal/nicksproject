@@ -253,6 +253,24 @@
       <Output>C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\health.xnb</Output>
       <Time>2010-02-19T15:57:36.4140625+09:00</Time>
     </Item>
+    <Item>
+      <Source>blip.png</Source>
+      <Name>blip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\blip.xnb</Output>
+      <Time>2010-02-19T18:46:12.1401238+09:00</Time>
+    </Item>
+    <Item>
+      <Source>radar.png</Source>
+      <Name>radar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\radar.xnb</Output>
+      <Time>2010-02-19T18:54:11.2123894+09:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
