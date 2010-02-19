@@ -28,7 +28,7 @@ namespace AlienShooterGame
             for (int i = 0; i < Marine.ClipSize; i++)
                 bullets[i] = new Ammo_Gui_Bullet(_Parent, firstPos + (i * increment));
 
-            Geometry = Geometry.CreateRectangularGeometry(this, 70, 180);
+            _Geometry = new Geometry(this, new Vector2(), 180.0f, 70.0f, 0.0f, 50.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();

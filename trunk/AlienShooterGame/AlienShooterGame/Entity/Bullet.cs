@@ -22,7 +22,7 @@ namespace AlienShooterGame
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            Geometry = Geometry.CreateRectangularGeometry(this, 56.0f, 2.5f);
+            _Geometry = new Geometry(this, new Vector2(), 2.0f, 56.0f, 0.0f, 3.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
@@ -52,9 +52,9 @@ namespace AlienShooterGame
             _Geometry.Position.Y += -(float)Math.Cos(_Geometry.Direction) * Speed * time.ElapsedGameTime.Milliseconds;          
         }
 
-        protected override void HandleCollision(Entity otherEnt, CollisionResult result)
+        protected override void HandleCollision(Entity otherEnt)
         {
-            base.HandleCollision(otherEnt, result);
+            base.HandleCollision(otherEnt);
 
             if (otherEnt as Marine == null && otherEnt as Bullet == null)
                 Dispose();

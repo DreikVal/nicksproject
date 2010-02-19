@@ -24,7 +24,7 @@ namespace AlienShooterGame
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            Geometry = Geometry.CreateRectangularGeometry(this, 48.0f, 48.0f);
+            _Geometry = new Geometry(this, new Vector2(), 48.0f, 48.0f, 0.0f, 18.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
@@ -36,7 +36,7 @@ namespace AlienShooterGame
             // Set crosshair to front of screen
             _Depth = 0.79f;
 
-            _DynamicLighting = false;
+            _DynamicLighting = true;
 
             // Flag as an active collision entity
             CollisionType = CollisionType.Active;
@@ -57,9 +57,9 @@ namespace AlienShooterGame
             _Geometry.Position.Y += -(float)Math.Cos(_Geometry.Direction) * AlienSpeed * time.ElapsedGameTime.Milliseconds;
         }
 
-        protected override void HandleCollision(Entity otherEnt, CollisionResult result)
+        protected override void HandleCollision(Entity otherEnt)
         {
-            base.HandleCollision(otherEnt, result);
+            base.HandleCollision(otherEnt);
 
             if (otherEnt as Bullet != null || otherEnt as Marine != null)
                 Dispose();
@@ -102,7 +102,7 @@ namespace AlienShooterGame
             {
                 // Create collision geometry for the marine
                 float size = (float)Application.AppReference.Random.NextDouble() * SizeVariation + BaseSize;
-                Geometry = Geometry.CreateCircularGeometry(this, size);
+                _Geometry = new Geometry(this, new Vector2(), size, size, 0.0f, size);
 
                 // Create an animation set for the marine
                 _Animations = new AnimationSet();
