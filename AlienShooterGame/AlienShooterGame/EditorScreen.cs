@@ -36,8 +36,7 @@ namespace AlienShooterGame
             // Create crosshair
             _Crosshair = new Crosshair(this);
 
-            _EditorGUI = new Editor_Gui(this);
-            _EditorGUI.Geometry.Position = new Vector2(764, 407);
+            _EditorGUI = new Editor_Gui(this, new Vector2(764, 407));
             PreviewTile = Tile.TileGen[_TileIndex](this, row, col);
             PreviewTile.Geometry.Position = new Vector2(734, 256);
             PreviewTile.Depth = 0.16f;
@@ -116,7 +115,6 @@ namespace AlienShooterGame
         {
             base.Update(time);
 
-            _EditorGUI.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 764 ,_ViewPort.ActualLocation.Y + 407);
             PreviewTile.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 754, _ViewPort.ActualLocation.Y + 397);
             PreviewTileB.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 774, _ViewPort.ActualLocation.Y + 417);
 
