@@ -10,8 +10,8 @@ namespace AlienShooterGame
     class Blood : Entity
     {
         public const int LifeTime = 19;
-        public const float BaseSize = 6.0f;
-        public const float SizeVariation = 16.0f;
+        public const float BaseSize = 8.0f;
+        public const float SizeVariation = 32.0f;
         public const float SpeedBase = 0.1f;
         public const float SpeedVariation = 0.2f;
         public const float SpeedDamping = 0.92f;

@@ -9,8 +9,8 @@ namespace AlienShooterGame
 {
     public class Tile : Entity
     {
-        public static float TileWidth = 24.0f;
-        public static float TileHeight = 24.0f;
+        public static float TileWidth = 16.0f;
+        public static float TileHeight = 16.0f;
 
         protected int _Row = 0;
         protected int _Col = 0;

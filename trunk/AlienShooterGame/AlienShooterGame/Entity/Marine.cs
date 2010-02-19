@@ -36,6 +36,9 @@ namespace AlienShooterGame
         public int Ammo { get { return _Ammo; } set { _Ammo = value; } }
         protected int _Ammo = ClipSize;
 
+        public int BloodPerHit { get { return _BloodPerHit; } }
+        protected int _BloodPerHit = 24;
+
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
                 if (_MoveForward) _Speed *= 0.707106781187f;

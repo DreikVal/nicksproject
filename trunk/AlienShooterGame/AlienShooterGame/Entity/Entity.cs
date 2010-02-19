@@ -166,7 +166,7 @@ namespace AlienShooterGame
 
             if (Application.AppReference.DynamicLighting && _DynamicLighting)
             {
-                Vector4 _Lighting = new Vector4(0.1f, 0.1f, 0.1f, 1.0f);
+                Vector4 _Lighting = new Vector4(0.15f, 0.15f, 0.15f, 1.0f);
                 foreach (LightSource light in _Parent.Lights)
                 {
                     if (!light.Active) continue;
