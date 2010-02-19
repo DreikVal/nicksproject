@@ -27,7 +27,8 @@ namespace AlienShooterGame
 
         public override string Initialize()
         {
-            Geometry = Geometry.CreateRectangularGeometry(this, 120, 120);
+            Geometry = new Geometry(this, new Vector2(), 120.0f, 120.0f, 0.0f);
+
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
