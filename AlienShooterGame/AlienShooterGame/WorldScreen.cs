@@ -80,7 +80,7 @@ namespace AlienShooterGame
             _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
-            Application.AppReference.DynamicLighting = false;
+            Application.AppReference.DynamicLighting = true;
 
             // Create loadport
             LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 1000), 240f);
