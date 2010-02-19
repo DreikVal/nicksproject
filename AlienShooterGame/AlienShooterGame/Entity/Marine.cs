@@ -25,6 +25,9 @@ namespace AlienShooterGame
         public LightSource NightVision { get { return _NightVision; } }
         protected LightSource _NightVision;
 
+        public int Score { get { return _Score; } set { _Score = value; } }
+        protected int _Score;
+
         public int _Reloading = -1;
 
         public bool Reloading { get { return _Reloading > 0; } }
@@ -124,7 +127,7 @@ namespace AlienShooterGame
 
         public void Fire()
         {
-            if (!Reloading)
+            if (!Reloading && !Disposed)
                 currentWeapon.Fire();
         }
 
@@ -139,7 +142,7 @@ namespace AlienShooterGame
             for (int i = 0; i < BloodOnDeath; i++)
                 new Blood(_Parent, _Geometry.Position, Color.Red, 12.0f, 56.0f, 0.1f, 0.8f, 0.88f, 42);
 
-            _Parent.Message = "Game over man..";
+            _Parent.Message = "Press secondary fire to respawn...";
 
             _Parent.Lights.Remove(_FlashLight);
             _Parent.Lights.Remove(_NightVision);

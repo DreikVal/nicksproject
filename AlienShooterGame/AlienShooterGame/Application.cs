@@ -150,8 +150,7 @@ namespace AlienShooterGame
 
             // Add game screens
             _ScreenManager.AddScreen(new WorldScreen(_ScreenManager, "world.awo"));
-            _ScreenManager.AddScreen(new GUIScreen(_ScreenManager));
-            
+            _ScreenManager.AddScreen(new GUIScreen(_ScreenManager));       
         }
 
         protected virtual void InitializeAudio()
