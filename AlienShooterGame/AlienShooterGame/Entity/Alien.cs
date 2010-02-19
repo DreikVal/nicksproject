@@ -36,7 +36,7 @@ namespace AlienShooterGame
             // Set crosshair to front of screen
             _Depth = 0.79f;
 
-            _DynamicLighting = true;
+            _DynamicLighting = false;
 
             // Flag as an active collision entity
             CollisionType = CollisionType.Active;

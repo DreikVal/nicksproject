@@ -10,16 +10,21 @@ namespace AlienShooterGame
     class GUIScreen : Screen
     {
         Ammo_Gui _AmmoGUI;
+        Health_Gui _HealthGUI;
 
         public GUIScreen(ScreenManager manager)
             : base(manager, "GUI")
         {
             _ViewPort.Size = new Vector2(800, 440);
             _AmmoGUI = new Ammo_Gui(this);
+            _HealthGUI = new Health_Gui(this);
 
             
             _AmmoGUI.Geometry.Position.X = this.ViewPort.Size.X - 90;
             _AmmoGUI.Geometry.Position.Y = this.ViewPort.Size.Y - 35;
+
+            _HealthGUI.Geometry.Position.X = 35;
+            _HealthGUI.Geometry.Position.Y = this.ViewPort.Size.Y - 30;
 
             Depth = 0.2f;
             _BackBehaviour = ActionOnBack.ExitApplication;
