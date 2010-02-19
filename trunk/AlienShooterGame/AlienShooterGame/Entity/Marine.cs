@@ -38,7 +38,10 @@ namespace AlienShooterGame
         protected int _Ammo = ClipSize;
 
         public int BloodPerHit { get { return _BloodPerHit; } }
-        protected int _BloodPerHit = 24;
+        protected int _BloodPerHit = 14;
+
+        public int BloodOnDeath { get { return _BloodOnDeath; } }
+        protected int _BloodOnDeath = 56;
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -129,6 +132,18 @@ namespace AlienShooterGame
         {
             _Reloading = currentWeapon.ReloadTime;
         }
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            for (int i = 0; i < BloodOnDeath; i++)
+                new Blood(_Parent, _Geometry.Position, Color.Red, 12.0f, 56.0f, 0.1f, 0.8f, 0.88f, 42);
+
+            _Parent.Message = "Game over man..";
+
+            _Parent.Lights.Remove(_FlashLight);
+            _Parent.Lights.Remove(_NightVision);
+        }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
@@ -139,6 +154,12 @@ namespace AlienShooterGame
             Vector2 mLoc = new Vector2();
             mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
             mLoc.Y = mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
+
+            if (_CurrentHP <= 0)
+            {
+                _CurrentHP = 0;
+                Dispose();
+            }
 
             _Geometry.Direction = ((float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + Math.PI/2);
 

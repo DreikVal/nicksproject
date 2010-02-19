@@ -19,7 +19,7 @@ namespace AlienShooterGame
 
         public int TileCols;
         public int TileRows;
-        public int NumAliens = 20;
+        public int NumAliens = 8;
 
         protected int _Frames = 60;
         protected int _NextFPSUpdate = 1000;
@@ -84,7 +84,7 @@ namespace AlienShooterGame
             _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
-            Application.AppReference.DynamicLighting = false;
+            //Application.AppReference.DynamicLighting = false;
 
             // Create loadport
             LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 1000), 240f);

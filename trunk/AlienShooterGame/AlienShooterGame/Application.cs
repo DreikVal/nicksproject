@@ -79,7 +79,7 @@ namespace AlienShooterGame
         protected Random _Random = new Random(DateTime.Now.Millisecond);
 
         public bool DynamicLighting { get { return _DynamicLighting; } set { _DynamicLighting = value; } }
-        public bool _DynamicLighting = false;
+        public bool _DynamicLighting = true;
 
         /// <summary>
         /// Creates a new Game Application.
