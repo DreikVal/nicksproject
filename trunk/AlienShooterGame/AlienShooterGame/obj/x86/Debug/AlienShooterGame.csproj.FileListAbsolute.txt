@@ -36,3 +36,9 @@ C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Deb
 C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.exe
 C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\obj\x86\Debug\AlienShooterGame.pdb
 C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\ammobox.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\bullet_gui.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\alien1.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\alien_blood.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\alien3.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\editorbox.xnb
+C:\Users\Nick\Desktop\nicksproject\AlienShooterGame\AlienShooterGame\bin\x86\Debug\Content\health.xnb

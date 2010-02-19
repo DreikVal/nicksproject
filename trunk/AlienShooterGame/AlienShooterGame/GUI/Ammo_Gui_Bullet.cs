@@ -10,7 +10,7 @@ namespace AlienShooterGame
     {
         public Ammo_Gui_Bullet(Screen Parent, Vector2 position)
             : base(Parent)
-
+            
         {
             DynamicLighting = false;
             Depth = 0.18f;
@@ -38,6 +38,13 @@ namespace AlienShooterGame
         {
             base.Update(time);
         }
+
+         //Screen screen;
+         //   WorldScreen world;
+         //   _Manager.LookupScreen("World", out screen);
+         //   world = (WorldScreen)screen;
+         //   world.Player.Ammo.FUCKYEAH
+
 
 
     }
