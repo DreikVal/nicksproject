@@ -14,6 +14,7 @@ namespace AlienShooterGame
         public GUIScreen(ScreenManager manager)
             : base(manager, "GUI")
         {
+            _ViewPort.Size = new Vector2(800, 440);
             _AmmoGUI = new Ammo_Gui(this);
 
             
