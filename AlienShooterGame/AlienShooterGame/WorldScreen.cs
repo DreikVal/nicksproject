@@ -39,7 +39,6 @@ namespace AlienShooterGame
             TileCols = bin.ReadInt32();
             Tile.TileWidth = bin.ReadSingle();
             Tile.TileHeight = bin.ReadSingle();
-            _Message ="Rows " + TileRows;
 
             for (int row = 0; row < TileRows; row++)
             {
@@ -52,7 +51,6 @@ namespace AlienShooterGame
 
             bin.Close();
             fs.Close();
-
 
             // Create player
             _Player = new Marine(this);
@@ -79,6 +77,9 @@ namespace AlienShooterGame
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
             Application.AppReference.DynamicLighting = true;
+
+            // Create loadport
+            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 900), 500.0f);
         }
 
         protected override void HandleInputActive(Bind bind)
@@ -170,6 +171,8 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
+
+            //_Message = "Active: " + _Entities.Count + "  Inactive: " + _InactiveEntities.Count;
             /*
             if (time.TotalGameTime.Milliseconds % 37 == 0)
                 _RedLight.Active = !_RedLight.Active;

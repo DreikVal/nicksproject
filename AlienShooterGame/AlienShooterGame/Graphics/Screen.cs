@@ -270,6 +270,12 @@ namespace AlienShooterGame
         public List<LightSource> Lights { get { return _Lights; } }
         protected List<LightSource> _Lights = new List<LightSource>();
 
+        public ThreadDictionary<UInt64, Entity> InactiveEntities { get { return _InactiveEntities; } }
+        protected ThreadDictionary<UInt64, Entity> _InactiveEntities = new ThreadDictionary<ulong, Entity>();
+
+        public LoadPort LoadPort { get { return _LoadPort; } set { _LoadPort = value; } }
+        protected LoadPort _LoadPort = null;
+
 
         /// <summary>
         /// Creates a new Screen object.
@@ -393,7 +399,9 @@ namespace AlienShooterGame
             if (_Dying && !_ViewPort.IsSliding)
                 Manager.RemoveScreen(this);
 
-            _ViewPort.Update(time); 
+            // Update ports
+            _ViewPort.Update(time);
+            if (_LoadPort != null) _LoadPort.Update(time);
 
             // Check that the player has signed in.
             if (_RequiresSignIn)

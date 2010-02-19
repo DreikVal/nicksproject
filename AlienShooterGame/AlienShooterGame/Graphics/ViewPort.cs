@@ -23,7 +23,7 @@ namespace AlienShooterGame
         /// <summary>
         /// The size in game units of the screen.
         /// </summary>
-        public Vector2 Size = new Vector2(800, 440);
+        public Vector2 Size = new Vector2(800, 500);
 
         /// <summary>
         /// The exact location of the top left corner of the screen in game units.

@@ -217,8 +217,8 @@ namespace AlienShooterGame
         {
             if (_Geometry.Position.X + _Geometry.Radius < _Parent.ViewPort.ActualLocation.X ||
                 _Geometry.Position.Y + _Geometry.Radius < _Parent.ViewPort.ActualLocation.Y ||
-                _Geometry.Position.X > _Parent.ViewPort.ActualLocation.X + _Parent.ViewPort.Size.X ||
-                _Geometry.Position.Y > _Parent.ViewPort.ActualLocation.Y + _Parent.ViewPort.Size.Y)
+                _Geometry.Position.X - _Geometry.Radius > _Parent.ViewPort.ActualLocation.X + _Parent.ViewPort.Size.X ||
+                _Geometry.Position.Y - _Geometry.Radius > _Parent.ViewPort.ActualLocation.Y + _Parent.ViewPort.Size.Y)
                 return false;
             return true;
         }
