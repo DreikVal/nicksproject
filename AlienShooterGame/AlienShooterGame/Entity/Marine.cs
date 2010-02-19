@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace AlienShooterGame
 {
@@ -98,7 +99,7 @@ namespace AlienShooterGame
             _NightVision.Active = false;
 
             // Activate dynamic lighting for the marine
-            _DynamicLighting = true;
+            _DynamicLighting = false;
 
             // Flag as an active collision entity
             CollisionType = CollisionType.Active;
@@ -121,6 +122,8 @@ namespace AlienShooterGame
             new MuzzleFlash(_Parent, bulletPos, this);
             if (--_Ammo <= 0)
                 _Reloading = ReloadTime;
+
+            Application.AppReference.Content.Load<SoundEffect>("Sounds\\bullet").Play();
         }
 
         public void Reload()
