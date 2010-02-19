@@ -20,6 +20,7 @@ namespace AlienShooterGame
 
         protected int _MaxHP = 100;
         protected int _CurrentHP;
+        protected float _Speed = AlienSpeed;
 
         public Alien(Screen parent, Vector2 position, Entity target) : base(parent) 
         {
@@ -63,8 +64,11 @@ namespace AlienShooterGame
             float y_diff = _Geometry.Position.Y - _Target.Geometry.Position.Y;
             _Geometry.Direction = Math.Atan2(y_diff, x_diff) - Math.PI/2;
 
-            _Geometry.Position.X += (float)Math.Sin(_Geometry.Direction) * AlienSpeed * time.ElapsedGameTime.Milliseconds;
-            _Geometry.Position.Y += -(float)Math.Cos(_Geometry.Direction) * AlienSpeed * time.ElapsedGameTime.Milliseconds;
+            if (_Speed < AlienSpeed)
+                _Speed *= 1.01f;
+
+            _Geometry.Position.X += (float)Math.Sin(_Geometry.Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+            _Geometry.Position.Y += -(float)Math.Cos(_Geometry.Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
         }
 
         protected override void HandleCollision(Entity otherEnt)
@@ -73,19 +77,28 @@ namespace AlienShooterGame
 
             if (otherEnt as Bullet != null)
             {
-                int damage = 5 + Application.AppReference.Random.Next(50);
+                int damage = 5 + Application.AppReference.Random.Next(15);
                 _CurrentHP -= damage;
                 for (int i = 0; i < BloodPerHit; i++)
                     new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 16.0f, 0.1f, 0.2f, 0.92f, 22);
                 Vector2 diff = otherEnt.Geometry.Position - Geometry.Position;
                 double angle = Math.Atan2(diff.Y, diff.X);
-                float knockbackFactor = 1.4f;
-                Geometry.Position.X = (float)(otherEnt.Geometry.Position.X + ((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * -Math.Cos(angle) * knockbackFactor));
-                Geometry.Position.Y = (float)(otherEnt.Geometry.Position.Y + ((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * -Math.Sin(angle) * knockbackFactor));
+                float knockbackFactor = 0.9f;
+                Geometry.Position.X += (float)((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * Math.Cos(Geometry.Direction - Math.PI) * knockbackFactor);
+                Geometry.Position.Y += (float)((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * -Math.Sin(Geometry.Direction - Math.PI) * knockbackFactor);
+                _Speed *= 0.55f;
+            }
+            else if (otherEnt as Alien != null)
+            {
+                Vector2 diff = Geometry.Position - otherEnt.Geometry.Position;
+                double angle = Math.Atan2(diff.Y, diff.X);
+                otherEnt.Geometry.Position.X = (float)(Geometry.Position.X + ((otherEnt.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Cos(angle)));
+                otherEnt.Geometry.Position.Y = (float)(Geometry.Position.Y + ((otherEnt.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Sin(angle)));
             }
 
-            if (otherEnt as Marine != null)
+            else if (otherEnt as Marine != null)
                 hurtPlayer((Marine)otherEnt);
+
         }
 
         private void hurtPlayer(Marine player)

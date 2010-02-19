@@ -85,7 +85,7 @@ namespace AlienShooterGame
         {
 
             // Create collision geometry for the marine
-            _Geometry = new Geometry(this, new Vector2(), 54.0f, 54.0f, 0.0f, 20.0f);
+            _Geometry = new Geometry(this, new Vector2(), 54.0f, 54.0f, 0.0f, 16.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
