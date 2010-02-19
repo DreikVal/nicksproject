@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
@@ -71,8 +72,11 @@ namespace AlienShooterGame
 
         private void hurtPlayer(Marine player)
         {
-            double knockbackFactor = 1.1;
+            double knockbackFactor = 1.3;
             player.CurrentHP -= alienHurt;
+            Parent.ViewPort.Shake(3.0f, 0.8f, 0.95f);
+            for (int i = 0; i < BloodPerDeath; i++)
+                new Blood(_Parent, _Geometry.Position, Color.Red);
 
             //bump em
             Vector2 diff = Geometry.Position - player.Geometry.Position;
@@ -86,7 +90,7 @@ namespace AlienShooterGame
             base.Dispose();
 
             for (int i = 0; i < BloodPerDeath; i++)
-                new AlienBlood(_Parent, _Geometry.Position);
+                new Blood(_Parent, _Geometry.Position, Color.Green);
 
             Alien.CreateNearbyAlien(_Parent, ((WorldScreen)_Parent).Player, 350, _Target);
         }
