@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="EditorScreen.cs" />
     <Compile Include="Entity\Alien.cs" />
+    <Compile Include="GUI\Radar_GUI.cs" />
     <Compile Include="GUI\Health_GUI.cs" />
     <Compile Include="Utility\LoadPort.cs" />
     <Compile Include="GUI\Ammo_GUI.cs" />
@@ -115,6 +116,7 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="radar.png" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
