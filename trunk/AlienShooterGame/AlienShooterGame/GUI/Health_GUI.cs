@@ -73,15 +73,19 @@ namespace AlienShooterGame
 
         public override void Draw(GameTime time, Microsoft.Xna.Framework.Graphics.SpriteBatch batch)
         {
-            batch.DrawString(getFont(), getHP().ToString(),
-                new Vector2(this.Geometry.Position.X + healthOffset.X,
-                    this.Geometry.Position.Y + healthOffset.Y),
-                    Color.Orange,
-                    0.0f,
-                    Vector2.Zero,
-                    3.0f,
-                    SpriteEffects.None,
-                    0.0f);
+            try
+            {
+                batch.DrawString(getFont(), getHP().ToString(),
+                    new Vector2(this.Geometry.Position.X + healthOffset.X,
+                        this.Geometry.Position.Y + healthOffset.Y),
+                        Color.Orange,
+                        0.0f,
+                        Vector2.Zero,
+                        3.0f,
+                        SpriteEffects.None,
+                        0.0f);
+            }
+            catch (Exception) { }
 
             base.Draw(time, batch);
         }

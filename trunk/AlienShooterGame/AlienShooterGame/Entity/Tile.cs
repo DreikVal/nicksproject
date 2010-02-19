@@ -71,6 +71,21 @@ namespace AlienShooterGame
             return "Tile";
         }
 
+        protected override void HandleCollision(Entity ent)
+        {
+            base.HandleCollision(ent);
+
+            if (ent as Bullet != null)
+                ent.Dispose();
+
+            if (ent as Marine == null && ent as Alien == null) return;
+
+            Vector2 diff = Geometry.Position - ent.Geometry.Position;
+            double angle = Math.Atan2(diff.Y, diff.X);
+            ent.Geometry.Position.X = (float)( Geometry.Position.X + ((ent.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Cos(angle)));
+            ent.Geometry.Position.Y = (float)( Geometry.Position.Y + ((ent.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Sin(angle)));
+        }
+
 
         public static Tile Tile_Floor1(Screen parent, int row, int col, int tileIndex)
         {
@@ -78,15 +93,15 @@ namespace AlienShooterGame
         }
         public static Tile Tile_Floor2(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "detail_tile", false, row, col, tileIndex);
+            return new Tile(parent, "detail_tile", true, row, col, tileIndex);
         }
         public static Tile Tile_Floor3(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "bar_tile", false, row, col, tileIndex);
+            return new Tile(parent, "bar_tile", true, row, col, tileIndex);
         }
         public static Tile Tile_Floor4(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "para_tile", false, row, col, tileIndex);
+            return new Tile(parent, "para_tile", true, row, col, tileIndex);
         }
         public static Tile Tile_Floor5(Screen parent, int row, int col, int tileIndex)
         {
@@ -94,11 +109,11 @@ namespace AlienShooterGame
         }
         public static Tile Tile_Floor6(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "ball_tile", false, row, col, tileIndex);
+            return new Tile(parent, "ball_tile", true, row, col, tileIndex);
         }
         public static Tile Tile_Floor7(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "cross_tile", false, row, col, tileIndex);
+            return new Tile(parent, "cross_tile", true, row, col, tileIndex);
         }
         public static Tile Tile_Floor8(Screen parent, int row, int col, int tileIndex)
         {
@@ -118,7 +133,7 @@ namespace AlienShooterGame
         }
         public static Tile Tile_Floor12(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "half_tile", false, row, col, tileIndex);
+            return new Tile(parent, "half_tile", true, row, col, tileIndex);
         }
         public static Tile Tile_Floor13(Screen parent, int row, int col, int tileIndex)
         {

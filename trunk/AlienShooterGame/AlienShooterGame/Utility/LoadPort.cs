@@ -31,9 +31,9 @@ namespace AlienShooterGame
 
             if (diff.Length() > _Threshold)
             {
-                if (_Worker.IsBusy) return;
                 _Worker.DoWork += LoadContent;
-                _Worker.RunWorkerAsync();
+                if (!_Worker.IsBusy)
+                    _Worker.RunWorkerAsync();
             }
         }
 
