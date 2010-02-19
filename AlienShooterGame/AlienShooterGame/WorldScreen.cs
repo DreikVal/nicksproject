@@ -92,8 +92,7 @@ namespace AlienShooterGame
             //music time
             Random random = new Random();
             int song = random.Next(0, 2);
-            //if (song == 0)
-            //    MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\03 - Teardrop"));
+            MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\03 - Teardrop"));
             //if (song == 1)
             //    MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\leanonme"));
         }

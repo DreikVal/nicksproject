@@ -9,6 +9,7 @@ namespace AlienShooterGame
 {
     public class Alien : Entity
     {
+        public const int BloodPerHit = 9;
         public const int BloodPerDeath = 24;
         private const int alienHurt = 2;
 
@@ -17,10 +18,14 @@ namespace AlienShooterGame
 
         public const float AlienSpeed = 0.14f;
 
+        protected int _MaxHP = 100;
+        protected int _CurrentHP;
+
         public Alien(Screen parent, Vector2 position, Entity target) : base(parent) 
         {
             _Geometry.Position = position;
             _Target = target;
+            _CurrentHP = _MaxHP;
         }
 
         public override string Initialize()
@@ -51,6 +56,9 @@ namespace AlienShooterGame
         {
  	        base.Update(time);
 
+            if (_CurrentHP <= 0)
+                Dispose();
+
             float x_diff = _Geometry.Position.X - _Target.Geometry.Position.X;
             float y_diff = _Geometry.Position.Y - _Target.Geometry.Position.Y;
             _Geometry.Direction = Math.Atan2(y_diff, x_diff) - Math.PI/2;
@@ -64,7 +72,17 @@ namespace AlienShooterGame
             base.HandleCollision(otherEnt);
 
             if (otherEnt as Bullet != null)
-            Dispose();
+            {
+                int damage = 5 + Application.AppReference.Random.Next(50);
+                _CurrentHP -= damage;
+                for (int i = 0; i < BloodPerHit; i++)
+                    new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 16.0f, 0.1f, 0.2f, 0.92f, 22);
+                Vector2 diff = otherEnt.Geometry.Position - Geometry.Position;
+                double angle = Math.Atan2(diff.Y, diff.X);
+                float knockbackFactor = 1.4f;
+                Geometry.Position.X = (float)(otherEnt.Geometry.Position.X + ((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * -Math.Cos(angle) * knockbackFactor));
+                Geometry.Position.Y = (float)(otherEnt.Geometry.Position.Y + ((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * -Math.Sin(angle) * knockbackFactor));
+            }
 
             if (otherEnt as Marine != null)
                 hurtPlayer((Marine)otherEnt);

@@ -33,7 +33,7 @@ namespace AlienShooterGame
         public int CurrentHP { get { return _CurrentHP; } set { _CurrentHP = value; } }
         protected int _CurrentHP = MaxHP;
 
-        public const int ClipSize = 25;
+        public const int ClipSize = 75;
         public int Ammo { get { return _Ammo; } set { _Ammo = value; } }
         protected int _Ammo = ClipSize;
 
@@ -143,6 +143,7 @@ namespace AlienShooterGame
 
             _Parent.Lights.Remove(_FlashLight);
             _Parent.Lights.Remove(_NightVision);
+            _Parent.Lights.Remove(_Muzzle);
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)
