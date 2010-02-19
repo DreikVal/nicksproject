@@ -86,7 +86,7 @@ namespace AlienShooterGame
                         Color.Red,
                         0.0f,
                         Vector2.Zero,
-                        3.0f,
+                        2.5f,
                         SpriteEffects.None,
                         0.0f);
             }

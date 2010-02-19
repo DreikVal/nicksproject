@@ -33,7 +33,7 @@ namespace AlienShooterGame
 
         protected String _WorldMap;
 
-        protected String _HelpMessage = "New Features:  (F)lashlight, (R)eload, (N)ightVision, (F9)FPS, (F12) WorldEditor";
+        protected String _HelpMessage = "(F)lashlight, (R)eload, (N)ightVision, (F9)FPS, (F12) WorldEditor \n 1-5 to Switch Weapon";
 
         public WorldScreen(ScreenManager manager, String worldMap)
             : base(manager, "World")
