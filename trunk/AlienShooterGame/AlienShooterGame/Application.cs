@@ -79,7 +79,7 @@ namespace AlienShooterGame
         protected Random _Random = new Random(DateTime.Now.Millisecond);
 
         public bool DynamicLighting { get { return _DynamicLighting; } set { _DynamicLighting = value; } }
-        public bool _DynamicLighting = true;
+        public bool _DynamicLighting = false;
 
         /// <summary>
         /// Creates a new Game Application.
@@ -210,6 +210,11 @@ namespace AlienShooterGame
         /// <param name="e">Event arguments.</param>
         protected virtual void GamerLeft(object sender, GamerLeftEventArgs e)
         {
+        }
+
+        protected override void OnExiting(object sender, EventArgs args)
+        {
+            MediaPlayer.Stop();
         }
     }
 }
