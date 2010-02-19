@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
@@ -12,6 +13,8 @@ namespace AlienShooterGame
         protected Ammo_Gui_Bullet[] bullets;
         protected Vector2 firstPos = new Vector2(794f, 422f);
         protected Vector2 increment = new Vector2(-7f, 0f);
+        protected Vector2 reloadOffset = new Vector2(570, 495);
+        protected int bulletIndex;
 
         public Ammo_Gui(Screen Parent)
             : base(Parent)
@@ -53,17 +56,55 @@ namespace AlienShooterGame
             {
                 _Parent.Manager.LookupScreen("World", out screen);
                 world = (WorldScreen)screen;
-                int index = world.Player.Ammo;
-                if (world.Player.Reloading) index = 0;
+                bulletIndex = world.Player.Ammo;
+                if (world.Player.Reloading)
+                    bulletIndex = -1;
                 for (int i = 0; i < Marine.ClipSize; i++)
                 {
-                    if (i < index)
+                    if (i < bulletIndex)
                         bullets[i].Hide = false;
                     else
                         bullets[i].Hide = true;
                 }
             }
             catch (Exception) { }
+        }
+
+        public override void Draw(GameTime time, Microsoft.Xna.Framework.Graphics.SpriteBatch batch)
+        {
+            if (bulletIndex == -1)
+            {
+                try
+                {
+                    batch.DrawString(getFont(), "Reloading...",
+                        new Vector2(this.Geometry.Position.X + reloadOffset.X,
+                            this.Geometry.Position.Y + reloadOffset.Y),
+                            Color.Red,
+                            0.0f,
+                            Vector2.Zero,
+                            3.0f,
+                            SpriteEffects.None,
+                            0.0f);
+                }
+                catch (Exception) { }
+            }
+            base.Draw(time, batch);
+        }
+
+        private SpriteFont getFont()
+        {
+            Screen screen;
+            WorldScreen world;
+
+            try
+            {
+                _Parent.Manager.LookupScreen("World", out screen);
+                world = (WorldScreen)screen;
+                return world.MessageFont;
+            }
+            catch (Exception) { }
+
+            return null;
         }
 
 
