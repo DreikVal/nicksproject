@@ -44,6 +44,6 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
             base.Update(time);
-        }      
+        }
     }
 }

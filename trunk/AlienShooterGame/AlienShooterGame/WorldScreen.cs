@@ -146,6 +146,15 @@ namespace AlienShooterGame
                 else
                     isFiring = false;
             }
+            else if (bind.Name.CompareTo("SecondaryFire") == 0) 
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    _Player = new Marine(this);
+                    _Player.Geometry.Position.X = TileCols * Tile.TileWidth / 2;
+                    _Player.Geometry.Position.Y = TileRows * Tile.TileHeight / 2;
+                }
+            }
             else if (bind.Name.CompareTo("Reload") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)

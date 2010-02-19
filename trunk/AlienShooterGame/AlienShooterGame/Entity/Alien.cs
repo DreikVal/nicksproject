@@ -32,7 +32,7 @@ namespace AlienShooterGame
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            _Geometry = new Geometry(this, new Vector2(), 48.0f, 48.0f, 0.0f, 18.0f);
+            _Geometry = new Geometry(this, new Vector2(), 44.0f, 44.0f, 0.0f, 16.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
@@ -60,6 +60,8 @@ namespace AlienShooterGame
             if (_CurrentHP <= 0)
                 Dispose();
 
+            if (_Target.Disposed) _Target = ((WorldScreen)_Parent).Player;
+
             float x_diff = _Geometry.Position.X - _Target.Geometry.Position.X;
             float y_diff = _Geometry.Position.Y - _Target.Geometry.Position.Y;
             _Geometry.Direction = Math.Atan2(y_diff, x_diff) - Math.PI/2;
@@ -77,16 +79,16 @@ namespace AlienShooterGame
 
             if (otherEnt as Bullet != null)
             {
-                int damage = 5 + Application.AppReference.Random.Next(15);
+                int damage = 15 + Application.AppReference.Random.Next(45);
                 _CurrentHP -= damage;
                 for (int i = 0; i < BloodPerHit; i++)
                     new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 16.0f, 0.1f, 0.2f, 0.92f, 22);
                 Vector2 diff = otherEnt.Geometry.Position - Geometry.Position;
                 double angle = Math.Atan2(diff.Y, diff.X);
-                float knockbackFactor = 0.9f;
+                float knockbackFactor = 0.7f;
                 Geometry.Position.X += (float)((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * Math.Cos(Geometry.Direction - Math.PI) * knockbackFactor);
                 Geometry.Position.Y += (float)((Geometry.CollisionRadius + otherEnt.Geometry.CollisionRadius) * -Math.Sin(Geometry.Direction - Math.PI) * knockbackFactor);
-                _Speed *= 0.55f;
+                _Speed *= 0.60f;
             }
             else if (otherEnt as Alien != null)
             {
@@ -103,7 +105,7 @@ namespace AlienShooterGame
 
         private void hurtPlayer(Marine player)
         {
-            double knockbackFactor = 1.3;
+            double knockbackFactor = 1.2;
             player.CurrentHP -= alienHurt;
             Parent.ViewPort.Shake(3.0f, 0.8f, 0.95f);
             for (int i = 0; i < player.BloodPerHit; i++)
