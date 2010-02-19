@@ -79,7 +79,7 @@ namespace AlienShooterGame
             Application.AppReference.DynamicLighting = true;
 
             // Create loadport
-            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 900), 500.0f);
+            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 1000), 240f);
         }
 
         protected override void HandleInputActive(Bind bind)
