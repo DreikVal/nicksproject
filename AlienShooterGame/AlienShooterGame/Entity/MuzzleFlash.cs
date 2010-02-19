@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
@@ -25,19 +26,21 @@ namespace AlienShooterGame
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            _Geometry = new Geometry(this, new Vector2(), 50.0f, 50.0f, 0.0f, 50.0f);
+            _Geometry = new Geometry(this, new Vector2(), 20.0f, 20.0f, 0.0f, 0.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
 
             // Add the default animation
-            Animation normal = new Animation("muzzle", "Normal", 1, 3, 6.0f);
+            Animation normal = new Animation("muzzle_flash", "Normal", 1, 5, 10.0f);
             normal.Loop = 1;
             _Animations.AddAnimation(normal);
             _Animations.PlayAnimation("Normal");
 
             // Set crosshair to front of screen
             _Depth = 0.18f;
+
+            _ColourOverlay = new Color(1.0f, 0.9f, 0.7f, 0.6f);
 
             // Return the name for this class
             return "MuzzleFlash";

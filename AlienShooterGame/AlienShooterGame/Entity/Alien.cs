@@ -76,7 +76,7 @@ namespace AlienShooterGame
             player.CurrentHP -= alienHurt;
             Parent.ViewPort.Shake(3.0f, 0.8f, 0.95f);
             for (int i = 0; i < player.BloodPerHit; i++)
-                new Blood(_Parent, _Geometry.Position, Color.Red);
+                new Blood(_Parent, _Geometry.Position, Color.Red, 8.0f, 16.0f, 0.1f, 0.2f, 0.92f, 22);
 
             //bump em
             Vector2 diff = Geometry.Position - player.Geometry.Position;
@@ -90,7 +90,7 @@ namespace AlienShooterGame
             base.Dispose();
 
             for (int i = 0; i < BloodPerDeath; i++)
-                new Blood(_Parent, _Geometry.Position, Color.Green);
+                new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 32.0f, 0.1f, 0.2f, 0.92f, 25);
 
             Alien.CreateNearbyAlien(_Parent, ((WorldScreen)_Parent).Player, 350, _Target);
         }
