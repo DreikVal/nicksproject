@@ -39,7 +39,7 @@ namespace AlienShooterGame
         /// <summary>
         /// The location of the top left of the screen before EffectOffset is applied.
         /// </summary>
-        public Vector2 TargetLocation = new Vector2(0, 0);
+        public Vector2 TargetLocation;
 
         // Variables for handling screen shakes
         protected float _ShakeDamping = 0.90f;

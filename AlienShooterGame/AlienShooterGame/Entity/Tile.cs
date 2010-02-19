@@ -15,7 +15,10 @@ namespace AlienShooterGame
         protected int _Row = 0;
         protected int _Col = 0;
 
-        public static Func<Screen, int, int, Tile>[] TileGen = {
+        public int TileIndex { get { return _TileIndex; } set { _TileIndex = value; } }
+        protected int _TileIndex;
+
+        public static Func<Screen, int, int, int, Tile>[] TileGen = {
                                                             Tile_Floor1,
                                                             Tile_Floor2,
                                                             Tile_Floor3,
@@ -32,7 +35,7 @@ namespace AlienShooterGame
                                                             Tile_Floor14
                                                         };
 
-        public Tile(Screen parent, String texName, bool collidable, int row, int col)
+        public Tile(Screen parent, String texName, bool collidable, int row, int col, int tileIndex)
             : base(parent)
         {
             _Row = row;
@@ -41,6 +44,8 @@ namespace AlienShooterGame
             // Set tile location
             Geometry.Position.X = _Col * TileWidth;
             Geometry.Position.Y = _Row * TileHeight;
+
+            _TileIndex = tileIndex;
 
             _Animations.AddAnimation(new Animation(texName, "Normal", 1, 1, 1.0f));
 
@@ -67,61 +72,61 @@ namespace AlienShooterGame
         }
 
 
-        public static Tile Tile_Floor1(Screen parent, int row, int col)
+        public static Tile Tile_Floor1(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "blade_tile", false, row, col);
+            return new Tile(parent, "blade_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor2(Screen parent, int row, int col)
+        public static Tile Tile_Floor2(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "detail_tile", false, row, col);
+            return new Tile(parent, "detail_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor3(Screen parent, int row, int col)
+        public static Tile Tile_Floor3(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "bar_tile", false, row, col);
+            return new Tile(parent, "bar_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor4(Screen parent, int row, int col)
+        public static Tile Tile_Floor4(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "para_tile", false, row, col);
+            return new Tile(parent, "para_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor5(Screen parent, int row, int col)
+        public static Tile Tile_Floor5(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "caution_tile", false, row, col);
+            return new Tile(parent, "caution_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor6(Screen parent, int row, int col)
+        public static Tile Tile_Floor6(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "ball_tile", false, row, col);
+            return new Tile(parent, "ball_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor7(Screen parent, int row, int col)
+        public static Tile Tile_Floor7(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "cross_tile", false, row, col);
+            return new Tile(parent, "cross_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor8(Screen parent, int row, int col)
+        public static Tile Tile_Floor8(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "dirt_tile", false, row, col);
+            return new Tile(parent, "dirt_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor9(Screen parent, int row, int col)
+        public static Tile Tile_Floor9(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "grass_tile", false, row, col);
+            return new Tile(parent, "grass_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor10(Screen parent, int row, int col)
+        public static Tile Tile_Floor10(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "sand_tile", false, row, col);
+            return new Tile(parent, "sand_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor11(Screen parent, int row, int col)
+        public static Tile Tile_Floor11(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "road_tile", false, row, col);
+            return new Tile(parent, "road_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor12(Screen parent, int row, int col)
+        public static Tile Tile_Floor12(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "half_tile", false, row, col);
+            return new Tile(parent, "half_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor13(Screen parent, int row, int col)
+        public static Tile Tile_Floor13(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "old_tile", false, row, col);
+            return new Tile(parent, "old_tile", false, row, col, tileIndex);
         }
-        public static Tile Tile_Floor14(Screen parent, int row, int col)
+        public static Tile Tile_Floor14(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "sci_tile", false, row, col);
+            return new Tile(parent, "sci_tile", false, row, col, tileIndex);
         }
     }
 }
