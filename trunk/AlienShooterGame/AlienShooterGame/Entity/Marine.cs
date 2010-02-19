@@ -19,13 +19,13 @@ namespace AlienShooterGame
 
         public LightSource Muzzle { get { return _Muzzle; } }
         protected LightSource _Muzzle;
+        public int MuzzleFrames { get { return _MuzzleFrames; } set { this._MuzzleFrames = value; } }
         protected int _MuzzleFrames;
 
         public LightSource NightVision { get { return _NightVision; } }
         protected LightSource _NightVision;
 
-        public const int ReloadTime = 2500;
-        protected int _Reloading = -1;
+        public int _Reloading = -1;
 
         public bool Reloading { get { return _Reloading > 0; } }
 
@@ -39,6 +39,10 @@ namespace AlienShooterGame
 
         public int BloodPerHit { get { return _BloodPerHit; } }
         protected int _BloodPerHit = 24;
+
+        public List<Weapon> weaponList = new List<Weapon>();
+        public Weapon currentWeapon = new AutoHandGun();
+
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -110,25 +114,13 @@ namespace AlienShooterGame
 
         public void Fire()
         {
-            if (_Reloading >= 0) return;
-
-            _Muzzle.Active = true;
-            _MuzzleFrames = 5;
-            Vector2 bulletPos = _Geometry.Position;
-            bulletPos.X += (float)Math.Sin(_Geometry.Direction) * 25.0f;
-            bulletPos.Y += -(float)Math.Cos(_Geometry.Direction) * 25.0f;
-            new Bullet(_Parent, bulletPos, _Geometry.Direction);
-            _Parent.ViewPort.Shake(1.5f, 0.8f, 0.95f);
-            new MuzzleFlash(_Parent, bulletPos, this);
-            if (--_Ammo <= 0)
-                _Reloading = ReloadTime;
-
-            Application.AppReference.Content.Load<SoundEffect>("Sounds\\bullet").Play();
+            if (!Reloading)
+                currentWeapon.Fire(this);
         }
 
         public void Reload()
         {
-            _Reloading = ReloadTime;
+            _Reloading = currentWeapon.ReloadTime;
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime time)

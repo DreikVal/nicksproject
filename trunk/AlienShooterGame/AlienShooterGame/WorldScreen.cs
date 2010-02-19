@@ -26,8 +26,10 @@ namespace AlienShooterGame
         protected bool _FPSDisplay = false;
 
         protected bool isFiring = false;
+
+        //protected 
+
         protected double shotCooldown = 0.0;
-        protected double weaponCooldown = 200;
 
         protected String _WorldMap;
 
@@ -90,10 +92,10 @@ namespace AlienShooterGame
             //music time
             Random random = new Random();
             int song = random.Next(0, 2);
-            if (song == 0)
-                MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\03 - Teardrop"));
-            if (song == 1)
-                MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\leanonme"));
+            //if (song == 0)
+            //    MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\03 - Teardrop"));
+            //if (song == 1)
+            //    MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\leanonme"));
         }
 
         protected override void HandleInputActive(Bind bind)
@@ -183,7 +185,7 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
             shotCooldown += time.ElapsedGameTime.Milliseconds;
-            if (shotCooldown > weaponCooldown && isFiring)
+            if (shotCooldown > Player.currentWeapon.weaponCooldown && isFiring)
             {
                 shotCooldown = 0.0;
                 Player.Fire();

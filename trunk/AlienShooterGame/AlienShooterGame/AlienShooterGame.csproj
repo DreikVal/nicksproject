@@ -87,6 +87,8 @@
     <Compile Include="EditorScreen.cs" />
     <Compile Include="Entity\Alien.cs" />
     <Compile Include="Entity\Blood.cs" />
+    <Compile Include="Entity\Weapon.cs" />
+    <Compile Include="Entity\Weapons\AutoHandGun.cs" />
     <Compile Include="GUI\Radar_GUI.cs" />
     <Compile Include="GUI\Health_GUI.cs" />
     <Compile Include="Utility\LoadPort.cs" />
