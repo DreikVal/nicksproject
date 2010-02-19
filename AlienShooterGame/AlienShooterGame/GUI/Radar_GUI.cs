@@ -15,15 +15,12 @@ namespace AlienShooterGame
         protected Vector2 increment = new Vector2(-7f, 0f);
 
         protected List<Vector2> radarBlip = new List<Vector2>();
+        protected Texture2D _BlipTex;
 
         public Radar_Gui(Screen Parent)
             : base(Parent)
 
-        {
-            this.parent = Parent;
-            DynamicLighting = false;
-            Depth = 0.19f;
-        }
+        {}
 
         public override string Initialize()
         {
@@ -37,7 +34,9 @@ namespace AlienShooterGame
             _Animations.AddAnimation(new Animation("radar", "Normal", 1, 1, 1.0f));
 
             // Set marine towards front of screen
-            //_Depth = 0.2f;
+            _Depth = 0.19f;
+
+            _BlipTex = Application.AppReference.Content.Load<Texture2D>("blip");
 
             // Return the name for this class
             return "Radar_Gui";
@@ -45,41 +44,37 @@ namespace AlienShooterGame
 
         public override void Draw(GameTime time, SpriteBatch batch)
         {
+            base.Draw(time, batch);
+
             Screen screen;
             WorldScreen world;
             try
             {
                 _Parent.Manager.LookupScreen("World", out screen);
                 world = (WorldScreen)screen;
-                world.Entities.ForEach(FindAliens, batch, null, null);
+                world.Entities.ForEach(FindAliens, batch, world.Player, null);
             }
-            catch { }
+                catch { }
 
-            base.Draw(time, batch);
+            
         }
 
-        private object FindAliens(Entity ent, object batch, object p2, object p3)
+        private object FindAliens(Entity ent, object batch, object player, object p3)
         {
             SpriteBatch spriteBatch = (SpriteBatch)batch;
-
-            float xRatio = 4;
-            float yRatio = 4;
+            Marine marine = (Marine)player;
+            float scalingFactor = 0.1f;
 
             if (ent as Alien == null)
                 return null;
-            
-            else
-            {
-                spriteBatch.Draw(Application.AppReference.Content.Load<Texture2D>("blip"), 
-                    new Vector2(ent.Geometry.Position.X/xRatio + Geometry.Position.X + 427, ent.Geometry.Position.Y/yRatio - 143),
-                    null,
-                    Color.White,
-                    0.0f,
-                    Vector2.Zero,
-                    1f,
-                    SpriteEffects.None,
-                    0.01f);
-            }
+
+            Vector2 diff = ent.Geometry.Position - marine.Geometry.Position;
+            Vector2 worldLoc = Geometry.Position + (scalingFactor*diff);
+            Vector2 pixelLoc = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(worldLoc);
+            Vector2 pixelSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(ent.Geometry.Size * scalingFactor);
+
+            spriteBatch.Draw(_BlipTex, new Rectangle((int)pixelLoc.X, (int)pixelLoc.Y, (int)pixelSize.X, (int)pixelSize.Y), Color.White);         
+
             return null;
         }
 
