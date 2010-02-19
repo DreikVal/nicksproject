@@ -5,7 +5,16 @@ using System.Text;
 
 namespace AlienShooterGame
 {
-    class AutoHandGun : Weapon
+    public class AutoHandGun : Weapon
     {
+        public AutoHandGun(Marine player)
+            : base(player)
+        {
+        }
+
+        public override string getName()
+        {
+            return "Auto Handgun";
+        }
     }
 }

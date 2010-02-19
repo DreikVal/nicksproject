@@ -72,10 +72,29 @@ namespace AlienShooterGame
 
         public override void Draw(GameTime time, Microsoft.Xna.Framework.Graphics.SpriteBatch batch)
         {
-            if (bulletIndex == -1)
+            Screen screen;
+            WorldScreen world;
+            try
             {
-                try
-                {
+                _Parent.Manager.LookupScreen("World", out screen);
+                world = (WorldScreen)screen;
+
+                //get weapon name
+                batch.DrawString(getFont(), world.Player.currentWeapon.getName(),
+                    new Vector2(this.Geometry.Position.X + reloadOffset.X,
+                        this.Geometry.Position.Y + reloadOffset.Y - 140),
+                        Color.Red,
+                        0.0f,
+                        Vector2.Zero,
+                        3.0f,
+                        SpriteEffects.None,
+                        0.0f);
+            }
+            
+            catch{}
+
+
+            if (bulletIndex == -1)
                     batch.DrawString(getFont(), "Reloading...",
                         new Vector2(this.Geometry.Position.X + reloadOffset.X,
                             this.Geometry.Position.Y + reloadOffset.Y),
@@ -85,9 +104,6 @@ namespace AlienShooterGame
                             3.0f,
                             SpriteEffects.None,
                             0.0f);
-                }
-                catch (Exception) { }
-            }
             base.Draw(time, batch);
         }
 

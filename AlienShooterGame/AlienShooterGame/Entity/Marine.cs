@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace AlienShooterGame
 {
-    class Marine : Entity
+    public class Marine : Entity
     {
         public float Speed { get { return _Speed; } set { _Speed = value; } }
         protected float _Speed = 0.15f;
@@ -39,10 +39,6 @@ namespace AlienShooterGame
 
         public int BloodPerHit { get { return _BloodPerHit; } }
         protected int _BloodPerHit = 24;
-
-        public List<Weapon> weaponList = new List<Weapon>();
-        public Weapon currentWeapon = new AutoHandGun();
-
 
         public bool MoveForward { get { return _MoveForward; } 
             set { _MoveForward = value; 
@@ -75,10 +71,16 @@ namespace AlienShooterGame
         }
         protected bool _MoveRight = false;
 
+
+        //weapons
+        public List<Weapon> weaponList = new List<Weapon>();
+        public Weapon currentWeapon;
+
         public Marine(Screen parent) : base(parent) { }
 
         public override string Initialize()
         {
+
             // Create collision geometry for the marine
             _Geometry = new Geometry(this, new Vector2(), 54.0f, 54.0f, 0.0f, 20.0f);
 
@@ -108,6 +110,11 @@ namespace AlienShooterGame
             // Flag as an active collision entity
             CollisionType = CollisionType.Active;
 
+            //give him a basic weapon
+            weaponList.Add(new MachineGun(this));
+            weaponList.Add(new AutoHandGun(this));
+            currentWeapon = weaponList[0];
+
             // Return the name for this class
             return "Marine";
         }
@@ -115,7 +122,7 @@ namespace AlienShooterGame
         public void Fire()
         {
             if (!Reloading)
-                currentWeapon.Fire(this);
+                currentWeapon.Fire();
         }
 
         public void Reload()
