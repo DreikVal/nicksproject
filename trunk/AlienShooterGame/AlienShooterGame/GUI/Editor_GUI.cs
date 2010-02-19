@@ -8,16 +8,13 @@ namespace AlienShooterGame
 {
     public class Editor_Gui : Entity
     {
-        protected Screen parent;
-        protected Vector2 firstPos = new Vector2(250f, 250f);
+        protected Vector2 _Offset;
 
-        public Editor_Gui(Screen Parent)
+        public Editor_Gui(Screen Parent, Vector2 offset)
             : base(Parent)
 
         {
-            this.parent = Parent;
-            DynamicLighting = false;
-            Depth = 0.19f;
+            _Offset = offset;
         }
 
         public override string Initialize()
@@ -30,8 +27,9 @@ namespace AlienShooterGame
             // Add the default animation
             _Animations.AddAnimation(new Animation("editorbox", "Normal", 1, 1, 1.0f));
 
-            // Set marine towards front of screen
-            //_Depth = 0.2f;
+            _Depth = 0.19f;
+
+            DynamicLighting = false;
 
             // Return the name for this class
             return "Editor_Gui";
@@ -40,6 +38,7 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
             base.Update(time);
+            Geometry.Position = _Parent.ViewPort.ActualLocation + _Offset;
         }
 
 
