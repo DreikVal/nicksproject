@@ -159,8 +159,8 @@ namespace AlienShooterGame
             _Draw_OnScreen = true;
             _Draw_Animation = _Animations.Current;
             _Draw_Position = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Geometry.Position);
-            _Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(_Geometry.UncompensatedSize);
-            _Draw_Origin = new Vector2(-_Geometry.MinX() / (_Geometry.MaxX() - _Geometry.MinX()) * _Animations.Current.WidthPerCell, -_Geometry.MinY() / (_Geometry.MaxY() - _Geometry.MinY()) * _Animations.Current.HeightPerCell);
+            _Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(_Geometry.Size);
+            _Draw_Origin = new Vector2(_Animations.Current.WidthPerCell / 2, _Animations.Current.HeightPerCell / 2);
             _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)_Draw_Size.X, (int)_Draw_Size.Y);
             _Draw_Source = _Draw_Animation.UpdateSource(time);
 
@@ -232,18 +232,15 @@ namespace AlienShooterGame
             if (ent.CollisionType == CollisionType.None) return null;
             if (ent == this) return null;
 
-            CollisionResult result = _Geometry.Collision(ent.Geometry);
-            if (result.Collision)
+            if (_Geometry.Collision(ent.Geometry))
             {
-                HandleCollision(ent, result);
-                ent.HandleCollision(this, result);
+                HandleCollision(ent);
+                ent.HandleCollision(this);
             }
             return null;
         }
 
-        protected virtual void HandleCollision(Entity otherEnt, CollisionResult result)
-        {
-        }
+        protected virtual void HandleCollision(Entity ent) { }
     }
 
     public enum CollisionType

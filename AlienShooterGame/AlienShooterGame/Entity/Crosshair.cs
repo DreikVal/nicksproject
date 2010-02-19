@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace AlienShooterGame
@@ -13,7 +14,7 @@ namespace AlienShooterGame
         public override string Initialize()
         {
             // Create collision geometry for the marine
-            Geometry = Geometry.CreateRectangularGeometry(this, 28.0f, 50.0f);
+            _Geometry = new Geometry(this, new Vector2(), 28.0f, 50.0f, 0.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
