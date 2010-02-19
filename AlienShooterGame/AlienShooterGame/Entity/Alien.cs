@@ -127,7 +127,7 @@ namespace AlienShooterGame
             for (int i = 0; i < BloodPerDeath; i++)
                 new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 32.0f, 0.1f, 0.2f, 0.92f, 25);
 
-            Alien.CreateNearbyAlien(_Parent, ((WorldScreen)_Parent).Player, 350, _Target);
+            Alien.CreateNearbyAlien(_Parent, ((WorldScreen)_Parent).Player, 400, _Target);
             new FloatingText(_Parent, _Geometry.Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).Player.GiveScore(ScoreValue).ToString(),
                 "FloatingFont", new Color(0.6f, 0.7f, 1.0f, 0.7f), 1000);
         }
