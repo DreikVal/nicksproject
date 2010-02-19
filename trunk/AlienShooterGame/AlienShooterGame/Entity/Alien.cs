@@ -8,7 +8,7 @@ namespace AlienShooterGame
 {
     public class Alien : Entity
     {
-        public const int BloodPerDeath = 8;
+        public const int BloodPerDeath = 24;
 
         public Entity Target { get { return _Target; } set { _Target = value; } } 
         protected Entity _Target;
