@@ -13,7 +13,7 @@ namespace AlienShooterGame
         protected Ammo_Gui_Bullet[] bullets;
         protected Vector2 firstPos = new Vector2(794f, 422f);
         protected Vector2 increment = new Vector2(-7f, 0f);
-        protected Vector2 reloadOffset = new Vector2(570, 495);
+        protected Vector2 reloadOffset = new Vector2(500, 495);
         protected int bulletIndex;
 
         public Ammo_Gui(Screen Parent)
@@ -80,6 +80,7 @@ namespace AlienShooterGame
                 world = (WorldScreen)screen;
 
                 //get weapon name
+                /*
                 batch.DrawString(getFont(), world.Player.currentWeapon.getName(),
                     new Vector2(this.Geometry.Position.X + reloadOffset.X,
                         this.Geometry.Position.Y + reloadOffset.Y - 140),
@@ -88,7 +89,7 @@ namespace AlienShooterGame
                         Vector2.Zero,
                         2.5f,
                         SpriteEffects.None,
-                        0.0f);
+                        0.0f);*/
             }
             
             catch{}
