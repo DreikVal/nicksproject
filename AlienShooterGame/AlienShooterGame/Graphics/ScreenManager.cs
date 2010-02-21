@@ -117,9 +117,9 @@ namespace AlienShooterGame
                 InputRecieved(bind);
             _Screens.ForEach(ForEachInput, bind, null, null);
         }
-        private object ForEachInput(Screen screen, object bind, object p2, object p3)
+        private bool ForEachInput(Screen screen, object bind, object p2, object p3)
         {
-            screen.HandleInput(bind as Bind); return null;
+            screen.HandleInput(bind as Bind); return true;
         }
 
 
@@ -135,10 +135,10 @@ namespace AlienShooterGame
             // Update screens
             _Screens.ForEach(ForEachUpdate, time, null, null);
         }
-        private object ForEachUpdate(Screen screen, object time, object p3, object p4)
+        private bool ForEachUpdate(Screen screen, object time, object p3, object p4)
         {
             screen.Update(time as GameTime);
-            return null;
+            return true;
         }
 
 
@@ -151,7 +151,7 @@ namespace AlienShooterGame
         {            
             _Screens.ForEach(ForEachDraw, time, batch, null);
         }
-        private object ForEachDraw(Screen screen, object time, object batch, object p4)
+        private bool ForEachDraw(Screen screen, object time, object batch, object p4)
         {
             if (screen.Visible)
             {
@@ -160,7 +160,7 @@ namespace AlienShooterGame
                 screen.Draw(time as GameTime, bat);
                 screen.EndDraw(bat);
             }
-            return null;
+            return true;
         }
 
 
@@ -231,19 +231,19 @@ namespace AlienShooterGame
         /// Obscures all screens visibility.
         /// </summary>
         protected virtual void ObscureAllVisibily() { _Screens.ForEach(ForEachObscureAllVisibly, null, null, null); }
-        private object ForEachObscureAllVisibly(Screen screen, object p1, object p2, object p3) { screen.ObscureVisibility(); return null; }
+        private bool ForEachObscureAllVisibly(Screen screen, object p1, object p2, object p3) { screen.ObscureVisibility(); return true; }
 
         /// <summary>
         /// Obscures all screens input.
         /// </summary>
         protected virtual void ObscureAllInput() { _Screens.ForEach(ForEachObscureAllInput, null, null, null); }
-        private object ForEachObscureAllInput(Screen screen, object p1, object p2, object p3) { screen.ObscureInput(); return null; }
+        private bool ForEachObscureAllInput(Screen screen, object p1, object p2, object p3) { screen.ObscureInput(); return true; }
 
         /// <summary>
         /// Obscures all screens updates.
         /// </summary>
         protected virtual void ObscureAllUpdates() { _Screens.ForEach(ForEachObscureAllUpdates, null, null, null); }
-        private object ForEachObscureAllUpdates(Screen screen, object p1, object p2, object p3) { screen.ObscureUpdates(); return null; }
+        private bool ForEachObscureAllUpdates(Screen screen, object p1, object p2, object p3) { screen.ObscureUpdates(); return true; }
 
         public virtual void DepthCheck()
         {
@@ -265,9 +265,9 @@ namespace AlienShooterGame
                 vblocker.ActivateVisibility();
         }
         private Screen vblocker;
-        private object ForEachVisBlocker(Screen screen, object p1, object p2, object p3)
+        private bool ForEachVisBlocker(Screen screen, object p1, object p2, object p3)
         {
-            if (!screen.BlocksVisibility) return null;
+            if (!screen.BlocksVisibility) return true;
             if (vblocker == null)
                 vblocker = screen;
             else
@@ -275,15 +275,15 @@ namespace AlienShooterGame
                 if (screen.Depth < vblocker.Depth)
                     vblocker = screen;
             }
-            return null;
+            return true;
         }
-        private object ForEachVisPopup(Screen screen, object p1, object p2, object p3)
+        private bool ForEachVisPopup(Screen screen, object p1, object p2, object p3)
         {
-            if (vblocker == null) { screen.ActivateVisibility(); return null; }
-            if (screen.BlocksVisibility) return null;
+            if (vblocker == null) { screen.ActivateVisibility(); return true; }
+            if (screen.BlocksVisibility) return true;
             if (screen.Depth < vblocker.Depth)
                 screen.ActivateVisibility();
-            return null;
+            return true;
         }
 
         /// <summary>
@@ -299,9 +299,9 @@ namespace AlienShooterGame
                 iblocker.ActivateInput();
         }
         private Screen iblocker;
-        private object ForEachInputBlocker(Screen screen, object p1, object p2, object p3)
+        private bool ForEachInputBlocker(Screen screen, object p1, object p2, object p3)
         {
-            if (!screen.BlocksInput) return null;
+            if (!screen.BlocksInput) return true;
             if (iblocker == null)
                 iblocker = screen;
             else
@@ -309,15 +309,15 @@ namespace AlienShooterGame
                 if (screen.Depth < iblocker.Depth)
                     iblocker = screen;
             }
-            return null;
+            return true;
         }
-        private object ForEachInputPopup(Screen screen, object p1, object p2, object p3)
+        private bool ForEachInputPopup(Screen screen, object p1, object p2, object p3)
         {
-            if (iblocker == null) { screen.ActivateInput(); return null; }
-            if (screen.BlocksInput) return null;
+            if (iblocker == null) { screen.ActivateInput(); return true; }
+            if (screen.BlocksInput) return true;
             if (screen.Depth < iblocker.Depth)
                 screen.ActivateInput();
-            return null;
+            return true;
         }
 
         /// <summary>
@@ -333,9 +333,9 @@ namespace AlienShooterGame
                 ublocker.ActivateUpdates();
         }
         private Screen ublocker;
-        private object ForEachUpdateBlocker(Screen screen, object p1, object p2, object p3)
+        private bool ForEachUpdateBlocker(Screen screen, object p1, object p2, object p3)
         {
-            if (!screen.BlocksUpdates) return null;
+            if (!screen.BlocksUpdates) return true;
             if (ublocker == null)
                 ublocker = screen;
             else
@@ -343,15 +343,15 @@ namespace AlienShooterGame
                 if (screen.Depth < ublocker.Depth)
                     ublocker = screen;
             }
-            return null;
+            return true;
         }
-        private object ForEachUpdatePopup(Screen screen, object p1, object p2, object p3)
+        private bool ForEachUpdatePopup(Screen screen, object p1, object p2, object p3)
         {
-            if (ublocker == null) { screen.ActivateUpdates(); return null; }
-            if (screen.BlocksUpdates) return null;
+            if (ublocker == null) { screen.ActivateUpdates(); return true; }
+            if (screen.BlocksUpdates) return true;
             if (screen.Depth < ublocker.Depth)
                 screen.ActivateUpdates();
-            return null;
+            return true;
         }
 
     }

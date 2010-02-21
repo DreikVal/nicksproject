@@ -18,7 +18,7 @@ namespace AlienShooterGame
         public Entity Target { get { return _Target; } set { _Target = value; } } 
         protected Entity _Target;
 
-        public const float AlienSpeed = 0.14f;
+        public const float AlienSpeed = 0.16f;
 
         protected int _MaxHP = 100;
         protected int _CurrentHP;
@@ -55,9 +55,11 @@ namespace AlienShooterGame
             return "Alien";
         }
 
-        public override void Update(Microsoft.Xna.Framework.GameTime time)
+        public override void Update(GameTime time)
         {
  	        base.Update(time);
+
+            if (Disposed) return;
 
             if (_CurrentHP <= 0)
                 Dispose();
@@ -127,7 +129,7 @@ namespace AlienShooterGame
             for (int i = 0; i < BloodPerDeath; i++)
                 new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 32.0f, 0.1f, 0.2f, 0.92f, 25);
 
-            Alien.CreateNearbyAlien(_Parent, ((WorldScreen)_Parent).Player, 400, _Target);
+            Alien.CreateNearbyAlien(_Parent, ((WorldScreen)_Parent).Player, 450, _Target);
             new FloatingText(_Parent, _Geometry.Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).Player.GiveScore(ScoreValue).ToString(),
                 "FloatingFont", new Color(0.6f, 0.7f, 1.0f, 0.7f), 1000);
         }

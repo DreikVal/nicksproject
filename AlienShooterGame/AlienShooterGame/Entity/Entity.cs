@@ -94,6 +94,12 @@ namespace AlienShooterGame
         private Vector2 _Draw_Origin, _Draw_Position, _Draw_Size;
         private Rectangle _Draw_Destination, _Draw_Source;
         private bool _Draw_OnScreen = false;
+
+        public bool Opaque { get { return _Opaque; } set { _Opaque = value; } }
+        protected bool _Opaque = false;
+
+        public List<ShadowRegion> Shadows { get { return _Shadows; } }
+        protected List<ShadowRegion> _Shadows = new List<ShadowRegion>();
         
 
         #endregion
@@ -163,42 +169,73 @@ namespace AlienShooterGame
             _Draw_Origin = new Vector2(_Animations.Current.WidthPerCell / 2, _Animations.Current.HeightPerCell / 2);
             _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)_Draw_Size.X, (int)_Draw_Size.Y);
             _Draw_Source = _Draw_Animation.UpdateSource(time);
+        }
 
+        public virtual void BackgroundUpdate()
+        {
             if (Application.AppReference.DynamicLighting && _DynamicLighting)
             {
-                Vector4 _Lighting = new Vector4(0.15f, 0.15f, 0.15f, 1.0f);
-                foreach (LightSource light in _Parent.Lights)
-                {
-                    if (!light.Active) continue;
-
-                    float x_diff = _Geometry.Position.X - light.Position.X;
-                    float y_diff = _Geometry.Position.Y - light.Position.Y;
-                    float dist = (float)Math.Sqrt((x_diff * x_diff) + (y_diff * y_diff));
-                    float val = 1.0f - (dist / light.Range);
-                    if (val < 0.0f) val = 0.0f;
-
-                    float angle = (float)Math.Atan2(y_diff, x_diff);
-                    float angle_diff = (float)Math.Abs(light.Direction - Math.PI / 2 - angle);
-                    if (angle_diff > Math.PI)
-                        angle_diff = 2 * (float)Math.PI - angle_diff;
-                    float angle_val = 1.0f - (angle_diff / light.Radius);
-
-                    Vector4 pre = light.Colour.ToVector4();
-                    Vector4 dis = new Vector4(val, val, val, 1.0f);
-                    Vector4 ang = new Vector4(angle_val, angle_val, angle_val, 1.0f);
-                    Vector4 result = pre * dis * ang;
-                    if (result.X < 0.0f) result.X = 0.0f;
-                    if (result.Y < 0.0f) result.Y = 0.0f;
-                    if (result.Z < 0.0f) result.Z = 0.0f;
-                    if (result.W < 0.0f) result.W = 0.0f;
-                    _Lighting += result;
-                }
+                _Lighting = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+                _Parent.Lights.ForEach(ForEachLight, null, null, null);
                 Vector4 _VectorOverlay = _ColourOverlay.ToVector4();
 
                 _ActualColour = new Color(_VectorOverlay * _Lighting);
             }
             else
                 _ActualColour = _ColourOverlay;
+        }
+
+        private bool ForEachLight(LightSource light, object p1, object p2, object p3)
+        {
+            if (!light.Active) return true;
+
+            if (!TraceRay(light)) return true;
+
+            float x_diff = _Geometry.Position.X - light.Geometry.Position.X;
+            float y_diff = _Geometry.Position.Y - light.Geometry.Position.Y;
+            float dist = (float)Math.Sqrt((x_diff * x_diff) + (y_diff * y_diff));
+            float val = 1.0f - (dist / light.Range);
+            if (val < 0.0f) val = 0.0f;
+
+            float angle = (float)Math.Atan2(y_diff, x_diff);
+            float angle_diff = (float)Math.Abs(light.Geometry.Direction - Math.PI / 2 - angle);
+            if (angle_diff > Math.PI)
+                angle_diff = 2 * (float)Math.PI - angle_diff;
+            float angle_val = 1.0f - (angle_diff / light.Radius);
+
+            Vector4 pre = light.ColourOverlay.ToVector4();
+            Vector4 dis = new Vector4(val, val, val, 1.0f);
+            Vector4 ang = new Vector4(angle_val, angle_val, angle_val, 1.0f);
+            Vector4 result = pre * dis * ang;
+            if (result.X < 0.0f) result.X = 0.0f;
+            if (result.Y < 0.0f) result.Y = 0.0f;
+            if (result.Z < 0.0f) result.Z = 0.0f;
+            if (result.W < 0.0f) result.W = 0.0f;
+            _Lighting += result;
+            return true;
+        }
+        Vector4 _Lighting;
+
+        protected virtual bool TraceRay(LightSource light)
+        {
+            return _Parent.Shadows.ForEach(ForEachRay, light, null, null);
+        }
+        private bool ForEachRay(ShadowRegion shadow, object p1, object p2, object p3)
+        {
+            if (_Shadows.Contains(shadow)) return true;
+            LightSource light = (LightSource)p1;
+
+            Vector2 dir = light.Geometry.Position - Geometry.Position;
+            Vector2 diff = shadow.Geometry.Position - Geometry.Position;
+            float t = (diff.X * dir.X + diff.Y * dir.Y) / (dir.X * dir.X + dir.Y * dir.Y);
+            if (t < 0.0f)
+                t = 0.0f;
+            if (t > 1.0f)
+                t = 1.0f;
+            Vector2 closest = Geometry.Position + t * dir;
+            Vector2 d = shadow.Geometry.Position - closest;
+            float distsqr = d.X * d.X + d.Y * d.Y;
+            return distsqr > shadow.Radius * shadow.Radius;
         }
 
         public virtual void Draw(GameTime time, SpriteBatch batch) 
@@ -227,17 +264,17 @@ namespace AlienShooterGame
         {
             _Parent.Entities.ForEach(ForEachCollisionCheck, null, null, null);
         }
-        private Object ForEachCollisionCheck(Entity ent, object p1, object p2, object p3)
+        private bool ForEachCollisionCheck(Entity ent, object p1, object p2, object p3)
         {
-            if (ent.CollisionType == CollisionType.None) return null;
-            if (ent == this) return null;
+            if (ent.CollisionType == CollisionType.None) return true;
+            if (ent == this) return true;
 
             if (_Geometry.Collision(ent.Geometry))
             {
                 HandleCollision(ent);
                 ent.HandleCollision(this);
             }
-            return null;
+            return true;
         }
 
         protected virtual void HandleCollision(Entity ent) { }

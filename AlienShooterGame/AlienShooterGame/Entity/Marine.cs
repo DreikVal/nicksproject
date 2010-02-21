@@ -106,10 +106,10 @@ namespace AlienShooterGame
             _Depth = 0.8f;
 
             // Create flashlight for marine
-            _FlashLight = new LightSource(_Parent, Color.Yellow, 500.0f, 1.5f, 0.0, _Geometry.Position);
+            _FlashLight = new LightSource(_Parent, new Color(1.0f, 1.0f, 0.7f), 625.0f, 1.6f, 0.0, _Geometry.Position);
 
             // Create small glow radius
-            _Muzzle = new LightSource(_Parent, Color.White, 700.0f, 4.0f, 0.0, _Geometry.Position);
+            _Muzzle = new LightSource(_Parent, Color.White, 325.0f, 4.0f, 0.0, _Geometry.Position);
             _Muzzle.Active = false;
 
             // Create night vision
@@ -150,9 +150,9 @@ namespace AlienShooterGame
 
             _Parent.Message = "Press secondary fire to respawn...";
 
-            _Parent.Lights.Remove(_FlashLight);
-            _Parent.Lights.Remove(_NightVision);
-            _Parent.Lights.Remove(_Muzzle);
+            _FlashLight.Dispose();
+            _NightVision.Dispose();
+            _Muzzle.Dispose();
         }
 
         public int GiveScore(int baseScore)
@@ -193,12 +193,12 @@ namespace AlienShooterGame
 
             _Geometry.Direction = ((float)Math.Atan2(mLoc.Y - Geometry.Position.Y, mLoc.X - Geometry.Position.X) + Math.PI/2);
 
-            _FlashLight.Position = _Geometry.Position;
-            _FlashLight.Direction = _Geometry.Direction;
-            _Muzzle.Position = _Geometry.Position;
-            _Muzzle.Direction = _Geometry.Direction;
-            _NightVision.Position = _Geometry.Position;
-            _NightVision.Direction = _Geometry.Direction;
+            _FlashLight.Geometry.Position = _Geometry.Position;
+            _FlashLight.Geometry.Direction = _Geometry.Direction;
+            _Muzzle.Geometry.Position = _Geometry.Position;
+            _Muzzle.Geometry.Direction = _Geometry.Direction;
+            _NightVision.Geometry.Position = _Geometry.Position;
+            _NightVision.Geometry.Direction = _Geometry.Direction;
 
             if (_Reloading >= 0)
             {

@@ -44,7 +44,7 @@ namespace AlienShooterGame
             _Parent.Entities.ForEach(CheckActive, null, null, null);
         }
 
-        public object CheckInactive(Entity ent, object p1, object p2, object p3)
+        public bool CheckInactive(Entity ent, object p1, object p2, object p3)
         {
             
             if (!(ent.Geometry.Position.X + ent.Geometry.Radius < ActualLocation.X ||
@@ -52,22 +52,35 @@ namespace AlienShooterGame
                 ent.Geometry.Position.X - ent.Geometry.Radius > ActualLocation.X + Size.X ||
                 ent.Geometry.Position.Y - ent.Geometry.Radius > ActualLocation.Y + Size.Y))
             {
+                if (ent as LightSource != null)
+                    _Parent.Lights.Add(ent.ID, ent as LightSource);
+                else if (ent as ShadowRegion != null)
+                    _Parent.Shadows.Add(ent.ID, ent as ShadowRegion);
                 _Parent.InactiveEntities.Remove(ent.ID);
                 _Parent.Entities.Add(ent.ID, ent);
             }
-            return null;
+            return true;
         }
-        public object CheckActive(Entity ent, object p1, object p2, object p3)
+        public bool CheckActive(Entity ent, object p1, object p2, object p3)
         {
             if (ent.Geometry.Position.X + ent.Geometry.Radius < ActualLocation.X ||
                 ent.Geometry.Position.Y + ent.Geometry.Radius < ActualLocation.Y ||
                 ent.Geometry.Position.X - ent.Geometry.Radius > ActualLocation.X + Size.X ||
                 ent.Geometry.Position.Y - ent.Geometry.Radius > ActualLocation.Y + Size.Y)
             {
+                if (ent as LightSource != null)
+                    _Parent.Lights.Remove(ent.ID);
+                else if (ent as ShadowRegion != null)
+                    _Parent.Shadows.Remove(ent.ID);
+                else if (ent as Bullet != null)
+                {
+                    ent.Dispose();
+                    return true;
+                }
                 _Parent.Entities.Remove(ent.ID);
                 _Parent.InactiveEntities.Add(ent.ID, ent);
             }
-            return null;
+            return true;
         }
     }
 }

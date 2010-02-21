@@ -59,23 +59,24 @@ namespace AlienShooterGame
             
         }
 
-        private object FindAliens(Entity ent, object batch, object player, object p3)
+        private bool FindAliens(Entity ent, object batch, object player, object p3)
         {
             SpriteBatch spriteBatch = (SpriteBatch)batch;
             Marine marine = (Marine)player;
             float scalingFactor = 0.1f;
+            float dFactor = 0.05f;
 
             if (ent as Alien == null)
-                return null;
+                return true;
 
             Vector2 diff = ent.Geometry.Position - marine.Geometry.Position;
-            Vector2 worldLoc = Geometry.Position + (scalingFactor*diff);
+            Vector2 worldLoc = Geometry.Position + (dFactor*diff);
             Vector2 pixelLoc = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(worldLoc);
             Vector2 pixelSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(ent.Geometry.Size * scalingFactor);
 
             spriteBatch.Draw(_BlipTex, new Rectangle((int)pixelLoc.X, (int)pixelLoc.Y, (int)pixelSize.X, (int)pixelSize.Y), Color.White);         
 
-            return null;
+            return true;
         }
 
 

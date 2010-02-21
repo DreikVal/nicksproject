@@ -9,8 +9,8 @@ namespace AlienShooterGame
 {
     public class Tile : Entity
     {
-        public static float TileWidth = 16.0f;
-        public static float TileHeight = 16.0f;
+        public static float TileWidth = 8.0f;
+        public static float TileHeight = 8.0f;
 
         protected int _Row = 0;
         protected int _Col = 0;
@@ -49,8 +49,14 @@ namespace AlienShooterGame
 
             _Animations.AddAnimation(new Animation(texName, "Normal", 1, 1, 1.0f));
 
-            if (collidable) CollisionType = CollisionType.Passive;
+            if (collidable)
+            {
+                CollisionType = CollisionType.Passive;
+                _Shadows.Add(new ShadowRegion(this, Geometry.Position, Geometry.CollisionRadius));
+            }
             else CollisionType = CollisionType.None;
+
+            
         }
 
         public override string Initialize()

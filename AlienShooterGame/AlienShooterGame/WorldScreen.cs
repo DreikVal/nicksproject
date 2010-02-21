@@ -19,7 +19,7 @@ namespace AlienShooterGame
 
         public int TileCols;
         public int TileRows;
-        public int NumAliens = 8;
+        public int NumAliens = 5;
 
         protected int _Frames = 60;
         protected int _NextFPSUpdate = 1000;
@@ -87,7 +87,7 @@ namespace AlienShooterGame
             //Application.AppReference.DynamicLighting = false;
 
             // Create loadport
-            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1000, 600), 80f);
+            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1050, 750), 100f);
 
             //music time
             Random random = new Random();
@@ -95,6 +95,7 @@ namespace AlienShooterGame
             MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\03 - Teardrop"));
             //if (song == 1)
             //    MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Sounds\\leanonme"));
+            StartBackgroundThread();
         }
 
         protected override void HandleInputActive(Bind bind)
@@ -258,7 +259,7 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
-            _Message = "Score: " + _Player.Score;
+            //_Message = "Score: " + _Player.Score;
             //_Message = "Active: " + _Entities.Count + "  Inactive: " + _InactiveEntities.Count;
             /*
             if (time.TotalGameTime.Milliseconds % 37 == 0)
