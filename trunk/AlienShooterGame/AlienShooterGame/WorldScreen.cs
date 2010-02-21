@@ -87,7 +87,7 @@ namespace AlienShooterGame
             //Application.AppReference.DynamicLighting = false;
 
             // Create loadport
-            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1600, 1000), 240f);
+            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1000, 600), 80f);
 
             //music time
             Random random = new Random();

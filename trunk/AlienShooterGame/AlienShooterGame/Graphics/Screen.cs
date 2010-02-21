@@ -371,6 +371,9 @@ namespace AlienShooterGame
             if (_VisiblyObscured && !_VisibleWhenObscured && !_Fading)
                 return;
 
+            // Begin screen drawing
+            
+
             // Draw each of the screen's entities
             _Entities.ForEach(DrawEntity, time, batch, null);
 
@@ -384,6 +387,9 @@ namespace AlienShooterGame
                 batch.DrawString(_MessageFont, _Message, TopLeft_Pixels, _MessageColour, 0.0f, new Vector2(0, 0), Scale.X, SpriteEffects.None, Depth);
             }
         }
+
+        public virtual void BeginDraw(SpriteBatch batch) { batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.None); }
+        public virtual void EndDraw(SpriteBatch batch) { batch.End(); }
 
         private object DrawEntity(Entity ent, object time, object batch, object p3) { ent.Draw(time as GameTime, batch as SpriteBatch); return null; }
 

@@ -148,15 +148,18 @@ namespace AlienShooterGame
         /// <param name="time">The GameTime object from the XNA framework.</param>
         /// <param name="batch">The spritebatch on which to draw.</param>
         public virtual void Draw(GameTime time, SpriteBatch batch)
-        {
-            batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.None);
+        {            
             _Screens.ForEach(ForEachDraw, time, batch, null);
-            batch.End();
         }
         private object ForEachDraw(Screen screen, object time, object batch, object p4)
         {
             if (screen.Visible)
-                screen.Draw(time as GameTime, batch as SpriteBatch);
+            {
+                SpriteBatch bat = batch as SpriteBatch;
+                screen.BeginDraw(bat);
+                screen.Draw(time as GameTime, bat);
+                screen.EndDraw(bat);
+            }
             return null;
         }
 
