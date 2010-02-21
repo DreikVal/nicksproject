@@ -171,6 +171,8 @@ namespace AlienShooterGame
         {
  	        base.Update(time);
 
+            if (Disposed) return;
+
             MouseState mState = Mouse.GetState();
 
             Vector2 mLoc = new Vector2();

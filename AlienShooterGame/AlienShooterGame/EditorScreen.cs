@@ -14,12 +14,12 @@ namespace AlienShooterGame
         protected Crosshair _Crosshair;
         protected Editor_Gui _EditorGUI;
 
-        public int TileCols = 50;
-        public int TileRows = 50;
+        public int TileCols = 500;
+        public int TileRows = 500;
 
         protected int _TileIndex = 0;
 
-        public const float ScreenMoveRate = 50.0f;
+        public const float ScreenMoveRate = 75.0f;
 
         protected bool _Dragging = false;
         protected int lastRow, lastCol;
@@ -131,6 +131,13 @@ namespace AlienShooterGame
                     this.Remove();
                     _Manager.AddScreen(new WorldScreen(_Manager, "world.awo"));
                     _Manager.AddScreen(new GUIScreen(_Manager));
+                }
+            }
+            else if (bind.Name.CompareTo("Reload") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    _ViewPort.TargetLocation = new Vector2(TileCols * Tile.TileWidth / 2, TileRows * Tile.TileHeight / 2);
                 }
             }
         }
