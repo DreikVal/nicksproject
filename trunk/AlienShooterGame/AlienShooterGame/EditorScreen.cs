@@ -50,6 +50,8 @@ namespace AlienShooterGame
 
 
             Application.AppReference.DynamicLighting = false;
+            Tile.TileWidth = 16.0f;
+            Tile.TileHeight = 16.0f;
 
             // Setup tiles
             _Tiles = new Tile[TileRows, TileCols];
@@ -138,6 +140,7 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
                     _ViewPort.TargetLocation = new Vector2(TileCols * Tile.TileWidth / 2, TileRows * Tile.TileHeight / 2);
+                    _ViewPort.Size = new Vector2(800, 500);
                 }
             }
         }
@@ -151,6 +154,7 @@ namespace AlienShooterGame
             bin.Write(TileCols);
             bin.Write(Tile.TileWidth);
             bin.Write(Tile.TileHeight);
+            
             for (int row = 0; row < TileRows; row++)
             {
                 for (int col = 0; col < TileCols; col++)

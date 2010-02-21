@@ -171,19 +171,19 @@ namespace AlienShooterGame
         /// while these loops occur. The function to be performed must be passed to the ForEach function.
         /// </summary>
         /// <param name="function">The function to be performed on each item.</param>
-        public object ForEach(Func<ValueType, object, object, object, object> function, object p1, object p2, object p3) 
+        public bool ForEach(Func<ValueType, object, object, object, bool> function, object p1, object p2, object p3) 
         {
-            object result = null;
+            bool result = true;
             lock (_Dictionary)
             {
                 while (_IterationBlocked)
                     Monitor.Wait(_Dictionary);
-                _IsCycling++;
-                
+                _IsCycling++;                
             }
             foreach (KeyValuePair<KeyType, ValueType> pair in _Dictionary)
             {
-                result = function(pair.Value, p1, p2, p3);
+                if ((result = function(pair.Value, p1, p2, p3)) == false)
+                    break;
             }
             lock (_Dictionary)
             {

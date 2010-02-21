@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -267,14 +268,23 @@ namespace AlienShooterGame
         protected static Vector2 _DefaultMessageLocation = new Vector2(50, 536);
 
 
-        public List<LightSource> Lights { get { return _Lights; } }
-        protected List<LightSource> _Lights = new List<LightSource>();
+        public ThreadDictionary<UInt64, LightSource> Lights { get { return _Lights; } }
+        protected ThreadDictionary<UInt64, LightSource> _Lights = new ThreadDictionary<UInt64, LightSource>();
 
         public ThreadDictionary<UInt64, Entity> InactiveEntities { get { return _InactiveEntities; } }
         protected ThreadDictionary<UInt64, Entity> _InactiveEntities = new ThreadDictionary<ulong, Entity>();
 
+        public ThreadDictionary<UInt64, ShadowRegion> Shadows { get { return _Shadows; } }
+        protected ThreadDictionary<UInt64, ShadowRegion> _Shadows = new ThreadDictionary<ulong, ShadowRegion>();
+
         public LoadPort LoadPort { get { return _LoadPort; } set { _LoadPort = value; } }
         protected LoadPort _LoadPort = null;
+
+        protected bool _BackgroundUpdates = false;
+        protected BackgroundWorker _Worker = new BackgroundWorker();
+
+        protected System.Threading.Thread _GruntThread = null;
+        protected int _LightingUpdatePeriod = 18;
 
 
         /// <summary>
@@ -391,7 +401,34 @@ namespace AlienShooterGame
         public virtual void BeginDraw(SpriteBatch batch) { batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.None); }
         public virtual void EndDraw(SpriteBatch batch) { batch.End(); }
 
-        private object DrawEntity(Entity ent, object time, object batch, object p3) { ent.Draw(time as GameTime, batch as SpriteBatch); return null; }
+        private bool DrawEntity(Entity ent, object time, object batch, object p3) { ent.Draw(time as GameTime, batch as SpriteBatch); return true; }
+
+
+        public virtual void StartBackgroundThread()
+        {
+            _BackgroundUpdates = true;
+            _Worker.DoWork += BackgroundUpdate;
+            _Worker.RunWorkerCompleted += WorkerCallback;
+            if (!_Worker.IsBusy)
+                _Worker.RunWorkerAsync();
+        }
+        public virtual void StopBackgroundThread()
+        {
+            _BackgroundUpdates = false;          
+        }
+        public virtual void WorkerCallback(object sender, RunWorkerCompletedEventArgs e)
+        {
+            _Worker.RunWorkerAsync();
+        }
+        public virtual void BackgroundUpdate(object sender, DoWorkEventArgs e)
+        {
+            DateTime start = DateTime.Now;
+            _Entities.ForEach(BGUpdateEntity, null, null, null);
+            TimeSpan span = DateTime.Now - start;
+            if (span.Milliseconds < _LightingUpdatePeriod)
+                System.Threading.Thread.Sleep(_LightingUpdatePeriod - span.Milliseconds);
+        }
+        private bool BGUpdateEntity(Entity ent, object p1, object p2, object p3) { ent.BackgroundUpdate(); return true; }
 
         /// <summary>
         /// Updates the screen state.
@@ -441,9 +478,13 @@ namespace AlienShooterGame
 
             // Update screens entities
             _Entities.ForEach(UpdateEntity, time, null, null);
+
+            // Update shadow regions
+            _Shadows.ForEach(UpdateShadow, time, null, null);
         }
 
-        private object UpdateEntity(Entity ent, object time, object p2, object p3) { ent.Update(time as GameTime); return null; }
+        private bool UpdateEntity(Entity ent, object time, object p2, object p3) { ent.Update(time as GameTime); return true; }
+        private bool UpdateShadow(ShadowRegion shad, object time, object p2, object p3) { shad.Update(time as GameTime); return true; }
 
         /// <summary>
         /// Removes (kills) this screen.

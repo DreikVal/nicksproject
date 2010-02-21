@@ -60,7 +60,7 @@ namespace AlienShooterGame
         {
             _Binds.ForEach(ForEachUpdate, Keyboard.GetState(), null, null);
         }
-        private object ForEachUpdate(Bind bind, object keystate, object p2, object p3)
+        private bool ForEachUpdate(Bind bind, object keystate, object p2, object p3)
         {
             if (bind.MouseBind)
             {
@@ -120,7 +120,7 @@ namespace AlienShooterGame
                     OnStateChanged(bind);
                 }
             }
-            return null;
+            return true;
         }
 
         /// <summary>

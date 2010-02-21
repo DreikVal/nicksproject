@@ -40,6 +40,8 @@ namespace AlienShooterGame
             // Flag as an active collision entity
             CollisionType = CollisionType.Active;
 
+            _DynamicLighting = false;
+
             // Return the name for this class
             return "Bullet";
         }

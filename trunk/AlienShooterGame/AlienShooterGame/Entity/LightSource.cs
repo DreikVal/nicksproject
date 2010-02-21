@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
-    public class LightSource
+    public class LightSource : Entity
     {
         public float Range { get { return _Range; } set { _Range = value; } }
         protected float _Range = 700.0f;
@@ -15,30 +15,24 @@ namespace AlienShooterGame
         public float Radius { get { return _Radius; } set { _Radius = value; } }
         protected float _Radius = 1.9f;
 
-        public Color Colour { get { return _Colour; } set { _Colour = value; } }
-        protected Color _Colour;
-
-        public Vector2 Position = new Vector2();
-
-        public double Direction { get { return _Direction; } set { _Direction = value; } }
-        protected double _Direction = 0.0f;
-
-        public Screen Parent { get { return _Parent; } }
-        protected Screen _Parent;
-
         public bool Active { get { return _Active; } set { _Active = value; } }
         protected bool _Active = true;
 
-
-        public LightSource(Screen parent, Color colour, float range, float radius, double direction, Vector2 position)
+        public LightSource(Screen parent, Color colour, float range, float radius, double direction, Vector2 position) : base(parent)
         {
             _Radius = radius;
             _Range = range;
-            _Colour = colour;
-            _Direction = direction;
-            Position = position;
-            _Parent = parent;
-            _Parent.Lights.Add(this);
+            _ColourOverlay = colour;
+            _Geometry = new Geometry(this, position, 0.0f, 0.0f, (float)direction);
+            _Parent.Lights.Add(_ID, this);
+        }
+
+        public override void Update(GameTime time) { }
+        public override void Draw(GameTime time, SpriteBatch batch) { }
+        public override void Dispose()
+        {
+            base.Dispose();
+            _Parent.Lights.Remove(_ID);
         }
     }
 }
