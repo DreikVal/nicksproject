@@ -48,7 +48,7 @@ namespace AlienShooterGame
         {
  	        base.Update(time);
 
-            _Remaining--;
+            _Remaining -= time.ElapsedGameTime.Milliseconds;
 
             if (_Remaining < 0) Dispose();
 
