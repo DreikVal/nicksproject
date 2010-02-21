@@ -149,12 +149,12 @@ namespace AlienShooterGame
         {
             if (_Disposed) return;
 
+            // Collision updates only done onscreen as well
+            if (_CollisionType == CollisionType.Active) CheckCollisions();
+
             // Graphics updates, bail now if the entity isn't on screen
             if (!isOnScreen()) { _Draw_OnScreen = false; return; }
             if (_Hide) return;
-
-            // Collision updates only done onscreen as well
-            if (_CollisionType == CollisionType.Active) CheckCollisions();
 
             _Draw_OnScreen = true;
             _Draw_Animation = _Animations.Current;

@@ -164,7 +164,10 @@ namespace AlienShooterGame
             return score;
         }
 
-        public override void Update(Microsoft.Xna.Framework.GameTime time)
+        public override void Update(GameTime time)
+        {}
+
+        public void UpdateFirst(Microsoft.Xna.Framework.GameTime time)
         {
  	        base.Update(time);
 

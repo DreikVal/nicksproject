@@ -252,6 +252,7 @@ namespace AlienShooterGame
                 Player.Fire();
             }
 
+            _Player.UpdateFirst(time);
             base.Update(time);
 
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
