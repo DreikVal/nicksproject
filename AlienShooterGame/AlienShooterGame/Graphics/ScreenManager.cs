@@ -156,8 +156,17 @@ namespace AlienShooterGame
             if (screen.Visible)
             {
                 SpriteBatch bat = batch as SpriteBatch;
+                GameTime gtime = time as GameTime;
+
+                if (screen.BackgroundDrawingOn)
+                {
+                    screen.BeginBackground(bat);
+                    screen.DrawBackground(gtime, bat);
+                    screen.EndBackground(bat);
+                }
+
                 screen.BeginDraw(bat);
-                screen.Draw(time as GameTime, bat);
+                screen.Draw(gtime, bat);
                 screen.EndDraw(bat);
             }
             return true;

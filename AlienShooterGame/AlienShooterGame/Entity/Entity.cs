@@ -248,6 +248,10 @@ namespace AlienShooterGame
             batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, (float)_Geometry.Direction, _Draw_Origin, SpriteEffects.None, _Depth);
         }
 
+        public virtual void BackgroundDraw(GameTime time, SpriteBatch batch)
+        {
+        }
+
         #endregion
 
         public bool isOnScreen()

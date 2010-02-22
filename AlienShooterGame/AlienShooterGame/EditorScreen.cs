@@ -50,8 +50,8 @@ namespace AlienShooterGame
 
 
             Application.AppReference.DynamicLighting = false;
-            Tile.TileWidth = 16.0f;
-            Tile.TileHeight = 16.0f;
+            Tile.TileWidth = 32.0f;
+            Tile.TileHeight = 32.0f;
 
             // Setup tiles
             _Tiles = new Tile[TileRows, TileCols];

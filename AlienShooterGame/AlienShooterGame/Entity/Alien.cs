@@ -18,7 +18,7 @@ namespace AlienShooterGame
         public Entity Target { get { return _Target; } set { _Target = value; } } 
         protected Entity _Target;
 
-        public const float AlienSpeed = 0.16f;
+        public const float AlienSpeed = 0.15f;
 
         protected int _MaxHP = 100;
         protected int _CurrentHP;
@@ -83,7 +83,7 @@ namespace AlienShooterGame
 
             if (otherEnt as Bullet != null)
             {
-                int damage = 15 + Application.AppReference.Random.Next(45);
+                int damage = 15 + Application.AppReference.Random.Next(25);
                 _CurrentHP -= damage;
                 for (int i = 0; i < BloodPerHit; i++)
                     new Blood(_Parent, _Geometry.Position, Color.Green, 8.0f, 16.0f, 0.1f, 0.2f, 0.92f, 22);

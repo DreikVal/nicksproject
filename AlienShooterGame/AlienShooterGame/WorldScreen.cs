@@ -84,6 +84,7 @@ namespace AlienShooterGame
             _Message = _HelpMessage;
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.White;
+            _BackgroundDrawingOn = true;
             //Application.AppReference.DynamicLighting = false;
 
             // Create loadport
@@ -259,7 +260,9 @@ namespace AlienShooterGame
             _ViewPort.TargetLocation.X = _Player.Geometry.Position.X - (_ViewPort.Size.X / 2);
             _ViewPort.TargetLocation.Y = _Player.Geometry.Position.Y - (_ViewPort.Size.Y / 2);
             _MessageLocation = new Vector2(_ViewPort.ActualLocation.X + 20.0f, _ViewPort.ActualLocation.Y + 20.0f);
-            //_Message = "Score: " + _Player.Score;
+            
+            if (!_FPSDisplay)
+                _Message = "Score: " + _Player.Score;
             //_Message = "Active: " + _Entities.Count + "  Inactive: " + _InactiveEntities.Count;
             /*
             if (time.TotalGameTime.Milliseconds % 37 == 0)
