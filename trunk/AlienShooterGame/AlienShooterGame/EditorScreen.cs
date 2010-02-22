@@ -38,10 +38,9 @@ namespace AlienShooterGame
             // Create crosshair
             _Crosshair = new Crosshair(this);
 
-
             Application.AppReference.DynamicLighting = false;
-            Tile.TileWidth = 32.0f;
-            Tile.TileHeight = 32.0f;
+            Tile.TileWidth = 8.0f;
+            Tile.TileHeight = 8.0f;
 
             // Setup tiles
             _Tiles = new Tile[TileRows, TileCols];
@@ -61,10 +60,12 @@ namespace AlienShooterGame
             _Message = "World Editor Mode";
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.Red;
+            _BackgroundDrawingOn = true;
 
             LoadPort = new LoadPort(this, new Vector2(), new Vector2(1050, 750), 100f);
 
             _ViewPort.TargetLocation = new Vector2(TileCols * Tile.TileWidth, TileRows * Tile.TileHeight);
+            
         }
 
         protected override void HandleInputActive(Bind bind)
@@ -177,8 +178,8 @@ namespace AlienShooterGame
 
             if (_Dragging)
             {
-                col = (int)((_Crosshair.Geometry.Position.X + _Crosshair.Geometry.Radius / 2) / Tile.TileWidth);
-                row = (int)((_Crosshair.Geometry.Position.Y + _Crosshair.Geometry.Radius / 2) / Tile.TileHeight);
+                col = (int)((_Crosshair.Geometry.Position.X ) / Tile.TileWidth);
+                row = (int)((_Crosshair.Geometry.Position.Y ) / Tile.TileHeight);
                 if (col != lastCol || row != lastRow)
                 {
                     try
