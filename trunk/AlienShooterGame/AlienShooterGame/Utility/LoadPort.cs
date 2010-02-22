@@ -52,10 +52,13 @@ namespace AlienShooterGame
                 ent.Geometry.Position.X - ent.Geometry.Radius > ActualLocation.X + Size.X ||
                 ent.Geometry.Position.Y - ent.Geometry.Radius > ActualLocation.Y + Size.Y))
             {
-                if (ent as LightSource != null)
-                    _Parent.Lights.Add(ent.ID, ent as LightSource);
+                
+                if (ent as Tile != null)
+                    _Parent.BGEntities.Add(ent.ID, ent);
                 else if (ent as ShadowRegion != null)
                     _Parent.Shadows.Add(ent.ID, ent as ShadowRegion);
+                else if (ent as LightSource != null)
+                    _Parent.Lights.Add(ent.ID, ent as LightSource);
                 _Parent.InactiveEntities.Remove(ent.ID);
                 _Parent.Entities.Add(ent.ID, ent);
             }
@@ -68,7 +71,9 @@ namespace AlienShooterGame
                 ent.Geometry.Position.X - ent.Geometry.Radius > ActualLocation.X + Size.X ||
                 ent.Geometry.Position.Y - ent.Geometry.Radius > ActualLocation.Y + Size.Y)
             {
-                if (ent as LightSource != null)
+                if (ent as Tile != null)
+                    _Parent.BGEntities.Remove(ent.ID);
+                else if (ent as LightSource != null)
                     _Parent.Lights.Remove(ent.ID);
                 else if (ent as ShadowRegion != null)
                     _Parent.Shadows.Remove(ent.ID);

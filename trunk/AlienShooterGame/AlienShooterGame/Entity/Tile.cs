@@ -56,7 +56,7 @@ namespace AlienShooterGame
             }
             else CollisionType = CollisionType.None;
 
-            
+            _Parent.BGEntities.Add(_ID, this);
         }
 
         public override string Initialize()
@@ -90,6 +90,13 @@ namespace AlienShooterGame
             double angle = Math.Atan2(diff.Y, diff.X);
             ent.Geometry.Position.X = (float)( Geometry.Position.X + ((ent.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Cos(angle)));
             ent.Geometry.Position.Y = (float)( Geometry.Position.Y + ((ent.Geometry.CollisionRadius + Geometry.CollisionRadius) * -Math.Sin(angle)));
+        }
+
+        public override void Draw(GameTime time, SpriteBatch batch) { }
+
+        public override void BackgroundDraw(GameTime time, SpriteBatch batch)
+        {
+            base.Draw(time, batch);
         }
 
 

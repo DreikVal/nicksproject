@@ -277,6 +277,12 @@ namespace AlienShooterGame
         public ThreadDictionary<UInt64, ShadowRegion> Shadows { get { return _Shadows; } }
         protected ThreadDictionary<UInt64, ShadowRegion> _Shadows = new ThreadDictionary<ulong, ShadowRegion>();
 
+        public ThreadDictionary<UInt64, Entity> BGEntities { get { return _BGEntities; } }
+        protected ThreadDictionary<UInt64, Entity> _BGEntities = new ThreadDictionary<ulong, Entity>();
+
+        public bool BackgroundDrawingOn { get { return _BackgroundDrawingOn; } set { _BackgroundDrawingOn = value; } }
+        protected bool _BackgroundDrawingOn = false;
+
         public LoadPort LoadPort { get { return _LoadPort; } set { _LoadPort = value; } }
         protected LoadPort _LoadPort = null;
 
@@ -284,7 +290,7 @@ namespace AlienShooterGame
         protected BackgroundWorker _Worker = new BackgroundWorker();
 
         protected System.Threading.Thread _GruntThread = null;
-        protected int _LightingUpdatePeriod = 18;
+        protected int _LightingUpdatePeriod = 50;
 
 
         /// <summary>
@@ -401,7 +407,33 @@ namespace AlienShooterGame
         public virtual void BeginDraw(SpriteBatch batch) { batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.None); }
         public virtual void EndDraw(SpriteBatch batch) { batch.End(); }
 
+        public virtual void BeginBackground(SpriteBatch batch) { batch.Begin(SpriteBlendMode.None, SpriteSortMode.Texture, SaveStateMode.None); }
+        public virtual void EndBackground(SpriteBatch batch) { batch.End(); }
+
+        /// <summary>
+        /// Renders this screen.
+        /// </summary>
+        /// <param name="time">The GameTime object from the XNA framework.</param>
+        /// <param name="batch">The spritebatch on which to render the screen.</param>
+        public virtual void DrawBackground(GameTime time, SpriteBatch batch)
+        {
+            // Break early if user made menu invisible
+            if (!Visible)
+                return;
+
+            // Check if this menu is hidden behind other screens
+            if (_VisiblyObscured && !_VisibleWhenObscured && !_Fading)
+                return;
+
+            // Begin screen drawing
+
+
+            // Draw each of the screen's entities
+            _BGEntities.ForEach(DrawBGEntity, time, batch, null);
+        }
+
         private bool DrawEntity(Entity ent, object time, object batch, object p3) { ent.Draw(time as GameTime, batch as SpriteBatch); return true; }
+        private bool DrawBGEntity(Entity ent, object time, object batch, object p3) { ent.BackgroundDraw(time as GameTime, batch as SpriteBatch); return true; }
 
 
         public virtual void StartBackgroundThread()

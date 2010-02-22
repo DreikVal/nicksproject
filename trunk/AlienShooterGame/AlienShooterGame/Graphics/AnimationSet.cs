@@ -28,7 +28,7 @@ namespace AlienShooterGame
             if (_Current == null)
             {
                 _Current = animation;
-                _Current.FreezeFrame = true;
+                //_Current.FreezeFrame = true;
             }
             else
             {
