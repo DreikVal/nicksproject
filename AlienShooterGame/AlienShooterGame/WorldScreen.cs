@@ -191,6 +191,7 @@ namespace AlienShooterGame
                     gui.Remove();
                     Remove();
                     _Manager.AddScreen(new EditorScreen(_Manager));
+                    _Manager.AddScreen(new GUIEditor(_Manager));
                 }
             }
             else if (bind.Name.CompareTo("Weapon1") == 0)

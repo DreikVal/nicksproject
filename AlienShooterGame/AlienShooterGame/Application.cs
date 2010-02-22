@@ -135,6 +135,8 @@ namespace AlienShooterGame
             _ScreenManager.Input.AddBind(new Bind("MoveMode", Keys.M));
             _ScreenManager.Input.AddBind(new Bind("PrimaryFire", MouseButtons.LeftButton));
             _ScreenManager.Input.AddBind(new Bind("SecondaryFire", MouseButtons.RightButton));
+            _ScreenManager.Input.AddBind(new Bind("ZoomIn", Keys.Add));
+            _ScreenManager.Input.AddBind(new Bind("ZoomOut", Keys.Subtract));
             _ScreenManager.Input.AddBind(new Bind("Reload", Keys.R));
             _ScreenManager.Input.AddBind(new Bind("NightVision", Keys.N));
             _ScreenManager.Input.AddBind(new Bind("Editor", Keys.F12));
