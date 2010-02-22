@@ -12,23 +12,21 @@ namespace AlienShooterGame
     class EditorScreen : Screen
     {
         protected Crosshair _Crosshair;
-        protected Editor_Gui _EditorGUI;
 
-        public int TileCols = 500;
-        public int TileRows = 500;
+        public int TileCols = 125;
+        public int TileRows = 125;
 
-        protected int _TileIndex = 0;
+        public int _TileIndex = 0;
 
         public const float ScreenMoveRate = 75.0f;
 
         protected bool _Dragging = false;
         protected int lastRow, lastCol;
 
-        protected Tile PreviewTile;
-        protected Tile PreviewTileB;
-
         protected Tile[,] _Tiles;
 
+        public int Row { get { return row; } }
+        public int Col { get { return col; } }
         protected int row = 0;
         protected int col = 0;
 
@@ -39,14 +37,6 @@ namespace AlienShooterGame
         {
             // Create crosshair
             _Crosshair = new Crosshair(this);
-
-            _EditorGUI = new Editor_Gui(this, new Vector2(764, 407));
-            PreviewTile = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
-            PreviewTile.Geometry.Position = new Vector2(734, 256);
-            PreviewTile.Depth = 0.16f;
-            PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col, _TileIndex);
-            PreviewTileB.Geometry.Position = new Vector2(734, 256);
-            PreviewTileB.Depth = 0.18f;
 
 
             Application.AppReference.DynamicLighting = false;
@@ -72,6 +62,8 @@ namespace AlienShooterGame
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
             _MessageColour = Color.Red;
 
+            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1050, 750), 100f);
+
             _ViewPort.TargetLocation = new Vector2(TileCols * Tile.TileWidth, TileRows * Tile.TileHeight);
         }
 
@@ -89,12 +81,6 @@ namespace AlienShooterGame
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
                     _TileIndex = (_TileIndex + 1) % Tile.TileGen.Length;
-                    PreviewTile.Dispose();
-                    PreviewTile = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
-                    PreviewTile.Depth = 0.16f;
-                    PreviewTileB.Dispose();
-                    PreviewTileB = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, row, col, _TileIndex);
-                    PreviewTileB.Depth = 0.18f;
                 }
             }
             else if (bind.Name.CompareTo("StrafeLeft") == 0)
@@ -130,6 +116,9 @@ namespace AlienShooterGame
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
+                    Screen gui;
+                    _Manager.LookupScreen("GUIEditor", out gui);
+                    gui.Remove();
                     this.Remove();
                     _Manager.AddScreen(new WorldScreen(_Manager, "world.awo"));
                     _Manager.AddScreen(new GUIScreen(_Manager));
@@ -141,6 +130,20 @@ namespace AlienShooterGame
                 {
                     _ViewPort.TargetLocation = new Vector2(TileCols * Tile.TileWidth / 2, TileRows * Tile.TileHeight / 2);
                     _ViewPort.Size = new Vector2(800, 500);
+                }
+            }
+            else if (bind.Name.CompareTo("ZoomIn") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    _ViewPort.Size -= new Vector2(_Manager.Resolution.X / 20, _Manager.Resolution.Y / 20);
+                }
+            }
+            else if (bind.Name.CompareTo("ZoomOut") == 0)
+            {
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    _ViewPort.Size += new Vector2(_Manager.Resolution.X / 20, _Manager.Resolution.Y / 20);
                 }
             }
         }
@@ -171,9 +174,6 @@ namespace AlienShooterGame
         public override void Update(Microsoft.Xna.Framework.GameTime time)
         {
             base.Update(time);
-
-            PreviewTile.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 754, _ViewPort.ActualLocation.Y + 397);
-            PreviewTileB.Geometry.Position = new Vector2(_ViewPort.ActualLocation.X + 774, _ViewPort.ActualLocation.Y + 417);
 
             if (_Dragging)
             {
