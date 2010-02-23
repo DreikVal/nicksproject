@@ -93,6 +93,7 @@
     <Compile Include="Entity\Weapons\MachineGun.cs" />
     <Compile Include="Graphics\ShadowRegion.cs" />
     <Compile Include="GUIEditor.cs" />
+    <Compile Include="GUI\Score_GUI.cs" />
     <Compile Include="GUI\Radar_GUI.cs" />
     <Compile Include="GUI\Health_GUI.cs" />
     <Compile Include="Utility\LoadPort.cs" />
