@@ -12,6 +12,7 @@ namespace AlienShooterGame
         Ammo_Gui _AmmoGUI;
         Health_Gui _HealthGUI;
         Radar_Gui _RadarGUI;
+        Score_Gui _ScoreGUI;
 
         public GUIScreen(ScreenManager manager)
             : base(manager, "GUI")
@@ -20,6 +21,7 @@ namespace AlienShooterGame
             _AmmoGUI = new Ammo_Gui(this);
             _HealthGUI = new Health_Gui(this);
             _RadarGUI = new Radar_Gui(this);
+            _ScoreGUI = new Score_Gui(this);
 
             
             _AmmoGUI.Geometry.Position.X = this.ViewPort.Size.X - 160;
@@ -30,6 +32,9 @@ namespace AlienShooterGame
 
             _RadarGUI.Geometry.Position.X = this.ViewPort.Size.X - 70;
             _RadarGUI.Geometry.Position.Y = 70;
+
+            _ScoreGUI.Geometry.Position.X = 20;
+            _ScoreGUI.Geometry.Position.Y = 70;
 
             Depth = 0.2f;
             _BackBehaviour = ActionOnBack.ExitApplication;
