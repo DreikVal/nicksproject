@@ -7,10 +7,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AlienShooterGame
 {
-    public class Editor_Gui : Entity
+    public class Editor_TextureBox : Entity
     {
 
-        public Editor_Gui(Screen Parent)
+        public Editor_TextureBox(Screen Parent)
             : base(Parent)
 
         {
@@ -18,13 +18,13 @@ namespace AlienShooterGame
 
         public override string Initialize()
         {
-            _Geometry = new Geometry(this, new Vector2(564, 407), 34.0f, 34.0f, 0.0f, 32.0f);
+            _Geometry = new Geometry(this, new Vector2(250, 250), 258, 268, 0.0f, 50.0f);
 
             // Create an animation set for the marine
             _Animations = new AnimationSet();
 
             // Add the default animation
-            _Animations.AddAnimation(new Animation("editorbox", "Normal", 1, 1, 1.0f));
+            _Animations.AddAnimation(new Animation("texturelistbox", "Normal", 1, 1, 1.0f));
 
             _Depth = 0.2f;
 
