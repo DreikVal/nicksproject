@@ -17,10 +17,12 @@ namespace AlienShooterGame
         public int TileRows = 125;
 
         public int _TileIndex = 0;
+        public int _SecondaryIndex = 1;
 
         public const float ScreenMoveRate = 75.0f;
 
         protected bool _Dragging = false;
+        protected bool _SecondaryDragging = false;
         protected int lastRow, lastCol;
 
         protected Tile[,] _Tiles;
@@ -57,9 +59,9 @@ namespace AlienShooterGame
             _BackBehaviour = ActionOnBack.ExitApplication;
             _FadeInTime = 0.0f;
             _FadeOutTime = 0.0f;
-            _Message = "World Editor Mode";
+            _Message = "Left Click/Right Click, Press (F) to Close Browser";
             _MessageFont = Application.AppReference.Content.Load<SpriteFont>("Font");
-            _MessageColour = Color.Red;
+            _MessageColour = Color.White;
             _BackgroundDrawingOn = true;
 
             LoadPort = new LoadPort(this, new Vector2(), new Vector2(1050, 750), 100f);
@@ -74,15 +76,21 @@ namespace AlienShooterGame
 
             if (bind.Name.CompareTo("PrimaryFire") == 0)
             {
-                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down) _Dragging = true;
+                if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
+                {
+                    _SecondaryDragging = false;
+                    _Dragging = true;
+                }
                 else _Dragging = false;
             }
             else if (bind.Name.CompareTo("SecondaryFire") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
-                    _TileIndex = (_TileIndex + 1) % Tile.TileGen.Length;
+                    _Dragging = false;
+                    _SecondaryDragging = true;
                 }
+                else _SecondaryDragging = false;
             }
             else if (bind.Name.CompareTo("StrafeLeft") == 0)
             {
@@ -176,7 +184,7 @@ namespace AlienShooterGame
         {
             base.Update(time);
 
-            if (_Dragging)
+            if (_Dragging || _SecondaryDragging)
             {
                 col = (int)((_Crosshair.Geometry.Position.X ) / Tile.TileWidth);
                 row = (int)((_Crosshair.Geometry.Position.Y ) / Tile.TileHeight);
@@ -185,7 +193,10 @@ namespace AlienShooterGame
                     try
                     {
                         _Tiles[row, col].Dispose();
-                        _Tiles[row, col] = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
+                        if (_SecondaryDragging)
+                            _Tiles[row, col] = Tile.TileGen[_SecondaryIndex](this, row, col, _SecondaryIndex);
+                        else
+                            _Tiles[row, col] = Tile.TileGen[_TileIndex](this, row, col, _TileIndex);
                         lastRow = row;
                         lastCol = col;
                     }
