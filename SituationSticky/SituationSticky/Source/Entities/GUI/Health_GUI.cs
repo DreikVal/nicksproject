@@ -9,77 +9,73 @@ namespace SituationSticky
 {
     public class Health_GUI : Entity
     {
-        protected Screen parent;
-        protected int currentHP;
-        protected Vector2 healthOffset = new Vector2 (100, 485);
+        #region Constants
 
+        public const String FontName = "Fonts/DefaultFont";
+        public static Vector2 TextOffset = new Vector2(25, -13);
+
+        #endregion
+
+        #region Members
+
+        protected String _HPText;
+        protected SpriteFont _Font;
+        protected float _PercentHP;
+        protected Vector2 _TextLocation;
+
+        #endregion
+
+        #region Init and Disposal
+
+        /// <summary>
+        /// Creates a new Health_GUI object.
+        /// </summary>
+        /// <param name="Parent">The screen for the health gui.</param>
+        /// <param name="position">The location of the health gui.</param>
         public Health_GUI(Screen Parent, Vector2 position)
-            : base(Parent.Entities, position, 45f, 50f, 0f)
-
-        {}
+            : base(Parent.Entities, position, 50f, 45f, 0f) { }
 
         public override string Initialize()
         {
             // Animations
             _Animations = new AnimationSet();
-            _Animations.AddAnimation(new Animation("Textures/GUI/Health01_1x1", "Normal", 1, 1, 1.0f));
+            _Animations.AddAnimation(new Animation("Textures/GUI/Health03_1x1", "Normal", 1, 1, 1.0f));
 
             // Settings
             _Depth = 0.19f;
             _DynamicLighting = false;
+            _Font = Application.AppReference.Content.Load<SpriteFont>(FontName);
+            _HPText = "Loading..";
 
             return "Health_GUI";
         }
 
-        private int getHP()
-        {
-            Screen screen;
-            WorldScreen world;
+        #endregion
 
-            try
-            {
-                _Parent.Manager.LookupScreen("World", out screen);
-                world = (WorldScreen)screen;
-                return world.PlayerMarine.CurrentHP;
-            }
-            catch (Exception) { }
-            return 0;
+        #region Update
+
+        public override void Update(GameTime time)
+        {
+            base.Update(time);
+            Marine player = ((WorldScreen)_Parent.Manager.GetScreen("World")).PlayerMarine;
+            _HPText = player.CurrentHP.ToString();
+            _PercentHP = (float)player.CurrentHP / (float)Marine.MaxHP;
+            _ColourOverlay = new Color(1f - _PercentHP, _PercentHP, 0f, 0.45f);
+            _ActualColour = _ColourOverlay;
+            _TextLocation = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position + TextOffset);
         }
 
-        private SpriteFont getFont()
-        {
-            Screen screen;
-            WorldScreen world;
+        #endregion
 
-            try
-            {
-                _Parent.Manager.LookupScreen("World", out screen);
-                world = (WorldScreen)screen;
-                return world.MessageFont;
-            }
-            catch (Exception) { }
-
-            return null;
-        }
+        #region Draw
 
         public override void Draw(GameTime time, Microsoft.Xna.Framework.Graphics.SpriteBatch batch)
         {
-            try
-            {
-                batch.DrawString(getFont(), getHP().ToString(),
-                    new Vector2(_Position.X + healthOffset.X,
-                        _Position.Y + healthOffset.Y),
-                        Color.Orange,
-                        0.0f,
-                        Vector2.Zero,
-                        3.0f,
-                        SpriteEffects.None,
-                        0.0f);
-            }
-            catch (Exception) { }
-
             base.Draw(time, batch);
+            batch.DrawString(_Font, _HPText, _TextLocation, _ColourOverlay, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0f);
         }
+
+        #endregion
 
     }
 }
