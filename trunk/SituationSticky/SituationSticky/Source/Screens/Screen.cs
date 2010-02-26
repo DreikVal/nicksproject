@@ -425,10 +425,9 @@ namespace SituationSticky
             {
                 batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Immediate, SaveStateMode.None);
                 Vector2 TopLeft_Pixels = ViewPort.Transform_UnitPosition_To_PixelPosition(MessageLocation);
-                Vector2 Size_Pixels = ViewPort.Transform_UnitSize_To_PixelSize(MessageFont.MeasureString(Message));
-                Vector2 Scale = Size_Pixels / MessageFont.MeasureString(Message);
+                Vector2 Size_Pixels = MessageFont.MeasureString(Message);
 
-                batch.DrawString(_MessageFont, _Message, TopLeft_Pixels, _MessageColour, 0.0f, new Vector2(0, 0), Scale.X, SpriteEffects.None, Depth);
+                batch.DrawString(_MessageFont, _Message, TopLeft_Pixels, _MessageColour, 0.0f, new Vector2(0, 0), 1f, SpriteEffects.None, Depth);
                 batch.End();
             }
         }
