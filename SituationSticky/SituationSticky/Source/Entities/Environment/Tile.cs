@@ -62,7 +62,7 @@ namespace SituationSticky
                 // Collision settings
                 _CollisionType = CollisionType.Passive;
                 _CollisionRadius = TileWidth / 2;
-                _Shadow = new ShadowRegion(this, _Position, _Radius);              
+                _Shadow = new ShadowRegion(this, _Position, _CollisionRadius);              
             }
             else CollisionType = CollisionType.None;
         }
@@ -156,7 +156,7 @@ namespace SituationSticky
         }
         public static Tile Tile_Wall07(Screen parent, int row, int col, int tileIndex)
         {
-            return new Tile(parent, "Textures/Environment/WallTile07_1x1", false, row, col, tileIndex);
+            return new Tile(parent, "Textures/Environment/WallTile07_1x1", true, row, col, tileIndex);
         }
 
         #endregion
