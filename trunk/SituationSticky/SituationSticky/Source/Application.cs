@@ -76,7 +76,7 @@ namespace SituationSticky
         /// Gets or sets the quality of graphics settings for the game.
         /// </summary>
         public int GfxLevel { get { return _GfxLevel; } set { _GfxLevel = value; } }
-        protected int _GfxLevel = 4;
+        protected int _GfxLevel = 2;
 
 
         /// <summary>
