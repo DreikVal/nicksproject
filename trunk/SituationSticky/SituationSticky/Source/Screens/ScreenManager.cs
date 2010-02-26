@@ -169,6 +169,11 @@ namespace SituationSticky
             return _Screens.TryGetValue(name, out screen);
         }
 
+        public virtual Screen GetScreen(string name)
+        {
+            return _Screens.GetValue(name);
+        }
+
         /// <summary>
         /// Adds the specified screen to the screen manager.
         /// </summary>

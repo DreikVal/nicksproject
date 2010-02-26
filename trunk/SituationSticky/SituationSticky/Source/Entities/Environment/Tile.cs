@@ -61,8 +61,8 @@ namespace SituationSticky
             {
                 // Collision settings
                 _CollisionType = CollisionType.Passive;
-                _CollisionRadius = TileWidth / 2;
-                _Shadow = new ShadowRegion(this, _Position, _CollisionRadius);              
+                _CollisionRadius = _Radius * 0.7f;
+                _Shadow = new ShadowRegion(this, _Position, _Radius);
             }
             else CollisionType = CollisionType.None;
         }
@@ -73,7 +73,6 @@ namespace SituationSticky
             _ColourOverlay = Color.White;
             _DynamicLighting = true;
             _Depth = 0.95f;
-            _Radius = TileWidth * 1.5f;
 
             return "Tile";
         }

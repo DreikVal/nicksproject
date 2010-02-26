@@ -123,7 +123,7 @@ namespace SituationSticky
             _ScreenManager.Input.AddBind(new Bind("SEC", MouseButtons.RightButton));
             _ScreenManager.Input.AddBind(new Bind("ZIN", Keys.Add));
             _ScreenManager.Input.AddBind(new Bind("ZOU", Keys.Subtract));
-            _ScreenManager.Input.AddBind(new Bind("REL", Keys.R));
+            _ScreenManager.Input.AddBind(new Bind("RLD", Keys.R));
             _ScreenManager.Input.AddBind(new Bind("NVI", Keys.N));
             _ScreenManager.Input.AddBind(new Bind("EDI", Keys.F12));
             _ScreenManager.Input.AddBind(new Bind("FPS", Keys.F9));

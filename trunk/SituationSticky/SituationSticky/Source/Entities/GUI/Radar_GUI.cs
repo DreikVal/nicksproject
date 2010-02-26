@@ -10,7 +10,6 @@ namespace SituationSticky
     public class Radar_GUI : Entity
     {
         protected Screen parent;
-        protected Bullet_GUI[] bullets;
         protected Vector2 firstPos = new Vector2(794f, 422f);
         protected Vector2 increment = new Vector2(-7f, 0f);
 

@@ -21,7 +21,7 @@ namespace SituationSticky
         /// The reload time in milliseconds for this weapon.
         /// </summary>
         public int ReloadTime { get { return _ReloadTime; } set { _ReloadTime = value; } }
-        protected int _ReloadTime = 1000;
+        protected int _ReloadTime = 1200;
 
         /// <summary>
         /// The remaining milliseconds on cooldown.
@@ -39,7 +39,7 @@ namespace SituationSticky
         /// The clip size for this weapon.
         /// </summary>
         public int ClipSize { get { return _ClipSize; } set { _ClipSize = value; } }
-        protected int _ClipSize = 12500;
+        protected int _ClipSize = 50;
 
         /// <summary>
         /// The current ammo in clip for this weapon.
@@ -70,6 +70,9 @@ namespace SituationSticky
         /// </summary>
         public bool IsReloading { get { return _IsReloading; } }
         protected bool _IsReloading = false;
+
+        public String Name { get { return _Name; } set { _Name = value; } }
+        protected String _Name = "Default Weapon";
 
         #endregion
 
@@ -105,7 +108,7 @@ namespace SituationSticky
             }
             
             // Firing weapon
-            if (_IsFiring && _RemainingCooldown <= 0 && !_IsReloading && _Ammo > 0)
+            if (_IsFiring && _RemainingCooldown <= 0 && !_IsReloading && _Ammo > 0 && !_Player.Disposed)
             {
                 // Create muzzle light source
                 _Player.Muzzle.Active = true;
@@ -142,11 +145,6 @@ namespace SituationSticky
             _RemainingReload = _ReloadTime;
             _Ammo = 0;
             _IsReloading = true;
-        }
-
-        public virtual string getName()
-        {
-            return "DefaultGun";
         }
 
         #endregion

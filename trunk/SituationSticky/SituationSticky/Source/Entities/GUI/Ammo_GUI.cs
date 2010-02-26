@@ -9,93 +9,124 @@ namespace SituationSticky
 {
     public class Ammo_GUI : Entity
     {
-        protected Screen parent;
-        //protected Bullet_GUI[] bullets;
-        protected Vector2 firstPos = new Vector2(794f, 422f);
-        protected Vector2 increment = new Vector2(-7f, 0f);
-        protected Vector2 reloadOffset = new Vector2(500, 495);
-        protected int bulletIndex;
-        protected Texture2D _BarDull, _Bar;
+        #region Constants
 
+        public static Vector2 AmmoBarOffset = new Vector2(0, 15);
+        public static Vector2 AmmoBarSize = new Vector2(135, 22);
+        public const String TextFont = "Fonts/DefaultFont";
+        public static Color TextColour = new Color(0f, 0f, 0f, 0.95f);
+        public const String DullTexture = "Textures/GUI/ProgressDull01_1x1";
+        public static Color DullColour = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+        public const String BarTexture = "Textures/GUI/ProgressBar01_1x1";
+        public static Color BarColour = new Color(1.0f, 0.2f, 0.2f, 0.25f);
+        public static Vector2 TextOffset = new Vector2(80, 12);
+        public static String[] ReloadingText = { "Reloading", "Reloading.", "Reloading..", "Reloading...", "Reloading....", "Reloading....." };
+
+        #endregion
+
+        #region Members
+
+        // Ammo bar textures
+        protected Texture2D _DullTexture, _BarTexture;
+
+        // Text font
+        protected SpriteFont _TextFont;
+
+        protected String _Text = "Reloading";
+
+        // Internal members for handling drawing of ammo box
+        private Rectangle _Draw_DullDest, _Draw_BarDest;
+        private Vector2 _TextLocation;
+        private float _TextScale;
+
+        #endregion
+
+        #region Init and Disposal
+
+        /// <summary>
+        /// Creates a new Ammo_GUI box which displays the player's weapon situation.
+        /// </summary>
+        /// <param name="Parent">Screen on which to display.</param>
+        /// <param name="position">Location of the ammo box.</param>
         public Ammo_GUI(Screen Parent, Vector2 position)
             : base(Parent.Entities, position, 180f, 70f, 0f)
-
-        {}
+        { }
 
         public override string Initialize()
         {
             // Animations
             _Animations = new AnimationSet();
-            _Animations.AddAnimation(new Animation("Textures/GUI/AmmoBox01_1x1", "Normal", 1, 1, 1.0f));
-            _BarDull = Application.AppReference.Content.Load<Texture2D>("Textures/GUI/ProgressDull01_1x1");
-            _Bar = Application.AppReference.Content.Load<Texture2D>("Textures/GUI/ProgressBar01_1x1");
+            //_Animations.AddAnimation(new Animation("Textures/GUI/AmmoBox01_1x1", "Normal", 1, 1, 1.0f));
+            _DullTexture = Application.AppReference.Content.Load<Texture2D>(DullTexture);
+            _BarTexture = Application.AppReference.Content.Load<Texture2D>(BarTexture);
 
             // Settings
             _Depth = 0.19f;
             _DynamicLighting = false;
+            _TextFont = Application.AppReference.Content.Load<SpriteFont>(TextFont);
 
             return "Ammo_GUI";
         }
 
-        public override void Draw(GameTime time, Microsoft.Xna.Framework.Graphics.SpriteBatch batch)
+        #endregion
+
+        #region Update
+
+        public override void Update(GameTime time)
         {
-            /*
-            Screen screen;
-            WorldScreen world;
-            try
+            base.Update(time);
+
+            // Drawing calculations for the dull ammo box
+            Vector2 dullPos = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position + AmmoBarOffset);
+            Vector2 dullSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(AmmoBarSize);
+            _Draw_DullDest = new Rectangle((int)(dullPos.X), (int)(dullPos.Y), (int)dullSize.X, (int)dullSize.Y);
+
+            // Grab the Marine's weapon info to compute ammo status
+            Weapon weap = ((WorldScreen)_Parent.Manager.GetScreen("World")).PlayerMarine.CurrentWeapon;
+            float percAmmo = (float)weap.Ammo / (float)weap.ClipSize;
+            if (percAmmo < 0) percAmmo = 0f;
+
+            // Set reloading text
+            if (weap.IsReloading)
             {
-                _Parent.Manager.LookupScreen("World", out screen);
-                world = (WorldScreen)screen;
-
-                //get weapon name
-                
-                batch.DrawString(getFont(), world.Player.currentWeapon.getName(),
-                    new Vector2(this.Geometry.Position.X + reloadOffset.X,
-                        this.Geometry.Position.Y + reloadOffset.Y - 140),
-                        Color.Red,
-                        0.0f,
-                        Vector2.Zero,
-                        2.5f,
-                        SpriteEffects.None,
-                        0.0f);
+                float remaining = (float)weap.RemainingReload / (float)weap.ReloadTime;
+                int index = ReloadingText.Length - (int)(remaining * (ReloadingText.Length-1)) - 1;
+                _Text = ReloadingText[index];
             }
-            
-            catch{}
+            else
+                _Text = weap.Name;
 
+            Vector2 textSize = _TextFont.MeasureString(_Text);
+            _TextScale = 1f;
+            if (textSize.X > dullSize.X) _TextScale = dullSize.X / textSize.X;
+            else if (textSize.Y > dullSize.Y) _TextScale = dullSize.Y / textSize.Y;
+            _TextLocation = dullPos - (textSize * _TextScale / 2);
 
-            if (bulletIndex == -1)
-                    batch.DrawString(getFont(), "Reloading...",
-                        new Vector2(_Position.X + reloadOffset.X,
-                            _Position.Y + reloadOffset.Y),
-                            Color.Red,
-                            0.0f,
-                            Vector2.Zero,
-                            3.0f,
-                            SpriteEffects.None,
-                            0.0f);
+            // Drawing calculations for ammo box
+            Vector2 barPos = dullPos;
+            barPos.X += dullSize.X / 2 * (1f - percAmmo) + 1f;
+            Vector2 barSize = dullSize;
+            barSize.X = barSize.X * percAmmo;
+            _Draw_BarDest = new Rectangle((int)(barPos.X), (int)(barPos.Y), (int)barSize.X, (int)barSize.Y);
+        }
+
+        #endregion
+
+        #region Draw
+
+        public override void Draw(GameTime time, SpriteBatch batch)
+        {
+            // Draw background box
             base.Draw(time, batch);
-            */
 
-            //batch.Draw(_BarDull, new Rectangle(1400, 900, 128, 32), Color.White);
-            //batch.Draw(_Bar, new Rectangle(1425, 900, 128-50, 28), new Color(0.2f, 0.4f, 1f, 0.8f));
+            // Draw ammo bars
+            batch.Draw(_DullTexture, _Draw_DullDest, null, DullColour, 0f, new Vector2(_DullTexture.Width / 2, _DullTexture.Height / 2), SpriteEffects.None, 0.05f);
+            batch.Draw(_BarTexture, _Draw_BarDest, null, BarColour, 0f, new Vector2(_BarTexture.Width / 2, _BarTexture.Height / 2), SpriteEffects.None, 0.04f);
+            
+            // Draw text
+            batch.DrawString(_TextFont, _Text, _TextLocation, TextColour, 0f, new Vector2(), _TextScale, SpriteEffects.None, 0.03f);
         }
 
-        private SpriteFont getFont()
-        {
-            Screen screen;
-            WorldScreen world;
-
-            try
-            {
-                _Parent.Manager.LookupScreen("World", out screen);
-                world = (WorldScreen)screen;
-                return world.MessageFont;
-            }
-            catch (Exception) { }
-
-            return null;
-        }
-
-
+        #endregion
     }
 }

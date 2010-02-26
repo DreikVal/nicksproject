@@ -29,7 +29,7 @@ namespace SituationSticky
             
             // Setup GUI entities
             _AmmoGUI = new Ammo_GUI(this, new Vector2(700,400));
-            _HealthGUI = new Health_GUI(this, new Vector2(35,400));
+            _HealthGUI = new Health_GUI(this, new Vector2(22,420));
             _RadarGUI = new Radar_GUI(this, new Vector2(725,75));
             //_ScoreGUI = new Score_GUI(this, new Vector2(400,400));           
         }

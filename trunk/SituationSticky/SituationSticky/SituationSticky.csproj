@@ -91,7 +91,6 @@
     <Compile Include="Source\Entities\Entity.cs" />
     <Compile Include="Source\Entities\Environment\Tile.cs" />
     <Compile Include="Source\Entities\GUI\Ammo_GUI.cs" />
-    <Compile Include="Source\Entities\GUI\Bullet_GUI.cs" />
     <Compile Include="Source\Entities\GUI\Health_GUI.cs" />
     <Compile Include="Source\Entities\GUI\Radar_GUI.cs" />
     <Compile Include="Source\Entities\GUI\Score_GUI.cs" />

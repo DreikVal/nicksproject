@@ -285,6 +285,8 @@ namespace SituationSticky
             // if (!isOnScreen()) { _Draw_OnScreen = false; return; }
             if (_Hide) return;
 
+            if (_Animations == null || _Animations.Current == null) return;
+
             // Pre-calculations for the spritebatch are computed here which allows XNA to distribute draw calls to the gfx card faster in Draw()
             _Draw_OnScreen = true;
             _Draw_Animation = _Animations.Current;
@@ -474,7 +476,7 @@ namespace SituationSticky
         /// </summary>
         protected virtual void CalculateRadius()
         {
-            _Radius = (float)Math.Sqrt(Height * Height + Width * Width);
+            _Radius = (float)Math.Sqrt(_Height * _Height + _Width * _Width)/2f;
         }
 
         public virtual void SetPosition(Vector2 pos) { _Position = pos; }
