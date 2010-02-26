@@ -90,8 +90,9 @@ namespace SituationSticky
             // Create a new drone to replace this one.
             Drone.CreateNearbyDrone(_Parent, _Parent.PlayerEntity, 450, _Target);
             
-            //new FloatingText(_Parent, _Geometry.Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).Player.GiveScore(ScoreValue).ToString(),
-            //"FloatingFont", new Color(0.6f, 0.7f, 1.0f, 0.7f), 1000);
+            // Create floating text
+            new FloatingText(_Parent, _Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).PlayerMarine.GiveScore(Bounty).ToString(),
+                "Fonts/FloatingFont", new Color(0.6f, 0.7f, 1.0f, 0.5f), 1000);
         }
 
         #endregion
