@@ -9,10 +9,31 @@ namespace SituationSticky
 {
     class WorldGUI : Screen
     {
-        Ammo_GUI _AmmoGUI;
-        Health_GUI _HealthGUI;
-        Radar_GUI _RadarGUI;
-        //Score_GUI _ScoreGUI;
+        #region Members
+
+        /// <summary>
+        /// The ammoy gui displays player's current ammo and weapon type.
+        /// </summary>
+        protected Ammo_GUI _AmmoGUI;
+
+        /// <summary>
+        /// The health gui displays player's current HP.
+        /// </summary>
+        protected Health_GUI _HealthGUI;
+
+        /// <summary>
+        /// The radar gui tracks nearby aliens.
+        /// </summary>
+        protected Radar_GUI _RadarGUI;
+
+        /// <summary>
+        /// The score gui displays player's score.
+        /// </summary>
+        protected Score_GUI _ScoreGUI;
+
+        #endregion
+
+        #region Init and Disposal
 
         public WorldGUI(ScreenManager manager)
             : base(manager, "WorldGUI")
@@ -31,7 +52,9 @@ namespace SituationSticky
             _AmmoGUI = new Ammo_GUI(this, new Vector2(700,400));
             _HealthGUI = new Health_GUI(this, new Vector2(22,420));
             _RadarGUI = new Radar_GUI(this, new Vector2(725,75));
-            //_ScoreGUI = new Score_GUI(this, new Vector2(400,400));           
+            _ScoreGUI = new Score_GUI(this, new Vector2(20,30));
         }
+
+        #endregion
     }
 }

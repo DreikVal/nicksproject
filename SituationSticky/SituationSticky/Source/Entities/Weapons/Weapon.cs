@@ -21,7 +21,7 @@ namespace SituationSticky
         /// The reload time in milliseconds for this weapon.
         /// </summary>
         public int ReloadTime { get { return _ReloadTime; } set { _ReloadTime = value; } }
-        protected int _ReloadTime = 1200;
+        protected int _ReloadTime = 1250;
 
         /// <summary>
         /// The remaining milliseconds on cooldown.
@@ -39,7 +39,7 @@ namespace SituationSticky
         /// The clip size for this weapon.
         /// </summary>
         public int ClipSize { get { return _ClipSize; } set { _ClipSize = value; } }
-        protected int _ClipSize = 50;
+        protected int _ClipSize = 75;
 
         /// <summary>
         /// The current ammo in clip for this weapon.
