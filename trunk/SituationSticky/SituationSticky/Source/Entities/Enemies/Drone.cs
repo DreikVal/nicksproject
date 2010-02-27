@@ -138,6 +138,8 @@ namespace SituationSticky
         {
             base.HandleCollision(otherEnt);
 
+            if (Disposed || otherEnt.Disposed) return;
+
             if (otherEnt as Bullet != null)
             {
                 // Apply bullet damage to drone
