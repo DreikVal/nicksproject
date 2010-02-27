@@ -18,9 +18,24 @@ namespace SituationSticky
 
         #region Members
 
+        /// <summary>
+        /// Text that displays the players current HP.
+        /// </summary>
         protected String _HPText;
+
+        /// <summary>
+        /// The font for the HP Text.
+        /// </summary>
         protected SpriteFont _Font;
+
+        /// <summary>
+        /// The percentage of HP that player has left.
+        /// </summary>
         protected float _PercentHP;
+
+        /// <summary>
+        /// The location of the HP text.
+        /// </summary>
         protected Vector2 _TextLocation;
 
         #endregion

@@ -20,6 +20,8 @@ namespace SituationSticky
     /// </summary>
     public class ViewPort
     {
+        #region Members
+
         /// <summary>
         /// The size in game units of the screen.
         /// </summary>
@@ -59,12 +61,15 @@ namespace SituationSticky
         public bool IsSliding { get { return _IsSliding; } }
         protected bool _IsSliding = false;
 
+        #endregion
+
+        #region Init and Disposal
+
         /// <summary>
         /// Creates a viewport with default position and size.
         /// </summary>
         public ViewPort()
-        {
-        }
+        { }
 
         /// <summary>
         /// Creates a viewport with specified position and size.
@@ -77,8 +82,13 @@ namespace SituationSticky
             Size = size;
         }
 
+        #endregion
+
+        #region Update
+
         public virtual void Update(GameTime time)
         {
+            // Handle screens shaking
             if (_ShakeDamping < 0.001f)
             {
                 _ShakeMagnitude = 0;
@@ -107,6 +117,7 @@ namespace SituationSticky
                     EffectOffset.X += _ShakeMagnitude * _ShakeRate;
             }
 
+            // Handle screen sliding
             if (_SlideTimeLeft > 0.0f)
             {
                 EffectOffset = (_SlideFrom - TargetLocation) * _SlideTimeLeft / _SlideTime;
@@ -121,9 +132,18 @@ namespace SituationSticky
             }
             else
                 _IsSliding = false;
-                
         }
 
+        #endregion
+
+        #region Utility
+
+        /// <summary>
+        /// Causes the viewport to shake.
+        /// </summary>
+        /// <param name="magnitude">The maximum distance of the shake.</param>
+        /// <param name="rate">How quickly the screen shakes back and forth.</param>
+        /// <param name="damping">Percentage of the magnitude that is maintained each update.</param>
         public virtual void Shake(float magnitude, float rate, float damping)
         {
             _ShakeDamping = damping;
@@ -131,6 +151,12 @@ namespace SituationSticky
             _ShakeRate = rate;
         }
 
+        /// <summary>
+        /// Causes the viewport to slide.
+        /// </summary>
+        /// <param name="from">Position to slide in from.</param>
+        /// <param name="to">Position to slide out to.</param>
+        /// <param name="time">Time taken for the slide.</param>
         public virtual void Slide(Vector2 from, Vector2 to, float time)
         {
             _SlideFrom = from;
@@ -160,5 +186,7 @@ namespace SituationSticky
         {
             return (size / Size * Application.AppReference.ScreenManager.Resolution);
         }
+
+        #endregion
     }
 }

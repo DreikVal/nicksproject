@@ -12,9 +12,9 @@ namespace SituationSticky
 
         public const int        DamageBase              = 15;
         public const int        DamageVar               = 25;
-        public const float      BulletSpeed             = 1.6f;
+        public const float      BulletSpeed             = 1.5f;
         public const int        BulletLifeTime          = 750;
-        public static int[]     DefaultCollisionPeriod  = { 80, 60, 45, 30, 18 };
+        public static int[]     DefaultCollisionPeriod  = { 75, 50, 40, 25, 18 };
 
         #endregion
 

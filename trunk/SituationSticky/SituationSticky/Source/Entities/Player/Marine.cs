@@ -34,7 +34,7 @@ namespace SituationSticky
         public const float      DeathSpeedVar               = 1.6f;
         public const float      DeathSpeedDamp              = 0.88f;
         public const float      ScoreMulti_Growth           = 1.4f;
-        public const int        ScoreMulti_Time             = 1000;
+        public const int        ScoreMulti_Time             = 1200;
         public const float      FlashLight_Range            = 650f;
         public const float      FlashLight_Bandwidth        = 1.8f;
         public static Color     FlashLight_Colour           = new Color(1.0f, 1.0f, 0.5f, 1.0f);

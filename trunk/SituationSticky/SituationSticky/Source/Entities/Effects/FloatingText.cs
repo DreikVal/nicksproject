@@ -9,10 +9,38 @@ namespace SituationSticky
 {
     public class FloatingText : Entity
     {
+        #region Members
+
+        /// <summary>
+        /// Percentage of text speed that is maintained each update.
+        /// </summary>
         protected float _Damping;
+
+        /// <summary>
+        /// What the floating text should say.
+        /// </summary>
         protected String _Text;
+
+        /// <summary>
+        /// The font of the floating text.
+        /// </summary>
         protected SpriteFont _Font;
 
+        #endregion
+
+        #region Init and Disposal
+
+        /// <summary>
+        /// Creates a new floating text entity.
+        /// </summary>
+        /// <param name="parent">Screen on which to create the text.</param>
+        /// <param name="position">The initial location of the text.</param>
+        /// <param name="speed">The velocity of the text.</param>
+        /// <param name="damping">The percentage of velocity maintained each update.</param>
+        /// <param name="text">What the text should say.</param>
+        /// <param name="font">The content name of the font.</param>
+        /// <param name="colour">The colour of the text.</param>
+        /// <param name="lifeTime">How long, in milliseconds, the text should last for.</param>
         public FloatingText(Screen parent, Vector2 position, float speed, float damping, String text, String font, Color colour, int lifeTime) : 
             base(parent.Entities, position, 50f, 28f, 0f)
         { 
@@ -34,11 +62,15 @@ namespace SituationSticky
             return "FloatingText";
         }
 
+        #endregion
+
+        #region Draw
+
         public override void Draw(GameTime time, SpriteBatch batch)
         {
             if (Disposed) return;
 
-            // Draw the message string
+            // Draw the floating text
             if (_Text != null && _Font != null)
             {
                 Vector2 Length = _Font.MeasureString(_Text);
@@ -49,11 +81,18 @@ namespace SituationSticky
             }
         }
 
-        public override void Update(Microsoft.Xna.Framework.GameTime time)
+        #endregion
+
+        #region Update
+
+        public override void Update(GameTime time)
         {
             base.Update(time);
 
+            // Apply speed damping effect
             _Speed *= _Damping;
         }
+
+        #endregion
     }
 }
