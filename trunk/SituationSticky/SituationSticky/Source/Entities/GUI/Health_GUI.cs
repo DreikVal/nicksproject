@@ -73,8 +73,9 @@ namespace SituationSticky
         {
             base.Update(time);
             Marine player = ((WorldScreen)_Parent.Manager.GetScreen("World")).PlayerMarine;
-            _HPText = player.CurrentHP.ToString();
-            _PercentHP = (float)player.CurrentHP / (float)Marine.MaxHP;
+            int hp = player.CurrentHP <= 0 ? 0 : player.CurrentHP;
+            _HPText = hp.ToString();
+            _PercentHP = (float)hp / (float)Marine.MaxHP;
             _ColourOverlay = new Color(1f - _PercentHP, _PercentHP, 0f, 0.45f);
             _ActualColour = _ColourOverlay;
             _TextLocation = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position + TextOffset);
