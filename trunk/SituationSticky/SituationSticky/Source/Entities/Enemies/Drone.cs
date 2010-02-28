@@ -14,7 +14,7 @@ namespace SituationSticky
         public static int[]         BloodOnHit              = { 3, 6, 10, 15, 25 };
         public static int[]         BloodOnDeath            = { 7, 11, 18, 26, 40 };
         public const float          DefaultCollisionRadius  = 20f;
-        public static int[]         DefaultCollisionPeriod  = { 150, 115, 90, 65, 50 };
+        public static int[]         DefaultCollisionPeriod  = { 125, 100, 75, 50, 35 };
         public static Color         BloodColour             = Color.Green;
         public const float          BloodSizeBase           = 5f;
         public const float          BloodSizeVar            = 18f;
@@ -27,7 +27,7 @@ namespace SituationSticky
         public const float          DroneSpeed              = 0.14f;
         public const int            Bounty                  = 50;
         public const float          BulletKnockback         = 0.7f;
-        public const float          MarineKnockback         = 1.2f;
+        public const float          MarineKnockback         = 1.1f;
 
         #endregion
 
@@ -88,7 +88,8 @@ namespace SituationSticky
                 new Blood(_Parent, _Position, BloodColour, BloodSizeBase, BloodSizeVar, BloodSpeedBase, BloodSpeedVar, BloodSpeedDamp, BloodLifeTime);
 
             // Create a new drone to replace this one.
-            Drone.CreateNearbyDrone(_Parent, _Parent.PlayerEntity, 450, _Target);
+            int index = Application.AppReference.Random.Next(WorldScreen.SpawnLocations.Length);
+            new Drone(_Parent, WorldScreen.SpawnLocations[index], _Target);
             
             // Create floating text
             new FloatingText(_Parent, _Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).PlayerMarine.GiveScore(Bounty).ToString(),

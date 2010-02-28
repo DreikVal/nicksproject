@@ -14,8 +14,9 @@ namespace SituationSticky
     {
         #region Constants
 
-        public const int    NumDrones           = 15;
+        public const int    NumDrones           = 7;
         public const String DefaultHelpMessage  = "Situation: Sticky (Demo)";
+        public static Vector2[] SpawnLocations = { new Vector2(220, 700), new Vector2(950, 700), new Vector2(600, 320), new Vector2(570, 1030) };
 
         #endregion
 
@@ -101,12 +102,13 @@ namespace SituationSticky
 
             // Create crosshair
             _Crosshair = new Crosshair(this);
+            _Crosshair.Hide = false;
 
             // Create aliens
             for (int i = 0; i < NumDrones; i++)
             {
-                float dist = (float)Application.AppReference.Random.NextDouble() * 300 + 200f;
-                Drone.CreateNearbyDrone(this, PlayerMarine, dist, PlayerMarine);
+                int index = Application.AppReference.Random.Next(SpawnLocations.Length);
+                new Drone(this, SpawnLocations[index], _PlayerEntity);
             }
 
 
@@ -271,19 +273,27 @@ namespace SituationSticky
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
-                    //Screen gui;
-                    //_Manager.LookupScreen("GUI", out gui);
-                    //gui.Remove();
+                    // Remove world gui
+                    _Manager.GetScreen("WorldGUI").Remove();
+
+                    // Remove world screen
                     Remove();
-                    //_Manager.AddScreen(new EditorScreen(_Manager));
-                    //_Manager.AddScreen(new GUIEditor(_Manager));
+
+                    // Add editor screen
+                    _Manager.AddScreen(new EditorScreen(_Manager));
+
+                    // Add editor gui
+                    _Manager.AddScreen(new EditorGUI(_Manager));
                 }
             }
             // Exit game
             else if (bind.Name.CompareTo("ESC") == 0)
             {
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Up)
-                    Application.AppReference.Exit();
+                {
+                    //Application.AppReference.Exit();
+                    throw new Exception("LOL: " + PlayerEntity.Position.X + ":" + PlayerEntity.Position.Y);
+                }
             }
             /*
             else if (bind.Name.CompareTo("WP1") == 0)

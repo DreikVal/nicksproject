@@ -79,16 +79,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\Environment\FloorTile01_1x1.png">
-      <Name>FloorTile01_1x1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Textures\Environment\FloorTile02_1x1.jpg">
-      <Name>FloorTile02_1x1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Textures\Environment\FloorTile03_1x1.jpg">
       <Name>FloorTile03_1x1</Name>
       <Importer>TextureImporter</Importer>
@@ -237,6 +227,25 @@
   <ItemGroup>
     <Compile Include="Textures\GUI\Health03_1x1.png">
       <Name>Health03_1x1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\Environment\FloorTile01_1x1.jpg">
+      <Name>FloorTile01_1x1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Environment\FloorTile02_1x1.png">
+      <Name>FloorTile02_1x1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\GUI\TextureListBox01_1x1.png">
+      <Name>TextureListBox01_1x1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

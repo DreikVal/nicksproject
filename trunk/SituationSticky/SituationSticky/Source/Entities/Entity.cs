@@ -180,10 +180,10 @@ namespace SituationSticky
         protected float _Spin = 0.0f;
 
         // Variables used to render object
-        private Animation _Draw_Animation;
-        private Vector2 _Draw_Origin, _Draw_Position, _Draw_Size;
-        private Rectangle _Draw_Destination, _Draw_Source;
-        private bool _Draw_OnScreen = false;
+        protected Animation _Draw_Animation;
+        protected Vector2 _Draw_Origin, _Draw_Position, _Draw_Size;
+        protected Rectangle _Draw_Destination, _Draw_Source;
+        protected bool _Draw_OnScreen = false;
         
         #endregion
 
@@ -293,7 +293,7 @@ namespace SituationSticky
             _Draw_Position = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position);
             _Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(Size);
             _Draw_Origin = new Vector2(_Animations.Current.WidthPerCell / 2, _Animations.Current.HeightPerCell / 2);
-            _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)_Draw_Size.X, (int)_Draw_Size.Y);
+            _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)(_Draw_Size.X), (int)(_Draw_Size.Y));
             _Draw_Source = _Draw_Animation.UpdateSource(time);
         }
 
@@ -305,7 +305,7 @@ namespace SituationSticky
         {
             if (_Parent.DynamicLighting && _DynamicLighting)
             {
-                _Lighting = new Vector4(0.25f, 0.25f, 0.25f, 1.0f);
+                _Lighting = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
                 _Parent.Lights.Loaded.ForEach(ForEachLight, null, null, null);
                 Vector4 _VectorOverlay = _ColourOverlay.ToVector4();
 

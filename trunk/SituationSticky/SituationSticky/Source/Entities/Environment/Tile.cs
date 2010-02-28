@@ -61,7 +61,7 @@ namespace SituationSticky
             {
                 // Collision settings
                 _CollisionType = CollisionType.Passive;
-                _CollisionRadius = _Radius * 0.7f;
+                _CollisionRadius = _Radius * 0.8f;
                 _Shadow = new ShadowRegion(this, _Position, _Radius);
             }
             else CollisionType = CollisionType.None;
@@ -75,6 +75,15 @@ namespace SituationSticky
             _Depth = 0.95f;
 
             return "Tile";
+        }
+
+        #endregion
+
+        #region Update
+
+        public override void Update(GameTime time)
+        {
+            base.Update(time);
         }
 
         #endregion
