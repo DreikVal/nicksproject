@@ -61,12 +61,6 @@ namespace SituationSticky
         protected ThreadDictionary<UInt64, Entity> _AllEntities = new ThreadDictionary<ulong, Entity>();
 
         /// <summary>
-        /// Gets a library that contains a function that creates an entity based on its entity class name.
-        /// </summary>
-        public Dictionary<String, Func<UInt64?, Screen, bool, Entity>> EntityDefinitions { get { return _EntityDefinitions; } }
-        protected Dictionary<String, Func<UInt64?, Screen, bool, Entity>> _EntityDefinitions = new Dictionary<string, Func<UInt64?, Screen, bool, Entity>>();
-
-        /// <summary>
         /// Gets the applications random number generator.
         /// </summary>
         public Random Random { get { return _Random; } }
@@ -77,6 +71,27 @@ namespace SituationSticky
         /// </summary>
         public int GfxLevel { get { return _GfxLevel; } set { _GfxLevel = value; } }
         protected int _GfxLevel = 4;
+
+        /// <summary>
+        /// Gets a library that contains a function that creates an entity based on its entity class name.
+        /// </summary>
+        public static Func<Screen, Vector2, Entity>[] _EntityDefinitions = 
+        { 
+            Tile.Tile_Floor01,
+            Tile.Tile_Floor02,
+            Tile.Tile_Floor03,
+            Tile.Tile_Floor04,
+            Tile.Tile_Floor05,
+            Tile.Tile_Floor06,
+            Tile.Tile_Wall01,
+            Tile.Tile_Wall02,
+            Tile.Tile_Wall03,
+            Tile.Tile_Wall04,
+            Tile.Tile_Wall05,
+            Tile.Tile_Wall06,
+            Marine.CreateMarine,
+            Drone.CreateDrone
+        };
 
 
         /// <summary>
@@ -146,8 +161,6 @@ namespace SituationSticky
 
             // Create a new SpriteBatch, which can be used to draw textures.
             _Batch = new SpriteBatch(GraphicsDevice);
-
-            // Load entity definitions
 
             // Add game screens
             _ScreenManager.AddScreen(new WorldScreen(_ScreenManager, "Content/Maps/world.awo"));

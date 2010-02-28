@@ -60,6 +60,7 @@ namespace SituationSticky
             _CollisionType = CollisionType.Active;
             _DynamicLighting = false;
             _LifeTime = BulletLifeTime;
+            _Temporary = true;
             _Speed = BulletSpeed;
             _Damage = DamageBase + Application.AppReference.Random.Next(DamageVar);
             _CollisionPeriod = DefaultCollisionPeriod[Application.AppReference.GfxLevel];

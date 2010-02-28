@@ -14,7 +14,7 @@ namespace SituationSticky
     {
         #region Constants
 
-        public const int    NumDrones           = 7;
+        public const int    NumDrones           = 4;
         public const String DefaultHelpMessage  = "Situation: Sticky (Demo)";
         public static Vector2[] SpawnLocations = { new Vector2(220, 700), new Vector2(950, 700), new Vector2(600, 320), new Vector2(570, 1030) };
 
@@ -70,6 +70,8 @@ namespace SituationSticky
         public bool IsFiring { get { return _IsFiring; } }
         protected bool _IsFiring = false;
 
+        protected int _ScoreTarget = 500;
+
         #endregion
 
         #region Init and Disposal
@@ -91,7 +93,7 @@ namespace SituationSticky
                 for (int col = 0; col < TileCols; col++)
                 {
                     int index = bin.ReadInt32();
-                    Tile.TileGen[index](this, row, col, index);
+                    Tile.TileGen[index](this, new Vector2(col*Tile.TileWidth, row*Tile.TileHeight));
                 }
             }
             bin.Close();
@@ -148,6 +150,14 @@ namespace SituationSticky
             // Display help message
             if (!_FPSDisplay && _PlayerEntity != null && !_PlayerEntity.Disposed)
                 _Message = DefaultHelpMessage;
+
+            // Check score target
+            if (PlayerMarine.Score > _ScoreTarget)
+            {
+                int index = Application.AppReference.Random.Next(SpawnLocations.Length);
+                new Drone(this, SpawnLocations[index], _PlayerEntity);
+                _ScoreTarget += 600;
+            }
         }
 
         #endregion

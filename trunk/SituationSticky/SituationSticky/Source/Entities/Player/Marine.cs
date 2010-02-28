@@ -203,6 +203,8 @@ namespace SituationSticky
             _Parent.Message = "Press secondary fire to respawn...";
         }
 
+        public static Marine CreateMarine(Screen parent, Vector2 position) { return new Marine(parent, position); }
+
         #endregion
 
         #region Utility
