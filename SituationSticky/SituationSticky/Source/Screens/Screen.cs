@@ -513,6 +513,8 @@ namespace SituationSticky
             // Break if the screen is update obscured
             if (_UpdateObscured && !_UpdatesWhenObscured) return;
 
+            if (_Dying) return;
+
             // Update screens entities
             _Entities.Loaded.ForEach(UpdateEntity, time, null, null);
             _Shadows.Loaded.ForEach(UpdateEntity, time, null, null);

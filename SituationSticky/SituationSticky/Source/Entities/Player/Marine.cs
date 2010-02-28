@@ -231,6 +231,10 @@ namespace SituationSticky
             _Speed = 0f;
             base.Update(time);
 
+            // Keep HP positive
+            if (_CurrentHP < 0)
+                _CurrentHP = 0;
+
             if (Disposed) return;
 
             // Point marine towards the mouse
@@ -241,9 +245,8 @@ namespace SituationSticky
             _Direction = (float)(Math.Atan2(mLoc.Y - _Position.Y, mLoc.X - _Position.X) + Math.PI / 2);
 
             // Check HP
-            if (_CurrentHP <= 0)
+            if (_CurrentHP == 0)
             {
-                _CurrentHP = 0;
                 Dispose();
                 return;
             }

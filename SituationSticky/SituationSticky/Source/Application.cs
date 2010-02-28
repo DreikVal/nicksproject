@@ -46,7 +46,7 @@ namespace SituationSticky
         /// The colour with which the backbuffer is cleared each time a frame is rendered.
         /// </summary>
         public Color BackgroundColour { get { return _BackgroundColour; } set { _BackgroundColour = value; } }
-        protected Color _BackgroundColour = Color.White;
+        protected Color _BackgroundColour = Color.Black;
 
         /// <summary>
         /// Gets a reference to the gamer services for the application.
@@ -121,13 +121,13 @@ namespace SituationSticky
             _ScreenManager.Input.AddBind(new Bind("MOV", Keys.M));
             _ScreenManager.Input.AddBind(new Bind("PRI", MouseButtons.LeftButton));
             _ScreenManager.Input.AddBind(new Bind("SEC", MouseButtons.RightButton));
-            _ScreenManager.Input.AddBind(new Bind("ZIN", Keys.Add));
-            _ScreenManager.Input.AddBind(new Bind("ZOU", Keys.Subtract));
+            _ScreenManager.Input.AddBind(new Bind("ZIN", MouseButtons.ScrollUp));
+            _ScreenManager.Input.AddBind(new Bind("ZOU", MouseButtons.ScrollDown));
             _ScreenManager.Input.AddBind(new Bind("RLD", Keys.R));
             _ScreenManager.Input.AddBind(new Bind("NVI", Keys.N));
             _ScreenManager.Input.AddBind(new Bind("EDI", Keys.F12));
             _ScreenManager.Input.AddBind(new Bind("FPS", Keys.F9));
-            _ScreenManager.Input.AddBind(new Bind("SVE", Keys.F11));
+            _ScreenManager.Input.AddBind(new Bind("SAV", Keys.F11));
             _ScreenManager.Input.AddBind(new Bind("WP1", Keys.D1));
             _ScreenManager.Input.AddBind(new Bind("WP2", Keys.D2));
             _ScreenManager.Input.AddBind(new Bind("WP3", Keys.D3));

@@ -93,9 +93,11 @@
     <Compile Include="Source\Entities\Entity.cs" />
     <Compile Include="Source\Entities\Environment\Tile.cs" />
     <Compile Include="Source\Entities\GUI\Ammo_GUI.cs" />
+    <Compile Include="Source\Entities\GUI\PreviewBox_GUI.cs" />
     <Compile Include="Source\Entities\GUI\Health_GUI.cs" />
     <Compile Include="Source\Entities\GUI\Radar_GUI.cs" />
     <Compile Include="Source\Entities\GUI\Score_GUI.cs" />
+    <Compile Include="Source\Entities\GUI\TextureBox_GUI.cs" />
     <Compile Include="Source\Entities\Lighting\LightSource.cs" />
     <Compile Include="Source\Entities\Lighting\ShadowRegion.cs" />
     <Compile Include="Source\Entities\Misc\Bullet.cs" />
@@ -104,6 +106,10 @@
     <Compile Include="Source\Entities\Weapons\Weapon.cs" />
     <Compile Include="Source\Input\Bind.cs" />
     <Compile Include="Source\Input\InputManager.cs" />
+    <Compile Include="Source\Screens\Editor\EditorGUI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Screens\Editor\EditorScreen.cs" />
     <Compile Include="Source\Screens\Game\WorldGUI.cs" />
     <Compile Include="Source\Screens\Game\WorldScreen.cs" />
     <Compile Include="Source\Screens\Screen.cs" />
@@ -154,7 +160,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Source\Screens\Editor\" />
     <Folder Include="Source\Screens\Menu\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
