@@ -41,7 +41,7 @@ namespace SituationSticky
         /// <summary>
         /// The default horizontal screen resolution.
         /// </summary>
-        public const int DefaultHorizontalResolution = 1600;
+        public const int DefaultHorizontalResolution = 1200;
 
         /// <summary>
         /// The default horizontal to vertical screen ratio.
