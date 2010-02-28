@@ -88,6 +88,7 @@
     <Compile Include="Source\Application.cs" />
     <Compile Include="Source\Entities\Effects\Blood.cs" />
     <Compile Include="Source\Entities\Effects\FloatingText.cs" />
+    <Compile Include="Source\Entities\Effects\MuzzleFlash.cs" />
     <Compile Include="Source\Entities\Enemies\Drone.cs" />
     <Compile Include="Source\Entities\Entity.cs" />
     <Compile Include="Source\Entities\Environment\Tile.cs" />
