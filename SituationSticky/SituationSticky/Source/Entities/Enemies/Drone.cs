@@ -24,10 +24,10 @@ namespace SituationSticky
         public const float          BloodSpeedDamp          = 0.92f;
         public const int            DamagePerHit            = 1;
         public const int            MaxHP                   = 100;
-        public const float          DroneSpeed              = 0.14f;
+        public const float          DroneSpeed              = 0.16f;
         public const int            Bounty                  = 50;
         public const float          BulletKnockback         = 0.7f;
-        public const float          MarineKnockback         = 1.05f;
+        public const float          MarineKnockback         = 1.03f;
 
         #endregion
 
@@ -94,7 +94,12 @@ namespace SituationSticky
             // Create floating text
             new FloatingText(_Parent, _Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).PlayerMarine.GiveScore(Bounty).ToString(),
                 "Fonts/FloatingFont", new Color(0.6f, 0.7f, 1.0f, 0.5f), 1000);
+
+            if (Application.AppReference.Random.NextDouble() > 0.90)
+                new HealthPack(_Parent, _Position);
         }
+
+        public static Drone CreateDrone(Screen parent, Vector2 position) { return new Drone(parent, position, null); }
 
         #endregion
 
@@ -168,7 +173,10 @@ namespace SituationSticky
                 otherEnt.SetYPosition((float)(_Position.Y + (otherEnt.CollisionRadius + _CollisionRadius) * -Math.Sin(angle)));
             }
             else if (otherEnt as Marine != null)
+            {
                 AttackPlayer(otherEnt as Marine);
+                _Speed *= 0.60f;
+            }
         }
 
         /// <summary>

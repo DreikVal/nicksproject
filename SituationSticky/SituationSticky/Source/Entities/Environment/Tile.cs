@@ -19,15 +19,9 @@ namespace SituationSticky
         #region Members
 
         /// <summary>
-        /// Gets or sets the TileGen index used to create this tile.
-        /// </summary>
-        public int TileIndex { get { return _TileIndex; } set { _TileIndex = value; } }
-        protected int _TileIndex;
-
-        /// <summary>
         /// An array of TileGen functions.
         /// </summary>
-        public static Func<Screen, int, int, int, Tile>[] TileGen = {
+        public static Func<Screen, Vector2, Tile>[] TileGen = {
                                                             Tile_Floor01,
                                                             Tile_Floor02,
                                                             Tile_Floor03,
@@ -48,10 +42,10 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public Tile(Screen parent, String texName, bool collidable, int row, int col, int tileIndex)
-            : base( ((collidable) ? parent.Walls : parent.Tiles), new Vector2(col*TileWidth, row*TileHeight), TileWidth, TileHeight, 0f)
+        public Tile(Screen parent, Vector2 position, String texName, bool collidable)
+            : base( ((collidable) ? parent.Walls : parent.Tiles), position, TileWidth, TileHeight, 0f)
         {
-            _TileIndex = tileIndex;
+            //_TileIndex = tileIndex;
 
             // Animations
             _Animations = new AnimationSet();
@@ -61,10 +55,13 @@ namespace SituationSticky
             {
                 // Collision settings
                 _CollisionType = CollisionType.Passive;
-                _CollisionRadius = _Radius * 0.9f;
+                _Radius *= 1.5f;
+                _CollisionRadius = _Radius * 0.6f;
                 _Shadow = new ShadowRegion(this, _Position, _Radius);
             }
             else CollisionType = CollisionType.None;
+
+            _EntityClass = texName.Substring(21, (texName.Length-25) );
         }
 
         public override string Initialize()
@@ -110,61 +107,61 @@ namespace SituationSticky
 
         #region TileGen Functions
 
-        public static Tile Tile_Floor01(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor01(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile01_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile01_1x1", false);
         }
-        public static Tile Tile_Wall01(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall01(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile01_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile01_1x1", true);
         }
-        public static Tile Tile_Wall02(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall02(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile02_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile02_1x1", true);
         }
-        public static Tile Tile_Wall03(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall03(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile03_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile03_1x1", true);
         }
-        public static Tile Tile_Floor02(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor02(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile02_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile02_1x1", false);
         }
-        public static Tile Tile_Wall04(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall04(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile04_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile04_1x1", true);
         }
-        public static Tile Tile_Wall05(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall05(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile05_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile05_1x1", true);
         }
-        public static Tile Tile_Floor03(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor03(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile03_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile03_1x1", false);
         }
-        public static Tile Tile_Floor04(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor04(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile04_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile04_1x1", false);
         }
-        public static Tile Tile_Floor05(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor05(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile05_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile05_1x1", false);
         }
-        public static Tile Tile_Floor06(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor06(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile06_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile06_1x1", false);
         }
-        public static Tile Tile_Wall06(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall06(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile06_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile06_1x1", true);
         }
-        public static Tile Tile_Floor07(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Floor07(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/FloorTile07_1x1", false, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/FloorTile07_1x1", false);
         }
-        public static Tile Tile_Wall07(Screen parent, int row, int col, int tileIndex)
+        public static Tile Tile_Wall07(Screen parent, Vector2 position)
         {
-            return new Tile(parent, "Textures/Environment/WallTile07_1x1", true, row, col, tileIndex);
+            return new Tile(parent, position, "Textures/Environment/WallTile07_1x1", true);
         }
 
         #endregion

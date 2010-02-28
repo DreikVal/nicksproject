@@ -184,6 +184,12 @@ namespace SituationSticky
         protected Vector2 _Draw_Origin, _Draw_Position, _Draw_Size;
         protected Rectangle _Draw_Destination, _Draw_Source;
         protected bool _Draw_OnScreen = false;
+
+        /// <summary>
+        /// Gets or sets the definition ID used to create an instance of this entity.
+        /// </summary>
+        public int DefinitionID { get { return _DefinitionID; } set { _DefinitionID = value; } }
+        protected int _DefinitionID = -1;
         
         #endregion
 

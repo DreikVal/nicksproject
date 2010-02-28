@@ -103,6 +103,7 @@
     <Compile Include="Source\Entities\Misc\Bullet.cs" />
     <Compile Include="Source\Entities\Misc\Crosshair.cs" />
     <Compile Include="Source\Entities\Player\Marine.cs" />
+    <Compile Include="Source\Entities\Powerups\HealthPack.cs" />
     <Compile Include="Source\Entities\Weapons\Weapon.cs" />
     <Compile Include="Source\Input\Bind.cs" />
     <Compile Include="Source\Input\InputManager.cs" />
