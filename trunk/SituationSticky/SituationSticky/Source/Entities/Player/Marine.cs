@@ -13,7 +13,7 @@ namespace SituationSticky
     {
         #region Constants
 
-        public const float      PlayerSpeed                 = 0.15f;
+        public const float      PlayerSpeed                 = 0.13f;
         public const int        MaxHP                       = 100;
         public const float      DefaultCollisionRadius      = 18f;
         public static int[]     DefaultCollisionPeriod      = { 80, 60, 40, 25, 16 };

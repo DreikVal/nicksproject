@@ -5,54 +5,80 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace AlienShooterGame
+namespace SituationSticky
 {
     public class MuzzleFlash : Entity
     {
-        public static float Speed = 1.5f;
-        public static int LifeTime = 4;
+        #region Constants
 
-        protected int _Remaining = LifeTime;
+        public const int DefaultLifeTime = 120;
+        public static Color MuzzleColour = new Color(1f, 0.9f, 0.7f, 0.25f);
+
+        #endregion
+
+        #region Members
+
+        /// <summary>
+        /// The owner of the entity, the position of the muzzle flash stays relative to this owner.
+        /// </summary>
         protected Entity _Owner = null;
+
+        /// <summary>
+        /// The positional offset from the owner of this muzzle flash.
+        /// </summary>
         protected Vector2 _Offset;
 
-        public MuzzleFlash(Screen parent, Vector2 position, Entity owner)
-            : base(parent)
+        #endregion
+
+        #region Init and Disposal
+
+        /// <summary>
+        /// Creates a new muzzle flash object.
+        /// </summary>
+        /// <param name="parent">The screen to create the muzzle flash on.</param>
+        /// <param name="owner">The owner (creator) of the muzzle flash.</param>
+        /// <param name="offset">The positional offset from the owner.</param>
+        public MuzzleFlash(Screen parent, Entity owner, Vector2 offset)
+            : base(parent.Entities, owner.Position, 15f, 20f, owner.Direction)
         {
-            _Offset = position - owner.Geometry.Position;
             _Owner = owner;
+            _Offset = offset;
+            _Position.X = _Owner.Position.X + (float)Math.Sin(_Owner.Direction) * _Offset.X + (float)Math.Cos(_Owner.Direction) * _Offset.Y;
+            _Position.Y = _Owner.Position.Y + (float)Math.Sin(_Owner.Direction) * _Offset.Y - (float)Math.Cos(_Owner.Direction) * _Offset.X;
         }
 
         public override string Initialize()
-        {
-            // Create collision geometry for the marine
-            _Geometry = new Geometry(this, new Vector2(), 20.0f, 20.0f, 0.0f, 0.0f);
-
-            // Create an animation set for the marine
+        {         
+            // Animations
             _Animations = new AnimationSet();
-
-            // Add the default animation
-            Animation normal = new Animation("muzzle_flash", "Normal", 1, 5, 10.0f);
+            Animation normal = new Animation("Textures/Effects/MuzzleFlash01_1x3", "Normal", 1, 3, 20.0f);
             normal.Loop = 1;
             _Animations.AddAnimation(normal);
             _Animations.PlayAnimation("Normal");
 
-            // Set crosshair to front of screen
+            // Settings
             _Depth = 0.18f;
+            _ColourOverlay = MuzzleColour;
+            _LifeTime = DefaultLifeTime;
+            _DynamicLighting = false;
+            _Temporary = true;
 
-            _ColourOverlay = new Color(1.0f, 0.9f, 0.7f, 0.6f);
-
-            // Return the name for this class
             return "MuzzleFlash";
         }
 
-        public override void Update(Microsoft.Xna.Framework.GameTime time)
+        #endregion
+
+        #region Update
+
+        public override void Update(GameTime time)
         {
             base.Update(time);
 
-            if (_Remaining-- < 0) Dispose();
-            _Geometry.Position = _Owner.Geometry.Position + _Offset;
-            _Geometry.Direction = _Owner.Geometry.Direction;
+            // Lock location relative to the owner.
+            _Position.X = _Owner.Position.X + (float)Math.Sin(_Owner.Direction) * _Offset.X + (float)Math.Cos(_Owner.Direction) * _Offset.Y;
+            _Position.Y = _Owner.Position.Y + (float)Math.Sin(_Owner.Direction) * _Offset.Y - (float)Math.Cos(_Owner.Direction) * _Offset.X;
         }
+
+        #endregion
     }
 }

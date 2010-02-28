@@ -110,29 +110,7 @@ namespace SituationSticky
             // Firing weapon
             if (_IsFiring && _RemainingCooldown <= 0 && !_IsReloading && _Ammo > 0 && !_Player.Disposed)
             {
-                // Create muzzle light source
-                _Player.Muzzle.Active = true;
-                _Player.MuzzleLifeTime = 100;
-
-                // Apply weapon cooldown
-                _RemainingCooldown = _Cooldown;
-
-                // Create bullet (slightly in front of marine)
-                Vector2 bulletPos = _Player.Position;
-                bulletPos.X += (float)Math.Sin(_Player.Direction) * 25.0f;
-                bulletPos.Y += -(float)Math.Cos(_Player.Direction) * 25.0f;
-                new Bullet(_Player.Parent, _Player, bulletPos, _Player.Direction);
-
-                // Shake screen slightly
-                _Player.Parent.ViewPort.Shake(1.5f, 0.8f, 0.95f);
-
-                // Update ammo
-                if (--_Ammo <= 0)
-                    Reload();
-
-                // Play weapon sound
-                if (_Sound != null)
-                    _Sound.Play(0.6f, 0.2f, 0.0f);
+                Fire();
             }
         }
 
@@ -145,6 +123,36 @@ namespace SituationSticky
             _RemainingReload = _ReloadTime;
             _Ammo = 0;
             _IsReloading = true;
+        }
+
+        protected virtual void Fire()
+        {
+            // Create muzzle light source
+            _Player.Muzzle.Active = true;
+            _Player.MuzzleLifeTime = 100;
+
+            // Create muzzle flash sprite
+            new MuzzleFlash(_Parent, _Player, new Vector2(20, 0));
+
+            // Apply weapon cooldown
+            _RemainingCooldown = _Cooldown;
+
+            // Create bullet (slightly in front of marine)
+            Vector2 bulletPos = _Player.Position;
+            bulletPos.X += (float)Math.Sin(_Player.Direction) * 25.0f;
+            bulletPos.Y += -(float)Math.Cos(_Player.Direction) * 25.0f;
+            new Bullet(_Player.Parent, _Player, bulletPos, _Player.Direction);
+
+            // Shake screen slightly
+            _Player.Parent.ViewPort.Shake(1.5f, 0.8f, 0.95f);
+
+            // Update ammo
+            if (--_Ammo <= 0)
+                Reload();
+
+            // Play weapon sound
+            if (_Sound != null)
+                _Sound.Play(0.6f, 0.2f, 0.0f);
         }
 
         #endregion
