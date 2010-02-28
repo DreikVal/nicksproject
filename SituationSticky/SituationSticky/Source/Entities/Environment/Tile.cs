@@ -61,7 +61,7 @@ namespace SituationSticky
             {
                 // Collision settings
                 _CollisionType = CollisionType.Passive;
-                _CollisionRadius = _Radius * 0.8f;
+                _CollisionRadius = _Radius * 0.9f;
                 _Shadow = new ShadowRegion(this, _Position, _Radius);
             }
             else CollisionType = CollisionType.None;
