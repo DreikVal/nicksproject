@@ -22,12 +22,12 @@ namespace SituationSticky
         public const float          BloodSpeedBase          = 0.1f;
         public const float          BloodSpeedVar           = 0.3f;
         public const float          BloodSpeedDamp          = 0.92f;
-        public const int            DamagePerHit            = 2;
+        public const int            DamagePerHit            = 1;
         public const int            MaxHP                   = 100;
         public const float          DroneSpeed              = 0.14f;
         public const int            Bounty                  = 50;
         public const float          BulletKnockback         = 0.7f;
-        public const float          MarineKnockback         = 1.1f;
+        public const float          MarineKnockback         = 1.05f;
 
         #endregion
 
