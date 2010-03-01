@@ -41,8 +41,8 @@ namespace SituationSticky
         /// <param name="font">The content name of the font.</param>
         /// <param name="colour">The colour of the text.</param>
         /// <param name="lifeTime">How long, in milliseconds, the text should last for.</param>
-        public FloatingText(Screen parent, Vector2 position, float speed, float damping, String text, String font, Color colour, int lifeTime) : 
-            base(parent.Entities, position, 50f, 28f, 0f)
+        public FloatingText(Screen parent, Vector3 position, float speed, float damping, String text, String font, Color colour, int lifeTime) : 
+            base(parent.Entities, position, new Vector3(50,28,0), Vector2.Zero)
         { 
             _Text = text;
             _Font = Application.AppReference.Content.Load<SpriteFont>(font);
@@ -73,11 +73,11 @@ namespace SituationSticky
             // Draw the floating text
             if (_Text != null && _Font != null)
             {
-                Vector2 Length = _Font.MeasureString(_Text);
-                Vector2 TopLeft_Pixels = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position) - Length/2;
-                Vector2 Size_Pixels = Length;
+                //Vector3 Length = _Font.MeasureString(_Text);
+                //Vector3 TopLeft_Pixels = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position) - Length/2;
+                //Vector3 Size_Pixels = Length;
 
-                batch.DrawString(_Font, _Text, TopLeft_Pixels, _ColourOverlay, 0.0f, new Vector2(0, 0), 1f, SpriteEffects.None, Depth);
+                //batch.DrawString(_Font, _Text, TopLeft_Pixels, _ColourOverlay, 0.0f, new Vector2(0, 0), 1f, SpriteEffects.None, Depth);
             }
         }
 

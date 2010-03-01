@@ -75,7 +75,7 @@ namespace SituationSticky
         /// <summary>
         /// Gets a library that contains a function that creates an entity based on its entity class name.
         /// </summary>
-        public static Func<Screen, Vector2, Entity>[] _EntityDefinitions = 
+        public static Func<Screen, Vector3, Entity>[] _EntityDefinitions = 
         { 
             Tile.Tile_Floor01,
             Tile.Tile_Floor02,

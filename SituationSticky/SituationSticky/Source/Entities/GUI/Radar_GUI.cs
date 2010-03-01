@@ -25,8 +25,8 @@ namespace SituationSticky
         /// </summary>
         /// <param name="Parent">The screen for the radar.</param>
         /// <param name="position">The location of the radar.</param>
-        public Radar_GUI(Screen Parent, Vector2 position)
-            : base(Parent.Entities, position, 120f, 120f, 0f) {}
+        public Radar_GUI(Screen Parent, Vector3 position)
+            : base(Parent.Entities, position, new Vector3(120,120,0), Vector2.Zero) {}
 
         public override string Initialize()
         {
@@ -67,10 +67,10 @@ namespace SituationSticky
             if (ent as Drone == null)
                 return true;
 
-            Vector2 diff = ent.Position - marine.Position;
-            Vector2 worldLoc = _Position + (dFactor * diff);
-            Vector2 pixelLoc = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(worldLoc);
-            Vector2 pixelSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(ent.Size * scalingFactor);
+            Vector3 diff = ent.Position - marine.Position;
+            Vector3 worldLoc = _Position + (dFactor * diff);
+            Vector3 pixelLoc = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(worldLoc);
+            Vector3 pixelSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(ent.Size * scalingFactor);
 
             spriteBatch.Draw(_BlipTex, new Rectangle((int)pixelLoc.X, (int)pixelLoc.Y, (int)pixelSize.X, (int)pixelSize.Y), Color.White);
 

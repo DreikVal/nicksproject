@@ -59,8 +59,8 @@ namespace SituationSticky
         /// </summary>
         /// <param name="Parent">The screen for the score entity.</param>
         /// <param name="position">The location of the score.</param>
-        public Score_GUI(Screen Parent, Vector2 position)
-            : base(Parent.Entities, position, 50f, 50f, 0f) { }
+        public Score_GUI(Screen Parent, Vector3 position)
+            : base(Parent.Entities, position, new Vector3(50,50,0), Vector2.Zero) { }
 
         public override string Initialize()
         {
@@ -89,7 +89,7 @@ namespace SituationSticky
             // Find current score
             Marine player = ((WorldScreen)_Parent.Manager.GetScreen("World")).PlayerMarine;
             _Text = "Score: " + player.Score.ToString();
-            _TextLocation = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position);
+            //_TextLocation = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position);
 
             // Check for change in score
             if (player.Score != _LastScore)

@@ -30,18 +30,18 @@ namespace SituationSticky
         /// <summary>
         /// The exact location of the top left corner of the screen in game units.
         /// </summary>
-        public Vector2 ActualLocation { get { return TargetLocation + EffectOffset; } }
+        public Vector3 ActualLocation { get { return TargetLocation + EffectOffset; } }
 
         /// <summary>
         /// The amount the screen has moved from its target location due to some sort of graphics effect such as screen
         /// shaking.
         /// </summary>
-        public Vector2 EffectOffset = new Vector2(0, 0);
+        public Vector3 EffectOffset = new Vector3(0, 0, 0);
 
         /// <summary>
         /// The location of the top left of the screen before EffectOffset is applied.
         /// </summary>
-        public Vector2 TargetLocation;
+        public Vector3 TargetLocation;
 
         // Variables for handling screen shakes
         protected float _ShakeDamping = 0.90f;
@@ -50,7 +50,7 @@ namespace SituationSticky
         protected bool _ShakeLeft = true;
 
         // Variables for handling screen slides
-        protected Vector2 _SlideFrom = new Vector2(0, 0);
+        protected Vector3 _SlideFrom = new Vector3(0, 0, 0);
         //protected Vector2 _SlideTo = new Vector2(0, 0);
         protected float _SlideTime = 0.60f;
         protected float _SlideTimeLeft = -0.10f;
@@ -60,6 +60,12 @@ namespace SituationSticky
         /// </summary>
         public bool IsSliding { get { return _IsSliding; } }
         protected bool _IsSliding = false;
+
+        /// <summary>
+        /// Gets the transform matrix for this viewport.
+        /// </summary>
+        public Matrix Transform { get { return _Transform; } }
+        protected Matrix _Transform = new Matrix();
 
         #endregion
 
@@ -76,7 +82,7 @@ namespace SituationSticky
         /// </summary>
         /// <param name="position">Location of the top left corner of the screen.</param>
         /// <param name="size">The size in game units of the screen.</param>
-        public ViewPort(Vector2 position, Vector2 size)
+        public ViewPort(Vector3 position, Vector2 size)
         {
             TargetLocation = position;
             Size = size;
@@ -92,7 +98,7 @@ namespace SituationSticky
             if (_ShakeDamping < 0.001f)
             {
                 _ShakeMagnitude = 0;
-                EffectOffset = new Vector2(0, 0);
+                EffectOffset = Vector3.Zero;
             }
             if (_ShakeLeft)
             {
@@ -127,7 +133,7 @@ namespace SituationSticky
                 if (_SlideTimeLeft < 0.0f)
                 {
                     _IsSliding = false;
-                    EffectOffset = new Vector2(0, 0);
+                    EffectOffset = Vector3.Zero;
                 }
             }
             else
@@ -157,7 +163,7 @@ namespace SituationSticky
         /// <param name="from">Position to slide in from.</param>
         /// <param name="to">Position to slide out to.</param>
         /// <param name="time">Time taken for the slide.</param>
-        public virtual void Slide(Vector2 from, Vector2 to, float time)
+        public virtual void Slide(Vector3 from, Vector3 to, float time)
         {
             _SlideFrom = from;
             _SlideTime = time;
@@ -172,9 +178,10 @@ namespace SituationSticky
         /// </summary>
         /// <param name="position">The position to be converted to pixel coordinates</param>
         /// <returns>Returns the pixel coordinates.</returns>
-        public Vector2 Transform_UnitPosition_To_PixelPosition(Vector2 position)
+        public Vector3 Transform_UnitPosition_To_PixelPosition(Vector3 position)
         {
-            return (position - ActualLocation) / Size * Application.AppReference.ScreenManager.Resolution;
+            //return (position - ActualLocation) / Size * Application.AppReference.ScreenManager.Resolution;
+            return new Vector3();
         }
 
         /// <summary>
@@ -182,9 +189,10 @@ namespace SituationSticky
         /// </summary>
         /// <param name="size">The size in game units to be converted.</param>
         /// <returns>The size in pixels.</returns>
-        public Vector2 Transform_UnitSize_To_PixelSize(Vector2 size)
+        public Vector3 Transform_UnitSize_To_PixelSize(Vector3 size)
         {
-            return (size / Size * Application.AppReference.ScreenManager.Resolution);
+            //return (size / Size * Application.AppReference.ScreenManager.Resolution);
+            return new Vector3();
         }
 
         #endregion

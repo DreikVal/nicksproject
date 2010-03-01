@@ -59,14 +59,14 @@ namespace SituationSticky
         /// <summary>
         /// Gets or sets the position of the centre of this entity in world coordinates.
         /// </summary>
-        public Vector2 Position { get { return _Position; } set { _Position = value; } }
-        protected Vector2 _Position = new Vector2();
+        public Vector3 Position { get { return _Position; } set { _Position = value; } }
+        protected Vector3 _Position = new Vector3();
 
         /// <summary>
         /// Gets or sets the direction in radians of this entity. (0.0f = North)
         /// </summary>
-        public float Direction { get { return _Direction; } set { _Direction = value; } }
-        protected float _Direction = 0.0f;
+        public Vector2 Direction { get { return _Direction; } set { _Direction = value; } }
+        protected Vector2 _Direction = new Vector2();
 
         /// <summary>
         /// Gets a set of animations for this entity.
@@ -123,25 +123,14 @@ namespace SituationSticky
         public bool Opaque { get { return _Opaque; } set { _Opaque = value; } }
         protected bool _Opaque = false;
 
-        /// <summary>
-        /// Gets or sets the width of the entity.
-        /// </summary>
-        public float Width { get { return _Width; } set { _Width = value; CalculateRadius(); } }
-        protected float _Width = 0.0f;
-
-        /// <summary>
-        /// Gets or sets the height of the entity.
-        /// </summary>
-        public float Height { get { return _Height; } set { _Height = value; CalculateRadius(); } }
-        protected float _Height = 0.0f;
-
         public float Radius { get { return _Radius; } }
         protected float _Radius = 0.0f;
 
         /// <summary>
         /// Gets or sets the size of the entity. (Interchangeable with Width and Height properties.)
         /// </summary>
-        public Vector2 Size { get { return new Vector2(_Width, _Height); } set { _Width = value.X; _Height = value.Y; CalculateRadius(); } }
+        public Vector3 Size { get { return _Size; } set { _Size = value; CalculateRadius(); } }
+        protected Vector3 _Size;
 
         /// <summary>
         /// Gets or sets the radius of collisions for this entity.
@@ -204,7 +193,7 @@ namespace SituationSticky
         /// <param name="width">The width of the entity.</param>
         /// <param name="height">The height of the entity.</param>
         /// <param name="direction">The direction of the entity.</param>
-        public Entity(EntityList list, Vector2 position, float width, float height, float direction)
+        public Entity(EntityList list, Vector3 position, Vector3 size, Vector2 direction)
         {
             // Retrieve entity manager
             if (list == null)
@@ -217,8 +206,7 @@ namespace SituationSticky
 
             // Set geometrical settings
             _Position = position;
-            _Width = width;
-            _Height = height;
+            _Size = size;
             _Direction = direction;
             CalculateRadius();
 
@@ -272,9 +260,9 @@ namespace SituationSticky
             }
 
             // Update position and direction
-            _Position.X += (float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-            _Position.Y += -(float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-            _Direction += _Spin * time.ElapsedGameTime.Milliseconds;
+            //_Position.X += (float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+            //_Position.Y += -(float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+            //_Direction += _Spin * time.ElapsedGameTime.Milliseconds;
 
             // Check collisions
             if (_CollisionType == CollisionType.Active)
@@ -294,13 +282,13 @@ namespace SituationSticky
             if (_Animations == null || _Animations.Current == null) return;
 
             // Pre-calculations for the spritebatch are computed here which allows XNA to distribute draw calls to the gfx card faster in Draw()
-            _Draw_OnScreen = true;
-            _Draw_Animation = _Animations.Current;
-            _Draw_Position = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position);
-            _Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(Size);
-            _Draw_Origin = new Vector2(_Animations.Current.WidthPerCell / 2, _Animations.Current.HeightPerCell / 2);
-            _Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)(_Draw_Size.X), (int)(_Draw_Size.Y));
-            _Draw_Source = _Draw_Animation.UpdateSource(time);
+            //_Draw_OnScreen = true;
+            //_Draw_Animation = _Animations.Current;
+            //_Draw_Position = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position);
+            //_Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(Size);
+            //_Draw_Origin = new Vector2(_Animations.Current.WidthPerCell / 2, _Animations.Current.HeightPerCell / 2);
+            //_Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)(_Draw_Size.X), (int)(_Draw_Size.Y));
+            //_Draw_Source = _Draw_Animation.UpdateSource(time);
         }
 
         /// <summary>
@@ -335,7 +323,7 @@ namespace SituationSticky
             if (val < 0.0f) val = 0.0f;
 
             float angle = (float)Math.Atan2(y_diff, x_diff);
-            float angle_diff = (float)Math.Abs(light.Direction - Math.PI / 2 - angle);
+            float angle_diff = (float)Math.Abs(light.Direction.X - Math.PI / 2 - angle);
             if (angle_diff > Math.PI)
                 angle_diff = 2 * (float)Math.PI - angle_diff;
             float angle_val = 1.0f - (angle_diff / light.Bandwidth);
@@ -370,15 +358,15 @@ namespace SituationSticky
             if (_Shadow == shadow) return true;
             LightSource light = (LightSource)p1;
 
-            Vector2 dir = light.Position - Position;
-            Vector2 diff = shadow.Position - Position;
+            Vector3 dir = light.Position - Position;
+            Vector3 diff = shadow.Position - Position;
             float t = (diff.X * dir.X + diff.Y * dir.Y) / (dir.X * dir.X + dir.Y * dir.Y);
             if (t < 0.0f)
                 t = 0.0f;
             if (t > 1.0f)
                 t = 1.0f;
-            Vector2 closest = Position + t * dir;
-            Vector2 d = shadow.Position - closest;
+            Vector3 closest = Position + t * dir;
+            Vector3 d = shadow.Position - closest;
             float distsqr = d.X * d.X + d.Y * d.Y;
             return distsqr > shadow.Radius * shadow.Radius;
         }
@@ -400,7 +388,7 @@ namespace SituationSticky
             if (_Draw_Animation == null) return;
             if (_Hide) return;
 
-            batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, _Direction, _Draw_Origin, SpriteEffects.None, _Depth);
+            //batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, _Direction, _Draw_Origin, SpriteEffects.None, _Depth);
         }
 
         #endregion
@@ -470,7 +458,7 @@ namespace SituationSticky
         /// <returns>True if the entities have collided.</returns>
         protected bool Collision(Entity ent)
         {
-            Vector2 diff = Position - ent.Position;
+            Vector3 diff = Position - ent.Position;
             if (diff.Length() < CollisionRadius + ent.CollisionRadius)
                 return true;
 
@@ -482,12 +470,13 @@ namespace SituationSticky
         /// </summary>
         protected virtual void CalculateRadius()
         {
-            _Radius = (float)Math.Sqrt(_Height * _Height + _Width * _Width)/2f;
+            _Radius = _Size.Length();
         }
 
-        public virtual void SetPosition(Vector2 pos) { _Position = pos; }
+        public virtual void SetPosition(Vector3 pos) { _Position = pos; }
         public virtual void SetXPosition(float xpos) { _Position.X = xpos; }
         public virtual void SetYPosition(float ypos) { _Position.Y = ypos; }
+        public virtual void SetZPosition(float zpos) { _Position.Z = zpos; }
 
 
         #endregion

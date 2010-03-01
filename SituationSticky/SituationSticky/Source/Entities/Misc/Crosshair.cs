@@ -22,7 +22,7 @@ namespace SituationSticky
         /// Creates a new crosshair object.
         /// </summary>
         /// <param name="parent">Screen for the crosshair.</param>
-        public Crosshair(Screen parent) : base(parent.Entities, new Vector2(), CrosshairWidth, CrosshairHeight, 0f) { }
+        public Crosshair(Screen parent) : base(parent.Entities, new Vector3(), new Vector3(50,28,0), Vector2.Zero) { }
 
         public override string Initialize()
         {
