@@ -43,7 +43,7 @@ namespace SituationSticky
         /// <param name="owner">The owner of the bullet.</param>
         /// <param name="position">The position of the bullet.</param>
         /// <param name="direction">The direction of the bullet.</param>
-        public Bullet(Screen parent, Entity owner, Vector2 position, float direction) : base(parent.Entities, position, 2f, 56f, direction) 
+        public Bullet(Screen parent, Entity owner, Vector3 position, Vector2 direction) : base(parent.Entities, position, new Vector3(2,56,2), direction) 
         {
             _Owner = owner;
         }

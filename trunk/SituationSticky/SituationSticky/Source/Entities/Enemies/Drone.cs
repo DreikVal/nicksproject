@@ -55,7 +55,7 @@ namespace SituationSticky
         /// <param name="parent">The screen to create the drone on.</param>
         /// <param name="position">The position of the drone.</param>
         /// <param name="target">The target that this drone will attack.</param>
-        public Drone(Screen parent, Vector2 position, Entity target) : base(parent.Entities, position, 44f, 44f, 0f) 
+        public Drone(Screen parent, Vector3 position, Entity target) : base(parent.Entities, position, new Vector3(44,44,30), Vector2.Zero) 
         {
             _Target = target;
         }
@@ -92,14 +92,14 @@ namespace SituationSticky
             new Drone(_Parent, WorldScreen.SpawnLocations[index], _Target);
             
             // Create floating text
-            new FloatingText(_Parent, _Position+new Vector2(0f,-20f), 0.12f, 0.95f, ((WorldScreen)_Parent).PlayerMarine.GiveScore(Bounty).ToString(),
+            new FloatingText(_Parent, _Position+new Vector3(0f,-20f, 0f), 0.12f, 0.95f, ((WorldScreen)_Parent).PlayerMarine.GiveScore(Bounty).ToString(),
                 "Fonts/FloatingFont", new Color(0.6f, 0.7f, 1.0f, 0.5f), 1000);
 
             if (Application.AppReference.Random.NextDouble() > 0.90)
                 new HealthPack(_Parent, _Position);
         }
 
-        public static Drone CreateDrone(Screen parent, Vector2 position) { return new Drone(parent, position, null); }
+        public static Drone CreateDrone(Screen parent, Vector3 position) { return new Drone(parent, position, null); }
 
         #endregion
 
@@ -125,7 +125,7 @@ namespace SituationSticky
             // Make drone face his target.
             float x_diff = _Position.X - _Target.Position.X;
             float y_diff = _Position.Y - _Target.Position.Y;
-            _Direction = (float) (Math.Atan2(y_diff, x_diff) - Math.PI / 2);
+            _Direction.X = (float) (Math.Atan2(y_diff, x_diff) - Math.PI / 2);
 
             // Allow drone to regain his speed up to maximum if he has been stunned earlier.
             if (_Speed < DroneSpeed)
@@ -155,19 +155,19 @@ namespace SituationSticky
                     new Blood(_Parent, _Position, BloodColour, BloodSizeBase, BloodSizeVar, BloodSpeedBase, BloodSpeedVar, BloodSpeedDamp, BloodLifeTime);
                 
                 // Calculate angle between bullet and drone
-                Vector2 diff = otherEnt.Position - _Position;
+                Vector3 diff = otherEnt.Position - _Position;
                 double angle = Math.Atan2(diff.Y, diff.X);
                 
                 // Apply knockback and stun to drone
-                _Position.X += (float)((_CollisionRadius + otherEnt.CollisionRadius) * Math.Cos(_Direction - Math.PI) * BulletKnockback);
-                _Position.Y += (float)((_CollisionRadius + otherEnt.CollisionRadius) * -Math.Sin(_Direction - Math.PI) * BulletKnockback);
+                _Position.X += (float)((_CollisionRadius + otherEnt.CollisionRadius) * Math.Cos(_Direction.X - Math.PI) * BulletKnockback);
+                _Position.Y += (float)((_CollisionRadius + otherEnt.CollisionRadius) * -Math.Sin(_Direction.X - Math.PI) * BulletKnockback);
                 _Speed *= 0.60f;
             }
             else if (otherEnt as Drone != null)
             {
                 
                 // Apply small knockback between multiple drones
-                Vector2 diff = _Position - otherEnt.Position;
+                Vector3 diff = _Position - otherEnt.Position;
                 double angle = Math.Atan2(diff.Y, diff.X);
                 otherEnt.SetXPosition((float)(_Position.X + (otherEnt.CollisionRadius + _CollisionRadius) * -Math.Cos(angle)));
                 otherEnt.SetYPosition((float)(_Position.Y + (otherEnt.CollisionRadius + _CollisionRadius) * -Math.Sin(angle)));
@@ -197,7 +197,7 @@ namespace SituationSticky
                     Marine.BloodSpeedVar, Marine.BloodSpeedDamp, Marine.BloodLifeTime);
 
             // Calculate angle difference
-            Vector2 diff = _Position - player.Position;
+            Vector3 diff = _Position - player.Position;
             double angle = Math.Atan2(diff.Y, diff.X);
 
             // Knockback marine
@@ -216,7 +216,7 @@ namespace SituationSticky
         public static Drone CreateNearbyDrone(Screen scr, Entity nearTo, float distance, Entity target)
         {
             double angle = Application.AppReference.Random.NextDouble() * 2 * Math.PI;
-            Vector2 disp = new Vector2(distance * (float)Math.Cos(angle), distance * (float)Math.Sin(angle));
+            Vector3 disp = new Vector3(distance * (float)Math.Cos(angle), distance * (float)Math.Sin(angle), 0);
             return new Drone(scr, nearTo.Position + disp, target);
         }
 

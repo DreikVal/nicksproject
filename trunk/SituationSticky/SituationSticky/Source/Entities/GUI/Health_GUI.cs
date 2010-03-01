@@ -47,8 +47,8 @@ namespace SituationSticky
         /// </summary>
         /// <param name="Parent">The screen for the health gui.</param>
         /// <param name="position">The location of the health gui.</param>
-        public Health_GUI(Screen Parent, Vector2 position)
-            : base(Parent.Entities, position, 50f, 45f, 0f) { }
+        public Health_GUI(Screen Parent, Vector3 position)
+            : base(Parent.Entities, position, new Vector3(50,45,0), Vector2.Zero) { }
 
         public override string Initialize()
         {
@@ -78,7 +78,7 @@ namespace SituationSticky
             _PercentHP = (float)hp / (float)Marine.MaxHP;
             _ColourOverlay = new Color(1f - _PercentHP, _PercentHP, 0f, 0.45f);
             _ActualColour = _ColourOverlay;
-            _TextLocation = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position + TextOffset);
+            //_TextLocation = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(_Position + TextOffset);
         }
 
         #endregion

@@ -180,10 +180,10 @@ namespace SituationSticky
         /// <summary>
         /// The location to fade in from.
         /// </summary>
-        public Vector2 FadeInFrom { get { return _FadeInFrom; } set { _FadeInFrom = value; } }
-        protected Vector2 _FadeInFrom = _DefaultFadeInFrom;
-        public static Vector2 DefaultFadeInFrom { get { return _DefaultFadeInFrom; } set { _DefaultFadeInFrom = value; } }
-        protected static Vector2 _DefaultFadeInFrom = new Vector2(0, 0);
+        public Vector3 FadeInFrom { get { return _FadeInFrom; } set { _FadeInFrom = value; } }
+        protected Vector3 _FadeInFrom = _DefaultFadeInFrom;
+        public static Vector3 DefaultFadeInFrom { get { return _DefaultFadeInFrom; } set { _DefaultFadeInFrom = value; } }
+        protected static Vector3 _DefaultFadeInFrom = Vector3.Zero;
 
         /// <summary>
         /// The time taken for the fade in effect when this menu spawns.
@@ -196,10 +196,10 @@ namespace SituationSticky
         /// <summary>
         /// The location to fade out to.
         /// </summary>
-        public Vector2 FadeOutTo { get { return _FadeOutTo; } set { _FadeOutTo = value; } }
-        protected Vector2 _FadeOutTo = _DefaultFadeOutTo;
-        public static Vector2 DefaultFadeOutTo { get { return _DefaultFadeOutTo; } set { _DefaultFadeOutTo = value; } }
-        protected static Vector2 _DefaultFadeOutTo = new Vector2(0, 0);
+        public Vector3 FadeOutTo { get { return _FadeOutTo; } set { _FadeOutTo = value; } }
+        protected Vector3 _FadeOutTo = _DefaultFadeOutTo;
+        public static Vector3 DefaultFadeOutTo { get { return _DefaultFadeOutTo; } set { _DefaultFadeOutTo = value; } }
+        protected static Vector3 _DefaultFadeOutTo = Vector3.Zero;
 
         /// <summary>
         /// The time taken for the fade out effect when this menu dies.
@@ -424,7 +424,7 @@ namespace SituationSticky
             if (_Message != null && _MessageFont != null)
             {
                 batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Immediate, SaveStateMode.None);
-                Vector2 TopLeft_Pixels = ViewPort.Transform_UnitPosition_To_PixelPosition(MessageLocation);
+                Vector2 TopLeft_Pixels = new Vector2(20, 20);
                 Vector2 Size_Pixels = MessageFont.MeasureString(Message);
 
                 batch.DrawString(_MessageFont, _Message, TopLeft_Pixels, _MessageColour, 0.0f, new Vector2(0, 0), 1f, SpriteEffects.None, Depth);
@@ -558,7 +558,7 @@ namespace SituationSticky
         public virtual void FadeIn()
         {
             _Fading = true;
-            _ViewPort.Slide(_FadeInFrom, new Vector2(0, 0), _FadeInTime);
+            _ViewPort.Slide(_FadeInFrom, Vector3.Zero, _FadeInTime);
         }
 
         /// <summary>
@@ -567,7 +567,7 @@ namespace SituationSticky
         public virtual void FadeOut()
         {
             _Fading = true;
-            _ViewPort.Slide(new Vector2(0, 0), _FadeOutTo, _FadeOutTime);
+            _ViewPort.Slide(Vector3.Zero, _FadeOutTo, _FadeOutTime);
         }
 
         /// <summary>

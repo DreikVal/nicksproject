@@ -159,7 +159,7 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public Marine(Screen parent, Vector2 position) : base(parent.Entities, position, 48f, 48f, 0f) { }
+        public Marine(Screen parent, Vector3 position) : base(parent.Entities, position, new Vector3(48,48,48), Vector2.Zero) { }
 
         public override string Initialize()
         {
@@ -176,10 +176,10 @@ namespace SituationSticky
             _CollisionPeriod = DefaultCollisionPeriod[Application.AppReference.GfxLevel];
 
             // Light sources
-            _FlashLight = new LightSource(_Parent, this, _Position, new Color(1.0f, 1.0f, 0.7f), 625f, 1.6f, 0f);
-            _Muzzle = new LightSource(_Parent, this, _Position, Color.White, 325f, 4.0f, 0f);
+            _FlashLight = new LightSource(_Parent, this, _Position, new Color(1.0f, 1.0f, 0.7f), 625f, 1.6f, Vector2.Zero);
+            _Muzzle = new LightSource(_Parent, this, _Position, Color.White, 325f, 4.0f, Vector2.Zero);
             _Muzzle.Active = false;
-            _NightVision = new LightSource(_Parent, this, _Position, new Color(100, 255, 100), 280f, 4.8f, 0f);
+            _NightVision = new LightSource(_Parent, this, _Position, new Color(100, 255, 100), 280f, 4.8f, Vector2.Zero);
             _NightVision.Active = false;
 
             // Weapons
@@ -203,7 +203,7 @@ namespace SituationSticky
             _Parent.Message = "Press secondary fire to respawn...";
         }
 
-        public static Marine CreateMarine(Screen parent, Vector2 position) { return new Marine(parent, position); }
+        public static Marine CreateMarine(Screen parent, Vector3 position) { return new Marine(parent, position); }
 
         #endregion
 
@@ -240,7 +240,7 @@ namespace SituationSticky
             Vector2 mLoc = new Vector2();
             mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
             mLoc.Y = mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
-            _Direction = (float)(Math.Atan2(mLoc.Y - _Position.Y, mLoc.X - _Position.X) + Math.PI / 2);
+            _Direction.X = (float)(Math.Atan2(mLoc.Y - _Position.Y, mLoc.X - _Position.X) + Math.PI / 2);
 
             // Check HP
             if (_CurrentHP <= 0)
@@ -287,23 +287,23 @@ namespace SituationSticky
             {
                 if (_MoveForward)
                 {
-                    _Position.X += (float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y += -(float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X += (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += -(float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveBack)
                 {
-                    _Position.X -= (float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y -= -(float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X -= (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y -= -(float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveLeft)
                 {
-                    _Position.X += -(float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y += -(float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X += -(float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += -(float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveRight)
                 {
-                    _Position.X += (float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y += (float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X += (float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
             }
         }

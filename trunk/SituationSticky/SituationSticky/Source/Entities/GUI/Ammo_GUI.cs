@@ -11,8 +11,8 @@ namespace SituationSticky
     {
         #region Constants
 
-        public static Vector2 AmmoBarOffset = new Vector2(0, 15);
-        public static Vector2 AmmoBarSize = new Vector2(135, 22);
+        public static Vector3 AmmoBarOffset = new Vector3(0, 15, 0);
+        public static Vector3 AmmoBarSize = new Vector3(135, 22, 0);
         public const String TextFont = "Fonts/DefaultFont";
         public static Color TextColour = new Color(0f, 0f, 0f, 0.95f);
         public const String DullTexture = "Textures/GUI/ProgressDull01_1x1";
@@ -48,8 +48,8 @@ namespace SituationSticky
         /// </summary>
         /// <param name="Parent">Screen on which to display.</param>
         /// <param name="position">Location of the ammo box.</param>
-        public Ammo_GUI(Screen Parent, Vector2 position)
-            : base(Parent.Entities, position, 180f, 70f, 0f)
+        public Ammo_GUI(Screen Parent, Vector3 position)
+            : base(Parent.Entities, position, new Vector3(180,70,0), Vector2.Zero)
         { }
 
         public override string Initialize()
@@ -77,8 +77,8 @@ namespace SituationSticky
             base.Update(time);
 
             // Drawing calculations for the dull ammo box
-            Vector2 dullPos = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position + AmmoBarOffset);
-            Vector2 dullSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(AmmoBarSize);
+            Vector3 dullPos = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position + AmmoBarOffset);
+            Vector3 dullSize = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(AmmoBarSize);
             _Draw_DullDest = new Rectangle((int)(dullPos.X), (int)(dullPos.Y), (int)dullSize.X, (int)dullSize.Y);
 
             // Grab the Marine's weapon info to compute ammo status
@@ -100,12 +100,13 @@ namespace SituationSticky
             _TextScale = 1f;
             if (textSize.X > dullSize.X) _TextScale = dullSize.X / textSize.X;
             else if (textSize.Y > dullSize.Y) _TextScale = dullSize.Y / textSize.Y;
-            _TextLocation = dullPos - (textSize * _TextScale / 2);
+            _TextLocation.X = dullPos.X - (textSize.X * _TextScale / 2);
+            _TextLocation.Y = dullPos.Y - (textSize.Y * _TextScale / 2);
 
             // Drawing calculations for ammo box
-            Vector2 barPos = dullPos;
+            Vector3 barPos = dullPos;
             barPos.X += dullSize.X / 2 * (1f - percAmmo) + 1f;
-            Vector2 barSize = dullSize;
+            Vector3 barSize = dullSize;
             barSize.X = barSize.X * percAmmo;
             _Draw_BarDest = new Rectangle((int)(barPos.X), (int)(barPos.Y), (int)barSize.X, (int)barSize.Y);
         }

@@ -16,7 +16,7 @@ namespace SituationSticky
 
         public const int    NumDrones           = 4;
         public const String DefaultHelpMessage  = "Situation: Sticky (Demo)";
-        public static Vector2[] SpawnLocations = { new Vector2(220, 700), new Vector2(950, 700), new Vector2(600, 320), new Vector2(570, 1030) };
+        public static Vector3[] SpawnLocations = { new Vector3(220,700,0), new Vector3(950,700,0), new Vector3(600,320,0), new Vector3(570,1030,0) };
 
         #endregion
 
@@ -93,14 +93,14 @@ namespace SituationSticky
                 for (int col = 0; col < TileCols; col++)
                 {
                     int index = bin.ReadInt32();
-                    Tile.TileGen[index](this, new Vector2(col*Tile.TileWidth, row*Tile.TileHeight));
+                    Tile.TileGen[index](this, new Vector3(col*Tile.TileWidth, row*Tile.TileHeight, 0));
                 }
             }
             bin.Close();
             fs.Close();
 
             // Create player
-            PlayerMarine = new Marine(this, new Vector2(TileCols*Tile.TileWidth / 2, TileRows*Tile.TileHeight / 2));
+            PlayerMarine = new Marine(this, new Vector3(TileCols*Tile.TileWidth / 2, TileRows*Tile.TileHeight / 2, 0));
 
             // Create crosshair
             _Crosshair = new Crosshair(this);
@@ -123,7 +123,7 @@ namespace SituationSticky
             _DynamicLighting = true;
 
             // Create loadport
-            LoadPort = new LoadPort(this, new Vector2(), new Vector2(1050, 750), 100f);
+            LoadPort = new LoadPort(this, new Vector3(), new Vector2(1050, 750), 100f);
 
             // Play music
             MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Audio/Music/GameMusic01"));
@@ -250,7 +250,7 @@ namespace SituationSticky
                 if (bind.State == Microsoft.Xna.Framework.Input.KeyState.Down)
                 {
                     if (PlayerMarine.Disposed)
-                        PlayerMarine = new Marine(this, new Vector2(TileCols * Tile.TileWidth / 2, TileRows * Tile.TileHeight / 2));
+                        PlayerMarine = new Marine(this, new Vector3(TileCols * Tile.TileWidth / 2, TileRows * Tile.TileHeight / 2, 0));
                 }
             }
             // Reload

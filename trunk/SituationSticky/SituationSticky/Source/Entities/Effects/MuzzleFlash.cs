@@ -39,12 +39,12 @@ namespace SituationSticky
         /// <param name="owner">The owner (creator) of the muzzle flash.</param>
         /// <param name="offset">The positional offset from the owner.</param>
         public MuzzleFlash(Screen parent, Entity owner, Vector2 offset)
-            : base(parent.Entities, owner.Position, 15f, 20f, owner.Direction)
+            : base(parent.Entities, owner.Position, new Vector3(15,20,0), owner.Direction)
         {
             _Owner = owner;
             _Offset = offset;
-            _Position.X = _Owner.Position.X + (float)Math.Sin(_Owner.Direction) * _Offset.X + (float)Math.Cos(_Owner.Direction) * _Offset.Y;
-            _Position.Y = _Owner.Position.Y + (float)Math.Sin(_Owner.Direction) * _Offset.Y - (float)Math.Cos(_Owner.Direction) * _Offset.X;
+            //_Position.X = _Owner.Position.X + (float)Math.Sin(_Owner.Direction) * _Offset.X + (float)Math.Cos(_Owner.Direction) * _Offset.Y;
+            //_Position.Y = _Owner.Position.Y + (float)Math.Sin(_Owner.Direction) * _Offset.Y - (float)Math.Cos(_Owner.Direction) * _Offset.X;
         }
 
         public override string Initialize()
@@ -75,8 +75,8 @@ namespace SituationSticky
             base.Update(time);
 
             // Lock location relative to the owner.
-            _Position.X = _Owner.Position.X + (float)Math.Sin(_Owner.Direction) * _Offset.X + (float)Math.Cos(_Owner.Direction) * _Offset.Y;
-            _Position.Y = _Owner.Position.Y + (float)Math.Sin(_Owner.Direction) * _Offset.Y - (float)Math.Cos(_Owner.Direction) * _Offset.X;
+            //_Position.X = _Owner.Position.X + (float)Math.Sin(_Owner.Direction) * _Offset.X + (float)Math.Cos(_Owner.Direction) * _Offset.Y;
+            //_Position.Y = _Owner.Position.Y + (float)Math.Sin(_Owner.Direction) * _Offset.Y - (float)Math.Cos(_Owner.Direction) * _Offset.X;
         }
 
         #endregion

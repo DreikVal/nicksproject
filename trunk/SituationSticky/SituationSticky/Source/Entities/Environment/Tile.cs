@@ -21,7 +21,7 @@ namespace SituationSticky
         /// <summary>
         /// An array of TileGen functions.
         /// </summary>
-        public static Func<Screen, Vector2, Tile>[] TileGen = {
+        public static Func<Screen, Vector3, Tile>[] TileGen = {
                                                             Tile_Floor01,
                                                             Tile_Floor02,
                                                             Tile_Floor03,
@@ -42,8 +42,8 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public Tile(Screen parent, Vector2 position, String texName, bool collidable)
-            : base( ((collidable) ? parent.Walls : parent.Tiles), position, TileWidth, TileHeight, 0f)
+        public Tile(Screen parent, Vector3 position, String texName, bool collidable)
+            : base( ((collidable) ? parent.Walls : parent.Tiles), position, new Vector3(TileWidth, TileHeight, 0), Vector2.Zero)
         {
             //_TileIndex = tileIndex;
 
@@ -95,7 +95,7 @@ namespace SituationSticky
             if (ent as Marine == null && ent as Drone == null) return;
 
             // Calculate angle between tile and entity
-            Vector2 diff = _Position - ent.Position;
+            Vector3 diff = _Position - ent.Position;
             double angle = Math.Atan2(diff.Y, diff.X);
 
             // Bounce entity back
@@ -107,59 +107,59 @@ namespace SituationSticky
 
         #region TileGen Functions
 
-        public static Tile Tile_Floor01(Screen parent, Vector2 position)
+        public static Tile Tile_Floor01(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile01_1x1", false);
         }
-        public static Tile Tile_Wall01(Screen parent, Vector2 position)
+        public static Tile Tile_Wall01(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile01_1x1", true);
         }
-        public static Tile Tile_Wall02(Screen parent, Vector2 position)
+        public static Tile Tile_Wall02(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile02_1x1", true);
         }
-        public static Tile Tile_Wall03(Screen parent, Vector2 position)
+        public static Tile Tile_Wall03(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile03_1x1", true);
         }
-        public static Tile Tile_Floor02(Screen parent, Vector2 position)
+        public static Tile Tile_Floor02(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile02_1x1", false);
         }
-        public static Tile Tile_Wall04(Screen parent, Vector2 position)
+        public static Tile Tile_Wall04(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile04_1x1", true);
         }
-        public static Tile Tile_Wall05(Screen parent, Vector2 position)
+        public static Tile Tile_Wall05(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile05_1x1", true);
         }
-        public static Tile Tile_Floor03(Screen parent, Vector2 position)
+        public static Tile Tile_Floor03(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile03_1x1", false);
         }
-        public static Tile Tile_Floor04(Screen parent, Vector2 position)
+        public static Tile Tile_Floor04(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile04_1x1", false);
         }
-        public static Tile Tile_Floor05(Screen parent, Vector2 position)
+        public static Tile Tile_Floor05(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile05_1x1", false);
         }
-        public static Tile Tile_Floor06(Screen parent, Vector2 position)
+        public static Tile Tile_Floor06(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile06_1x1", false);
         }
-        public static Tile Tile_Wall06(Screen parent, Vector2 position)
+        public static Tile Tile_Wall06(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile06_1x1", true);
         }
-        public static Tile Tile_Floor07(Screen parent, Vector2 position)
+        public static Tile Tile_Floor07(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/FloorTile07_1x1", false);
         }
-        public static Tile Tile_Wall07(Screen parent, Vector2 position)
+        public static Tile Tile_Wall07(Screen parent, Vector3 position)
         {
             return new Tile(parent, position, "Textures/Environment/WallTile07_1x1", true);
         }

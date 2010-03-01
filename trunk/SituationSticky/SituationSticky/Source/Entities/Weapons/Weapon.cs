@@ -78,7 +78,7 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public Weapon(Screen parent, Marine player) : base(parent.Entities, player.Position, 0f, 0f, 0f)
+        public Weapon(Screen parent, Marine player) : base(parent.Entities, player.Position, Vector3.Zero, Vector2.Zero)
         {
             _Player = player;
             _Sound = Application.AppReference.Content.Load<SoundEffect>("Audio/Effects/Bullet01");
@@ -138,9 +138,9 @@ namespace SituationSticky
             _RemainingCooldown = _Cooldown;
 
             // Create bullet (slightly in front of marine)
-            Vector2 bulletPos = _Player.Position;
-            bulletPos.X += (float)Math.Sin(_Player.Direction) * 25.0f;
-            bulletPos.Y += -(float)Math.Cos(_Player.Direction) * 25.0f;
+            Vector3 bulletPos = _Player.Position;
+            bulletPos.X += (float)Math.Sin(_Player.Direction.X) * 25.0f;
+            bulletPos.Y += -(float)Math.Cos(_Player.Direction.X) * 25.0f;
             new Bullet(_Player.Parent, _Player, bulletPos, _Player.Direction);
 
             // Shake screen slightly

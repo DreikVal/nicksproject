@@ -30,8 +30,8 @@ namespace SituationSticky
         /// <param name="speedVar">The random variance in blood velocity.</param>
         /// <param name="speedDamp">The factor by which blood maintains its velocity.</param>
         /// <param name="lifeTime">The time in milliseconds until the blood disappears.</param>
-        public Blood(Screen parent, Vector2 position, Color overlay, float baseSize, float sizeVar, float baseSpeed, float speedVar, float speedDamp, int lifeTime)
-            : base(parent.Blood, position, 20f, 20f, 0f)
+        public Blood(Screen parent, Vector3 position, Color overlay, float baseSize, float sizeVar, float baseSpeed, float speedVar, float speedDamp, int lifeTime)
+            : base(parent.Blood, position, new Vector3(20,20,20), Vector2.Zero)
         {
             _ColourOverlay = overlay;
             _BaseSize = baseSize;
@@ -40,10 +40,9 @@ namespace SituationSticky
             _SpeedVar = speedVar;
             _SpeedDamp = speedDamp;
             _LifeTime = lifeTime;
-            _Width = (float)Application.AppReference.Random.NextDouble() * _SizeVar + _BaseSize;
-            _Height = _Width;
-            _Radius = _Width;
-            _Direction = (float)(Application.AppReference.Random.NextDouble() * Math.PI * 2);
+            float size = (float)Application.AppReference.Random.NextDouble() * _SizeVar + _BaseSize;
+            _Size = new Vector3(size, size, size);
+            _Direction.X = (float)(Application.AppReference.Random.NextDouble() * Math.PI * 2);
             _Speed = (float)Application.AppReference.Random.NextDouble() * _SpeedVar + _BaseSpeed;
         }
 

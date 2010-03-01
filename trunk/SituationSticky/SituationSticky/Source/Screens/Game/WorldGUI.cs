@@ -49,10 +49,10 @@ namespace SituationSticky
             _ViewPort.Size = new Vector2(800, 440);
             
             // Setup GUI entities
-            _AmmoGUI = new Ammo_GUI(this, new Vector2(700,400));
-            _HealthGUI = new Health_GUI(this, new Vector2(22,420));
-            _RadarGUI = new Radar_GUI(this, new Vector2(725,75));
-            _ScoreGUI = new Score_GUI(this, new Vector2(20,30));
+            _AmmoGUI = new Ammo_GUI(this, new Vector3(700,400,0));
+            _HealthGUI = new Health_GUI(this, new Vector3(22,420,0));
+            _RadarGUI = new Radar_GUI(this, new Vector3(725,75,0));
+            _ScoreGUI = new Score_GUI(this, new Vector3(20,30,0));
         }
 
         #endregion

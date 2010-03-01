@@ -15,7 +15,7 @@ namespace SituationSticky
         /// Distance from last load that the loadport needs to move before commencing a new content load.
         /// </summary>
         protected float _Threshold;
-        protected Vector2 _LastLoad = new Vector2(-10000f, -10000f);
+        protected Vector3 _LastLoad = new Vector3(-10000f, -10000f, -10000f);
 
         /// <summary>
         /// The background worker that runs asynchronous content loading.
@@ -38,11 +38,11 @@ namespace SituationSticky
         /// <param name="position">The location of the loadport.</param>
         /// <param name="size">The size of the loadport.</param>
         /// <param name="threshold">The minimum distance the loadport has to move before a new content load begins.</param>
-        public LoadPort(Screen parent, Vector2 position, Vector2 size, float threshold) : base(position, size) 
+        public LoadPort(Screen parent, Vector3 position, Vector2 size, float threshold) : base(position, size) 
         {
             _Threshold = threshold;
             _Parent = parent;
-            TargetLocation = _Parent.ViewPort.TargetLocation - ((Size - _Parent.ViewPort.Size) / 2);
+            //TargetLocation = _Parent.ViewPort.TargetLocation - ((Size - _Parent.ViewPort.Size) / 2);
             LoadContent(null, null);
         }
 
@@ -53,16 +53,17 @@ namespace SituationSticky
         public override void Update(GameTime time)
         {
             // Set location to position of viewport
-            TargetLocation = _Parent.ViewPort.TargetLocation - ((Size-_Parent.ViewPort.Size)/2);
-            Vector2 diff = ActualLocation - _LastLoad;
+            //TargetLocation = _Parent.ViewPort.TargetLocation - ((Size-_Parent.ViewPort.Size)/2);
+            //Vector3 diff = ActualLocation - _LastLoad;
 
             // Check if a new load is required.
+            /*
             if (diff.Length() > _Threshold)
             {
                 _Worker.DoWork += LoadContent;
                 if (!_Worker.IsBusy)
                     _Worker.RunWorkerAsync();
-            }
+            }*/
         }
 
         #endregion

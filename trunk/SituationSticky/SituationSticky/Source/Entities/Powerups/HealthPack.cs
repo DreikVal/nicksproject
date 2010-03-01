@@ -29,8 +29,8 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public HealthPack(Screen parent, Vector2 position)
-            : base(parent.Entities, position, 25f, 25f, 0f)
+        public HealthPack(Screen parent, Vector3 position)
+            : base(parent.Entities, position, new Vector3(25,25,25), Vector2.Zero)
         { }
 
         /// <summary>
@@ -51,12 +51,12 @@ namespace SituationSticky
             _Temporary = false;
             _Spin = 0.01f;
             _CollisionType = CollisionType.Passive;
-            new LightSource(_Parent, this, _Position, new Color(0.15f, 0f, 0f, 1f), 150f, 6.28f, 0f);
+            new LightSource(_Parent, this, _Position, new Color(0.15f, 0f, 0f, 1f), 150f, 6.28f, Vector2.Zero);
 
             return "HealthPack";
         }
 
-        public static HealthPack CreateHealthPack(Screen parent, Vector2 position) { return new HealthPack(parent, position); }
+        public static HealthPack CreateHealthPack(Screen parent, Vector3 position) { return new HealthPack(parent, position); }
 
         #endregion
 
