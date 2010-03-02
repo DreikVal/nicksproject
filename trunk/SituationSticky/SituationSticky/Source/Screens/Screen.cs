@@ -306,6 +306,8 @@ namespace SituationSticky
         protected BackgroundWorker _Worker = new BackgroundWorker();
         protected int _LightingUpdatePeriod = 50;
 
+
+
 #endregion
 
         #region Initialization
@@ -431,7 +433,10 @@ namespace SituationSticky
                 batch.End();
             }
         }
-        private bool DrawEntity(Entity ent, object time, object batch, object p3) { ent.Draw(time as GameTime, batch as SpriteBatch); return true; }
+        private bool DrawEntity(Entity ent, object time, object batch, object p3) {
+            ent.Draw(time as GameTime, batch as SpriteBatch);
+            return true; 
+        }
 
         #endregion
 

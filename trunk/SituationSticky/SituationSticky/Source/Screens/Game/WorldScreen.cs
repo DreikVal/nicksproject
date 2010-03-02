@@ -101,6 +101,7 @@ namespace SituationSticky
 
             // Create player
             PlayerMarine = new Marine(this, new Vector3(TileCols*Tile.TileWidth / 2, TileRows*Tile.TileHeight / 2, 0));
+            //PlayerMarine.DrawO
 
             // Create crosshair
             _Crosshair = new Crosshair(this);
@@ -158,6 +159,15 @@ namespace SituationSticky
                 new Drone(this, SpawnLocations[index], _PlayerEntity);
                 _ScoreTarget += 600;
             }
+
+            //if (_Draw_OnScreen == false) return;
+
+            //if (_Disposed) return;
+
+            //if (_Draw_Animation == null) return;
+
+            //if (_Hide) return;
+            ViewPort.PlayerPosition = PlayerMarine.Position;
         }
 
         #endregion

@@ -67,6 +67,19 @@ namespace SituationSticky
         public Matrix Transform { get { return _Transform; } }
         protected Matrix _Transform = new Matrix();
 
+        /// <summary>
+        /// NICK_S
+        /// </summary>
+        protected Vector3 thirdPersonReference = new Vector3(0, -600, 75);
+        protected Vector3 cameraPosition = Vector3.Zero;
+        protected Vector3 cameraLookAt = Vector3.Zero;
+
+        public Matrix cameraProjectionMatrix;
+        public Matrix cameraViewMatrix;
+
+        public Vector3 PlayerPosition { get { return _PlayerPosition; } set { _PlayerPosition = value; } }
+        protected Vector3 _PlayerPosition = Vector3.Zero;
+
         #endregion
 
         #region Init and Disposal
@@ -138,6 +151,23 @@ namespace SituationSticky
             }
             else
                 _IsSliding = false;
+
+            /// <summary>
+            /// NICK_S
+            /// </summary>
+
+            cameraPosition = thirdPersonReference + PlayerPosition;
+
+            cameraViewMatrix = Matrix.CreateLookAt(
+                cameraPosition,
+                PlayerPosition,
+                Vector3.Up);
+
+            cameraProjectionMatrix = Matrix.CreatePerspectiveFieldOfView(
+                MathHelper.ToRadians(45.0f),
+                Application.AppReference.GraphicsDevice.Viewport.AspectRatio,
+                1.0f,
+                10000.0f);
         }
 
         #endregion
