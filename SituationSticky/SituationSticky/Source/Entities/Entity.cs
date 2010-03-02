@@ -179,6 +179,11 @@ namespace SituationSticky
         /// </summary>
         public int DefinitionID { get { return _DefinitionID; } set { _DefinitionID = value; } }
         protected int _DefinitionID = -1;
+
+        /// <summary>
+        /// NICK_S
+        /// </summary>
+        public Model model;
         
         #endregion
 
@@ -383,12 +388,45 @@ namespace SituationSticky
         /// <param name="batch">The spritebatch to render to.</param>
         public virtual void Draw(GameTime time, SpriteBatch batch)
         {
-            if (_Draw_OnScreen == false) return;
+
+            //if (_Draw_OnScreen == false) return;
             if (_Disposed) return;
-            if (_Draw_Animation == null) return;
+            //if (_Draw_Animation == null) return;
             if (_Hide) return;
 
             //batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, _Direction, _Draw_Origin, SpriteEffects.None, _Depth);
+
+            /// <summary>
+            /// NICK_S
+            /// </summary>
+            /// 
+            //dummy model
+            if (model == null)
+                model = Application.AppReference.Content.Load<Model>("plane");
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+
+                    effect.EnableDefaultLighting();
+                    effect.PreferPerPixelLighting = true;
+
+                    effect.World =
+                        //Matrix.CreateFromYawPitchRoll(
+                        //gameObject.rotation.Y,
+                        //gameObject.rotation.X,
+                        //gameObject.rotation.Z) *
+
+                        Matrix.CreateScale(4) *
+
+                        Matrix.CreateTranslation(new Vector3(Position.X, Position.Y, Position.Z));
+
+                    effect.Projection = Parent.ViewPort.cameraProjectionMatrix;
+                    effect.View = Parent.ViewPort.cameraViewMatrix;
+                }
+                mesh.Draw();
+            }
         }
 
         #endregion

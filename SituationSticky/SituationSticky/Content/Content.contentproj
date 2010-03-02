@@ -251,6 +251,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="plane.fbx">
+      <Name>plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="planes.fbx">
+      <Name>planes</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Textures\Lighting\" />
     <Folder Include="Textures\Weapons\" />
   </ItemGroup>

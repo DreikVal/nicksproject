@@ -187,6 +187,7 @@ namespace SituationSticky
             //weaponList.Add(new MachineGun(this));
             //weaponList.Add(new AutoHandGun(this));
             //currentWeapon = weaponList[0];
+            base.model = Application.AppReference.Content.Load<Model>("plane");
 
             return "Marine";
         }
