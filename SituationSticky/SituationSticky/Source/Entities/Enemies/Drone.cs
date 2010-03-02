@@ -11,8 +11,8 @@ namespace SituationSticky
     {
         #region Constants
 
-        public static int[]         BloodOnHit              = { 3, 6, 10, 15, 25 };
-        public static int[]         BloodOnDeath            = { 7, 11, 18, 26, 40 };
+        public static int[]         BloodOnHit              = { 3, 3, 4, 4, 5 };
+        public static int[]         BloodOnDeath            = { 5, 6, 7, 8, 9 };
         public const float          DefaultCollisionRadius  = 20f;
         public static int[]         DefaultCollisionPeriod  = { 125, 100, 75, 50, 35 };
         public static Color         BloodColour             = Color.Green;
@@ -67,7 +67,7 @@ namespace SituationSticky
 
             // Model
             _Model = Application.AppReference.Content.Load<Model>("Models/Enemies/Drone01/Drone01");
-            _ModelScale = 0.3f;
+            _ModelScale = 0.2f;
 
             // Settings
             _Depth = 0.79f;

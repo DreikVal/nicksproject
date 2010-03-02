@@ -70,7 +70,7 @@ namespace SituationSticky
         /// Gets or sets the quality of graphics settings for the game.
         /// </summary>
         public int GfxLevel { get { return _GfxLevel; } set { _GfxLevel = value; } }
-        protected int _GfxLevel = 0;
+        protected int _GfxLevel = 3;
 
         /// <summary>
         /// Gets a library that contains a function that creates an entity based on its entity class name.
