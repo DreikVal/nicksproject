@@ -27,7 +27,8 @@ namespace SituationSticky
         /// <param name="owner">Owner of the region.</param>
         /// <param name="position">Position of the region.</param>
         /// <param name="size">The size of the region. (Width and Height)</param>
-        public ShadowRegion(Entity owner, Vector3 position, float size) : base(owner.Parent.Shadows, position, new Vector3(size,size,size), Vector2.Zero)
+        public ShadowRegion(Entity owner, Vector3 position, float size)
+            : base(owner.Parent.Shadows, position, new Vector3(size, size, size), Vector3.Zero)
         {
             _Owner = owner;
         }

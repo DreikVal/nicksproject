@@ -70,15 +70,26 @@ namespace SituationSticky
         /// <summary>
         /// NICK_S
         /// </summary>
-        protected Vector3 thirdPersonReference = new Vector3(0, -600, 75);
-        protected Vector3 cameraPosition = Vector3.Zero;
-        protected Vector3 cameraLookAt = Vector3.Zero;
+        public Vector3 ThirdPersonReference { get { return _ThirdPersonReference; } set { _ThirdPersonReference = value; } }
+        protected Vector3 _ThirdPersonReference = new Vector3(0, -40, 400);
 
-        public Matrix cameraProjectionMatrix;
-        public Matrix cameraViewMatrix;
+        public Vector3 Location { get { return _Location; } set { _Location = value; } }
+        protected Vector3 _Location = Vector3.Zero;
+
+        public Vector3 LookAt { get { return _LookAt; } set { _LookAt = value; } }
+        protected Vector3 _LookAt = Vector3.Zero;
+
+        public Matrix ProjectionMatrix { get { return _ProjectionMatrix; } set { _ProjectionMatrix = value; } }
+        protected Matrix _ProjectionMatrix;
+
+        public Matrix ViewMatrix { get { return _ViewMatrix; } set { _ViewMatrix = value; } }
+        protected Matrix _ViewMatrix;
 
         public Vector3 PlayerPosition { get { return _PlayerPosition; } set { _PlayerPosition = value; } }
         protected Vector3 _PlayerPosition = Vector3.Zero;
+
+        public float FieldOfView { get { return _FieldOfView; } set { _FieldOfView = value; } }
+        protected float _FieldOfView = (float)Math.PI / 4;
 
         #endregion
 
@@ -156,15 +167,16 @@ namespace SituationSticky
             /// NICK_S
             /// </summary>
 
-            cameraPosition = thirdPersonReference + PlayerPosition;
+            _Location = _ThirdPersonReference + _PlayerPosition;
+            _LookAt = _PlayerPosition;
 
-            cameraViewMatrix = Matrix.CreateLookAt(
-                cameraPosition,
-                PlayerPosition,
+            _ViewMatrix = Matrix.CreateLookAt(
+                _Location,
+                _PlayerPosition,
                 Vector3.Up);
 
-            cameraProjectionMatrix = Matrix.CreatePerspectiveFieldOfView(
-                MathHelper.ToRadians(45.0f),
+            _ProjectionMatrix = Matrix.CreatePerspectiveFieldOfView(
+                _FieldOfView,
                 Application.AppReference.GraphicsDevice.Viewport.AspectRatio,
                 1.0f,
                 10000.0f);

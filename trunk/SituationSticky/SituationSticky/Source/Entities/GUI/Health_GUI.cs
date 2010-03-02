@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    public class Health_GUI : Entity
+    public class Health_GUI : Entity_Quad
     {
         #region Constants
 
@@ -48,10 +48,12 @@ namespace SituationSticky
         /// <param name="Parent">The screen for the health gui.</param>
         /// <param name="position">The location of the health gui.</param>
         public Health_GUI(Screen Parent, Vector3 position)
-            : base(Parent.Entities, position, new Vector3(50,45,0), Vector2.Zero) { }
+            : base(Parent.Entities, position, new Vector3(50, 45, 0), Vector3.Zero) { }
 
         public override string Initialize()
         {
+            base.Initialize();
+
             // Animations
             _Animations = new AnimationSet();
             _Animations.AddAnimation(new Animation("Textures/GUI/Health03_1x1", "Normal", 1, 1, 1.0f));

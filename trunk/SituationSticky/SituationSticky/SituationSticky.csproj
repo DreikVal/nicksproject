@@ -14,6 +14,7 @@
     <XnaCrossPlatformGroupID>99d1c440-803c-4807-83d1-7735f5406f56</XnaCrossPlatformGroupID>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <NoStdLib>true</NoStdLib>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <PlatformTarget>x86</PlatformTarget>
-    <XnaCompressContent>false</XnaCompressContent>
+    <XnaCompressContent>False</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -91,6 +91,8 @@
     <Compile Include="Source\Entities\Effects\MuzzleFlash.cs" />
     <Compile Include="Source\Entities\Enemies\Drone.cs" />
     <Compile Include="Source\Entities\Entity.cs" />
+    <Compile Include="Source\Entities\Entity_3D.cs" />
+    <Compile Include="Source\Entities\Entity_Quad.cs" />
     <Compile Include="Source\Entities\Environment\Tile.cs" />
     <Compile Include="Source\Entities\GUI\Ammo_GUI.cs" />
     <Compile Include="Source\Entities\GUI\PreviewBox_GUI.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="Source\Utilities\AnimationSet.cs" />
     <Compile Include="Source\Utilities\EntityList.cs" />
     <Compile Include="Source\Utilities\LoadPort.cs" />
+    <Compile Include="Source\Utilities\Quad.cs" />
     <Compile Include="Source\Utilities\ThreadDictionary.cs" />
     <Compile Include="Source\Utilities\ViewPort.cs" />
   </ItemGroup>

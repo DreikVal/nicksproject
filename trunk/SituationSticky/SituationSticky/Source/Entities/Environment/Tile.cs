@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    public class Tile : Entity
+    public class Tile : Entity_Quad
     {
         #region Constants
 
@@ -38,14 +38,16 @@ namespace SituationSticky
                                                             Tile_Wall07
                                                         };
 
+        
+
         #endregion
 
         #region Init and Disposal
 
         public Tile(Screen parent, Vector3 position, String texName, bool collidable)
-            : base( ((collidable) ? parent.Walls : parent.Tiles), position, new Vector3(TileWidth, TileHeight, 0), Vector2.Zero)
+            : base(((collidable) ? parent.Walls : parent.Tiles), position, new Vector3(TileWidth, TileHeight, 1f), Vector3.Zero)
         {
-            //_TileIndex = tileIndex;
+            base.Initialize();
 
             // Animations
             _Animations = new AnimationSet();
@@ -101,6 +103,15 @@ namespace SituationSticky
             // Bounce entity back
             ent.SetXPosition( (float)( _Position.X + (ent.CollisionRadius + _CollisionRadius) * -Math.Cos(angle)) );
             ent.SetYPosition( (float)( _Position.Y + (ent.CollisionRadius + _CollisionRadius) * -Math.Sin(angle)) );
+        }
+
+        #endregion
+
+        #region Draw
+
+        public override void Draw(GameTime time, SpriteBatch batch)
+        {
+            base.Draw(time, batch);         
         }
 
         #endregion

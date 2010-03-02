@@ -15,9 +15,9 @@ namespace SituationSticky
 
         TextureBox_GUI _TextureBox_GUI;
         public bool TextureListShown { get { return !_TextureBox_GUI.Hide; } }
-        protected Entity _PreviewEntityA;
-        protected Entity _PreviewEntityB;
-        protected Entity[] _TextureBoxEntities;
+        protected Entity_Quad _PreviewEntityA;
+        protected Entity_Quad _PreviewEntityB;
+        protected Entity_Quad[] _TextureBoxEntities;
         protected Tile _TemporaryTile;
         protected int _TileIndex = 0;
 
@@ -26,13 +26,13 @@ namespace SituationSticky
         {
             _TextureBox_GUI = new TextureBox_GUI(this);
             _TextureBox_GUI.Hide = true;
-            _TextureBoxEntities = new Entity[16];
+            _TextureBoxEntities = new Entity_Quad[16];
             new Crosshair(this);
 
             for (int i = 0; i < 16; i++)
             {
                 _TemporaryTile = Tile.TileGen[(_TileIndex + i) % Tile.TileGen.Length](this, new Vector3());
-                _TextureBoxEntities[i] = new Entity(_Entities, new Vector3(138 + (i * 30) - (i /4 * 120) , 134 + (i /4 * 30), 0), new Vector3(30,30,0), Vector2.Zero);
+                _TextureBoxEntities[i] = new Entity_Quad(_Entities, new Vector3(138 + (i * 30) - (i / 4 * 120), 134 + (i / 4 * 30), 0), new Vector3(30, 30, 0), Vector3.Zero);
                 _TextureBoxEntities[i].Depth = 0.18f;
                 _TextureBoxEntities[i].Animations.AddAnimation(_TemporaryTile.Animations.Current);
                 _TextureBoxEntities[i].Hide = true;
@@ -40,13 +40,13 @@ namespace SituationSticky
             }
 
             _TemporaryTile = Tile.TileGen[_TileIndex](this, new Vector3());
-            _PreviewEntityA = new Entity(_Entities, PreviewPositionA, new Vector3(30,30,0), Vector2.Zero);
+            _PreviewEntityA = new Entity_Quad(_Entities, PreviewPositionA, new Vector3(30, 30, 0), Vector3.Zero);
             _PreviewEntityA.Animations.AddAnimation(_TemporaryTile.Animations.Current);
             _PreviewEntityA.Depth = 0.17f;
             _TemporaryTile.Dispose();
 
             _TemporaryTile = Tile.TileGen[(_TileIndex + 1) % Tile.TileGen.Length](this, new Vector3());
-            _PreviewEntityB = new Entity(_Entities, PreviewPositionB, new Vector3(30, 30, 0), Vector2.Zero);
+            _PreviewEntityB = new Entity_Quad(_Entities, PreviewPositionB, new Vector3(30, 30, 0), Vector3.Zero);
             _PreviewEntityB.Animations.AddAnimation(_TemporaryTile.Animations.Current);
             _PreviewEntityB.Depth = 0.18f;
             _TemporaryTile.Dispose();
@@ -83,7 +83,7 @@ namespace SituationSticky
                                 editor.TileIndex = i % Tile.TileGen.Length;
                                 _TemporaryTile = Tile.TileGen[editor.TileIndex](this, new Vector3());
                                 _PreviewEntityA.Dispose();
-                                _PreviewEntityA = new Entity(_Entities, PreviewPositionA, new Vector3(30, 30, 0), Vector2.Zero);
+                                _PreviewEntityA = new Entity_Quad(_Entities, PreviewPositionA, new Vector3(30, 30, 0), Vector3.Zero);
                                 _PreviewEntityA.Animations.AddAnimation(_TemporaryTile.Animations.Current);
                                 _PreviewEntityA.Depth = 0.17f;
                                 _TemporaryTile.Dispose();
@@ -108,7 +108,7 @@ namespace SituationSticky
                                 editor.SecondaryIndex = i % Tile.TileGen.Length;
                                 _TemporaryTile = Tile.TileGen[editor.SecondaryIndex](this, new Vector3());
                                 _PreviewEntityB.Dispose();
-                                _PreviewEntityB = new Entity(_Entities, PreviewPositionB, new Vector3(30, 30, 0), Vector2.Zero);
+                                _PreviewEntityB = new Entity_Quad(_Entities, PreviewPositionB, new Vector3(30, 30, 0), Vector3.Zero);
                                 _PreviewEntityB.Animations.AddAnimation(_TemporaryTile.Animations.Current);
                                 _PreviewEntityB.Depth = 0.17f;
                                 _TemporaryTile.Dispose();

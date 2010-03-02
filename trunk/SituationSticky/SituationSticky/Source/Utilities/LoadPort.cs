@@ -42,7 +42,6 @@ namespace SituationSticky
         {
             _Threshold = threshold;
             _Parent = parent;
-            //TargetLocation = _Parent.ViewPort.TargetLocation - ((Size - _Parent.ViewPort.Size) / 2);
             LoadContent(null, null);
         }
 
@@ -53,17 +52,16 @@ namespace SituationSticky
         public override void Update(GameTime time)
         {
             // Set location to position of viewport
-            //TargetLocation = _Parent.ViewPort.TargetLocation - ((Size-_Parent.ViewPort.Size)/2);
-            //Vector3 diff = ActualLocation - _LastLoad;
+            _Location = _Parent.ViewPort.Location;
+            Vector3 diff = _Location - _LastLoad;
 
             // Check if a new load is required.
-            /*
             if (diff.Length() > _Threshold)
             {
                 _Worker.DoWork += LoadContent;
                 if (!_Worker.IsBusy)
                     _Worker.RunWorkerAsync();
-            }*/
+            }
         }
 
         #endregion

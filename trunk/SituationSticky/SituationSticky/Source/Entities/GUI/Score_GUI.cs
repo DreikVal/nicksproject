@@ -60,10 +60,12 @@ namespace SituationSticky
         /// <param name="Parent">The screen for the score entity.</param>
         /// <param name="position">The location of the score.</param>
         public Score_GUI(Screen Parent, Vector3 position)
-            : base(Parent.Entities, position, new Vector3(50,50,0), Vector2.Zero) { }
+            : base(Parent.Entities, position, new Vector3(50, 50, 0), Vector3.Zero) { }
 
         public override string Initialize()
         {
+            base.Initialize();
+
             // Animations
 
             // Settings

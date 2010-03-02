@@ -41,8 +41,8 @@ namespace SituationSticky
         /// <param name="font">The content name of the font.</param>
         /// <param name="colour">The colour of the text.</param>
         /// <param name="lifeTime">How long, in milliseconds, the text should last for.</param>
-        public FloatingText(Screen parent, Vector3 position, float speed, float damping, String text, String font, Color colour, int lifeTime) : 
-            base(parent.Entities, position, new Vector3(50,28,0), Vector2.Zero)
+        public FloatingText(Screen parent, Vector3 position, float speed, float damping, String text, String font, Color colour, int lifeTime) :
+            base(parent.Entities, position, new Vector3(50, 28, 0), Vector3.Zero)
         { 
             _Text = text;
             _Font = Application.AppReference.Content.Load<SpriteFont>(font);
@@ -54,6 +54,8 @@ namespace SituationSticky
 
         public override string Initialize()
         {
+            base.Initialize();
+
             // Set crosshair to front of screen
             _Depth = 0.15f;
             _Temporary = true;

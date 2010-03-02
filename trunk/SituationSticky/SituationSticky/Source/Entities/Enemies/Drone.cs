@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    public class Drone : Entity
+    public class Drone : Entity_3D
     {
         #region Constants
 
@@ -55,17 +55,19 @@ namespace SituationSticky
         /// <param name="parent">The screen to create the drone on.</param>
         /// <param name="position">The position of the drone.</param>
         /// <param name="target">The target that this drone will attack.</param>
-        public Drone(Screen parent, Vector3 position, Entity target) : base(parent.Entities, position, new Vector3(44,44,30), Vector2.Zero) 
+        public Drone(Screen parent, Vector3 position, Entity target)
+            : base(parent.Entities, position, new Vector3(44, 44, 30), Vector3.Zero) 
         {
             _Target = target;
         }
 
         public override string Initialize()
         {
-            // Animations
-            _Animations = new AnimationSet();
-            _Animations.AddAnimation(new Animation("Textures/Enemies/Drone03_1x5", "Normal", 1, 5, 8.0f));
-            _Animations.PlayAnimation("Normal");
+            base.Initialize();
+
+            // Model
+            _Model = Application.AppReference.Content.Load<Model>("Models/Enemies/Drone01/Drone01");
+            _ModelScale = 0.3f;
 
             // Settings
             _Depth = 0.79f;
@@ -125,7 +127,7 @@ namespace SituationSticky
             // Make drone face his target.
             float x_diff = _Position.X - _Target.Position.X;
             float y_diff = _Position.Y - _Target.Position.Y;
-            _Direction.X = (float) (Math.Atan2(y_diff, x_diff) - Math.PI / 2);
+            _Direction.Z = (float) (Math.Atan2(y_diff, x_diff) - Math.PI / 2);
 
             // Allow drone to regain his speed up to maximum if he has been stunned earlier.
             if (_Speed < DroneSpeed)
@@ -159,8 +161,8 @@ namespace SituationSticky
                 double angle = Math.Atan2(diff.Y, diff.X);
                 
                 // Apply knockback and stun to drone
-                _Position.X += (float)((_CollisionRadius + otherEnt.CollisionRadius) * Math.Cos(_Direction.X - Math.PI) * BulletKnockback);
-                _Position.Y += (float)((_CollisionRadius + otherEnt.CollisionRadius) * -Math.Sin(_Direction.X - Math.PI) * BulletKnockback);
+                _Position.X += (float)((_CollisionRadius + otherEnt.CollisionRadius) * Math.Cos(_Direction.Z - Math.PI) * BulletKnockback);
+                _Position.Y += (float)((_CollisionRadius + otherEnt.CollisionRadius) * -Math.Sin(_Direction.Z - Math.PI) * BulletKnockback);
                 _Speed *= 0.60f;
             }
             else if (otherEnt as Drone != null)
