@@ -60,6 +60,7 @@ namespace SituationSticky
                 _Radius *= 1.5f;
                 _CollisionRadius = _Radius * 0.6f;
                 _Shadow = new ShadowRegion(this, _Position, _Radius);
+                _Size.Z = _Size.X;
             }
             else CollisionType = CollisionType.None;
 

@@ -17,7 +17,7 @@ namespace SituationSticky
         public const int        MaxHP                       = 100;
         public const float      DefaultCollisionRadius      = 18f;
         public static int[]     DefaultCollisionPeriod      = { 80, 60, 40, 25, 16 };
-        public static int[]     BloodParticles              = { 3, 5, 8, 13, 18 };       
+        public static int[]     BloodParticles              = { 3, 3, 4, 4, 5 };       
         public static Color     BloodColour                 = Color.Red;
         public const float      BloodSizeBase               = 3f;
         public const float      BloodSizeVar                = 26f;
@@ -25,7 +25,7 @@ namespace SituationSticky
         public const float      BloodSpeedBase              = 0.1f;
         public const float      BloodSpeedVar               = 0.3f;
         public const float      BloodSpeedDamp              = 0.91f;
-        public static int[]     DeathParticles              = { 9, 20, 45, 90, 180 };
+        public static int[]     DeathParticles              = { 4, 5, 6, 7, 8 };
         public static Color     DeathColour                 = Color.Red;
         public const float      DeathSizeBase               = 12f;
         public const float      DeathSizeVar                = 78f;
