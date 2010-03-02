@@ -49,7 +49,8 @@ namespace SituationSticky
         /// <param name="range">The maximum distance of the lighting.</param>
         /// <param name="bandwidth">The field of view of the light.</param>
         /// <param name="direction">The direction in which the light is pointing.</param>
-        public LightSource(Screen parent, Entity owner, Vector3 position, Color colour, float range, float bandwidth, Vector2 direction) : base(parent.Lights, position, Vector3.Zero, direction)
+        public LightSource(Screen parent, Entity owner, Vector3 position, Color colour, float range, float bandwidth, Vector3 direction)
+            : base(parent.Lights, position, Vector3.Zero, direction)
         {
             _Range = range;
             _Bandwidth = bandwidth;

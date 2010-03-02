@@ -78,7 +78,8 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public Weapon(Screen parent, Marine player) : base(parent.Entities, player.Position, Vector3.Zero, Vector2.Zero)
+        public Weapon(Screen parent, Marine player)
+            : base(parent.Entities, player.Position, Vector3.Zero, Vector3.Zero)
         {
             _Player = player;
             _Sound = Application.AppReference.Content.Load<SoundEffect>("Audio/Effects/Bullet01");
@@ -132,15 +133,15 @@ namespace SituationSticky
             _Player.MuzzleLifeTime = 100;
 
             // Create muzzle flash sprite
-            new MuzzleFlash(_Parent, _Player, new Vector2(20, 0));
+            //new MuzzleFlash(_Parent, _Player, new Vector3(20, 0, 0));
 
             // Apply weapon cooldown
             _RemainingCooldown = _Cooldown;
 
             // Create bullet (slightly in front of marine)
             Vector3 bulletPos = _Player.Position;
-            bulletPos.X += (float)Math.Sin(_Player.Direction.X) * 25.0f;
-            bulletPos.Y += -(float)Math.Cos(_Player.Direction.X) * 25.0f;
+            bulletPos.X += (float)Math.Sin(_Player.Direction.Z) * 25.0f;
+            bulletPos.Y += -(float)Math.Cos(_Player.Direction.Z) * 25.0f;
             new Bullet(_Player.Parent, _Player, bulletPos, _Player.Direction);
 
             // Shake screen slightly

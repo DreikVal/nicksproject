@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    public class MuzzleFlash : Entity
+    public class MuzzleFlash : Entity_Quad
     {
         #region Constants
 
@@ -26,7 +26,7 @@ namespace SituationSticky
         /// <summary>
         /// The positional offset from the owner of this muzzle flash.
         /// </summary>
-        protected Vector2 _Offset;
+        protected Vector3 _Offset;
 
         #endregion
 
@@ -38,7 +38,7 @@ namespace SituationSticky
         /// <param name="parent">The screen to create the muzzle flash on.</param>
         /// <param name="owner">The owner (creator) of the muzzle flash.</param>
         /// <param name="offset">The positional offset from the owner.</param>
-        public MuzzleFlash(Screen parent, Entity owner, Vector2 offset)
+        public MuzzleFlash(Screen parent, Entity owner, Vector3 offset)
             : base(parent.Entities, owner.Position, new Vector3(15,20,0), owner.Direction)
         {
             _Owner = owner;
@@ -48,7 +48,9 @@ namespace SituationSticky
         }
 
         public override string Initialize()
-        {         
+        {
+            base.Initialize();
+
             // Animations
             _Animations = new AnimationSet();
             Animation normal = new Animation("Textures/Effects/MuzzleFlash01_1x3", "Normal", 1, 3, 20.0f);

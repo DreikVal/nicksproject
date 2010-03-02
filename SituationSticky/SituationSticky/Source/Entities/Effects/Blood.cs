@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    class Blood : Entity
+    class Blood : Entity_Quad
     {
         #region Members
 
@@ -31,7 +31,7 @@ namespace SituationSticky
         /// <param name="speedDamp">The factor by which blood maintains its velocity.</param>
         /// <param name="lifeTime">The time in milliseconds until the blood disappears.</param>
         public Blood(Screen parent, Vector3 position, Color overlay, float baseSize, float sizeVar, float baseSpeed, float speedVar, float speedDamp, int lifeTime)
-            : base(parent.Blood, position, new Vector3(20,20,20), Vector2.Zero)
+            : base(parent.Blood, position, new Vector3(20, 20, 20), Vector3.Zero)
         {
             _ColourOverlay = overlay;
             _BaseSize = baseSize;
@@ -42,12 +42,14 @@ namespace SituationSticky
             _LifeTime = lifeTime;
             float size = (float)Application.AppReference.Random.NextDouble() * _SizeVar + _BaseSize;
             _Size = new Vector3(size, size, size);
-            _Direction.X = (float)(Application.AppReference.Random.NextDouble() * Math.PI * 2);
+            _Direction.Z = (float)(Application.AppReference.Random.NextDouble() * Math.PI * 2);
             _Speed = (float)Application.AppReference.Random.NextDouble() * _SpeedVar + _BaseSpeed;
         }
 
         public override string Initialize()
         {
+            base.Initialize();
+
             // Animations
             _Animations = new AnimationSet();
             _Animations.AddAnimation(new Animation("Textures/Effects/Blood01_1x7", "Normal", 1, 7, 6.0f));

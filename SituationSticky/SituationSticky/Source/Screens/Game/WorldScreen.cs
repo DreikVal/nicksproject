@@ -74,6 +74,7 @@ namespace SituationSticky
 
         #endregion
 
+        
         #region Init and Disposal
 
         public WorldScreen(ScreenManager manager, String worldMap)
@@ -113,7 +114,7 @@ namespace SituationSticky
                 int index = Application.AppReference.Random.Next(SpawnLocations.Length);
                 new Drone(this, SpawnLocations[index], _PlayerEntity);
             }
-
+            
 
             // Setup screen behavior
             _Depth = 0.9f;

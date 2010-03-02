@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    public class Radar_GUI : Entity
+    public class Radar_GUI : Entity_Quad
     {
         #region Members
 
@@ -26,10 +26,12 @@ namespace SituationSticky
         /// <param name="Parent">The screen for the radar.</param>
         /// <param name="position">The location of the radar.</param>
         public Radar_GUI(Screen Parent, Vector3 position)
-            : base(Parent.Entities, position, new Vector3(120,120,0), Vector2.Zero) {}
+            : base(Parent.Entities, position, new Vector3(120, 120, 0), Vector3.Zero) { }
 
         public override string Initialize()
         {
+            base.Initialize();
+
             // Animations
             _Animations = new AnimationSet();
             _Animations.AddAnimation(new Animation("Textures/GUI/Radar01_1x1", "Normal", 1, 1, 1.0f));

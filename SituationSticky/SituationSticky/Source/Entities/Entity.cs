@@ -65,14 +65,8 @@ namespace SituationSticky
         /// <summary>
         /// Gets or sets the direction in radians of this entity. (0.0f = North)
         /// </summary>
-        public Vector2 Direction { get { return _Direction; } set { _Direction = value; } }
-        protected Vector2 _Direction = new Vector2();
-
-        /// <summary>
-        /// Gets a set of animations for this entity.
-        /// </summary>
-        public AnimationSet Animations { get { return _Animations; } }
-        protected AnimationSet _Animations = new AnimationSet();
+        public Vector3 Direction { get { return _Direction; } set { _Direction = value; } }
+        protected Vector3 _Direction = new Vector3();
 
         /// <summary>
         /// Gets or sets the depth of this entity (layer level on the screen, 0.0f = in front, 1.0f = at back)
@@ -179,11 +173,6 @@ namespace SituationSticky
         /// </summary>
         public int DefinitionID { get { return _DefinitionID; } set { _DefinitionID = value; } }
         protected int _DefinitionID = -1;
-
-        /// <summary>
-        /// NICK_S
-        /// </summary>
-        public Model model;
         
         #endregion
 
@@ -198,7 +187,7 @@ namespace SituationSticky
         /// <param name="width">The width of the entity.</param>
         /// <param name="height">The height of the entity.</param>
         /// <param name="direction">The direction of the entity.</param>
-        public Entity(EntityList list, Vector3 position, Vector3 size, Vector2 direction)
+        public Entity(EntityList list, Vector3 position, Vector3 size, Vector3 direction)
         {
             // Retrieve entity manager
             if (list == null)
@@ -265,9 +254,9 @@ namespace SituationSticky
             }
 
             // Update position and direction
-            //_Position.X += (float)Math.Sin(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-            //_Position.Y += -(float)Math.Cos(_Direction) * _Speed * time.ElapsedGameTime.Milliseconds;
-            //_Direction += _Spin * time.ElapsedGameTime.Milliseconds;
+            _Position.X += (float)Math.Sin(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
+            _Position.Y += -(float)Math.Cos(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
+            _Direction.Z += _Spin * time.ElapsedGameTime.Milliseconds;
 
             // Check collisions
             if (_CollisionType == CollisionType.Active)
@@ -279,21 +268,6 @@ namespace SituationSticky
                     CheckCollisions();
                 }  
             }
-
-            // Graphics updates, bail now if the entity isn't on screen
-            // if (!isOnScreen()) { _Draw_OnScreen = false; return; }
-            if (_Hide) return;
-
-            if (_Animations == null || _Animations.Current == null) return;
-
-            // Pre-calculations for the spritebatch are computed here which allows XNA to distribute draw calls to the gfx card faster in Draw()
-            //_Draw_OnScreen = true;
-            //_Draw_Animation = _Animations.Current;
-            //_Draw_Position = _Parent.ViewPort.Transform_UnitPosition_To_PixelPosition(Position);
-            //_Draw_Size = _Parent.ViewPort.Transform_UnitSize_To_PixelSize(Size);
-            //_Draw_Origin = new Vector2(_Animations.Current.WidthPerCell / 2, _Animations.Current.HeightPerCell / 2);
-            //_Draw_Destination = new Rectangle((int)(_Draw_Position.X), (int)(_Draw_Position.Y), (int)(_Draw_Size.X), (int)(_Draw_Size.Y));
-            //_Draw_Source = _Draw_Animation.UpdateSource(time);
         }
 
         /// <summary>
@@ -328,7 +302,7 @@ namespace SituationSticky
             if (val < 0.0f) val = 0.0f;
 
             float angle = (float)Math.Atan2(y_diff, x_diff);
-            float angle_diff = (float)Math.Abs(light.Direction.X - Math.PI / 2 - angle);
+            float angle_diff = (float)Math.Abs(light.Direction.Z - Math.PI / 2 - angle);
             if (angle_diff > Math.PI)
                 angle_diff = 2 * (float)Math.PI - angle_diff;
             float angle_val = 1.0f - (angle_diff / light.Bandwidth);
@@ -387,47 +361,7 @@ namespace SituationSticky
         /// <param name="time">XNA game time.</param>
         /// <param name="batch">The spritebatch to render to.</param>
         public virtual void Draw(GameTime time, SpriteBatch batch)
-        {
-
-            //if (_Draw_OnScreen == false) return;
-            if (_Disposed) return;
-            //if (_Draw_Animation == null) return;
-            if (_Hide) return;
-
-            //batch.Draw(_Draw_Animation.Texture, _Draw_Destination, _Draw_Source, _ActualColour, _Direction, _Draw_Origin, SpriteEffects.None, _Depth);
-
-            /// <summary>
-            /// NICK_S
-            /// </summary>
-            /// 
-            //dummy model
-            if (model == null)
-                model = Application.AppReference.Content.Load<Model>("plane");
-            foreach (ModelMesh mesh in model.Meshes)
-            {
-
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-
-                    effect.EnableDefaultLighting();
-                    effect.PreferPerPixelLighting = true;
-
-                    effect.World =
-                        //Matrix.CreateFromYawPitchRoll(
-                        //gameObject.rotation.Y,
-                        //gameObject.rotation.X,
-                        //gameObject.rotation.Z) *
-
-                        Matrix.CreateScale(4) *
-
-                        Matrix.CreateTranslation(new Vector3(Position.X, Position.Y, Position.Z));
-
-                    effect.Projection = Parent.ViewPort.cameraProjectionMatrix;
-                    effect.View = Parent.ViewPort.cameraViewMatrix;
-                }
-                mesh.Draw();
-            }
-        }
+        { }
 
         #endregion
 

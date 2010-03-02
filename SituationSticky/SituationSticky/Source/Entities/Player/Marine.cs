@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace SituationSticky
 {
-    public class Marine : Entity
+    public class Marine : Entity_3D
     {
         #region Constants
 
@@ -159,13 +159,16 @@ namespace SituationSticky
 
         #region Init and Disposal
 
-        public Marine(Screen parent, Vector3 position) : base(parent.Entities, position, new Vector3(48,48,48), Vector2.Zero) { }
+        public Marine(Screen parent, Vector3 position) : base(parent.Entities, position, new Vector3(48, 48, 48), Vector3.Zero) { }
 
         public override string Initialize()
         {
-            // Animations
-            _Animations = new AnimationSet();
-            _Animations.AddAnimation(new Animation("Textures/Player/Marine01_1x1", "Normal", 1, 1, 18.0f));
+            base.Initialize();
+
+            // Model
+            _Model = Application.AppReference.Content.Load<Model>("Models/Player/Marine01/Marine01");
+            _ModelScale = 0.05f;
+            _ModelRotation = new Vector3(0, 0, 0);
 
             // Entity settings
             _Depth = 0.8f;
@@ -176,10 +179,10 @@ namespace SituationSticky
             _CollisionPeriod = DefaultCollisionPeriod[Application.AppReference.GfxLevel];
 
             // Light sources
-            _FlashLight = new LightSource(_Parent, this, _Position, new Color(1.0f, 1.0f, 0.7f), 625f, 1.6f, Vector2.Zero);
-            _Muzzle = new LightSource(_Parent, this, _Position, Color.White, 325f, 4.0f, Vector2.Zero);
+            _FlashLight = new LightSource(_Parent, this, _Position, new Color(1.0f, 1.0f, 0.7f), 625f, 1.6f, Vector3.Zero);
+            _Muzzle = new LightSource(_Parent, this, _Position, Color.White, 325f, 4.0f, Vector3.Zero);
             _Muzzle.Active = false;
-            _NightVision = new LightSource(_Parent, this, _Position, new Color(100, 255, 100), 280f, 4.8f, Vector2.Zero);
+            _NightVision = new LightSource(_Parent, this, _Position, new Color(100, 255, 100), 280f, 4.8f, Vector3.Zero);
             _NightVision.Active = false;
 
             // Weapons
@@ -187,7 +190,6 @@ namespace SituationSticky
             //weaponList.Add(new MachineGun(this));
             //weaponList.Add(new AutoHandGun(this));
             //currentWeapon = weaponList[0];
-            base.model = Application.AppReference.Content.Load<Model>("plane");
 
             return "Marine";
         }
@@ -207,6 +209,11 @@ namespace SituationSticky
         public static Marine CreateMarine(Screen parent, Vector3 position) { return new Marine(parent, position); }
 
         #endregion
+
+        public override void Draw(GameTime time, SpriteBatch batch)
+        {
+            base.Draw(time, batch);
+        }
 
         #region Utility
         
@@ -238,10 +245,13 @@ namespace SituationSticky
 
             // Point marine towards the mouse
             MouseState mState = Mouse.GetState();
-            Vector2 mLoc = new Vector2();
-            mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
-            mLoc.Y = mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
-            _Direction.X = (float)(Math.Atan2(mLoc.Y - _Position.Y, mLoc.X - _Position.X) + Math.PI / 2);
+            //Vector2 mLoc = new Vector2();
+            //mLoc.X = mState.X / _Parent.Manager.Resolution.X * _Parent.ViewPort.Size.X + _Parent.ViewPort.ActualLocation.X;
+            //mLoc.Y = -mState.Y / _Parent.Manager.Resolution.Y * _Parent.ViewPort.Size.Y + _Parent.ViewPort.ActualLocation.Y;
+            //_Direction.X = (float)(Math.Atan2(mLoc.Y - _Position.Y, mLoc.X - _Position.X) + Math.PI / 2);
+
+            Vector3 diff = ((WorldScreen)_Parent).Crosshair.Position - _Position;
+            _Direction.Z = (float)(Math.Atan2(diff.Y, diff.X) + Math.PI / 2);
 
             // Check HP
             if (_CurrentHP <= 0)
@@ -269,11 +279,11 @@ namespace SituationSticky
             {
                 if (_MoveForward)
                 {
-                    _Position.Y -= _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveBack)
                 {
-                    _Position.Y += _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y -= _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveLeft)
                 {
@@ -288,23 +298,23 @@ namespace SituationSticky
             {
                 if (_MoveForward)
                 {
-                    _Position.X += (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y += -(float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X += (float)Math.Sin(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += -(float)Math.Cos(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveBack)
                 {
-                    _Position.X -= (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y -= -(float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X -= (float)Math.Sin(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y -= -(float)Math.Cos(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveLeft)
                 {
-                    _Position.X += -(float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y += -(float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X += -(float)Math.Cos(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += -(float)Math.Sin(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
                 if (_MoveRight)
                 {
-                    _Position.X += (float)Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
-                    _Position.Y += (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.X += (float)Math.Cos(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
+                    _Position.Y += (float)Math.Sin(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
                 }
             }
         }

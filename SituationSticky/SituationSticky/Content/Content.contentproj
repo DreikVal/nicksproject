@@ -263,6 +263,39 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Player\Female01\Female01.X">
+      <Name>Female01</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Enemies\Goblin01\Goblin01.FBX">
+      <Name>Goblin01</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Enemies\Drone01\Drone01.x">
+      <Name>Drone01</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Player\Male01\Male01.fbx">
+      <Name>Male01</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Player\Marine01\Marine01.fbx">
+      <Name>Marine01</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Textures\Lighting\" />
     <Folder Include="Textures\Weapons\" />
   </ItemGroup>

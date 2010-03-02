@@ -404,6 +404,7 @@ namespace SituationSticky
                 _Tiles.Loaded.ForEach(DrawEntity, time, batch, null);
                 _Walls.Loaded.ForEach(DrawEntity, time, batch, null);
                 batch.End();
+                
             }
 
             // Draw active entities
