@@ -263,39 +263,47 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Player\Female01\Female01.X">
-      <Name>Female01</Name>
-      <Importer>XImporter</Importer>
+    <Compile Include="Models\Effects\Blood01.FBX">
+      <Name>Blood01</Name>
+      <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Enemies\Goblin01\Goblin01.FBX">
-      <Name>Goblin01</Name>
+    <Compile Include="Models\Player\StickMan01.FBX">
+      <Name>StickMan01</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Enemies\Drone01\Drone01.x">
-      <Name>Drone01</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Player\Male01\Male01.fbx">
-      <Name>Male01</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Player\Marine01\Marine01.fbx">
-      <Name>Marine01</Name>
+    <Compile Include="Models\Player\StickMan02.FBX">
+      <Name>StickMan02</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Player\Pyramid01.FBX">
+      <Name>Pyramid01</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Player\Pyramid02.FBX">
+      <Name>Pyramid02</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Effects\Blood02.FBX">
+      <Name>Blood02</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Enemies\" />
     <Folder Include="Textures\Lighting\" />
     <Folder Include="Textures\Weapons\" />
   </ItemGroup>

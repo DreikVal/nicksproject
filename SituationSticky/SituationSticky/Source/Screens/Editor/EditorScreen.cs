@@ -66,7 +66,7 @@ namespace SituationSticky
 
             // Setup ports
             _ViewPort.TargetLocation = new Vector3(TileCols * Tile.TileWidth, TileRows * Tile.TileHeight, 0);
-            _LoadPort = new LoadPort(this, new Vector3(), _ViewPort.Size*1.20f, _ViewPort.Size.Y*0.1f);
+            _LoadPort = new LoadPort(this, Vector2.Zero, _ViewPort.Size*1.20f, _ViewPort.Size.Y*0.1f);
         }
 
         protected override void HandleInputActive(Bind bind)

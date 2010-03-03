@@ -17,11 +17,11 @@ namespace SituationSticky
         public static int[]         DefaultCollisionPeriod  = { 125, 100, 75, 50, 35 };
         public static Color         BloodColour             = Color.Green;
         public const float          BloodSizeBase           = 5f;
-        public const float          BloodSizeVar            = 18f;
-        public const int            BloodLifeTime           = 650;
-        public const float          BloodSpeedBase          = 0.1f;
-        public const float          BloodSpeedVar           = 0.3f;
-        public const float          BloodSpeedDamp          = 0.92f;
+        public const float          BloodSizeVar            = 14f;
+        public const int            BloodLifeTime           = 1100;
+        public const float          BloodSpeedBase          = 0.2f;
+        public const float          BloodSpeedVar           = 0.2f;
+        public const float          BloodSpeedDamp          = 0.95f;
         public const int            DamagePerHit            = 1;
         public const int            MaxHP                   = 100;
         public const float          DroneSpeed              = 0.16f;
@@ -66,8 +66,8 @@ namespace SituationSticky
             base.Initialize();
 
             // Model
-            _Model = Application.AppReference.Content.Load<Model>("Models/Enemies/Drone01/Drone01");
-            _ModelScale = 0.2f;
+            _Model = Application.AppReference.Content.Load<Model>("Models/Player/StickMan01");
+            _ModelScale = 0.01f;
 
             // Settings
             _Depth = 0.79f;

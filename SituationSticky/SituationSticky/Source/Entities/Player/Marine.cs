@@ -166,8 +166,8 @@ namespace SituationSticky
             base.Initialize();
 
             // Model
-            _Model = Application.AppReference.Content.Load<Model>("Models/Player/Marine01/Marine01");
-            _ModelScale = 0.05f;
+            _Model = Application.AppReference.Content.Load<Model>("Models/Player/Pyramid01");
+            _ModelScale = 0.015f;
             _ModelRotation = new Vector3(0, 0, 0);
 
             // Entity settings
