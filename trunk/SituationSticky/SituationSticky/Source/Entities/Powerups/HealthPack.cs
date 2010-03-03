@@ -49,7 +49,7 @@ namespace SituationSticky
             _DynamicLighting = false;
             _Depth = 0.5f;
             _Temporary = false;
-            _Spin = 0.01f;
+            _Spin = new Vector3(0f, 0f, 0.1f);
             _CollisionType = CollisionType.Passive;
             new LightSource(_Parent, this, _Position, new Color(0.15f, 0f, 0f, 1f), 150f, 6.28f, Vector3.Zero);
 

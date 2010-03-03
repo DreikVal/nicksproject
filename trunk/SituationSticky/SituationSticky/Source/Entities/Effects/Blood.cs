@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SituationSticky
 {
-    class Blood : Entity_Quad
+    class Blood : Entity_3D
     {
         #region Members
 
@@ -43,7 +43,10 @@ namespace SituationSticky
             float size = (float)Application.AppReference.Random.NextDouble() * _SizeVar + _BaseSize;
             _Size = new Vector3(size, size, size);
             _Direction.Z = (float)(Application.AppReference.Random.NextDouble() * Math.PI * 2);
+            _Direction.Y = (float)(0);
+            _Direction.X = (float)(Application.AppReference.Random.NextDouble() * Math.PI / 3 + Math.PI / 6);
             _Speed = (float)Application.AppReference.Random.NextDouble() * _SpeedVar + _BaseSpeed;
+            _Spin.X = -0.002f;
         }
 
         public override string Initialize()
@@ -51,8 +54,9 @@ namespace SituationSticky
             base.Initialize();
 
             // Animations
-            _Animations = new AnimationSet();
-            _Animations.AddAnimation(new Animation("Textures/Effects/Blood01_1x7", "Normal", 1, 7, 6.0f));
+            _Model = Application.AppReference.Content.Load<Model>("Models/Effects/Blood02");
+            _ModelScale = 0.002f;
+            _ModelRotation = new Vector3((float)Math.PI / 2, 0, 0);
 
             // Entity settings
             _Depth = 0.00f;
@@ -70,6 +74,8 @@ namespace SituationSticky
         {
             base.Update(time);
             _Speed *= _SpeedDamp;
+            if (_Direction.X < -Math.PI / 2 + 0.1) _Spin = Vector3.Zero;
+            if (_Direction.X < 0) _Speed *= 1.1f;
         }
 
         #endregion

@@ -125,7 +125,7 @@ namespace SituationSticky
             _DynamicLighting = true;
 
             // Create loadport
-            LoadPort = new LoadPort(this, new Vector3(), new Vector2(1050, 750), 100f);
+            LoadPort = new LoadPort(this, Vector2.Zero, new Vector2(1050, 750), 100f);
 
             // Play music
             MediaPlayer.Play(Application.AppReference.Content.Load<Song>("Audio/Music/GameMusic01"));

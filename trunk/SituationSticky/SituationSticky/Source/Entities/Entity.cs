@@ -159,8 +159,8 @@ namespace SituationSticky
         /// <summary>
         /// Gets or sets the speed of the object.
         /// </summary>
-        public float Spin { get { return _Spin; } set { _Spin = value; } }
-        protected float _Spin = 0.0f;
+        public Vector3 Spin { get { return _Spin; } set { _Spin = value; } }
+        protected Vector3 _Spin = Vector3.Zero;
 
         // Variables used to render object
         protected Animation _Draw_Animation;
@@ -254,9 +254,13 @@ namespace SituationSticky
             }
 
             // Update position and direction
-            _Position.X += (float)Math.Sin(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
-            _Position.Y += -(float)Math.Cos(_Direction.Z) * _Speed * time.ElapsedGameTime.Milliseconds;
-            _Direction.Z += _Spin * time.ElapsedGameTime.Milliseconds;
+            //_Position.X += (float)(Math.Sin(_Direction.Z) * Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds);
+            //_Position.Y += -(float)(Math.Cos(_Direction.Z) * Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds);
+            //_Position.Z += (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+            _Position.X += (float)(Math.Sin(_Direction.Z) * Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds);
+            _Position.Y += -(float)(Math.Cos(_Direction.Z) * Math.Cos(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds);
+            _Position.Z += (float)Math.Sin(_Direction.X) * _Speed * time.ElapsedGameTime.Milliseconds;
+            _Direction += _Spin * time.ElapsedGameTime.Milliseconds;
 
             // Check collisions
             if (_CollisionType == CollisionType.Active)
@@ -388,10 +392,10 @@ namespace SituationSticky
         /// <returns>True if inside LoadPort region.</returns>
         public bool isInLoadPort()
         {
-            if (Position.X + Radius < _Parent.LoadPort.ActualLocation.X ||
-                Position.Y + Radius < _Parent.LoadPort.ActualLocation.Y ||
-                Position.X - Radius > _Parent.LoadPort.ActualLocation.X + _Parent.LoadPort.Size.X ||
-                Position.Y - Radius > _Parent.LoadPort.ActualLocation.Y + _Parent.LoadPort.Size.Y)
+            if (Position.X + Radius < _Parent.LoadPort.Location.X ||
+                Position.Y + Radius < _Parent.LoadPort.Location.Y ||
+                Position.X - Radius > _Parent.LoadPort.Location.X + _Parent.LoadPort.Size.X ||
+                Position.Y - Radius > _Parent.LoadPort.Location.Y + _Parent.LoadPort.Size.Y)
                 return false;
             return true;
         }

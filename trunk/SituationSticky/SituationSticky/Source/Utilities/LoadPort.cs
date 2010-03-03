@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace SituationSticky
 {
-    public class LoadPort : ViewPort
+    public class LoadPort
     {
         #region Members
 
@@ -15,7 +15,13 @@ namespace SituationSticky
         /// Distance from last load that the loadport needs to move before commencing a new content load.
         /// </summary>
         protected float _Threshold;
-        protected Vector3 _LastLoad = new Vector3(-10000f, -10000f, -10000f);
+        protected Vector2 _LastLoad = new Vector2(-10000f, -10000f);
+
+        public Vector2 Location { get { return _Location; } set { _Location = value; } }
+        protected Vector2 _Location = new Vector2(-10000f, -10000f);
+
+        public Vector2 Size { get { return _Size; } set { _Size = value; } }
+        protected Vector2 _Size = new Vector2(1000, 800);
 
         /// <summary>
         /// The background worker that runs asynchronous content loading.
@@ -38,10 +44,12 @@ namespace SituationSticky
         /// <param name="position">The location of the loadport.</param>
         /// <param name="size">The size of the loadport.</param>
         /// <param name="threshold">The minimum distance the loadport has to move before a new content load begins.</param>
-        public LoadPort(Screen parent, Vector3 position, Vector2 size, float threshold) : base(position, size) 
+        public LoadPort(Screen parent, Vector2 position, Vector2 size, float threshold)
         {
             _Threshold = threshold;
             _Parent = parent;
+            _Location = position;
+            _Size = size;
             LoadContent(null, null);
         }
 
@@ -49,11 +57,12 @@ namespace SituationSticky
 
         #region Update
 
-        public override void Update(GameTime time)
+        public virtual void Update(GameTime time)
         {
             // Set location to position of viewport
-            _Location = _Parent.ViewPort.Location;
-            Vector3 diff = _Location - _LastLoad;
+            _Location.X = ((WorldScreen)_Parent).PlayerEntity.Position.X - _Size.X/2;
+            _Location.Y = ((WorldScreen)_Parent).PlayerEntity.Position.Y - _Size.Y/2;
+            Vector2 diff = _Location - _LastLoad;
 
             // Check if a new load is required.
             if (diff.Length() > _Threshold)
@@ -71,7 +80,7 @@ namespace SituationSticky
         public void LoadContent(object source, DoWorkEventArgs e)
         {
             // Set last load location
-            _LastLoad = ActualLocation;
+            _LastLoad = _Location;
 
             // Load/unload all entities.
             CheckList(_Parent.Entities);
@@ -105,10 +114,10 @@ namespace SituationSticky
             ThreadDictionary<UInt64, Entity> ilist = (ThreadDictionary<UInt64, Entity>)inactiveList;
 
             // Check if entity is within loadport bounds
-            if (!(ent.Position.X + ent.Radius < ActualLocation.X ||
-                ent.Position.Y + ent.Radius < ActualLocation.Y ||
-                ent.Position.X - ent.Radius > ActualLocation.X + Size.X ||
-                ent.Position.Y - ent.Radius > ActualLocation.Y + Size.Y))
+            if (!(ent.Position.X + ent.Radius < Location.X ||
+                ent.Position.Y + ent.Radius < Location.Y ||
+                ent.Position.X - ent.Radius > Location.X + Size.X ||
+                ent.Position.Y - ent.Radius > Location.Y + Size.Y))
             {
                 ilist.Remove(ent.ID); // Remove the entity from the inactive list
                 alist.Add(ent.ID, ent); // Add the entity to the active list
@@ -131,13 +140,14 @@ namespace SituationSticky
             ThreadDictionary<UInt64, Entity> ilist = (ThreadDictionary<UInt64, Entity>)inactiveList;
 
             // Check if entity is outside the loadport bounds
-            if (ent.Position.X + ent.Radius < ActualLocation.X ||
-                ent.Position.Y + ent.Radius < ActualLocation.Y ||
-                ent.Position.X - ent.Radius > ActualLocation.X + Size.X ||
-                ent.Position.Y - ent.Radius > ActualLocation.Y + Size.Y)
+            if (ent.Position.X + ent.Radius < Location.X ||
+                ent.Position.Y + ent.Radius < Location.Y ||
+                ent.Position.X - ent.Radius > Location.X + Size.X ||
+                ent.Position.Y - ent.Radius > Location.Y + Size.Y)
             {
                 // If it's a temporary entity we just delete it instead of unloading it
                 if (ent.Temporary) { ent.Dispose(); return true; }
+                if (ent as Crosshair != null) return true;
 
                 alist.Remove(ent.ID); // Remove entity from loaded list
                 ilist.Add(ent.ID, ent); // Add entity to unloaded list

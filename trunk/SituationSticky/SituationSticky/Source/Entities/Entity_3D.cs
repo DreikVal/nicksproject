@@ -98,12 +98,8 @@ namespace SituationSticky
                     effect.PreferPerPixelLighting = true;
                     effect.World =
                         Matrix.CreateScale(_Size * _ModelScale)
-                        * Matrix.CreateRotationZ(_ModelRotation.Z)
-                        * Matrix.CreateRotationY(_ModelRotation.Y)
-                        * Matrix.CreateRotationX(_ModelRotation.X)
-                        * Matrix.CreateRotationZ(_Direction.Z)
-                        * Matrix.CreateRotationY(_Direction.Y)
-                        * Matrix.CreateRotationX(_Direction.X)
+                        * Matrix.CreateFromYawPitchRoll(_ModelRotation.Y, _ModelRotation.X, _ModelRotation.Z)
+                        * Matrix.CreateFromYawPitchRoll(_Direction.Y, _Direction.X, _Direction.Z)
                         * Matrix.CreateTranslation(_Position)
                         ;
                     effect.Projection = Parent.ViewPort.ProjectionMatrix;
