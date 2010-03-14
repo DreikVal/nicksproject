@@ -1,0 +1,1524 @@
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 118 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1731
+Average clusters visible: 33
+Building PAS...
+Average clusters audible: 51
+visdatasize:1150  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+220 faces
+115754 square feet [16668671.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+220 patches before subdivision
+12180 patches after subdivision
+0 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1503370, max 353
+transfer lists:  11.5 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0090 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               385/65536        4620/786432   ( 0.6%) 
+nodes                  120/65536        3840/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  220/65536       12320/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               77/65536        4312/3670016  ( 0.1%) 
+leaves                 122/65536        3904/2097152  ( 0.2%) 
+leaffaces              281/65536         562/131072   ( 0.4%) 
+leafbrushes             60/65536         120/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1308/512000       5232/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          0/8192            0/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             13/32768         130/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           168/65536         336/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042624/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1150/16777216 ( 0.0%) 
+entdata               [variable]         338/393216   ( 0.1%) 
+LDR ambient table      122/65536         488/262144   ( 0.2%) 
+HDR ambient table      122/65536         488/262144   ( 0.2%) 
+LDR leaf ambient        51/65536        1428/1835008  ( 0.1%) 
+HDR leaf ambient       122/65536        3416/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 560
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+4 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 118 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1731
+Average clusters visible: 33
+Building PAS...
+Average clusters audible: 51
+visdatasize:1150  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+220 faces
+115754 square feet [16668671.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+220 patches before subdivision
+12180 patches after subdivision
+0 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1503370, max 353
+transfer lists:  11.5 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0054 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               385/65536        4620/786432   ( 0.6%) 
+nodes                  120/65536        3840/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  220/65536       12320/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               77/65536        4312/3670016  ( 0.1%) 
+leaves                 122/65536        3904/2097152  ( 0.2%) 
+leaffaces              281/65536         562/131072   ( 0.4%) 
+leafbrushes             60/65536         120/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1308/512000       5232/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          0/8192            0/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             13/32768         130/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           168/65536         336/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042624/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1150/16777216 ( 0.0%) 
+entdata               [variable]         338/393216   ( 0.1%) 
+LDR ambient table      122/65536         488/262144   ( 0.2%) 
+HDR ambient table      122/65536         488/262144   ( 0.2%) 
+LDR leaf ambient        51/65536        1428/1835008  ( 0.1%) 
+HDR leaf ambient       122/65536        3416/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 560
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+4 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 118 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1731
+Average clusters visible: 33
+Building PAS...
+Average clusters audible: 51
+visdatasize:1150  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+220 faces
+115754 square feet [16668671.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+220 patches before subdivision
+12180 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1503370, max 353
+transfer lists:  11.5 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18199, 946, 710)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2653, 143, 81)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(377, 21, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(54, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0067 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               385/65536        4620/786432   ( 0.6%) 
+nodes                  120/65536        3840/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  220/65536       12320/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               77/65536        4312/3670016  ( 0.1%) 
+leaves                 122/65536        3904/2097152  ( 0.2%) 
+leaffaces              281/65536         562/131072   ( 0.4%) 
+leafbrushes             60/65536         120/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1308/512000       5232/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             13/32768         130/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           168/65536         336/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042624/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1150/16777216 ( 0.0%) 
+entdata               [variable]         669/393216   ( 0.2%) 
+LDR ambient table      122/65536         488/262144   ( 0.2%) 
+HDR ambient table      122/65536         488/262144   ( 0.2%) 
+LDR leaf ambient       626/65536       17528/1835008  ( 1.0%) 
+HDR leaf ambient       122/65536        3416/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 560
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+9 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 117 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1891
+Average clusters visible: 37
+Building PAS...
+Average clusters audible: 51
+visdatasize:1137  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+221 faces
+115754 square feet [16668672.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+221 patches before subdivision
+12303 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1518111, max 352
+transfer lists:  11.6 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18487, 960, 719)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2714, 146, 83)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(383, 22, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(55, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0057 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               386/65536        4632/786432   ( 0.6%) 
+nodes                  125/65536        4000/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  221/65536       12376/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               75/65536        4200/3670016  ( 0.1%) 
+leaves                 127/65536        4064/2097152  ( 0.2%) 
+leaffaces              277/65536         554/131072   ( 0.4%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1304/512000       5216/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           186/65536         372/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042408/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1137/16777216 ( 0.0%) 
+entdata               [variable]        4202/393216   ( 1.1%) 
+LDR ambient table      127/65536         508/262144   ( 0.2%) 
+HDR ambient table      127/65536         508/262144   ( 0.2%) 
+LDR leaf ambient       613/65536       17164/1835008  ( 0.9%) 
+HDR leaf ambient       127/65536        3556/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 562
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+9 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 117 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1891
+Average clusters visible: 37
+Building PAS...
+Average clusters audible: 51
+visdatasize:1137  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+221 faces
+115754 square feet [16668672.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+221 patches before subdivision
+12303 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1518111, max 352
+transfer lists:  11.6 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18487, 960, 719)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2714, 146, 83)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(383, 22, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(55, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0085 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               386/65536        4632/786432   ( 0.6%) 
+nodes                  125/65536        4000/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  221/65536       12376/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               75/65536        4200/3670016  ( 0.1%) 
+leaves                 127/65536        4064/2097152  ( 0.2%) 
+leaffaces              277/65536         554/131072   ( 0.4%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1304/512000       5216/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           186/65536         372/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042408/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1137/16777216 ( 0.0%) 
+entdata               [variable]        1051/393216   ( 0.3%) 
+LDR ambient table      127/65536         508/262144   ( 0.2%) 
+HDR ambient table      127/65536         508/262144   ( 0.2%) 
+LDR leaf ambient       613/65536       17164/1835008  ( 0.9%) 
+HDR leaf ambient       127/65536        3556/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 562
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+8 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 117 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1891
+Average clusters visible: 37
+Building PAS...
+Average clusters audible: 51
+visdatasize:1137  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+221 faces
+115754 square feet [16668672.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+221 patches before subdivision
+12303 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1518111, max 352
+transfer lists:  11.6 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18487, 960, 719)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2714, 146, 83)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(383, 22, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(55, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0050 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               386/65536        4632/786432   ( 0.6%) 
+nodes                  125/65536        4000/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  221/65536       12376/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               75/65536        4200/3670016  ( 0.1%) 
+leaves                 127/65536        4064/2097152  ( 0.2%) 
+leaffaces              277/65536         554/131072   ( 0.4%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1304/512000       5216/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           186/65536         372/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042408/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1137/16777216 ( 0.0%) 
+entdata               [variable]        1130/393216   ( 0.3%) 
+LDR ambient table      127/65536         508/262144   ( 0.2%) 
+HDR ambient table      127/65536         508/262144   ( 0.2%) 
+LDR leaf ambient       613/65536       17164/1835008  ( 0.9%) 
+HDR leaf ambient       127/65536        3556/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 562
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+7 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 117 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1891
+Average clusters visible: 37
+Building PAS...
+Average clusters audible: 51
+visdatasize:1137  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+221 faces
+115754 square feet [16668672.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+221 patches before subdivision
+12303 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1518111, max 352
+transfer lists:  11.6 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18487, 960, 719)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2714, 146, 83)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(383, 22, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(55, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0050 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               386/65536        4632/786432   ( 0.6%) 
+nodes                  125/65536        4000/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  221/65536       12376/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               75/65536        4200/3670016  ( 0.1%) 
+leaves                 127/65536        4064/2097152  ( 0.2%) 
+leaffaces              277/65536         554/131072   ( 0.4%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1304/512000       5216/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           186/65536         372/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042408/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1137/16777216 ( 0.0%) 
+entdata               [variable]        1130/393216   ( 0.3%) 
+LDR ambient table      127/65536         508/262144   ( 0.2%) 
+HDR ambient table      127/65536         508/262144   ( 0.2%) 
+LDR leaf ambient       613/65536       17164/1835008  ( 0.9%) 
+HDR leaf ambient       127/65536        3556/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 562
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+8 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 117 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1891
+Average clusters visible: 37
+Building PAS...
+Average clusters audible: 51
+visdatasize:1137  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+221 faces
+115754 square feet [16668672.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+221 patches before subdivision
+12303 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1518111, max 352
+transfer lists:  11.6 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18487, 960, 719)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2714, 146, 83)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(383, 22, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(55, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0050 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               386/65536        4632/786432   ( 0.6%) 
+nodes                  125/65536        4000/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  221/65536       12376/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               75/65536        4200/3670016  ( 0.1%) 
+leaves                 127/65536        4064/2097152  ( 0.2%) 
+leaffaces              277/65536         554/131072   ( 0.4%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1304/512000       5216/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           186/65536         372/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042408/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1137/16777216 ( 0.0%) 
+entdata               [variable]        1074/393216   ( 0.3%) 
+LDR ambient table      127/65536         508/262144   ( 0.2%) 
+HDR ambient table      127/65536         508/262144   ( 0.2%) 
+LDR leaf ambient       613/65536       17164/1835008  ( 0.9%) 
+HDR leaf ambient       127/65536        3556/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 562
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+7 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+  51 portalclusters
+ 117 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 1891
+Average clusters visible: 37
+Building PAS...
+Average clusters audible: 51
+visdatasize:1137  compressed from 816
+writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+1 second elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+221 faces
+115754 square feet [16668672.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+221 patches before subdivision
+12303 patches after subdivision
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 1518111, max 352
+transfer lists:  11.6 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(18487, 960, 719)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(2714, 146, 83)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(383, 22, 9)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(55, 3, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(8, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(0, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0086 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               386/65536        4632/786432   ( 0.6%) 
+nodes                  125/65536        4000/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  221/65536       12376/3670016  ( 0.3%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               75/65536        4200/3670016  ( 0.1%) 
+leaves                 127/65536        4064/2097152  ( 0.2%) 
+leaffaces              277/65536         554/131072   ( 0.4%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1304/512000       5216/2048000  ( 0.3%) 
+edges                  718/256000       2872/1024000  ( 0.3%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           186/65536         372/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     1042408/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]        1137/16777216 ( 0.0%) 
+entdata               [variable]        1173/393216   ( 0.3%) 
+LDR ambient table      127/65536         508/262144   ( 0.2%) 
+HDR ambient table      127/65536         508/262144   ( 0.2%) 
+LDR leaf ambient       613/65536       17164/1835008  ( 0.9%) 
+HDR leaf ambient       127/65536        3556/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 562
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+7 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...10**** leaked ****
+Entity filter_enemy (-512.00 0.00 128.00) leaked!
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 256.0 -1032.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 768.0 -1016.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 256.0 8.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 768.0 -488.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (3072.0 512.0 -512.0)
+Leaf 0 contents: 
+Leaf 1 contents: CONTENTS_SOLID 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2560.0 1024.0 -512.0)
+Leaf 0 contents: 
+Leaf 1 contents: CONTENTS_SOLID 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2560.0 -1024.0 -512.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 -512.0 -1032.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+*** Suppressing further FindPortalSide errors.... ***
+Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+LoadPortals: couldn't read c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+No vis information, direct lighting only.
+359 faces
+217699 square feet [31348720.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...10Build Patch/Sample Hash Table(s).....Done<0.0075 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               538/65536        6456/786432   ( 0.8%) 
+nodes                  157/65536        5024/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  359/65536       20104/3670016  ( 0.5%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               92/65536        5152/3670016  ( 0.1%) 
+leaves                 159/65536        5088/2097152  ( 0.2%) 
+leaffaces              429/65536         858/131072   ( 0.7%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    3/256            24/2048     ( 1.2%) 
+surfedges             1972/512000       7888/2048000  ( 0.4%) 
+edges                 1063/256000       4252/1024000  ( 0.4%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             16/32768         160/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           213/65536         426/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     2073008/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]           0/16777216 ( 0.0%) 
+entdata               [variable]        2487/393216   ( 0.6%) 
+LDR ambient table      159/65536         636/262144   ( 0.2%) 
+HDR ambient table      159/65536         636/262144   ( 0.2%) 
+LDR leaf ambient       699/65536       19572/1835008  ( 1.1%) 
+HDR leaf ambient       159/65536        4452/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 886
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+2 seconds elapsed
+
+
+
+materialPath: c:\program files (x86)\steam\steamapps\SourceMods\situationsticky\materials
+Loading C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.vmf
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...10**** leaked ****
+Entity filter_enemy (-576.00 576.00 128.00) leaked!
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 256.0 -1032.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 768.0 -1016.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 256.0 8.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 768.0 -488.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (3072.0 512.0 -512.0)
+Leaf 0 contents: 
+Leaf 1 contents: CONTENTS_SOLID 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2560.0 1024.0 -512.0)
+Leaf 0 contents: 
+Leaf 1 contents: CONTENTS_SOLID 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2560.0 -1024.0 -512.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (2048.0 -512.0 -1032.0)
+Leaf 0 contents: CONTENTS_SOLID 
+Leaf 1 contents: 
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID 
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID 
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID 
+Candidate brush IDs: 
+
+*** Suppressing further FindPortalSide errors.... ***
+Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (9030 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6 texinfos to 6
+Reduced 2 texdatas to 2 (46 bytes to 46)
+Writing C:\Program Files (x86)\Steam\steamapps\SourceMods\situationsticky\maps\Zone01.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+reading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+LoadPortals: couldn't read c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.prt
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+No vis information, direct lighting only.
+359 faces
+217699 square feet [31348720.00 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+light has _fifty_percent_distance of 500.000000 but _zero_percent_distance of 20.000000
+1 direct lights
+0...1...2...3...4...5...6...7...8...9...10Build Patch/Sample Hash Table(s).....Done<0.0074 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   1/1024           48/49152    ( 0.1%) 
+brushes                 24/8192          288/98304    ( 0.3%) 
+brushsides             144/65536        1152/524288   ( 0.2%) 
+planes                 112/65536        2240/1310720  ( 0.2%) 
+vertexes               538/65536        6456/786432   ( 0.8%) 
+nodes                  157/65536        5024/2097152  ( 0.2%) 
+texinfos                 6/12288         432/884736   ( 0.0%) 
+texdata                  2/2048           64/65536    ( 0.1%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  359/65536       20104/3670016  ( 0.5%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces               92/65536        5152/3670016  ( 0.1%) 
+leaves                 159/65536        5088/2097152  ( 0.2%) 
+leaffaces              429/65536         858/131072   ( 0.7%) 
+leafbrushes             68/65536         136/131072   ( 0.1%) 
+areas                    3/256            24/2048     ( 1.2%) 
+surfedges             1972/512000       7888/2048000  ( 0.4%) 
+edges                 1063/256000       4252/1024000  ( 0.4%) 
+LDR worldlights          1/8192           88/720896   ( 0.0%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             16/32768         160/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           213/65536         426/131072   ( 0.3%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]     2073008/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]           0/16777216 ( 0.0%) 
+entdata               [variable]        4077/393216   ( 1.0%) 
+LDR ambient table      159/65536         636/262144   ( 0.2%) 
+HDR ambient table      159/65536         636/262144   ( 0.2%) 
+LDR leaf ambient       699/65536       19572/1835008  ( 1.1%) 
+HDR leaf ambient       159/65536        4452/1835008  ( 0.2%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]      105655/0        ( 0.0%) 
+physics               [variable]        9030/4194304  ( 0.2%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 886
+Writing c:\program files (x86)\steam\steamapps\sourcemods\situationsticky\maps\Zone01.bsp
+2 seconds elapsed
