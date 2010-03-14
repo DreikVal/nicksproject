@@ -2546,6 +2546,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\c_npc_zombie.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\hl2\c_plasma_beam_node.cpp"
 					>
 				</File>
